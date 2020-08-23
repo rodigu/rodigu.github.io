@@ -6,18 +6,32 @@ function setup(){
   frameRate(50);
   canvas1 = createCanvas(100, 100);
   paragraph = createElement('h1', "Current time: " + hour());
-  follow = createElement('h1', "&#129409; <br> i will follow u *o*");
+  follow = createElement('h1', "&#129409;<br>i will follow u >:D");
+  fbutton = createButton("Following Lion");
 }
 
-function mousePressed(){
-  console.log(follow.position(), '\n', mouseX, ' ', mouseY);
-  move = false;
+function movedec(){
+  if (move){
+    move = false;
+    follow.html("&#129409;<br>i stop following*_*");
+  }
+  else{
+    move = true;
+    follow.html("&#129409;<br>i will follow u >:D");
+  }
 }
-function mouseReleased(){
-  move = true;
-}
+
+// function mousePressed(){
+//   console.log(follow.position(), '\n', mouseX, ' ', mouseY);
+//   console.log('\n', canvas1.position());
+//   move = false;
+// }
+// function mouseReleased(){
+//   move = true;
+// }
 
 function draw(){
+  fbutton.mousePressed(movedec);
   if (millis() >= 1000 && !vnt){
     vnt = true;
     counter = 0;
@@ -28,7 +42,7 @@ function draw(){
     counter++;
   }
   if (counter >= phrase.length && frameCount%100 == 0) vnt = false;
-  if (move) follow.position(mouseX + 20, mouseY + 60);
+  if (move) follow.position(mouseX + 8, mouseY + 110);
   background(255);
   fill(230);
   ellipse(50, 50, 50, 50);
