@@ -35,7 +35,7 @@ function draw(){
   if (millis() >= 1000 && !vnt){
     vnt = true;
     counter = 0;
-    paragraph.html("");
+    paragraph.html(" ");
   }
   if (vnt && counter < phrase.length && frameCount%int(random(3, 6)) == 0){
     paragraph.html(phrase[counter], true);
