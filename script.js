@@ -8,31 +8,23 @@ function setup(){
   canvas1 = createCanvas(100, 100);
   input = createInput("Leon");
   fbutton = createButton("Update text");
-  sizeslide = createSlider(0, 500, 50);
+  sizeslide = createSlider(20, 500, 50);
   paragraph = createElement('h1', "Current time: " + hour());
-  leon = new Emoji(mouseX, mouseY, "resources/dancin.gif", "Leon");
+  leon = new Emoji(mouseX, mouseY, "assets/dancin.gif", "Leon");
 }
 
-// function mousePressed(){
-//   console.log(follow.position(), '\n', mouseX, ' ', mouseY);
-//   console.log('\n', canvas1.position());
-//   move = false;
-// }
-// function mouseReleased(){
-//   move = true;
-// }
 function nameChange(){
   leon.name = input.value();
 }
 function draw(){
-  leon.img.size(sizeslide.value(), 1.5*sizeslide.value());
-  leon.movement(mouseX + 10, mouseY + 100);
+  leon.s = sizeslide.value();
+  leon.movement(mouseX + 10, mouseY + 150);
   fbutton.mousePressed(nameChange);
   leon.update();
   if (millis() >= 1000 && !vnt){
     vnt = true;
     counter = 0;
-    paragraph.html(" ");
+    paragraph.html("...");
   }
   if (vnt && counter < phrase.length && frameCount%int(random(3, 6)) == 0){
     paragraph.html(phrase[counter], true);
