@@ -1,4 +1,4 @@
-
+/*
 let vnt = false;
 var counter = 0;
 let phrase = "This sentence will write itself slowly";
@@ -34,3 +34,4 @@ function draw(){
   fill(230);
   ellipse(50, 50, 50, 50);
 }
+*/
