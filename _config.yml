@@ -1,7 +1,0 @@
-theme: jekyll-theme-midnight
-minima:
-  skin: dark
-  date_format: "%b %-d, %Y"
-domain: my-site.github.io
-url: https://my-site.github.io
-baseurl: /docs/
