@@ -1,1 +1,4 @@
 theme: jekyll-theme-midnight
+domain: my-site.github.io
+url: https://my-site.github.io
+baseurl: /docs/
