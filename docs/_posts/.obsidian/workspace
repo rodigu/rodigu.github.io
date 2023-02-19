@@ -7,12 +7,8 @@
         "id": "79eb51c3ea5eeda9",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "On Quadruplets.md",
-            "mode": "source",
-            "source": false
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -69,7 +65,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "On Quadruplets.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -85,9 +80,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "On Quadruplets.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -99,6 +92,7 @@
   },
   "active": "79eb51c3ea5eeda9",
   "lastOpenFiles": [
+    "Untitled.md",
     "On Quadruplets.md",
     "template.md",
     "2022-04-03-jekyll-setup.md"
