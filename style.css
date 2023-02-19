@@ -1,0 +1,74 @@
+html,
+body {
+  display: block;
+  row-gap: 10px;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  background-color: black;
+  text-align: center;
+  color: white;
+  margin: 0px;
+}
+
+.imagemref {
+  width: 350px;
+  border: 2px solid #ddd;
+  align-self: baseline;
+  animation-name: hide;
+  animation-duration: 500ms;
+}
+
+.imagemref:hover {
+  animation-name: show;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+
+.topimage {
+  width: 350px;
+  position: absolute;
+  animation: show;
+  animation-duration: 500ms;
+}
+
+.topimage:hover {
+  animation-name: hide;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 100;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+div {
+  margin: 20px;
+}
+
+p,
+h3 {
+  word-wrap: break-word;
+  width: 350px;
+  margin: 0px;
+  padding: 10px;
+  line-height: 20px;
+}
+
+h3 {
+  line-height: 30px;
+}
