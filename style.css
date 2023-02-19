@@ -9,7 +9,6 @@ body {
 }
 
 .imagemref {
-  border: 2px solid #ddd;
   align-self: baseline;
   animation-name: hide;
   animation-duration: 500ms;
@@ -22,6 +21,7 @@ body {
 }
 
 .topimage {
+  /* border: 2px solid #ddd; */
   position: absolute;
   animation: show;
   animation-duration: 500ms;
@@ -57,6 +57,7 @@ div {
 
 img {
   width: 350px;
+  margin: 5px;
 }
 
 p,
@@ -73,6 +74,7 @@ h3 {
 
 p {
   font-size: 22px;
+  padding: 1px;
 }
 
 h3 {
