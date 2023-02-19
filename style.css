@@ -56,13 +56,13 @@ div {
 }
 
 img {
-  width: 700px;
+  width: 600px;
 }
 
 p,
 h3 {
   word-wrap: break-word;
-  width: 700px;
+  width: 600px;
   margin: 0px;
   padding: 10px;
   line-height: 20px;
