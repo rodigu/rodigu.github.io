@@ -56,13 +56,13 @@ div {
 }
 
 img {
-  width: 600px;
+  width: 350px;
 }
 
 p,
 h3 {
   word-wrap: break-word;
-  width: 600px;
+  width: 350px;
   margin: 0px;
   padding: 10px;
   line-height: 20px;
@@ -81,4 +81,9 @@ h3 {
 
 a {
   background-color: white;
+}
+
+div {
+  margin-left: 0;
+  margin-right: 0;
 }
