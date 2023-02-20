@@ -1,5 +1,19 @@
 <!DOCTYPE html>
 <html>
+  <div class="rato">
+    <!-- <img class="cursor rato" src="./imgs/rato.png" /> -->
+  </div>
+  <script>
+    const rato = document.querySelector(".rato");
+    const positionElement = (e) => {
+      const mouseY = e.clientY;
+      const mouseX = e.clientX;
+
+      rato.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+    };
+
+    window.addEventListener("mousemove", positionElement);
+  </script>
   <head>
     <link
       href="https://bouncecss.bookie0.repl.co/bounce.css"
