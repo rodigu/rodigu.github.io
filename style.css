@@ -58,6 +58,7 @@ div {
 img {
   width: 350px;
   margin: 5px;
+  margin-bottom: 2px;
 }
 
 p,
@@ -65,19 +66,17 @@ h3 {
   word-wrap: break-word;
   width: 350px;
   line-height: 20px;
-  text-align: center;
-  padding: 5px;
+  text-align: left;
   margin: 0px;
   padding: 0px;
-  align-items: center;
-  align-content: center;
-  align-self: center;
-  margin-left: 5px;
+  display: flex;
 }
 
 p {
   font-size: 22px;
-  padding: 1px;
+  padding: 5px;
+  margin-left: 10px;
+  width: 340px;
 }
 
 h3 {
@@ -105,21 +104,6 @@ div {
   background-color: black;
 }
 
-.ceny {
-  display: flex;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-}
-
-.topdiv {
-  margin: 0px;
-  display: flex;
-  justify-content: center;
-  margin-right: 10px;
-  margin-left: 10px;
-}
-
 /* width */
 ::-webkit-scrollbar {
   width: 7px;
@@ -141,7 +125,52 @@ div {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #777777;
 }
+.cardtitle > h3 {
+  width: 300px;
+  margin: 5px;
+}
 
-a {
-  cursor: help;
+.cardtitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px;
+}
+
+.langlogo {
+  outline: 0px;
+  width: 40px;
+  padding: 0;
+  justify-self: flex-end;
+  align-self: center;
+  margin: 4px;
+}
+
+.langlogo:hover {
+  animation: none;
+  transform: none;
+  box-shadow: none;
+}
+
+.cabecao {
+  display: inline-block;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+}
+
+.ceny {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-self: center;
+  align-self: center;
+}
+
+.topdiv {
+  margin: 10px;
+  display: flex;
+  justify-content: flex-end;
+  justify-self: left;
+  justify-items: flex-end;
 }
