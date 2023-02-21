@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <div class="rato">
+    <!-- <img class="cursor rato" src="./imgs/rato.png" /> -->
+  </div>
+  <script>
+    const rato = document.querySelector(".rato");
+    const positionElement = (e) => {
+      const mouseY = e.clientY;
+      const mouseX = e.clientX;
+
+      rato.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+    };
+
+    window.addEventListener("mousemove", positionElement);
+  </script>
+  <head>
+    <link
+      href="https://bouncecss.bookie0.repl.co/bounce.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="./ole.css" rel="stylesheet" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui"
+    />
+  </head>
+  <body>
+    <div class="cabecao">
+      <h2 class="ceny">
+        <div class="topdiv">
+          <a
+            href="https://github.com/rodigu"
+            class="pink customa"
+            target="_blank"
+            ><img src="./imgs/GitHub-Mark-Light-64px.png" class="blue logo"
+          /></a>
+        </div>
+        rodigu
+        <div class="topdiv">
+          <a
+            href="https://tic80.com/dev?id=5531"
+            class="pink customa"
+            target="_blank"
+            ><img src="./imgs/tic80.png" class="cyan logo"
+          /></a>
+        </div>
+      </h2>
+    </div>
+    <div class="fillerdiv">
+      <div class="container">
+        <a
+          class="pink"
+          href="https://github.com/rodigu/supernova-age"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="cardtitle">
+            <h3>Supernova Age Prediction</h3>
+            <img
+              class="langlogo"
+              src="https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/512/Python_logo-512.png"
+            />
+          </div>
+          <p>Using clustering algorithms to predict the age of supernovae.</p>
+          <img class="topimage" src="./imgs/littlestar.png" />
+          <img class="imagemref" src="./imgs/supernovass.png" />
+        </a>
+      </div>
+
+      <div class="container">
+        <a
+          class="pink"
+          href="https://rmorais.itch.io/xadado"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="cardtitle">
+            <h3>Xadado</h3>
+            <img
+              class="langlogo"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Lua-Logo.svg/1200px-Lua-Logo.svg.png"
+            />
+          </div>
+          <p>A dice board game for two. Made with TIC-80.</p>
+          <img class="topimage" src="./imgs/dademomenu.gif" />
+          <img class="imagemref" src="./imgs/dademoplay.gif" />
+        </a>
+      </div>
+
+      <div class="container">
+        <a
+          class="blue"
+          href="https://github.com/Liu-Hy/Food-Bank-Network-Simulation"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="cardtitle">
+            <h3>Foodbank Simulation</h3>
+            <img
+              class="langlogo"
+              src="https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/512/Python_logo-512.png"
+            />
+          </div>
+          <p>Monte Carlo simulation of food distribution.</p>
+          <img class="topimage" src="./imgs/foodcover.png" />
+          <img class="imagemref" src="./imgs/foodbanksimcode.png" />
+        </a>
+      </div>
+
+      <div class="container">
+        <a
+          class="purple"
+          href="https://deno.land/x/nets"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="cardtitle">
+            <h3>NeTS</h3>
+            <img
+              class="langlogo"
+              src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg"
+            />
+          </div>
+          <p>Deno network science library.</p>
+          <img class="topimage" src="./imgs/denologo.png" />
+          <img class="imagemref" src="./imgs/netscode.png" />
+        </a>
+      </div>
+
+      <div class="container">
+        <a
+          class="cyan"
+          href="https://tic80.com/play?cart=2788"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="cardtitle">
+            <h3>WFC</h3>
+            <img
+              class="langlogo"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Lua-Logo.svg/1200px-Lua-Logo.svg.png"
+            />
+          </div>
+          <p>Wave function collapse algorithm implemented in TIC-80.</p>
+          <img class="topimage" src="./imgs/wfcgifcover.gif" />
+          <img class="imagemref" src="./imgs/wfccover.png" />
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

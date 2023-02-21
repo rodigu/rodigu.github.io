@@ -1,0 +1,85 @@
+@keyframes popup {
+  from {
+    transform: translateX(0) translateY(0);
+    box-shadow: 0px 0px 0 0 #6b0cfa, 0 0 0 2px #cdaefd;
+  }
+  to {
+    transform: translateX(5px) translateY(-5px);
+    box-shadow: -5px 5px 0 0 #6b0cfa, -5px 5px 0 2px #cdaefd;
+  }
+}
+
+@keyframes popdown {
+  from {
+    transform: translateX(5px) translateY(-5px);
+    box-shadow: -5px 5px 0 0 #6b0cfa, -5px 5px 0 2px #cdaefd;
+  }
+  tp {
+    transform: translateX(0) translateY(0);
+    box-shadow: 0px 0px 0 0 #6b0cfa, 0 0 0 2px #cdaefd;
+  }
+}
+
+.card {
+  cursor: pointer;
+  padding: 10px;
+  margin: 0px;
+  background-color: white;
+  width: 250px;
+  height: 350px;
+  border-radius: 4px;
+  padding: 10px;
+  animation-name: popdown;
+  animation-fill-mode: forwards;
+  animation-duration: 300ms;
+  transition-timing-function: ease-out;
+}
+
+.card-title {
+  display: flex;
+  font-family: "UbuntuMonoBold";
+  margin: 0;
+  justify-content: space-between;
+}
+
+.card h2 {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  margin: 0px;
+}
+
+.langlogo {
+  width: 30px;
+  margin: 0px;
+}
+
+.overimg:hover {
+  animation-name: hide;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+}
+
+.overimg {
+  animation-name: show;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+}
+
+.overimg,
+.underimg {
+  display: flex;
+  align-self: center;
+  width: 250px;
+  border-radius: 5px;
+}
+
+.overimg {
+  position: absolute;
+}
+
+.card:hover {
+  animation-name: popup;
+  animation-duration: 300ms;
+}
