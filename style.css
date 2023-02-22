@@ -19,6 +19,10 @@
   font-style: italic;
 }
 
+html {
+  overflow-y: overlay;
+}
+
 body {
   background-color: black;
   margin: 0;
@@ -70,6 +74,8 @@ a {
   height: 30px;
   justify-self: center;
   margin: 10px;
+  margin-top: 15px;
+  margin-bottom: 0px;
   justify-content: space-between;
   width: 260px;
 }
@@ -137,4 +143,31 @@ a {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background-color: #777777;
+}
+
+.selectedbutton {
+  animation-name: none !important;
+  color: black !important;
+  background-color: white !important;
+  cursor: auto !important;
+}
+
+.name-title {
+  color: white;
+  margin: 10px;
+}
+
+.other-links {
+  display: flex;
+  width: 250px;
+  justify-content: space-around;
+}
+
+.other-links img {
+  transition: transform 200ms ease-in-out;
+  height: 25px;
+}
+
+.other-links img:hover {
+  transform: scale(90%);
 }

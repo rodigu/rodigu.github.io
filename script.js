@@ -9,10 +9,18 @@ const generateCard = (
       "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
     topImage: "./imgs/denologo.png",
     bottomImage: "./imgs/netscode.png",
+    year: "Fall 2022 - Spring 2023",
   }
 ) => {
-  const { hrefLink, title, description, languageLogo, topImage, bottomImage } =
-    args;
+  const {
+    hrefLink,
+    title,
+    description,
+    languageLogo,
+    topImage,
+    bottomImage,
+    year,
+  } = args;
   const newCard = document.createElement("div");
 
   newCard.classList.add("card");
@@ -25,11 +33,16 @@ const generateCard = (
             src="${languageLogo}"
           />
         </h2>
+        <p class='card-year'>${year}</p>
       </div>
       <p>${description}</p>
       <div>
-        <img class="overimg" src="${topImage}" />
-        <img class="underimg" src="${bottomImage}" />
+        ${topImage === "" ? "" : `<img class="overimg" src="${topImage}" />`}
+        ${
+          bottomImage === ""
+            ? ""
+            : `<img class="underimg" src="${bottomImage}" />`
+        }
       </div>
     </a>
   `;
@@ -39,7 +52,16 @@ const generateCard = (
 
 let leftButton = document.getElementById("leftbutton");
 let rightButton = document.getElementById("rightbutton");
-let centralButton = document.getElementById("centralbutton");
+let centralButton = document.getElementById("centerbutton");
+
+const buttons = {
+  projects: leftButton,
+  work: centralButton,
+  games: rightButton,
+};
+
+let activeButton = centralButton;
+activeButton.classList.add("selectedbutton");
 
 let gamesSection = document.getElementById("games");
 let workSection = document.getElementById("work");
@@ -53,14 +75,14 @@ sectionOrder.set("games", gamesSection);
 function changeSection(buttonChosen) {
   let sectionKeys = [...sectionOrder.keys()];
 
-  let [left, center, right] = sectionKeys;
+  activeButton.classList.remove("selectedbutton");
 
-  console.log(buttonChosen);
+  let [left, center, right] = sectionKeys;
 
   if (buttonChosen === left) {
     direction = "left";
   } else if (buttonChosen === right) {
-    direction = right;
+    direction = "right";
   }
 
   let menuOrder = ["left", "center", "right"];
@@ -73,6 +95,9 @@ function changeSection(buttonChosen) {
   if (buttonChosen === "projects")
     sectionOrder.get("work").dataset.status = "right";
   else sectionOrder.get("work").dataset.status = "left";
+
+  activeButton = buttons[buttonChosen];
+  activeButton.classList.add("selectedbutton");
 
   sectionOrder.get(buttonChosen).dataset.status = "center";
 }

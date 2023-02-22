@@ -9,19 +9,23 @@
 
 .card-section {
   position: absolute;
-  transition: transform 300ms ease;
+  transition: transform 350ms ease-in-out, opacity 300ms ease-in;
+  margin-top: 10px;
 }
 
 .card-section[data-status="center"] {
-  transition-delay: 100ms;
+  transition-delay: 0ms;
+  opacity: 100;
 }
 
 .card-section[data-status="right"] {
-  transition-delay: 100ms;
-  transform: translateX(50%) scale(0);
+  transition-delay: 0ms;
+  transform: translateX(50%) translateY(-50%) scale(0);
+  opacity: 0;
 }
 
 .card-section[data-status="left"] {
-  transition-delay: 100ms;
-  transform: translateX(-50%) scale(0);
+  transition-delay: 0ms;
+  transform: translateX(-50%) translateY(-50%) scale(0);
+  opacity: 0;
 }
