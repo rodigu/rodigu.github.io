@@ -12,12 +12,30 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "UbuntuMonoItalic";
+  src: url("./fonts/UbuntuMono-Italic.ttf");
+  font-weight: normal;
+  font-style: italic;
+}
+
 body {
   background-color: black;
   margin: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-content: center;
+  align-items: center;
   font-family: "UbuntuMono", monospace;
+}
+
+.sections {
+  display: flex;
+  flex-direction: row;
+  margin: 0px;
+  padding: 0px;
+  width: 270;
 }
 
 div {
@@ -45,4 +63,78 @@ a {
   100% {
     opacity: 100;
   }
+}
+
+.menu {
+  display: flex;
+  height: 30px;
+  justify-self: center;
+  margin: 10px;
+  justify-content: space-between;
+  width: 260px;
+}
+
+@keyframes button-ani {
+  from {
+    color: white;
+    background-color: black;
+  }
+  to {
+    color: black;
+    background-color: white;
+  }
+}
+
+@keyframes button-dani {
+  from {
+    color: black;
+    background-color: white;
+  }
+  to {
+    color: white;
+    background-color: black;
+  }
+}
+.menu button {
+  cursor: pointer;
+  font-family: "UbuntuMonoBold";
+  font-size: 15px;
+  background-color: black;
+  color: white;
+  border: 2px;
+  border-color: white;
+  border-style: dashed;
+  width: 100px;
+  animation-name: button-dani;
+  animation-duration: 200ms;
+  animation-fill-mode: forwards;
+}
+
+.menu button:hover {
+  border-style: double;
+  animation-name: button-ani;
+  animation-duration: 200ms;
+  animation-fill-mode: forwards;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #202020;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #535353;
+  border-radius: 1px;
+  border-color: #535353;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #777777;
 }

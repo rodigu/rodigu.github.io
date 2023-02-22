@@ -1,0 +1,27 @@
+@keyframes fall {
+  from {
+  }
+  to {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+}
+
+.card-section {
+  position: absolute;
+  transition: transform 300ms ease;
+}
+
+.card-section[data-status="center"] {
+  transition-delay: 100ms;
+}
+
+.card-section[data-status="right"] {
+  transition-delay: 100ms;
+  transform: translateX(50%) scale(0);
+}
+
+.card-section[data-status="left"] {
+  transition-delay: 100ms;
+  transform: translateX(-50%) scale(0);
+}

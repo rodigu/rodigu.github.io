@@ -1,22 +1,22 @@
 @keyframes popup {
   from {
     transform: translateX(0) translateY(0);
-    box-shadow: 0px 0px 0 0 #6b0cfa, 0 0 0 2px #cdaefd;
+    box-shadow: 0px 0px 2px 2px #6b0cfa;
   }
   to {
     transform: translateX(5px) translateY(-5px);
-    box-shadow: -5px 5px 0 0 #6b0cfa, -5px 5px 0 2px #cdaefd;
+    box-shadow: -4px 4px 2px 2px #6b0cfa;
   }
 }
 
 @keyframes popdown {
   from {
     transform: translateX(5px) translateY(-5px);
-    box-shadow: -5px 5px 0 0 #6b0cfa, -5px 5px 0 2px #cdaefd;
+    box-shadow: -4px 4px 2px 2px #6b0cfa;
   }
   tp {
     transform: translateX(0) translateY(0);
-    box-shadow: 0px 0px 0 0 #6b0cfa, 0 0 0 2px #cdaefd;
+    box-shadow: 0px 0px 2px 2px #6b0cfa;
   }
 }
 
@@ -26,13 +26,15 @@
   margin: 0px;
   background-color: white;
   width: 250px;
-  height: 350px;
+  height: 360px;
   border-radius: 4px;
   padding: 10px;
   animation-name: popdown;
   animation-fill-mode: forwards;
   animation-duration: 300ms;
   transition-timing-function: ease-out;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .card-title {
@@ -71,7 +73,7 @@
 .underimg {
   display: flex;
   align-self: center;
-  width: 250px;
+  height: 250px;
   border-radius: 5px;
 }
 
@@ -82,4 +84,10 @@
 .card:hover {
   animation-name: popup;
   animation-duration: 300ms;
+}
+
+.card p {
+  font-family: "UbuntuMonoItalic";
+  margin-top: 7px;
+  margin-bottom: 7px;
 }

@@ -2,12 +2,27 @@
   <head>
     <link href="./style.css" rel="stylesheet" />
     <link href="./styles/card.css" rel="stylesheet" />
+    <link href="./styles/sectionStyling.css" rel="stylesheet" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui"
     />
   </head>
 
-  <body></body>
+  <body>
+    <div class="menu">
+      <button onclick="changeSection('projects')" id="leftbutton">
+        projects
+      </button>
+      <button onclick="changeSection('work')" id="centralbutton">work</button>
+      <button onclick="changeSection('games')" id="rightbutton">games</button>
+    </div>
+    <div class="sections">
+      <div id="projects" class="card-section" data-status="left"></div>
+      <div id="work" class="card-section" data-status="center"></div>
+      <div id="games" class="card-section" data-status="right"></div>
+    </div>
+  </body>
   <script src="script.js"></script>
+  <script src="genCards.js"></script>
 </html>
