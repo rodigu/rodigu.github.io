@@ -32,7 +32,7 @@ generateCard(document.getElementById("projects"), {
 });
 
 generateCard(document.getElementById("projects"), {
-  hrefLink: "https://github.com/Liu-Hy/Food-Bank-Network-Simulation",
+  hrefLink: "https://tic80.com/play?cart=2788",
   title: "WFC",
   description:
     "Wave function collapse algorithm implemented inside a TIC-80 retro fantasy console.",
