@@ -7,8 +7,8 @@ const generateCard = (
       "Network Science library. Currently used for research on trade cycles in currency markets.",
     languageLogo:
       "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
-    topImage: "./imgs/denologo.png",
-    bottomImage: "./imgs/netscode.png",
+    topImage: "",
+    bottomImage: "",
     year: "Fall 2022 - Spring 2023",
   }
 ) => {
