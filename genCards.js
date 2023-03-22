@@ -81,7 +81,7 @@ function addWork() {
     hrefLink: "https://pushstart.com.br",
     title: "Software Developer",
     description:
-      "Junior JS developer. Implemented web-based games using the PixiJS library.",
+      "Junior JS developer at PushStart. Implemented web-based games using the PixiJS library.",
     languageLogo: langs.js,
     topImage: "",
     bottomImage: "",
