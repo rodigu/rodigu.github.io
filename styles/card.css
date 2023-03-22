@@ -24,7 +24,7 @@
   cursor: pointer;
   padding: 10px;
   margin: 0px;
-  background-color: #f3e5cb;
+  background-color: #ffffff;
   width: 250px;
   height: auto;
   border-radius: 4px;
@@ -55,6 +55,7 @@
 .langlogo {
   height: 30px;
   margin: 0px;
+  border-radius: 2px;
 }
 
 .overimg:hover {
