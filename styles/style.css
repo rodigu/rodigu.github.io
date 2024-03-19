@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "computer";
+  src: url("../fonts/cmunrb.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-color: black;
+  color: wheat;
+  margin-left: 1em;
+  margin-right: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  font-family: "computer", monospace;
+}
+
+.header {
+  max-width: 40em;
+}
+
+.content {
+  margin-top: 1em;
+  max-width: 40em;
+}
+
+.title {
+  font-size: 2em;
+  text-align: center;
+}
+
+.top-menu {
+  position: fixed;
+  margin-bottom: vh;
+  bottom: 1vh;
+}
+
+.other-links {
+  display: flex;
+  justify-content: space-around;
+  align-self: center;
+  min-width: 10em;
+  max-width: 40em;
+}
+
+.other-links img {
+  transition: transform 200ms ease-in-out;
+  height: 2em;
+}
+
+.other-links img:hover {
+  transform: scale(120%);
+}
