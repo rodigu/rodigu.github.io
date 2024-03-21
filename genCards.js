@@ -89,6 +89,16 @@ function addWork() {
 
 function addGames() {
   generateCard(document.getElementById("games"), {
+    hrefLink: "https://rmorais.itch.io/matic",
+    title: "MaTIC",
+    description: "Educational math game.",
+    languageLogo: langs.lua,
+    topImage: "./imgs/matic.gif",
+    bottomImage: "./imgs/matic_play.gif",
+    year: "Fall 2024",
+  });
+
+  generateCard(document.getElementById("games"), {
     hrefLink: "https://rmorais.itch.io/xadado",
     title: "Xadado",
     description:
