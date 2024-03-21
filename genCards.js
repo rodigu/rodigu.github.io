@@ -1,9 +1,7 @@
 const langs = {
   js: "./imgs/jslogo.jpeg",
-  py:
-    "https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/512/Python_logo-512.png",
-  lua:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Lua-Logo.svg/1200px-Lua-Logo.svg.png",
+  py: "https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/512/Python_logo-512.png",
+  lua: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Lua-Logo.svg/1200px-Lua-Logo.svg.png",
   blocki: "./imgs/blocki.png",
 };
 
