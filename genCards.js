@@ -148,6 +148,16 @@ function addGames() {
     title: "tritri",
     description: "Falling trominoes game for up to 3 players.",
     languageLogo: langs.lua,
+    topImage: "./imgs/tri.png",
+    bottomImage: "./imgs/tritri.gif",
+    year: "Fall 2024",
+  });
+
+  generateCard(document.getElementById("games"), {
+    hrefLink: "https://rmorais.itch.io/matic",
+    title: "MaTIC",
+    description: "Educational math game.",
+    languageLogo: langs.lua,
     topImage: "./imgs/matic.gif",
     bottomImage: "./imgs/matic_play.gif",
     year: "Fall 2024",
