@@ -7,6 +7,28 @@ const langs = {
 
 function addProjects() {
   generateCard(document.getElementById("projects"), {
+    hrefLink: "https://tic80.com/play?cart=3571",
+    title: "TIC-80 ML: DBScan",
+    description:
+      "DBSCAN Machine Learning algorithm implemented in the TIC-80 fantasy console.",
+    languageLogo: langs.lua,
+    topImage: "./imgs/dbscan_cover.png",
+    bottomImage: "./imgs/dbscan_back.gif",
+    year: "Fall 2023",
+  });
+
+  generateCard(document.getElementById("projects"), {
+    hrefLink: "https://tic80.com/play?cart=3572",
+    title: "TIC-80 ML: K-means",
+    description:
+      "K-Means Machine Learning algorithm implemented in the TIC-80 fantasy console.",
+    languageLogo: langs.lua,
+    topImage: "./imgs/kmeans_back.gif",
+    bottomImage: "./imgs/kmeans_back.gif",
+    year: "Fall 2023",
+  });
+
+  generateCard(document.getElementById("projects"), {
     hrefLink: "https://github.com/rodigu/supernova-age",
     title: "Supernova Age Prediction",
     description:
@@ -52,6 +74,39 @@ function addProjects() {
 
 function addWork() {
   generateCard(document.getElementById("work"), {
+    hrefLink: "https://courses.illinois.edu/schedule/2024/spring/GSD/103",
+    title: "GSD 405 TA",
+    description:
+      "Teaching assistant for Basics of Game Design. Taught and graded one discussion session (15 students).",
+    languageLogo: langs.blocki,
+    topImage: "",
+    bottomImage: "",
+    year: "Spring 2024",
+  });
+
+  generateCard(document.getElementById("work"), {
+    hrefLink: "https://courses.illinois.edu/schedule/2024/spring/GSD/405",
+    title: "GSD 405 TA",
+    description:
+      "Teaching assistant for Intro to the Game Development Process. Worked as game producer for students' projects. Managed the class Discord server.",
+    languageLogo: langs.blocki,
+    topImage: "",
+    bottomImage: "",
+    year: "Spring 2024",
+  });
+
+  generateCard(document.getElementById("work"), {
+    hrefLink: "https://courses.illinois.edu/schedule/2023/fall/GSD/403",
+    title: "GSD 403 TA",
+    description:
+      "Teaching assistant for Top Down Game Design. Worked as Dan Cermak's teaching assistant.",
+    languageLogo: langs.blocki,
+    topImage: "",
+    bottomImage: "",
+    year: "Fall 2023",
+  });
+
+  generateCard(document.getElementById("work"), {
     hrefLink: "http://catalog.illinois.edu/courses-of-instruction/gsd/",
     title: "GSD 103 TA",
     description:
@@ -89,9 +144,9 @@ function addWork() {
 
 function addGames() {
   generateCard(document.getElementById("games"), {
-    hrefLink: "https://rmorais.itch.io/matic",
-    title: "MaTIC",
-    description: "Educational math game.",
+    hrefLink: "https://rmorais.itch.io/tritri",
+    title: "tritri",
+    description: "Falling trominoes game for up to 3 players.",
     languageLogo: langs.lua,
     topImage: "./imgs/matic.gif",
     bottomImage: "./imgs/matic_play.gif",
