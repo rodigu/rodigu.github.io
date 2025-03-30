@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>hiroto's things (Posts about meta)</title><link>https://rodigu.github.io/</link><description></description><atom:link href="https://rodigu.github.io/categories/meta.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:rmoraisu@proton.me"&gt;rodigu&lt;/a&gt; </copyright><lastBuildDate>Sun, 30 Mar 2025 20:14:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>setting up</title><link>https://rodigu.github.io/posts/setting-up/</link><dc:creator>rodigu</dc:creator><description>&lt;p&gt;looking at the &lt;a href="https://github.com/rodigu/rodigu.github.io/commits/master/"&gt;commit history&lt;/a&gt; for the repository
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>hiroto's things (Posts about meta)</title><link>https://rodigu.github.io/</link><description></description><atom:link href="https://rodigu.github.io/categories/meta.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:rmoraisu@proton.me"&gt;rodigu&lt;/a&gt; </copyright><lastBuildDate>Sun, 30 Mar 2025 20:25:38 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>setting up</title><link>https://rodigu.github.io/posts/setting-up/</link><dc:creator>rodigu</dc:creator><description>&lt;p&gt;looking at the &lt;a href="https://github.com/rodigu/rodigu.github.io/commits/master/"&gt;commit history&lt;/a&gt; for the repository
 containing the source for this blog, you may notice that this was originally my personal website/cv.&lt;/p&gt;
 &lt;p&gt;my initial intention was to setup the present blog on a separate branch,
 but i forgot to switch branches before deleting everything.&lt;/p&gt;
 &lt;p&gt;in any case, i suppose i'll have to commit to this now so here is a test post.&lt;/p&gt;
 &lt;h3&gt;testing out&lt;/h3&gt;
-&lt;p&gt;originally, i attempted to use jekyll &lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="https://rodigu.github.io/posts/setting-up/#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt;, at it is already integrated into github.
+&lt;p&gt;originally, i attempted to use jekyll &lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="https://rodigu.github.io/posts/setting-up/#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt;, at it is already integrated into github pages.
 however, after some frustration (as had happened years ago when i tried it),
 i decided to look for a different blog building tool.&lt;/p&gt;
 &lt;p&gt;one of my main points of contention with jekyll is that is uses ruby, which i am entirelly unfamiliar with.
@@ -54,6 +54,13 @@ for whatever reason, github pages only allows deployement from root or from &lt;
 &lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="n"&gt;OUTPUT_FOLDER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'docs'&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
+&lt;h3&gt;addemdum 2&lt;/h3&gt;
+&lt;p&gt;one last thing for this test post.&lt;/p&gt;
+&lt;p&gt;nikola came with a number of filed in its demo.
+i deleted them manually, and then followed the instructions from the getting started page &lt;sup id="fnref:4"&gt;&lt;a class="footnote-ref" href="https://rodigu.github.io/posts/setting-up/#fn:4"&gt;4&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;check&lt;span class="w"&gt; &lt;/span&gt;--clean-files
+&lt;/pre&gt;&lt;/div&gt;
+
 &lt;div class="footnote"&gt;
 &lt;hr&gt;
 &lt;ol&gt;
@@ -65,6 +72,9 @@ for whatever reason, github pages only allows deployement from root or from &lt;
 &lt;/li&gt;
 &lt;li id="fn:3"&gt;
 &lt;p&gt;at least according to the answer to &lt;a href="https://github.com/orgs/community/discussions/23073"&gt;this community question&lt;/a&gt; &lt;a class="footnote-backref" href="https://rodigu.github.io/posts/setting-up/#fnref:3" title="Jump back to footnote 3 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:4"&gt;
+&lt;p&gt;&lt;a href="https://getnikola.com/getting-started.html#rm-demo"&gt;the getnikola getting started page&lt;/a&gt; &lt;a class="footnote-backref" href="https://rodigu.github.io/posts/setting-up/#fnref:4" title="Jump back to footnote 4 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</description><category>blog</category><category>meta</category><guid>https://rodigu.github.io/posts/setting-up/</guid><pubDate>Sun, 30 Mar 2025 19:20:00 GMT</pubDate></item></channel></rss>

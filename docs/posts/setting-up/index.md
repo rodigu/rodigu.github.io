@@ -17,7 +17,7 @@ in any case, i suppose i'll have to commit to this now so here is a test post.
 
 ## testing out
 
-originally, i attempted to use jekyll [^1], at it is already integrated into github.
+originally, i attempted to use jekyll [^1], at it is already integrated into github pages.
 however, after some frustration (as had happened years ago when i tried it),
 i decided to look for a different blog building tool.
 
@@ -87,3 +87,18 @@ so i had to change the output folder of this repo to `docs`, with the following 
 ```py
 OUTPUT_FOLDER = 'docs'
 ```
+
+## addemdum 2
+
+one last thing for this test post.
+
+nikola came with a number of filed in its demo.
+i deleted them manually, and then followed the instructions from the getting started page [^4]:
+
+[^4]: [the getnikola getting started page](https://getnikola.com/getting-started.html#rm-demo)
+
+```bash
+nikola check --clean-files
+```
+
+
