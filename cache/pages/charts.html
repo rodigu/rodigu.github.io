@@ -1,0 +1,26 @@
+<p>If you are using reStructuredText and install pygal, Nikola has support for rather nice charts
+with little effort, and i's even semi-interactive (hover your pointer over the legend!):</p>
+<div class="code"><pre class="code rest"><a id="rest_code_81bc49790d654a1fb247f2f2c4b170bf-1" name="rest_code_81bc49790d654a1fb247f2f2c4b170bf-1" href="#rest_code_81bc49790d654a1fb247f2f2c4b170bf-1"></a><span class="p">..</span> <span class="ow">chart</span><span class="p">::</span> StackedLine
+<a id="rest_code_81bc49790d654a1fb247f2f2c4b170bf-2" name="rest_code_81bc49790d654a1fb247f2f2c4b170bf-2" href="#rest_code_81bc49790d654a1fb247f2f2c4b170bf-2"></a>   <span class="nc">:title:</span> &#39;Browser usage evolution (in %)&#39;
+<a id="rest_code_81bc49790d654a1fb247f2f2c4b170bf-3" name="rest_code_81bc49790d654a1fb247f2f2c4b170bf-3" href="#rest_code_81bc49790d654a1fb247f2f2c4b170bf-3"></a>   <span class="nc">:fill:</span> True
+<a id="rest_code_81bc49790d654a1fb247f2f2c4b170bf-4" name="rest_code_81bc49790d654a1fb247f2f2c4b170bf-4" href="#rest_code_81bc49790d654a1fb247f2f2c4b170bf-4"></a>   <span class="nc">:x_labels:</span> [&#39;2002&#39;,&#39;2003&#39;,&#39;2004&#39;,&#39;2005&#39;,&#39;2006&#39;,&#39;2007&#39;,&#39;2008&#39;,&#39;2009&#39;,&#39;2010&#39;,&#39;2011&#39;,&#39;2012&#39;]
+<a id="rest_code_81bc49790d654a1fb247f2f2c4b170bf-5" name="rest_code_81bc49790d654a1fb247f2f2c4b170bf-5" href="#rest_code_81bc49790d654a1fb247f2f2c4b170bf-5"></a>   <span class="nc">:width:</span> 600
+<a id="rest_code_81bc49790d654a1fb247f2f2c4b170bf-6" name="rest_code_81bc49790d654a1fb247f2f2c4b170bf-6" href="#rest_code_81bc49790d654a1fb247f2f2c4b170bf-6"></a>   <span class="nc">:height:</span> 400
+<a id="rest_code_81bc49790d654a1fb247f2f2c4b170bf-7" name="rest_code_81bc49790d654a1fb247f2f2c4b170bf-7" href="#rest_code_81bc49790d654a1fb247f2f2c4b170bf-7"></a>   <span class="nc">:explicit_size:</span> True
+<a id="rest_code_81bc49790d654a1fb247f2f2c4b170bf-8" name="rest_code_81bc49790d654a1fb247f2f2c4b170bf-8" href="#rest_code_81bc49790d654a1fb247f2f2c4b170bf-8"></a>   <span class="nc">:style:</span> BlueStyle
+<a id="rest_code_81bc49790d654a1fb247f2f2c4b170bf-9" name="rest_code_81bc49790d654a1fb247f2f2c4b170bf-9" href="#rest_code_81bc49790d654a1fb247f2f2c4b170bf-9"></a>
+<a id="rest_code_81bc49790d654a1fb247f2f2c4b170bf-10" name="rest_code_81bc49790d654a1fb247f2f2c4b170bf-10" href="#rest_code_81bc49790d654a1fb247f2f2c4b170bf-10"></a>   (&#39;Others&#39;,  [14.2, 15.4, 15.3,  8.9,    9, 10.4,  8.9,  5.8,  6.7,  6.8,  7.5])
+<a id="rest_code_81bc49790d654a1fb247f2f2c4b170bf-11" name="rest_code_81bc49790d654a1fb247f2f2c4b170bf-11" href="#rest_code_81bc49790d654a1fb247f2f2c4b170bf-11"></a>   (&#39;IE&#39;,      [85.8, 84.6, 84.7, 74.5,   66, 58.6, 54.7, 44.8, 36.2, 26.6, 20.1])
+<a id="rest_code_81bc49790d654a1fb247f2f2c4b170bf-12" name="rest_code_81bc49790d654a1fb247f2f2c4b170bf-12" href="#rest_code_81bc49790d654a1fb247f2f2c4b170bf-12"></a>   (&#39;Firefox&#39;, [None, None, None, 16.6,   25,   31, 36.4, 45.5, 46.3, 42.8, 37.1])
+<a id="rest_code_81bc49790d654a1fb247f2f2c4b170bf-13" name="rest_code_81bc49790d654a1fb247f2f2c4b170bf-13" href="#rest_code_81bc49790d654a1fb247f2f2c4b170bf-13"></a>   (&#39;Chrome&#39;,  [None, None, None, None, None, None,    0,  3.9, 10.8, 23.8, 35.3])
+</pre></div>
+<div style="text-align: center;"><div class="text-error">In order to use the Chart directive, you must install the "pygal" Python package.</div></div><p>Here's how it works:</p>
+<ul class="simple">
+<li><p>Next to the directive, use the <a class="reference external" href="http://pygal.org/chart_types/">chart type you want</a></p></li>
+<li><p>Any option you can set in a chart? Use it like <code class="docutils literal">:title:</code> in this example. Syntax on
+the value is just like in the pygal examples.</p></li>
+<li><p>For each data series do it like the line that says <code class="docutils literal">Firefox</code> in this example. The first element
+is the label, then comes the data.</p></li>
+</ul>
+<p>Easy, right? Please explore <a class="reference external" href="http://pygal.org">the pygal site</a> for more information, and just
+take this example and tweak stuff.</p>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>hiroto's things</title><link>https://rodigu.github.io/</link><description>personal website with technical writing, tiny game demos, and photo-logs</description><atom:link href="https://rodigu.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:rmoraisu@proton.me"&gt;rodigu&lt;/a&gt; </copyright><lastBuildDate>Sun, 30 Mar 2025 19:45:55 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>setting up</title><link>https://rodigu.github.io/posts/setting-up/</link><dc:creator>rodigu</dc:creator><description>&lt;p&gt;looking at the &lt;a href="https://github.com/rodigu/rodigu.github.io/commits/master/"&gt;commit history&lt;/a&gt; for the repository
+containing the source for this blog, you may notice that this was originally my personal website/cv.&lt;/p&gt;
+&lt;p&gt;my initial intention was to setup the present blog on a separate branch,
+but i forgot to switch branches before deleting everything.&lt;/p&gt;
+&lt;p&gt;in any case, i suppose i'll have to commit to this now so here is a test post.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="a photo i took while biking in chicago" src="https://rodigu.github.io/images/2025-03-30_16-37_chicago-skyline-biking.png"&gt;&lt;/p&gt;
+&lt;p&gt;originally, i attempted to use jekyll &lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="https://rodigu.github.io/posts/setting-up/#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt;, at it is already integrated into github.
+however, after some frustration (as had happened years ago when i tried it),
+i decided to look for a different blog building tool.&lt;/p&gt;
+&lt;p&gt;one of my main points of contention with jekyll is that is uses ruby, which i am entirelly unfamiliar with.
+therefore, i went searching for a tool that allowed me to stay within what i alredy know (namely, python),
+and had built-in markdown support.&lt;/p&gt;
+&lt;p&gt;i also want it to be doing most of the work.
+i am not too interested in messing with templates and such at the moment.
+all i want is to get started on throwing stuff out there.&lt;/p&gt;
+&lt;p&gt;so i landed on nikola &lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="https://rodigu.github.io/posts/setting-up/#fn:2"&gt;2&lt;/a&gt;&lt;/sup&gt; for static site generation.
+it even has built'in support for extended markdown seeing that the footnotes are working nicely.&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;&lt;a href="https://jekyllrb.com/"&gt;the jekyll website&lt;/a&gt; &lt;a class="footnote-backref" href="https://rodigu.github.io/posts/setting-up/#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:2"&gt;
+&lt;p&gt;&lt;a href="https://getnikola.com/"&gt;the nikola website&lt;/a&gt; &lt;a class="footnote-backref" href="https://rodigu.github.io/posts/setting-up/#fnref:2" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description><category>blog</category><category>meta</category><guid>https://rodigu.github.io/posts/setting-up/</guid><pubDate>Sun, 30 Mar 2025 19:20:00 GMT</pubDate></item></channel></rss>

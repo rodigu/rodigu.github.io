@@ -1,0 +1,265 @@
+.
+├── cache
+│   ├── galleries
+│   │   └── demo
+│   │       ├── index.html
+│   │       └── index.html.dep
+│   ├── pages
+│   │   ├── 1.html
+│   │   ├── 1.html.dep
+│   │   ├── bootstrap-demo.html
+│   │   ├── bootstrap-demo.html.dep
+│   │   ├── charts.html
+│   │   ├── charts.html.dep
+│   │   ├── creating-a-theme.html
+│   │   ├── creating-a-theme.html.dep
+│   │   ├── dr-nikolas-vendetta.html
+│   │   ├── dr-nikolas-vendetta.html.dep
+│   │   ├── extending.html
+│   │   ├── extending.html.dep
+│   │   ├── internals.html
+│   │   ├── internals.html.dep
+│   │   ├── listings-demo.html
+│   │   ├── listings-demo.html.dep
+│   │   ├── manual.html
+│   │   ├── manual.html.dep
+│   │   ├── path_handlers.html
+│   │   ├── path_handlers.html.dep
+│   │   ├── quickref.html
+│   │   ├── quickref.html.dep
+│   │   ├── quickstart.html
+│   │   ├── quickstart.html.dep
+│   │   ├── social_buttons.html
+│   │   ├── social_buttons.html.dep
+│   │   ├── theming.html
+│   │   └── theming.html.dep
+│   └── posts
+│       ├── 1.html
+│       ├── 1.html.dep
+│       ├── 1md.html
+│       └── 1md.html.dep
+├── clipboard
+├── conf.py
+├── files
+│   ├── favicon.ico
+│   └── images
+│       └── nikola.png
+├── galleries
+│   └── demo
+│       ├── exclude.meta
+│       ├── index.txt
+│       ├── metadata.sample.yml
+│       ├── tesla2_lg.jpg
+│       ├── tesla4_lg.jpg
+│       ├── tesla_conducts_lg.webp
+│       ├── tesla_lightning1_lg.jpg
+│       ├── tesla_lightning2_lg.jpg
+│       └── tesla_tower1_lg.jpg
+├── images
+│   ├── 2025-03-30_16-37_chicago-skyline-biking.png
+│   ├── frontispiece.jpg
+│   └── illus_001.jpg
+├── listings
+│   ├── hello.py
+│   └── __pycache__
+│       └── hello.cpython-310.pyc
+├── output
+│   ├── 2012
+│   │   └── index.html
+│   ├── 2025
+│   │   └── index.html
+│   ├── archive.html
+│   ├── assets
+│   │   ├── css
+│   │   │   ├── all.css
+│   │   │   ├── all-nocdn.css
+│   │   │   ├── baguetteBox.min.css
+│   │   │   ├── bootblog.css
+│   │   │   ├── bootstrap.min.css
+│   │   │   ├── code.css
+│   │   │   ├── dark.css
+│   │   │   ├── dark-grey.css
+│   │   │   ├── hack.css
+│   │   │   ├── html4css1.css
+│   │   │   ├── ipython.min.css
+│   │   │   ├── LICENSE
+│   │   │   ├── nikola_ipython.css
+│   │   │   ├── nikola_rst.css
+│   │   │   ├── rst_base.css
+│   │   │   ├── rst.css
+│   │   │   ├── solarized-dark.css
+│   │   │   ├── standard.css
+│   │   │   └── theme.css
+│   │   ├── js
+│   │   │   ├── all.js
+│   │   │   ├── all-nocdn.js
+│   │   │   ├── baguetteBox.min.js
+│   │   │   ├── bootstrap.min.js
+│   │   │   ├── fancydates.js
+│   │   │   ├── fancydates.min.js
+│   │   │   ├── gallery.js
+│   │   │   ├── gallery.min.js
+│   │   │   ├── html5.js
+│   │   │   ├── html5shiv-printshiv.min.js
+│   │   │   ├── jquery.min.js
+│   │   │   ├── justified-layout.min.js
+│   │   │   ├── luxon.min.js
+│   │   │   └── popper.min.js
+│   │   └── xml
+│   │       ├── atom.xsl
+│   │       └── rss.xsl
+│   ├── categories
+│   │   ├── blog
+│   │   │   └── index.html
+│   │   ├── blog.xml
+│   │   ├── cat_nikola
+│   │   │   └── index.html
+│   │   ├── cat_nikola.xml
+│   │   ├── cat_technical
+│   │   │   └── index.html
+│   │   ├── cat_technical.xml
+│   │   ├── demo
+│   │   │   └── index.html
+│   │   ├── demo.xml
+│   │   ├── index.html
+│   │   ├── meta
+│   │   │   └── index.html
+│   │   ├── meta.xml
+│   │   ├── nikola
+│   │   │   └── index.html
+│   │   ├── nikola.xml
+│   │   ├── python
+│   │   │   └── index.html
+│   │   └── python.xml
+│   ├── favicon.ico
+│   ├── galleries
+│   │   ├── demo
+│   │   │   ├── index.html
+│   │   │   ├── rss.xml
+│   │   │   ├── tesla4_lg.jpg
+│   │   │   ├── tesla4_lg.thumbnail.jpg
+│   │   │   ├── tesla_conducts_lg.thumbnail.webp
+│   │   │   ├── tesla_conducts_lg.webp
+│   │   │   ├── tesla_lightning1_lg.jpg
+│   │   │   ├── tesla_lightning1_lg.thumbnail.jpg
+│   │   │   ├── tesla_lightning2_lg.jpg
+│   │   │   ├── tesla_lightning2_lg.thumbnail.jpg
+│   │   │   ├── tesla_tower1_lg.jpg
+│   │   │   └── tesla_tower1_lg.thumbnail.jpg
+│   │   ├── index.html
+│   │   └── rss.xml
+│   ├── images
+│   │   ├── 2025-03-30_16-37_chicago-skyline-biking.png
+│   │   ├── 2025-03-30_16-37_chicago-skyline-biking.thumbnail.png
+│   │   ├── frontispiece.jpg
+│   │   ├── frontispiece.thumbnail.jpg
+│   │   ├── illus_001.jpg
+│   │   ├── illus_001.thumbnail.jpg
+│   │   └── nikola.png
+│   ├── index.html
+│   ├── listings
+│   │   ├── hello.py
+│   │   ├── hello.py.html
+│   │   ├── index.html
+│   │   └── __pycache__
+│   │       └── index.html
+│   ├── pages
+│   │   ├── about-nikola
+│   │   │   ├── index.html
+│   │   │   └── index.rst
+│   │   ├── bootstrap-demo
+│   │   │   ├── index.html
+│   │   │   └── index.rst
+│   │   ├── charts
+│   │   │   ├── index.html
+│   │   │   └── index.rst
+│   │   ├── creating-a-theme
+│   │   │   ├── index.html
+│   │   │   └── index.rst
+│   │   ├── dr-nikolas-vendetta
+│   │   │   ├── index.html
+│   │   │   └── index.rst
+│   │   ├── extending
+│   │   │   ├── index.html
+│   │   │   └── index.rst
+│   │   ├── handbook
+│   │   │   ├── index.html
+│   │   │   └── index.rst
+│   │   ├── internals
+│   │   │   ├── index.html
+│   │   │   └── index.rst
+│   │   ├── listings-demo
+│   │   │   ├── index.html
+│   │   │   └── index.rst
+│   │   ├── path-handlers
+│   │   │   ├── index.html
+│   │   │   └── index.rst
+│   │   ├── quickref
+│   │   │   ├── index.html
+│   │   │   └── index.rst
+│   │   ├── quickstart
+│   │   │   ├── index.html
+│   │   │   └── index.rst
+│   │   ├── social_buttons
+│   │   │   ├── index.html
+│   │   │   └── index.rst
+│   │   └── theming
+│   │       ├── index.html
+│   │       └── index.rst
+│   ├── posts
+│   │   ├── setting-up
+│   │   │   ├── index.html
+│   │   │   └── index.md
+│   │   ├── welcome-to-nikola
+│   │   │   ├── index.html
+│   │   │   └── index.rst
+│   │   └── welcome-to-nikola-md
+│   │       ├── index.html
+│   │       └── index.md
+│   ├── robots.txt
+│   ├── rss.xml
+│   ├── sitemapindex.xml
+│   └── sitemap.xml
+├── pages
+│   ├── 1.rst
+│   ├── bootstrap-demo.rst
+│   ├── charts.rst
+│   ├── creating-a-theme.rst
+│   ├── dr-nikolas-vendetta.rst
+│   ├── extending.rst
+│   ├── internals.rst
+│   ├── listings-demo.rst
+│   ├── manual.rst
+│   ├── path_handlers.rst
+│   ├── quickref.rst
+│   ├── quickstart.rst
+│   ├── social_buttons.rst
+│   └── theming.rst
+├── posts
+│   └── 1.md
+├── __pycache__
+│   └── conf.cpython-310.pyc
+├── README.txt
+├── templates
+│   └── book.tmpl
+└── themes
+    └── hack
+        ├── assets
+        │   └── css
+        │       ├── dark.css
+        │       ├── dark-grey.css
+        │       ├── hack.css
+        │       ├── LICENSE
+        │       ├── solarized-dark.css
+        │       ├── standard.css
+        │       └── theme.css
+        ├── conf.py.sample
+        ├── hack.theme
+        ├── LICENSE.md
+        ├── parent
+        ├── README.md
+        └── templates
+            ├── base_helper.tmpl
+            └── base.tmpl
+
+60 directories, 202 files
