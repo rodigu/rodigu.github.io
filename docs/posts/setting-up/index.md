@@ -74,3 +74,16 @@ meaning, while in this markdown, i can use intellisense to access the image with
 i need to add an additional `../` to the beginning of the image reference.
 
 anyway, this is more of a minor pet peeve, so it is fine i guess.
+
+## addendum 1
+
+ok, i have another pet peev, this time with github pages.
+for whatever reason, github pages only allows deployement from root or from `/docs` [^3]?
+
+[^3]: at least according to the answer to [this community question](https://github.com/orgs/community/discussions/23073)
+
+so i had to change the output folder of this repo to `docs`, with the following addition to nikola's [`conf.py`](https://github.com/rodigu/rodigu.github.io/blob/master/conf.py):
+
+```py
+OUTPUT_FOLDER = 'docs'
+```

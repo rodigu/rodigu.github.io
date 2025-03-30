@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1743365124.0641503
+_modified_time = 1743365643.5985696
 _enable_loop = True
 _template_filename = 'themes/hack/templates/base.tmpl'
 _template_uri = 'base.tmpl'
@@ -37,21 +37,21 @@ def render_body(context,**pageargs):
         _mako_get_namespace(context, 'base')._populate(_import_ns, ['*'])
         _mako_get_namespace(context, 'header')._populate(_import_ns, ['*'])
         _mako_get_namespace(context, 'footer')._populate(_import_ns, ['*'])
-        HACK_VARIANT = _import_ns.get('HACK_VARIANT', context.get('HACK_VARIANT', UNDEFINED))
         base = _mako_get_namespace(context, 'base')
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
-        def extra_js():
-            return render_extra_js(context._locals(__M_locals))
-        def content():
-            return render_content(context._locals(__M_locals))
-        template_hooks = _import_ns.get('template_hooks', context.get('template_hooks', UNDEFINED))
-        lang = _import_ns.get('lang', context.get('lang', UNDEFINED))
         footer = _mako_get_namespace(context, 'footer')
-        header = _mako_get_namespace(context, 'header')
-        body_end = _import_ns.get('body_end', context.get('body_end', UNDEFINED))
+        set_locale = _import_ns.get('set_locale', context.get('set_locale', UNDEFINED))
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        template_hooks = _import_ns.get('template_hooks', context.get('template_hooks', UNDEFINED))
         def extra_head():
             return render_extra_head(context._locals(__M_locals))
-        set_locale = _import_ns.get('set_locale', context.get('set_locale', UNDEFINED))
+        header = _mako_get_namespace(context, 'header')
+        body_end = _import_ns.get('body_end', context.get('body_end', UNDEFINED))
+        def extra_js():
+            return render_extra_js(context._locals(__M_locals))
+        HACK_VARIANT = _import_ns.get('HACK_VARIANT', context.get('HACK_VARIANT', UNDEFINED))
+        lang = _import_ns.get('lang', context.get('lang', UNDEFINED))
+        def content():
+            return render_content(context._locals(__M_locals))
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer('\n')

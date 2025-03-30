@@ -103,6 +103,13 @@ after the build, my post is in <code>./output/posts/setting-up</code>, and the i
 meaning, while in this markdown, i can use intellisense to access the image with <code>../images/2025-03-30_16-37_chicago-skyline-biking.png</code>, because the image in the build is in a different directory,
 i need to add an additional <code>../</code> to the beginning of the image reference.</p>
 <p>anyway, this is more of a minor pet peeve, so it is fine i guess.</p>
+<h3>addendum 1</h3>
+<p>ok, i have another pet peev, this time with github pages.
+for whatever reason, github pages only allows deployement from root or from <code>/docs</code> <sup id="fnref:3"><a class="footnote-ref" href="posts/setting-up/#fn:3">3</a></sup>?</p>
+<p>so i had to change the output folder of this repo to <code>docs</code>, with the following addition to nikola's <a href="https://github.com/rodigu/rodigu.github.io/blob/master/conf.py"><code>conf.py</code></a>:</p>
+<div class="code"><pre class="code literal-block"><span class="n">OUTPUT_FOLDER</span> <span class="o">=</span> <span class="s1">'docs'</span>
+</pre></div>
+
 <div class="footnote">
 <hr>
 <ol>
@@ -111,6 +118,9 @@ i need to add an additional <code>../</code> to the beginning of the image refer
 </li>
 <li id="fn:2">
 <p><a href="https://getnikola.com/">the nikola website</a> <a class="footnote-backref" href="posts/setting-up/#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:3">
+<p>at least according to the answer to <a href="https://github.com/orgs/community/discussions/23073">this community question</a> <a class="footnote-backref" href="posts/setting-up/#fnref:3" title="Jump back to footnote 3 in the text">↩</a></p>
 </li>
 </ol>
 </div>
