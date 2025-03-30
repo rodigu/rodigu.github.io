@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://rodigu.github.io/</loc>
-  <lastmod>2025-03-30T20:22:00Z</lastmod>
+  <lastmod>2025-03-30T20:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://rodigu.github.io/2025/</loc>
@@ -15,7 +15,7 @@
  </url>
  <url>
   <loc>https://rodigu.github.io/archive.html</loc>
-  <lastmod>2025-03-30T20:05:00Z</lastmod>
+  <lastmod>2025-03-30T20:45:00Z</lastmod>
  </url>
  <url>
   <loc>https://rodigu.github.io/categories/</loc>
@@ -47,7 +47,15 @@
  </url>
  <url>
   <loc>https://rodigu.github.io/listings/hello.py.html</loc>
-  <lastmod>2025-03-30T20:05:00Z</lastmod>
+  <lastmod>2025-03-30T20:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://rodigu.github.io/pages/about/</loc>
+  <lastmod>2025-03-30T20:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://rodigu.github.io/pages/on-nikola/</loc>
+  <lastmod>2025-03-30T20:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://rodigu.github.io/posts/setting-up/</loc>
