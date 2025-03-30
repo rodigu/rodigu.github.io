@@ -3,7 +3,7 @@ containing the source for this blog, you may notice that this was originally my 
 <p>my initial intention was to setup the present blog on a separate branch,
 but i forgot to switch branches before deleting everything.</p>
 <p>in any case, i suppose i'll have to commit to this now so here is a test post.</p>
-<p><img alt="a photo i took while biking in chicago" src="../../images/2025-03-30_16-37_chicago-skyline-biking.png"></p>
+<h2>testing out</h2>
 <p>originally, i attempted to use jekyll <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, at it is already integrated into github.
 however, after some frustration (as had happened years ago when i tried it),
 i decided to look for a different blog building tool.</p>
@@ -15,6 +15,37 @@ i am not too interested in messing with templates and such at the moment.
 all i want is to get started on throwing stuff out there.</p>
 <p>so i landed on nikola <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> for static site generation.
 it even has built'in support for extended markdown seeing that the footnotes are working nicely.</p>
+<p>it does have support for images in markdown, but in an annoying kind of way.</p>
+<p><img alt="a photo i took while biking in chicago" src="../../images/2025-03-30_16-37_chicago-skyline-biking.png"></p>
+<p>here is what the markdown for the previous photo looks like:</p>
+<div class="code"><pre class="code literal-block">![<span class="nt">a photo i took while biking in chicago</span>](<span class="na">../../images/2025-03-30_16-37_chicago-skyline-biking.png</span>)
+</pre></div>
+
+<p>which seems fine, except that the folder structure of this repo looks a little like this (with some omitions for readibility):</p>
+<div class="code"><pre class="code literal-block">.
+├──<span class="w"> </span>images
+│<span class="w">   </span>├──<span class="w"> </span><span class="m">2025</span>-03-30_16-37_chicago-skyline-biking.png
+│<span class="w">   </span>├──<span class="w"> </span>frontispiece.jpg
+│<span class="w">   </span>└──<span class="w"> </span>illus_001.jpg
+├──<span class="w"> </span>output
+│<span class="w">   </span>├──<span class="w"> </span>images
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span><span class="m">2025</span>-03-30_16-37_chicago-skyline-biking.png
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span><span class="m">2025</span>-03-30_16-37_chicago-skyline-biking.thumbnail.png
+│<span class="w">   </span>├──<span class="w"> </span>index.html
+│<span class="w">   </span>└──<span class="w"> </span>posts
+│<span class="w">       </span>├──<span class="w"> </span>setting-up
+│<span class="w">       </span>├──<span class="w"> </span>index.html
+│<span class="w">       </span>└──<span class="w"> </span>index.md
+├──<span class="w"> </span>posts
+│<span class="w">   </span>└──<span class="w"> </span><span class="m">1</span>.md
+└──<span class="w"> </span>README.txt
+</pre></div>
+
+<p>i am writing from <code>./posts/1.md</code>, and i am placing my image in <code>./images/</code>.
+after the build, my post is in <code>./output/posts/setting-up</code>, and the image is in <code>./output/images/</code>.
+meaning, while in this markdown, i can use intellisense to access the image with <code>../images/2025-03-30_16-37_chicago-skyline-biking.png</code>, because the image in the build is in a different directory,
+i need to add an additional <code>../</code> to the beginning of the image reference.</p>
+<p>anyway, this is more of a minor pet peeve, so it is fine i guess.</p>
 <div class="footnote">
 <hr>
 <ol>
