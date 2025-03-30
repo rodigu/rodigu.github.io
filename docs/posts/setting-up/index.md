@@ -70,8 +70,18 @@ which seems fine, except that the folder structure of this repo looks a little l
 
 i am writing from `./posts/1.md`, and i am placing my image in `./images/`.
 after the build, my post is in `./output/posts/setting-up`, and the image is in `./output/images/`.
-meaning, while in this markdown, i can use intellisense to access the image with `../images/2025-03-30_16-37_chicago-skyline-biking.png`, because the image in the build is in a different directory,
-i need to add an additional `../` to the beginning of the image reference.
+meaning, while in this markdown, i can use intellisense to access the image with:
+
+```
+../images/2025-03-30_16-37_chicago-skyline-biking.png
+```
+
+because the image in the build is in a different directory,
+i need to add an additional `../` to the beginning of the image reference [^5].
+
+[^5]: going on a tangent here, but i had to make the previous long directory reference into
+its own code block instead of an in-line reference because it was breaking the layout on mobile.
+i should keep this in mind for the future.
 
 anyway, this is more of a minor pet peeve, so it is fine i guess.
 
@@ -100,5 +110,3 @@ i deleted them manually, and then followed the instructions from the getting sta
 ```bash
 nikola check --clean-files
 ```
-
-

@@ -43,12 +43,16 @@ it even has built'in support for extended markdown seeing that the footnotes are
 
 <p>i am writing from <code>./posts/1.md</code>, and i am placing my image in <code>./images/</code>.
 after the build, my post is in <code>./output/posts/setting-up</code>, and the image is in <code>./output/images/</code>.
-meaning, while in this markdown, i can use intellisense to access the image with <code>../images/2025-03-30_16-37_chicago-skyline-biking.png</code>, because the image in the build is in a different directory,
-i need to add an additional <code>../</code> to the beginning of the image reference.</p>
+meaning, while in this markdown, i can use intellisense to access the image with:</p>
+<div class="code"><pre class="code literal-block"><span class="cp">../images/2025-03-30_16-37_chicago-skyline-biking.png</span>
+</pre></div>
+
+<p>because the image in the build is in a different directory,
+i need to add an additional <code>../</code> to the beginning of the image reference <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">3</a></sup>.</p>
 <p>anyway, this is more of a minor pet peeve, so it is fine i guess.</p>
 <h2>addendum 1</h2>
 <p>ok, i have another pet peev, this time with github pages.
-for whatever reason, github pages only allows deployement from root or from <code>/docs</code> <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>?</p>
+for whatever reason, github pages only allows deployement from root or from <code>/docs</code> <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">4</a></sup>?</p>
 <p>so i had to change the output folder of this repo to <code>docs</code>, with the following addition to nikola's <a href="https://github.com/rodigu/rodigu.github.io/blob/master/conf.py"><code>conf.py</code></a>:</p>
 <div class="code"><pre class="code literal-block"><span class="n">OUTPUT_FOLDER</span> <span class="o">=</span> <span class="s1">&#39;docs&#39;</span>
 </pre></div>
@@ -56,7 +60,7 @@ for whatever reason, github pages only allows deployement from root or from <cod
 <h2>addemdum 2</h2>
 <p>one last thing for this test post.</p>
 <p>nikola came with a number of filed in its demo.
-i deleted them manually, and then followed the instructions from the getting started page <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>:</p>
+i deleted them manually, and then followed the instructions from the getting started page <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">5</a></sup>:</p>
 <div class="code"><pre class="code literal-block">nikola<span class="w"> </span>check<span class="w"> </span>--clean-files
 </pre></div>
 
@@ -69,11 +73,16 @@ i deleted them manually, and then followed the instructions from the getting sta
 <li id="fn:2">
 <p><a href="https://getnikola.com/">the nikola website</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
+<li id="fn:5">
+<p>going on a tangent here, but i had to make the previous long directory reference into
+its own code block instead of an in-line reference because it was breaking the layout on mobile.
+i should keep this in mind for the future.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
 <li id="fn:3">
-<p>at least according to the answer to <a href="https://github.com/orgs/community/discussions/23073">this community question</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>at least according to the answer to <a href="https://github.com/orgs/community/discussions/23073">this community question</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn:4">
-<p><a href="https://getnikola.com/getting-started.html#rm-demo">the getnikola getting started page</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p><a href="https://getnikola.com/getting-started.html#rm-demo">the getnikola getting started page</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
