@@ -55,10 +55,13 @@
     <p>i tried using the auto builder, but either i did something wrong, or there is a bug with it.
 nikola depends on the python package <code>watchdog</code> for the continuous auto-build.
 i might try it again some other time.</p>
-<p>for now, build is done with the following sequence of commands:</p>
+<p>for now, this blog is built with the following sequence of commands:</p>
 <div class="code"><pre class="code literal-block">nikola<span class="w"> </span>check<span class="w"> </span>--clean-files
 nikola<span class="w"> </span>build
-nikola<span class="w"> </span>serve<span class="w"> </span>-b
+</pre></div>
+
+<p>and served locally with:</p>
+<div class="code"><pre class="code literal-block">nikola<span class="w"> </span>serve<span class="w"> </span>-b
 </pre></div>
 
 <p>the first line cleans up any files that no longer exist from the output directory (<code>docs</code>, <a href="https://rodigu.github.io/posts/setting-up/">because github pages is unloved</a>).</p>

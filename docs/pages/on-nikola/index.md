@@ -9,11 +9,16 @@ i tried using the auto builder, but either i did something wrong, or there is a 
 nikola depends on the python package `watchdog` for the continuous auto-build.
 i might try it again some other time.
 
-for now, build is done with the following sequence of commands:
+for now, this blog is built with the following sequence of commands:
 
 ```bash
 nikola check --clean-files
 nikola build
+```
+
+and served locally with:
+
+```bash
 nikola serve -b
 ```
 
