@@ -213,7 +213,7 @@
 'copy_assets:docs/assets/js/gallery.min.js', (515072, 437)
 'render_sources:docs/pages/charts/index.rst', (515584, 239)
 'copy_assets:docs/assets/css/LICENSE', (516096, 271)
-'sitemap:docs/sitemap.xml', (569344, 4228)
+'sitemap:docs/sitemap.xml', (569344, 4229)
 'render_listings:docs/listings/hello.py.html', (521216, 1731)
 'render_taxonomies:docs/categories/index.html', (523264, 1747)
 'render_taxonomies:docs/rss.xml', (525312, 448)
