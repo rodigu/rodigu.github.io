@@ -1027,7 +1027,7 @@ COMMENT_SYSTEM = "utterances"
 # depends on what comment system you use. The default is
 # "nikolademo" which is a test account for Disqus. More information
 # is in the manual.
-COMMENT_SYSTEM_ID = ""
+COMMENT_SYSTEM_ID = "https://github.com/rodigu/rodigu.github.io"
 
 # Create index.html for page folders?
 # WARNING: if a page would conflict with the index file (usually
@@ -1409,7 +1409,14 @@ WARN_ABOUT_TAG_METADATA = False
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
 GLOBAL_CONTEXT = {
-    'HACK_VARIANT': 'dark'
+    'HACK_VARIANT': 'dark',
+    'utterances_config': {
+        'src':"https://utteranc.es/client.js",
+        'issue-term':"url",
+        'label':"comment",
+        'theme':"github-dark",
+        'crossorigin':"anonymous",
+    }
 }
 
 # Add functions here and they will be called with template
