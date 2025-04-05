@@ -15,19 +15,39 @@
  </url>
  <url>
   <loc>https://rodigu.github.io/archive.html</loc>
-  <lastmod>2025-04-05T14:21:00Z</lastmod>
+  <lastmod>2025-04-05T14:47:00Z</lastmod>
  </url>
  <url>
   <loc>https://rodigu.github.io/categories/</loc>
-  <lastmod>2025-04-05T14:14:00Z</lastmod>
+  <lastmod>2025-04-05T14:47:00Z</lastmod>
  </url>
  <url>
   <loc>https://rodigu.github.io/categories/blog/</loc>
   <lastmod>2025-03-30T20:05:00Z</lastmod>
  </url>
  <url>
+  <loc>https://rodigu.github.io/categories/cat_reading/</loc>
+  <lastmod>2025-04-05T14:43:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://rodigu.github.io/categories/english/</loc>
+  <lastmod>2025-04-05T14:43:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://rodigu.github.io/categories/literature/</loc>
+  <lastmod>2025-04-05T14:43:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://rodigu.github.io/categories/meta/</loc>
   <lastmod>2025-03-30T20:05:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://rodigu.github.io/categories/non-fiction/</loc>
+  <lastmod>2025-04-05T14:43:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://rodigu.github.io/categories/quote/</loc>
+  <lastmod>2025-04-05T14:47:00Z</lastmod>
  </url>
  <url>
   <loc>https://rodigu.github.io/galleries/</loc>
@@ -43,7 +63,7 @@
  </url>
  <url>
   <loc>https://rodigu.github.io/listings/hello.py.html</loc>
-  <lastmod>2025-04-05T14:21:00Z</lastmod>
+  <lastmod>2025-04-05T14:47:00Z</lastmod>
  </url>
  <url>
   <loc>https://rodigu.github.io/pages/about/</loc>
@@ -52,6 +72,10 @@
  <url>
   <loc>https://rodigu.github.io/pages/on-nikola/</loc>
   <lastmod>2025-03-30T20:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://rodigu.github.io/posts/reading/thoreau-walden-31/</loc>
+  <lastmod>2025-04-05T14:43:00Z</lastmod>
  </url>
  <url>
   <loc>https://rodigu.github.io/posts/setting-up/</loc>
