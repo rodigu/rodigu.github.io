@@ -3,6 +3,7 @@
 .. date: 2025-03-30 16:20:00 UTC-03:00
 .. tags: python, airflow
 .. author: rodigu
+.. status: draft
 .. category: data-sci
 .. link: https://rodigu.github.io/
 .. description: walrus operator and airflow task dependency
