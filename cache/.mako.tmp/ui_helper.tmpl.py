@@ -5,9 +5,9 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1743864437.142007
+_modified_time = 1770346909.540851
 _enable_loop = True
-_template_filename = '/home/hiroto/.pyenv/versions/3.10.13/lib/python3.10/site-packages/nikola/data/themes/base/templates/ui_helper.tmpl'
+_template_filename = '/opt/miniconda3/envs/blog/lib/python3.14/site-packages/nikola/data/themes/base/templates/ui_helper.tmpl'
 _template_uri = 'ui_helper.tmpl'
 _source_encoding = 'utf-8'
 _exports = ['breadcrumbs']
@@ -33,7 +33,9 @@ def render_breadcrumbs(context,crumbs):
         if crumbs:
             __M_writer('<nav class="breadcrumbs">\n<ul class="breadcrumb">\n')
             for link, text in crumbs:
+                pass
                 if text != index_file:
+                    pass
                     if link == '#':
                         __M_writer('                <li>')
                         __M_writer(str(text.rsplit('.html', 1)[0]))
@@ -52,6 +54,6 @@ def render_breadcrumbs(context,crumbs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "/home/hiroto/.pyenv/versions/3.10.13/lib/python3.10/site-packages/nikola/data/themes/base/templates/ui_helper.tmpl", "uri": "ui_helper.tmpl", "source_encoding": "utf-8", "line_map": {"16": 0, "21": 18, "27": 2, "32": 2, "33": 3, "34": 4, "35": 6, "36": 7, "37": 8, "38": 9, "39": 9, "40": 9, "41": 10, "42": 11, "43": 11, "44": 11, "45": 11, "46": 11, "47": 15, "53": 47}}
+{"filename": "/opt/miniconda3/envs/blog/lib/python3.14/site-packages/nikola/data/themes/base/templates/ui_helper.tmpl", "uri": "ui_helper.tmpl", "source_encoding": "utf-8", "line_map": {"16": 0, "21": 18, "27": 2, "32": 2, "33": 3, "34": 4, "35": 6, "37": 7, "39": 8, "40": 9, "41": 9, "42": 9, "43": 10, "44": 11, "45": 11, "46": 11, "47": 11, "48": 11, "49": 15, "55": 49}}
 __M_END_METADATA
 """

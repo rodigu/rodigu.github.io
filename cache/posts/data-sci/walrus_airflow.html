@@ -1,0 +1,13 @@
+<div class="code"><pre class="code literal-block"><span class="p">[</span>
+    <span class="p">(</span>
+        <span class="n">a_data</span> <span class="o">:=</span> <span class="n">get_users</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span>
+            <span class="n">connection_meta</span><span class="o">=</span><span class="n">connection_meta</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">code_a</span><span class="p">)</span>
+    <span class="p">),</span>
+    <span class="p">(</span>
+        <span class="n">b_data</span> <span class="o">:=</span> <span class="n">get_users</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span>
+            <span class="n">connection_meta</span><span class="o">=</span><span class="n">connection_meta</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">code_b</span><span class="p">)</span>
+    <span class="p">),</span>
+<span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="p">(</span><span class="n">fetch_content</span> <span class="o">:=</span> <span class="n">content_fetch</span><span class="p">())</span>
+</pre></div>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>hiroto's things (Posts about meta)</title><link>https://rodigu.github.io/</link><description></description><atom:link href="https://rodigu.github.io/categories/cat_meta.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:rmoraisu@proton.me"&gt;rodigu&lt;/a&gt; </copyright><lastBuildDate>Fri, 06 Feb 2026 02:50:30 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>on nikola</title><link>https://rodigu.github.io/posts/meta/on-nikola/</link><dc:creator>rodigu</dc:creator><description>&lt;p&gt;i tried using the auto builder, but either i did something wrong, or there is a bug with it.
+nikola depends on the python package &lt;code&gt;watchdog&lt;/code&gt; for the continuous auto-build.
+i might try it again some other time.&lt;/p&gt;
+&lt;p&gt;for now, this blog is built with the following sequence of commands:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;check&lt;span class="w"&gt; &lt;/span&gt;--clean-files
+nikola&lt;span class="w"&gt; &lt;/span&gt;build
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;and served locally with:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;serve&lt;span class="w"&gt; &lt;/span&gt;-b
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;in one line:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;check&lt;span class="w"&gt; &lt;/span&gt;--clean-files&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;build&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;serve
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;the first line cleans up any files that no longer exist from the output directory (&lt;code&gt;docs&lt;/code&gt;, &lt;a href="https://rodigu.github.io/posts/setting-up/"&gt;because github pages is unloved&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;new "tabs" can be added with through the &lt;code&gt;NAVIGATION_LINKS&lt;/code&gt; variable in &lt;code&gt;conf.py&lt;/code&gt; &lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="https://rodigu.github.io/posts/meta/on-nikola/#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt;.
+here is what that variable looks like attow:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="n"&gt;NAVIGATION_LINKS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;DEFAULT_LANG&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"/archive.html"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"archive"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"/categories/"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"tags"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"/rss.xml"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"rss feed"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"/pages/about/index.html"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"about"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;),&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="footnote"&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;as documented in &lt;a href="https://getnikola.com/handbook.html#customizing-your-site"&gt;the nikola handbook on &lt;em&gt;customizing your site&lt;/em&gt;&lt;/a&gt; &lt;a class="footnote-backref" href="https://rodigu.github.io/posts/meta/on-nikola/#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description><category>meta</category><category>technical</category><guid>https://rodigu.github.io/posts/meta/on-nikola/</guid><pubDate>Sun, 30 Mar 2025 20:47:00 GMT</pubDate></item><item><title>setting up</title><link>https://rodigu.github.io/posts/meta/setting-up/</link><dc:creator>rodigu</dc:creator><description>&lt;p&gt;looking at the &lt;a href="https://github.com/rodigu/rodigu.github.io/commits/master/" target="_blank"&gt;commit history&lt;/a&gt; for the repository
+containing the source for this blog, you may notice that this was originally my personal website/cv.&lt;/p&gt;
+&lt;p&gt;my initial intention was to setup the present blog on a separate branch,
+but &lt;a href="https://c.tenor.com/Bi5t9IXWlEkAAAAC/tenor.gif" target="_blank"&gt;i forgot to switch branches before deleting everything&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;in any case, i suppose i'll have to commit to this now.
+so here is a test post.&lt;/p&gt;
+&lt;h3&gt;testing out&lt;/h3&gt;
+&lt;p&gt;originally, i attempted to use &lt;a href="https://jekyllrb.com/" target="_blank"&gt;jekyll&lt;/a&gt; for this blog, as it is already integrated into github pages.
+however, after some frustration (as had happened years ago when i first tried it),
+i decided to look for a different blog building tool.&lt;/p&gt;
+&lt;p&gt;one of my main points of contention with jekyll is that it uses ruby, which i don't have anything against, but am also entirelly unfamiliar with.
+therefore, i went searching for a tool that allowed me to stay within what i alredy know (namely, python),
+and that had built-in markdown support.&lt;/p&gt;
+&lt;p&gt;i also want it to be doing most of the work.
+i am not too interested in messing with templates and such at the moment.
+all i want is to get started on throwing stuff out there.&lt;/p&gt;
+&lt;p&gt;so i landed on &lt;a href="https://getnikola.com/"&gt;nikola&lt;/a&gt;{:target="&lt;em&gt;blank"} for static site generation.
+it even has built'in support for _extended&lt;/em&gt; markdown, seeing that the footnotes are working nicely.&lt;/p&gt;
+&lt;p&gt;it does have support for images in markdown, but...&lt;/p&gt;
+&lt;p&gt;&lt;img alt="a photo i took while biking in chicago" src="https://rodigu.github.io/posts/images/2025-03-30_16-37_chicago-skyline-biking.png"&gt;&lt;/p&gt;
+&lt;p&gt;here is what the markdown for the previous photo looks like:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;![&lt;span class="nt"&gt;a photo i took while biking in chicago&lt;/span&gt;](&lt;span class="na"&gt;../../images/2025-03-30_16-37_chicago-skyline-biking.png&lt;/span&gt;)
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;which seems fine, except that this is what the folder structure of this repo looks like (with some omissions for readability):&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;.
+├──&lt;span class="w"&gt; &lt;/span&gt;images
+│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2025&lt;/span&gt;-03-30_16-37_chicago-skyline-biking.png
+│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;frontispiece.jpg
+│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;illus_001.jpg
+├──&lt;span class="w"&gt; &lt;/span&gt;output
+│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;images
+│&lt;span class="w"&gt;   &lt;/span&gt;│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2025&lt;/span&gt;-03-30_16-37_chicago-skyline-biking.png
+│&lt;span class="w"&gt;   &lt;/span&gt;│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2025&lt;/span&gt;-03-30_16-37_chicago-skyline-biking.thumbnail.png
+│&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;index.html
+│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;posts
+│&lt;span class="w"&gt;       &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;setting-up
+│&lt;span class="w"&gt;       &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;index.html
+│&lt;span class="w"&gt;       &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;index.md
+├──&lt;span class="w"&gt; &lt;/span&gt;posts
+│&lt;span class="w"&gt;   &lt;/span&gt;└──&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.md
+└──&lt;span class="w"&gt; &lt;/span&gt;README.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;i am writing from &lt;code&gt;./posts/1.md&lt;/code&gt;, and i am placing my image in &lt;code&gt;./images/&lt;/code&gt;.
+after the build, my post is in &lt;code&gt;./output/posts/setting-up&lt;/code&gt;, and the image is in &lt;code&gt;./output/images/&lt;/code&gt;.
+meaning that while in this markdown i can use intellisense to access the image with:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;../images/2025-03-30_16-37_chicago-skyline-biking.png
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;however, because the image in the output build is in a different directory,
+i need to add an additional &lt;code&gt;../&lt;/code&gt; to the beginning of the image reference&lt;sup id="fnref:5"&gt;&lt;a class="footnote-ref" href="https://rodigu.github.io/posts/meta/setting-up/#fn:5"&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;anyway, this is more of a minor pet peeve, so it is fine i guess.&lt;/p&gt;
+&lt;h3&gt;addendum 1&lt;/h3&gt;
+&lt;p&gt;ok, i have another pet peev, this time with github pages.
+for whatever reason, github pages only allows deployement from root or from &lt;code&gt;/docs&lt;/code&gt;&lt;sup id="fnref:3"&gt;&lt;a class="footnote-ref" href="https://rodigu.github.io/posts/meta/setting-up/#fn:3"&gt;2&lt;/a&gt;&lt;/sup&gt;?&lt;/p&gt;
+&lt;p&gt;so i had to change the output folder of this repo to &lt;code&gt;docs&lt;/code&gt;, with the following addition to nikola's &lt;a href="https://github.com/rodigu/rodigu.github.io/blob/master/conf.py" target="_blank"&gt;&lt;code&gt;conf.py&lt;/code&gt;&lt;/a&gt;:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="n"&gt;OUTPUT_FOLDER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'docs'&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;addemdum 2&lt;/h3&gt;
+&lt;p&gt;one last thing for this test post.&lt;/p&gt;
+&lt;p&gt;nikola came with a number of files in its demo.
+i deleted them manually, and then followed the instructions from the &lt;a href="https://getnikola.com/getting-started.html#rm-demo" target="_blank"&gt;getting started page&lt;/a&gt;:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;check&lt;span class="w"&gt; &lt;/span&gt;--clean-files
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="footnote"&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id="fn:5"&gt;
+&lt;p&gt;going on a tangent here, but i had to make the previous long directory reference into
+its own code block instead of an in-line reference because it was breaking the layout on mobile.
+i should keep this in mind for the future. &lt;a class="footnote-backref" href="https://rodigu.github.io/posts/meta/setting-up/#fnref:5" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:3"&gt;
+&lt;p&gt;at least according to the answer to &lt;a href="https://github.com/orgs/community/discussions/23073" target="_blank"&gt;this community question&lt;/a&gt; &lt;a class="footnote-backref" href="https://rodigu.github.io/posts/meta/setting-up/#fnref:3" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description><category>blog</category><category>meta</category><guid>https://rodigu.github.io/posts/meta/setting-up/</guid><pubDate>Sun, 30 Mar 2025 19:20:00 GMT</pubDate></item></channel></rss>

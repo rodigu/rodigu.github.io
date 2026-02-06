@@ -1,0 +1,37 @@
+<p>i tried using the auto builder, but either i did something wrong, or there is a bug with it.
+nikola depends on the python package <code>watchdog</code> for the continuous auto-build.
+i might try it again some other time.</p>
+<p>for now, this blog is built with the following sequence of commands:</p>
+<div class="code"><pre class="code literal-block">nikola<span class="w"> </span>check<span class="w"> </span>--clean-files
+nikola<span class="w"> </span>build
+</pre></div>
+
+<p>and served locally with:</p>
+<div class="code"><pre class="code literal-block">nikola<span class="w"> </span>serve<span class="w"> </span>-b
+</pre></div>
+
+<p>in one line:</p>
+<div class="code"><pre class="code literal-block">nikola<span class="w"> </span>check<span class="w"> </span>--clean-files<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>nikola<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>nikola<span class="w"> </span>serve
+</pre></div>
+
+<p>the first line cleans up any files that no longer exist from the output directory (<code>docs</code>, <a href="https://rodigu.github.io/posts/setting-up/">because github pages is unloved</a>).</p>
+<p>new "tabs" can be added with through the <code>NAVIGATION_LINKS</code> variable in <code>conf.py</code> <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.
+here is what that variable looks like attow:</p>
+<div class="code"><pre class="code literal-block"><span class="n">NAVIGATION_LINKS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">DEFAULT_LANG</span><span class="p">:</span> <span class="p">(</span>
+        <span class="p">(</span><span class="s2">&quot;/archive.html&quot;</span><span class="p">,</span> <span class="s2">&quot;archive&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;/categories/&quot;</span><span class="p">,</span> <span class="s2">&quot;tags&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;/rss.xml&quot;</span><span class="p">,</span> <span class="s2">&quot;rss feed&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;/pages/about/index.html&quot;</span><span class="p">,</span> <span class="s2">&quot;about&quot;</span><span class="p">)</span>
+    <span class="p">),</span>
+<span class="p">}</span>
+</pre></div>
+
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:1">
+<p>as documented in <a href="https://getnikola.com/handbook.html#customizing-your-site">the nikola handbook on <em>customizing your site</em></a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>

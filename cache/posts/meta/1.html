@@ -1,0 +1,80 @@
+<p>looking at the <a href="https://github.com/rodigu/rodigu.github.io/commits/master/" target="_blank">commit history</a> for the repository
+containing the source for this blog, you may notice that this was originally my personal website/cv.</p>
+<p>my initial intention was to setup the present blog on a separate branch,
+but <a href="https://c.tenor.com/Bi5t9IXWlEkAAAAC/tenor.gif" target="_blank">i forgot to switch branches before deleting everything</a>.</p>
+<p>in any case, i suppose i'll have to commit to this now.
+so here is a test post.</p>
+<h2>testing out</h2>
+<p>originally, i attempted to use <a href="https://jekyllrb.com/" target="_blank">jekyll</a> for this blog, as it is already integrated into github pages.
+however, after some frustration (as had happened years ago when i first tried it),
+i decided to look for a different blog building tool.</p>
+<p>one of my main points of contention with jekyll is that it uses ruby, which i don't have anything against, but am also entirelly unfamiliar with.
+therefore, i went searching for a tool that allowed me to stay within what i alredy know (namely, python),
+and that had built-in markdown support.</p>
+<p>i also want it to be doing most of the work.
+i am not too interested in messing with templates and such at the moment.
+all i want is to get started on throwing stuff out there.</p>
+<p>so i landed on <a href="https://getnikola.com/">nikola</a>{:target="<em>blank"} for static site generation.
+it even has built'in support for _extended</em> markdown, seeing that the footnotes are working nicely.</p>
+<p>it does have support for images in markdown, but...</p>
+<p><img alt="a photo i took while biking in chicago" src="../../images/2025-03-30_16-37_chicago-skyline-biking.png"></p>
+<p>here is what the markdown for the previous photo looks like:</p>
+<div class="code"><pre class="code literal-block">![<span class="nt">a photo i took while biking in chicago</span>](<span class="na">../../images/2025-03-30_16-37_chicago-skyline-biking.png</span>)
+</pre></div>
+
+<p>which seems fine, except that this is what the folder structure of this repo looks like (with some omissions for readability):</p>
+<div class="code"><pre class="code literal-block">.
+├──<span class="w"> </span>images
+│<span class="w">   </span>├──<span class="w"> </span><span class="m">2025</span>-03-30_16-37_chicago-skyline-biking.png
+│<span class="w">   </span>├──<span class="w"> </span>frontispiece.jpg
+│<span class="w">   </span>└──<span class="w"> </span>illus_001.jpg
+├──<span class="w"> </span>output
+│<span class="w">   </span>├──<span class="w"> </span>images
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span><span class="m">2025</span>-03-30_16-37_chicago-skyline-biking.png
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span><span class="m">2025</span>-03-30_16-37_chicago-skyline-biking.thumbnail.png
+│<span class="w">   </span>├──<span class="w"> </span>index.html
+│<span class="w">   </span>└──<span class="w"> </span>posts
+│<span class="w">       </span>├──<span class="w"> </span>setting-up
+│<span class="w">       </span>├──<span class="w"> </span>index.html
+│<span class="w">       </span>└──<span class="w"> </span>index.md
+├──<span class="w"> </span>posts
+│<span class="w">   </span>└──<span class="w"> </span><span class="m">1</span>.md
+└──<span class="w"> </span>README.txt
+</pre></div>
+
+<p>i am writing from <code>./posts/1.md</code>, and i am placing my image in <code>./images/</code>.
+after the build, my post is in <code>./output/posts/setting-up</code>, and the image is in <code>./output/images/</code>.
+meaning that while in this markdown i can use intellisense to access the image with:</p>
+<div class="code"><pre class="code literal-block">../images/2025-03-30_16-37_chicago-skyline-biking.png
+</pre></div>
+
+<p>however, because the image in the output build is in a different directory,
+i need to add an additional <code>../</code> to the beginning of the image reference<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">1</a></sup>.</p>
+<p>anyway, this is more of a minor pet peeve, so it is fine i guess.</p>
+<h2>addendum 1</h2>
+<p>ok, i have another pet peev, this time with github pages.
+for whatever reason, github pages only allows deployement from root or from <code>/docs</code><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">2</a></sup>?</p>
+<p>so i had to change the output folder of this repo to <code>docs</code>, with the following addition to nikola's <a href="https://github.com/rodigu/rodigu.github.io/blob/master/conf.py" target="_blank"><code>conf.py</code></a>:</p>
+<div class="code"><pre class="code literal-block"><span class="n">OUTPUT_FOLDER</span> <span class="o">=</span> <span class="s1">&#39;docs&#39;</span>
+</pre></div>
+
+<h2>addemdum 2</h2>
+<p>one last thing for this test post.</p>
+<p>nikola came with a number of files in its demo.
+i deleted them manually, and then followed the instructions from the <a href="https://getnikola.com/getting-started.html#rm-demo" target="_blank">getting started page</a>:</p>
+<div class="code"><pre class="code literal-block">nikola<span class="w"> </span>check<span class="w"> </span>--clean-files
+</pre></div>
+
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:5">
+<p>going on a tangent here, but i had to make the previous long directory reference into
+its own code block instead of an in-line reference because it was breaking the layout on mobile.
+i should keep this in mind for the future.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>at least according to the answer to <a href="https://github.com/orgs/community/discussions/23073" target="_blank">this community question</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>

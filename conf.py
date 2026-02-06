@@ -144,6 +144,9 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         # ("/archive.html", "archive"),
         ("/categories/cat_reading/", "reading"),
+        ("/categories/cat_linux/", "linux"),
+        ("/categories/cat_data-sci/", "data science"),
+        ("/categories/cat_photo-journal/", "photo journal"),
         ("/rss.xml", "rss"),
         ("/pages/about/index.html", "about")
     ),
@@ -860,7 +863,7 @@ GALLERIES_DEFAULT_THUMBNAIL = None
 # but a different naming template can be configured with IMAGE_THUMBNAIL_FORMAT).
 # Panoramas (aspect ratio over 3:1) get 4x larger thumbnails due to scaling issues.
 
-IMAGE_FOLDERS = {'images': 'images'}
+IMAGE_FOLDERS = {'images': 'posts/images'}
 # IMAGE_THUMBNAIL_SIZE = 400
 # IMAGE_THUMBNAIL_FORMAT = '{name}.thumbnail{ext}'
 

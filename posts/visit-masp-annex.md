@@ -1,9 +1,0 @@
-.. title: a visit to the masp annex
-.. slug: visit-masp-annex
-.. date: 2025-03-30 16:20:00 UTC-03:00
-.. tags: blog, photos
-.. status: draft
-.. category: photo-journal
-.. author: rodigu
-.. link: https://rodigu.github.io/
-.. description: some pictures and first impressions of the new sao paulo art museum's annex

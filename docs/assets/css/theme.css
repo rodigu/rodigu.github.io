@@ -323,7 +323,7 @@ pre.code, code {
 		color: #000 !important; /* Black prints faster: http://www.sanbeiji.com/archives/953 */
 		box-shadow: none !important;
 		text-shadow: none !important;
-		font-family: Garamond, Junicode, serif;
+		font-family: 'Share Tech Mono', monospace;
 	}
 
 	body {

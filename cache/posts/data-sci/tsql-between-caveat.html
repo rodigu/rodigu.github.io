@@ -1,0 +1,83 @@
+<p>microsoft's <a href="https://learn.microsoft.com/en-us/sql/t-sql/language-elements/between-transact-sql?view=sql-server-ver17" target="_blank">documentation for between</a> doesn't mention inclusivity <em>at all</em> until <a href="https://learn.microsoft.com/en-us/sql/t-sql/language-elements/between-transact-sql?view=sql-server-ver17#b-use--and--instead-of-between" target="_blank">section b</a>, which suggests that <code>between</code> is inclusive. the information is only really <em>explicitly</em> stated all the way down in <a href="https://learn.microsoft.com/en-us/sql/t-sql/language-elements/between-transact-sql?view=sql-server-ver17#d-use-between-with-datetime-values" target="_blank">section d</a>, where it states that (for datetime values, at least), <code>between</code> is inclusive.</p>
+<p>however, as i have come to find out (not before a whole hour of debugging): it ... depends?</p>
+<h2>context</h2>
+<p>lets create a table with two columns.
+<code>date_vc</code> is a <code>varchar</code> that follows the formatting <code>'%d/%m/%Y'</code> (as per the usual cron formatting<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">1</a></sup>).
+<code>date_dt</code> is a <code>datetime</code> column.</p>
+<p>this was an issue i ran into at work, involving real data.
+here, i'll demonstrate it with a sample table.</p>
+<p>here is a sample sql script to create the tables and insert some values into them.</p>
+<div class="code"><pre class="code literal-block"><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">tsql_testing</span><span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">date_vc</span><span class="p">]</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">,</span>
+<span class="w">    </span><span class="p">[</span><span class="n">date_dt</span><span class="p">]</span><span class="w"> </span><span class="n">datetime</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span>
+<span class="p">)</span>
+<span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">tsql_testing</span><span class="w"> </span><span class="p">(</span><span class="n">date_vc</span><span class="p">,</span><span class="w"> </span><span class="n">date_dt</span><span class="p">)</span>
+<span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;15/12/2025&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2025-12-15 23:48:13.000&#39;</span><span class="p">)</span>
+<span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">tsql_testing</span><span class="w"> </span><span class="p">(</span><span class="n">date_vc</span><span class="p">,</span><span class="w"> </span><span class="n">date_dt</span><span class="p">)</span>
+<span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;09/12/2025&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2025-12-09 23:48:13.000&#39;</span><span class="p">)</span>
+</pre></div>
+
+<p>now, notice that, as previously mentioned, <code>date_vc</code> has string values with style 103 (<code>'%d/%m/%Y'</code>),
+the British/French standard as per <a href="https://learn.microsoft.com/en-us/sql/t-sql/functions/cast-and-convert-transact-sql?view=sql-server-ver17#date-and-time-styles" target="_blank">microsoft's own documentation</a>.</p>
+<h2>between is (not?) inclusive</h2>
+<p>if we try to select the following using <code>between</code>, what should be the expected behavior?</p>
+<div class="code"><pre class="code literal-block"><span class="k">select</span><span class="w"> </span><span class="n">date_vc</span><span class="p">,</span><span class="w"> </span><span class="n">date_dt</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">tsql_testing</span>
+<span class="k">where</span><span class="w"> </span><span class="k">convert</span><span class="p">(</span><span class="n">datetime</span><span class="p">,</span><span class="n">date_vc</span><span class="p">,</span><span class="mi">103</span><span class="p">)</span><span class="w"> </span><span class="k">between</span><span class="w"> </span><span class="s1">&#39;2025-12-09&#39;</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="s1">&#39;2025-12-15&#39;</span><span class="p">;</span>
+</pre></div>
+
+<p>we convert the <code>varchar</code> column <code>date_vc</code> to datetime, and select between those two dates.</p>
+<p>as alluded to in microsoft's own documentation, we do get that this between select is indeed inclusive, as we fetch the following from the select:</p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>date_vc</th>
+<th>date_dt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>09/12/2025</td>
+<td>2025-12-09 23:48:13.000</td>
+</tr>
+<tr>
+<td>15/12/2025</td>
+<td>2025-12-15 23:48:13.000</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>note that, even if we were to use the 103 standard with <code>between '12/09/2025' and '12/15/2025'</code>, we'd still get the same response.</p>
+<p>now, if we do the <strong><em>exact same select</em></strong> for the <code>datetime</code> column <code>date_dt</code> (again, it doesn't matter which standard and formatting you pick):</p>
+<div class="code"><pre class="code literal-block"><span class="k">select</span><span class="w"> </span><span class="n">date_vc</span><span class="p">,</span><span class="w"> </span><span class="n">date_dt</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">tsql_testing</span>
+<span class="k">where</span><span class="w"> </span><span class="n">date_dt</span><span class="w"> </span><span class="k">between</span><span class="w"> </span><span class="s1">&#39;12/09/2025&#39;</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="s1">&#39;12/15/2025&#39;</span>
+</pre></div>
+
+<p>we get a response non-inclusive of the second value:</p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>date_vc</th>
+<th>date_dt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>09/12/2025</td>
+<td>2025-12-09 23:48:13.000</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>is this a quirk of tsql? or is this also in other sql dialects?</p>
+<h2>a rant</h2>
+<p>it is a tremendously unpleasant experience to find out that a bug derives not from a mistake i have made, bet from an <em>undocumented</em> issue from the tool i am using. all the more aggravating when this is not someone's foss passion project, but a prod tool by a massive tech company (which we pay good money to deploy on <em>their</em> azure servers). well, at least this is not as bad as powerbi.</p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:2">
+<p>not entirely sure of the name. i have seen this formatting in different places, such as a <a href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html" target="_blank">rust library</a> and the <a href="https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes" target="_blank">python standard library</a>, but i can't find a proper standards definition, nor the origin of this formatting convention.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>

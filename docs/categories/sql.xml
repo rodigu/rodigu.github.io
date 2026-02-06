@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>hiroto's things (Posts about sql)</title><link>https://rodigu.github.io/</link><description></description><atom:link href="https://rodigu.github.io/categories/sql.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:rmoraisu@proton.me"&gt;rodigu&lt;/a&gt; </copyright><lastBuildDate>Fri, 06 Feb 2026 02:02:01 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>is tsql's `between` inclusive?</title><link>https://rodigu.github.io/posts/data-sci/tsql-between/</link><dc:creator>rodigu</dc:creator><description>&lt;p&gt;microsoft's &lt;a href="https://learn.microsoft.com/en-us/sql/t-sql/language-elements/between-transact-sql?view=sql-server-ver17" target="_blank"&gt;documentation for between&lt;/a&gt; doesn't mention inclusivity &lt;em&gt;at all&lt;/em&gt; until &lt;a href="https://learn.microsoft.com/en-us/sql/t-sql/language-elements/between-transact-sql?view=sql-server-ver17#b-use--and--instead-of-between" target="_blank"&gt;section b&lt;/a&gt;, which suggests that &lt;code&gt;between&lt;/code&gt; is inclusive. the information is only really &lt;em&gt;explicitly&lt;/em&gt; stated all the way down in &lt;a href="https://learn.microsoft.com/en-us/sql/t-sql/language-elements/between-transact-sql?view=sql-server-ver17#d-use-between-with-datetime-values" target="_blank"&gt;section d&lt;/a&gt;, where it states that (for datetime values, at least), &lt;code&gt;between&lt;/code&gt; is inclusive.&lt;/p&gt;
+&lt;p&gt;however, as i have come to find out (not before a whole hour of debugging): it ... depends?&lt;/p&gt;
+&lt;h3&gt;context&lt;/h3&gt;
+&lt;p&gt;lets create a table with two columns.
+&lt;code&gt;date_vc&lt;/code&gt; is a &lt;code&gt;varchar&lt;/code&gt; that follows the formatting &lt;code&gt;'%d/%m/%Y'&lt;/code&gt; (as per the usual cron formatting&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="https://rodigu.github.io/posts/data-sci/tsql-between/#fn:2"&gt;1&lt;/a&gt;&lt;/sup&gt;).
+&lt;code&gt;date_dt&lt;/code&gt; is a &lt;code&gt;datetime&lt;/code&gt; column.&lt;/p&gt;
+&lt;p&gt;this was an issue i ran into at work, involving real data.
+here, i'll demonstrate it with a sample table.&lt;/p&gt;
+&lt;p&gt;here is a sample sql script to create the tables and insert some values into them.&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="k"&gt;create&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;table&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;tsql_testing&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;date_vc&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;varchar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;not&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;null&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;date_dt&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;not&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;null&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;insert&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;into&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;tsql_testing&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;date_vc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;date_dt&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;values&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'15/12/2025'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'2025-12-15 23:48:13.000'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;insert&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;into&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;tsql_testing&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;date_vc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;date_dt&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;values&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'09/12/2025'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'2025-12-09 23:48:13.000'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;now, notice that, as previously mentioned, &lt;code&gt;date_vc&lt;/code&gt; has string values with style 103 (&lt;code&gt;'%d/%m/%Y'&lt;/code&gt;),
+the British/French standard as per &lt;a href="https://learn.microsoft.com/en-us/sql/t-sql/functions/cast-and-convert-transact-sql?view=sql-server-ver17#date-and-time-styles" target="_blank"&gt;microsoft's own documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;between is (not?) inclusive&lt;/h3&gt;
+&lt;p&gt;if we try to select the following using &lt;code&gt;between&lt;/code&gt;, what should be the expected behavior?&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="k"&gt;select&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;date_vc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;date_dt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;tsql_testing&lt;/span&gt;
+&lt;span class="k"&gt;where&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;convert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;date_vc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;103&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;between&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'2025-12-09'&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'2025-12-15'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;we convert the &lt;code&gt;varchar&lt;/code&gt; column &lt;code&gt;date_vc&lt;/code&gt; to datetime, and select between those two dates.&lt;/p&gt;
+&lt;p&gt;as alluded to in microsoft's own documentation, we do get that this between select is indeed inclusive, as we fetch the following from the select:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;date_vc&lt;/th&gt;
+&lt;th&gt;date_dt&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;09/12/2025&lt;/td&gt;
+&lt;td&gt;2025-12-09 23:48:13.000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;15/12/2025&lt;/td&gt;
+&lt;td&gt;2025-12-15 23:48:13.000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;note that, even if we were to use the 103 standard with &lt;code&gt;between '12/09/2025' and '12/15/2025'&lt;/code&gt;, we'd still get the same response.&lt;/p&gt;
+&lt;p&gt;now, if we do the &lt;strong&gt;&lt;em&gt;exact same select&lt;/em&gt;&lt;/strong&gt; for the &lt;code&gt;datetime&lt;/code&gt; column &lt;code&gt;date_dt&lt;/code&gt; (again, it doesn't matter which standard and formatting you pick):&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="k"&gt;select&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;date_vc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;date_dt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;tsql_testing&lt;/span&gt;
+&lt;span class="k"&gt;where&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;date_dt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;between&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'12/09/2025'&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'12/15/2025'&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;we get a response non-inclusive of the second value:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;date_vc&lt;/th&gt;
+&lt;th&gt;date_dt&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;09/12/2025&lt;/td&gt;
+&lt;td&gt;2025-12-09 23:48:13.000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;is this a quirk of tsql? or is this also in other sql dialects?&lt;/p&gt;
+&lt;h3&gt;a rant&lt;/h3&gt;
+&lt;p&gt;it is a tremendously unpleasant experience to find out that a bug derives not from a mistake i have made, bet from an &lt;em&gt;undocumented&lt;/em&gt; issue from the tool i am using. all the more aggravating when this is not someone's foss passion project, but a prod tool by a massive tech company (which we pay good money to deploy on &lt;em&gt;their&lt;/em&gt; azure servers). well, at least this is not as bad as powerbi.&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id="fn:2"&gt;
+&lt;p&gt;not entirely sure of the name. i have seen this formatting in different places, such as a &lt;a href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html" target="_blank"&gt;rust library&lt;/a&gt; and the &lt;a href="https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes" target="_blank"&gt;python standard library&lt;/a&gt;, but i can't find a proper standards definition, nor the origin of this formatting convention. &lt;a class="footnote-backref" href="https://rodigu.github.io/posts/data-sci/tsql-between/#fnref:2" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description><category>databases</category><category>sql</category><guid>https://rodigu.github.io/posts/data-sci/tsql-between/</guid><pubDate>Tue, 16 Dec 2025 20:10:00 GMT</pubDate></item></channel></rss>

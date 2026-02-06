@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>hiroto's things (Posts about linux)</title><link>https://rodigu.github.io/</link><description></description><atom:link href="https://rodigu.github.io/categories/cat_linux.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:rmoraisu@proton.me"&gt;rodigu&lt;/a&gt; </copyright><lastBuildDate>Fri, 06 Feb 2026 02:24:58 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>missing packages on arch</title><link>https://rodigu.github.io/posts/linux/arch-missing-packages/</link><dc:creator>rodigu</dc:creator><description>&lt;p&gt;i was trying to use pandoc with arch, but was getting an error when trying to convert a markdown to pdf.&lt;/p&gt;
+&lt;p&gt;conversion snippet:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;pandoc&lt;span class="w"&gt; &lt;/span&gt;document.md&lt;span class="w"&gt; &lt;/span&gt;-o&lt;span class="w"&gt; &lt;/span&gt;document.pdf
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;resulted in:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;Error producing PDF.
+! LaTeX Error: File `xcolor.sty' not found.
+
+Type X to quit or &amp;lt;RETURN&amp;gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+&amp;lt;read *&amp;gt; 
+
+l.7 \usepackage
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;to use pandoc you first need a tex engine, like texlive:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;texlive
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;i installed only the ones that seemed relevant, as all packages amount to over 1 GB (??).&lt;/p&gt;
+&lt;p&gt;turns out, i was missing something.
+&lt;a href="https://www.reddit.com/r/archlinux/comments/n8vbyz/latex_packages_problem/" target="_blank"&gt;this reddit comment&lt;/a&gt; helped me out:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you want to figure out which one you need to install to get a certain LaTeX package, use for example &lt;code&gt;pacman -F bbm.sty&lt;/code&gt;. You will need to run &lt;code&gt;pacman -Fy&lt;/code&gt; once if you have never used &lt;code&gt;pacman -F&lt;/code&gt; at all.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;very good to know.
+running it:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-F&lt;span class="w"&gt; &lt;/span&gt;soul.sty
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;gave me:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;extra/texlive-plaingeneric 2025.2-3 (texlive)
+    usr/share/texmf-dist/tex/generic/soul/soul.sty
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;which i just had to install with pacman.&lt;/p&gt;</description><category>arch</category><category>linux</category><guid>https://rodigu.github.io/posts/linux/arch-missing-packages/</guid><pubDate>Fri, 06 Feb 2026 01:41:00 GMT</pubDate></item></channel></rss>

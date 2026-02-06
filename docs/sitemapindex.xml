@@ -6,43 +6,91 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>https://rodigu.github.io/categories/airflow.xml</loc>
+  <lastmod>2026-02-06T01:56:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://rodigu.github.io/categories/arch.xml</loc>
+  <lastmod>2026-02-06T02:24:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://rodigu.github.io/categories/blog.xml</loc>
-  <lastmod>2025-04-05T14:14:00Z</lastmod>
+  <lastmod>2026-02-06T02:46:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://rodigu.github.io/categories/cat_data-sci.xml</loc>
+  <lastmod>2026-02-06T02:02:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://rodigu.github.io/categories/cat_linux.xml</loc>
+  <lastmod>2026-02-06T02:24:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://rodigu.github.io/categories/cat_meta.xml</loc>
+  <lastmod>2026-02-06T02:24:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://rodigu.github.io/categories/cat_photo-journal.xml</loc>
+  <lastmod>2026-02-06T02:46:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rodigu.github.io/categories/cat_reading.xml</loc>
-  <lastmod>2025-04-05T14:47:00Z</lastmod>
+  <lastmod>2026-02-02T14:15:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://rodigu.github.io/categories/databases.xml</loc>
+  <lastmod>2026-02-06T02:02:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rodigu.github.io/categories/english.xml</loc>
-  <lastmod>2025-04-05T14:47:00Z</lastmod>
+  <lastmod>2026-02-02T14:15:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://rodigu.github.io/categories/linux.xml</loc>
+  <lastmod>2026-02-06T02:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rodigu.github.io/categories/literature.xml</loc>
-  <lastmod>2025-04-05T14:47:00Z</lastmod>
+  <lastmod>2026-02-02T14:15:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rodigu.github.io/categories/meta.xml</loc>
-  <lastmod>2025-04-05T14:14:00Z</lastmod>
+  <lastmod>2026-02-06T02:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rodigu.github.io/categories/non-fiction.xml</loc>
-  <lastmod>2025-04-05T14:47:00Z</lastmod>
+  <lastmod>2026-02-02T14:15:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://rodigu.github.io/categories/photos.xml</loc>
+  <lastmod>2026-02-06T02:46:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://rodigu.github.io/categories/python.xml</loc>
+  <lastmod>2026-02-06T01:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rodigu.github.io/categories/quote.xml</loc>
-  <lastmod>2025-04-05T14:47:00Z</lastmod>
+  <lastmod>2026-02-02T14:15:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://rodigu.github.io/galleries/rss.xml</loc>
-  <lastmod>2025-04-05T14:47:00Z</lastmod>
+  <loc>https://rodigu.github.io/categories/snippet.xml</loc>
+  <lastmod>2026-02-06T01:51:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://rodigu.github.io/categories/sql.xml</loc>
+  <lastmod>2026-02-06T02:02:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://rodigu.github.io/categories/technical.xml</loc>
+  <lastmod>2026-02-06T02:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rodigu.github.io/rss.xml</loc>
-  <lastmod>2025-04-05T14:47:00Z</lastmod>
+  <lastmod>2026-02-06T02:46:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rodigu.github.io/sitemap.xml</loc>
-  <lastmod>2025-04-05T14:47:00Z</lastmod>
+  <lastmod>2026-02-06T02:46:00Z</lastmod>
  </sitemap>
 </sitemapindex>

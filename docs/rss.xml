@@ -1,16 +1,252 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>hiroto's things</title><link>https://rodigu.github.io/</link><description>personal website with technical writing, tiny game demos, and photo-logs</description><atom:link href="https://rodigu.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:rmoraisu@proton.me"&gt;rodigu&lt;/a&gt; </copyright><lastBuildDate>Sat, 05 Apr 2025 14:47:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>thoreau; walden; 31</title><link>https://rodigu.github.io/posts/reading/thoreau-walden-31/</link><dc:creator>rodigu</dc:creator><description>&lt;blockquote&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>hiroto's things</title><link>https://rodigu.github.io/</link><description>personal website with technical writing, tiny game demos, and photo-logs</description><atom:link href="https://rodigu.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:rmoraisu@proton.me"&gt;rodigu&lt;/a&gt; </copyright><lastBuildDate>Fri, 06 Feb 2026 03:00:38 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>tiny thermal cam goes to masp</title><link>https://rodigu.github.io/posts/photo-journal/thermal-visit-masp-annex/</link><dc:creator>rodigu</dc:creator><description>&lt;p&gt;last year, masp's new annex opened to the public. i had the opportunity to visit at opening week. a few weeks before that, i bought a tiny thermal camera that prints on receipt paper.&lt;/p&gt;
+&lt;h3&gt;path&lt;/h3&gt;
+&lt;p align="center"&gt;
+    &lt;img src="https://rodigu.github.io/posts/images/poste-fio.jpg" width="400"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;using the tiny camera is lots of fun. i get to print and see the image as soon as they are taken.&lt;/p&gt;
+&lt;p align="center"&gt;
+    &lt;img src="https://rodigu.github.io/posts/images/janelas-paulista.jpg" width="400"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;the paper is also cheap (a &lt;em&gt;lot&lt;/em&gt; cheaper than instax). i could even reuse regular print paper, which is something i do actually want to try out in the future.&lt;/p&gt;
+&lt;p align="center"&gt;
+    &lt;img src="https://rodigu.github.io/posts/images/cadeirinhas.jpg" width="400"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;some little chairs i found on the way.&lt;/p&gt;
+&lt;h3&gt;anexo&lt;/h3&gt;
+&lt;p&gt;the annex is out of place and discrete at the same time.&lt;/p&gt;
+&lt;p align="center"&gt;
+    &lt;img src="https://rodigu.github.io/posts/images/anexo-masp.jpg" width="400"&gt;
+&lt;/p&gt;
+
+&lt;p align="center"&gt;
+    &lt;img src="https://rodigu.github.io/posts/images/anexo-visao.jpg" width="200"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;it does not draw much attention to itself.&lt;/p&gt;
+&lt;p align="center"&gt;
+    &lt;img src="https://rodigu.github.io/posts/images/masp-e-anexo.jpg" width="200"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;while contrasting the original building by bobardi.&lt;/p&gt;
+&lt;p align="center"&gt;
+    &lt;img src="https://rodigu.github.io/posts/images/masp-e-anexo-lado.jpg" width="200"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;the annex was actually built on top of a pre-existing building. they reused some of the foundations and original structure.&lt;/p&gt;
+&lt;p align="center"&gt;
+    &lt;img src="https://rodigu.github.io/posts/images/moca-masp-escuro.jpg" width="200"&gt;
+&lt;/p&gt;</description><category>blog</category><category>photos</category><guid>https://rodigu.github.io/posts/photo-journal/thermal-visit-masp-annex/</guid><pubDate>Fri, 06 Feb 2026 02:34:00 GMT</pubDate></item><item><title>missing packages on arch</title><link>https://rodigu.github.io/posts/linux/arch-missing-packages/</link><dc:creator>rodigu</dc:creator><description>&lt;p&gt;i was trying to use pandoc with arch, but was getting an error when trying to convert a markdown to pdf.&lt;/p&gt;
+&lt;p&gt;conversion snippet:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;pandoc&lt;span class="w"&gt; &lt;/span&gt;document.md&lt;span class="w"&gt; &lt;/span&gt;-o&lt;span class="w"&gt; &lt;/span&gt;document.pdf
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;resulted in:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;Error producing PDF.
+! LaTeX Error: File `xcolor.sty' not found.
+
+Type X to quit or &amp;lt;RETURN&amp;gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+&amp;lt;read *&amp;gt; 
+
+l.7 \usepackage
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;to use pandoc you first need a tex engine, like texlive:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;texlive
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;i installed only the ones that seemed relevant, as all packages amount to over 1 GB (??).&lt;/p&gt;
+&lt;p&gt;turns out, i was missing something.
+&lt;a href="https://www.reddit.com/r/archlinux/comments/n8vbyz/latex_packages_problem/" target="_blank"&gt;this reddit comment&lt;/a&gt; helped me out:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you want to figure out which one you need to install to get a certain LaTeX package, use for example &lt;code&gt;pacman -F bbm.sty&lt;/code&gt;. You will need to run &lt;code&gt;pacman -Fy&lt;/code&gt; once if you have never used &lt;code&gt;pacman -F&lt;/code&gt; at all.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;very good to know.
+running it:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-F&lt;span class="w"&gt; &lt;/span&gt;soul.sty
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;gave me:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;extra/texlive-plaingeneric 2025.2-3 (texlive)
+    usr/share/texmf-dist/tex/generic/soul/soul.sty
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;which i just had to install with pacman.&lt;/p&gt;</description><category>arch</category><category>linux</category><guid>https://rodigu.github.io/posts/linux/arch-missing-packages/</guid><pubDate>Fri, 06 Feb 2026 01:41:00 GMT</pubDate></item><item><title>is tsql's `between` inclusive?</title><link>https://rodigu.github.io/posts/data-sci/tsql-between/</link><dc:creator>rodigu</dc:creator><description>&lt;p&gt;microsoft's &lt;a href="https://learn.microsoft.com/en-us/sql/t-sql/language-elements/between-transact-sql?view=sql-server-ver17" target="_blank"&gt;documentation for between&lt;/a&gt; doesn't mention inclusivity &lt;em&gt;at all&lt;/em&gt; until &lt;a href="https://learn.microsoft.com/en-us/sql/t-sql/language-elements/between-transact-sql?view=sql-server-ver17#b-use--and--instead-of-between" target="_blank"&gt;section b&lt;/a&gt;, which suggests that &lt;code&gt;between&lt;/code&gt; is inclusive. the information is only really &lt;em&gt;explicitly&lt;/em&gt; stated all the way down in &lt;a href="https://learn.microsoft.com/en-us/sql/t-sql/language-elements/between-transact-sql?view=sql-server-ver17#d-use-between-with-datetime-values" target="_blank"&gt;section d&lt;/a&gt;, where it states that (for datetime values, at least), &lt;code&gt;between&lt;/code&gt; is inclusive.&lt;/p&gt;
+&lt;p&gt;however, as i have come to find out (not before a whole hour of debugging): it ... depends?&lt;/p&gt;
+&lt;h3&gt;context&lt;/h3&gt;
+&lt;p&gt;lets create a table with two columns.
+&lt;code&gt;date_vc&lt;/code&gt; is a &lt;code&gt;varchar&lt;/code&gt; that follows the formatting &lt;code&gt;'%d/%m/%Y'&lt;/code&gt; (as per the usual cron formatting&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="https://rodigu.github.io/posts/data-sci/tsql-between/#fn:2"&gt;1&lt;/a&gt;&lt;/sup&gt;).
+&lt;code&gt;date_dt&lt;/code&gt; is a &lt;code&gt;datetime&lt;/code&gt; column.&lt;/p&gt;
+&lt;p&gt;this was an issue i ran into at work, involving real data.
+here, i'll demonstrate it with a sample table.&lt;/p&gt;
+&lt;p&gt;here is a sample sql script to create the tables and insert some values into them.&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="k"&gt;create&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;table&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;tsql_testing&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;date_vc&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;varchar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;not&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;null&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;date_dt&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;not&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;null&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;insert&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;into&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;tsql_testing&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;date_vc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;date_dt&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;values&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'15/12/2025'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'2025-12-15 23:48:13.000'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;insert&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;into&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;tsql_testing&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;date_vc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;date_dt&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;values&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'09/12/2025'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'2025-12-09 23:48:13.000'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;now, notice that, as previously mentioned, &lt;code&gt;date_vc&lt;/code&gt; has string values with style 103 (&lt;code&gt;'%d/%m/%Y'&lt;/code&gt;),
+the British/French standard as per &lt;a href="https://learn.microsoft.com/en-us/sql/t-sql/functions/cast-and-convert-transact-sql?view=sql-server-ver17#date-and-time-styles" target="_blank"&gt;microsoft's own documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;between is (not?) inclusive&lt;/h3&gt;
+&lt;p&gt;if we try to select the following using &lt;code&gt;between&lt;/code&gt;, what should be the expected behavior?&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="k"&gt;select&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;date_vc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;date_dt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;tsql_testing&lt;/span&gt;
+&lt;span class="k"&gt;where&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;convert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;date_vc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;103&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;between&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'2025-12-09'&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'2025-12-15'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;we convert the &lt;code&gt;varchar&lt;/code&gt; column &lt;code&gt;date_vc&lt;/code&gt; to datetime, and select between those two dates.&lt;/p&gt;
+&lt;p&gt;as alluded to in microsoft's own documentation, we do get that this between select is indeed inclusive, as we fetch the following from the select:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;date_vc&lt;/th&gt;
+&lt;th&gt;date_dt&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;09/12/2025&lt;/td&gt;
+&lt;td&gt;2025-12-09 23:48:13.000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;15/12/2025&lt;/td&gt;
+&lt;td&gt;2025-12-15 23:48:13.000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;note that, even if we were to use the 103 standard with &lt;code&gt;between '12/09/2025' and '12/15/2025'&lt;/code&gt;, we'd still get the same response.&lt;/p&gt;
+&lt;p&gt;now, if we do the &lt;strong&gt;&lt;em&gt;exact same select&lt;/em&gt;&lt;/strong&gt; for the &lt;code&gt;datetime&lt;/code&gt; column &lt;code&gt;date_dt&lt;/code&gt; (again, it doesn't matter which standard and formatting you pick):&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="k"&gt;select&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;date_vc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;date_dt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;tsql_testing&lt;/span&gt;
+&lt;span class="k"&gt;where&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;date_dt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;between&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'12/09/2025'&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'12/15/2025'&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;we get a response non-inclusive of the second value:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;date_vc&lt;/th&gt;
+&lt;th&gt;date_dt&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;09/12/2025&lt;/td&gt;
+&lt;td&gt;2025-12-09 23:48:13.000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;is this a quirk of tsql? or is this also in other sql dialects?&lt;/p&gt;
+&lt;h3&gt;a rant&lt;/h3&gt;
+&lt;p&gt;it is a tremendously unpleasant experience to find out that a bug derives not from a mistake i have made, bet from an &lt;em&gt;undocumented&lt;/em&gt; issue from the tool i am using. all the more aggravating when this is not someone's foss passion project, but a prod tool by a massive tech company (which we pay good money to deploy on &lt;em&gt;their&lt;/em&gt; azure servers). well, at least this is not as bad as powerbi.&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id="fn:2"&gt;
+&lt;p&gt;not entirely sure of the name. i have seen this formatting in different places, such as a &lt;a href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html" target="_blank"&gt;rust library&lt;/a&gt; and the &lt;a href="https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes" target="_blank"&gt;python standard library&lt;/a&gt;, but i can't find a proper standards definition, nor the origin of this formatting convention. &lt;a class="footnote-backref" href="https://rodigu.github.io/posts/data-sci/tsql-between/#fnref:2" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description><category>databases</category><category>sql</category><guid>https://rodigu.github.io/posts/data-sci/tsql-between/</guid><pubDate>Tue, 16 Dec 2025 20:10:00 GMT</pubDate></item><item><title>thoreau; walden; 31</title><link>https://rodigu.github.io/posts/reading/thoreau-walden-31/</link><dc:creator>rodigu</dc:creator><description>&lt;blockquote&gt;
 &lt;p&gt;The finest qualities of our nature, like the bloom on fruits, can be preserved only by the most delicate handling.
 Yet we do not treat ourselves nor one another thus tenderly.&lt;/p&gt;
-&lt;/blockquote&gt;</description><category>english</category><category>literature</category><category>non-fiction</category><category>quote</category><guid>https://rodigu.github.io/posts/reading/thoreau-walden-31/</guid><pubDate>Sat, 05 Apr 2025 14:41:00 GMT</pubDate></item><item><title>setting up</title><link>https://rodigu.github.io/posts/setting-up/</link><dc:creator>rodigu</dc:creator><description>&lt;p&gt;looking at the &lt;a href="https://github.com/rodigu/rodigu.github.io/commits/master/"&gt;commit history&lt;/a&gt; for the repository
+&lt;/blockquote&gt;</description><category>english</category><category>literature</category><category>non-fiction</category><category>quote</category><guid>https://rodigu.github.io/posts/reading/thoreau-walden-31/</guid><pubDate>Sat, 05 Apr 2025 14:41:00 GMT</pubDate></item><item><title>on nikola</title><link>https://rodigu.github.io/posts/meta/on-nikola/</link><dc:creator>rodigu</dc:creator><description>&lt;p&gt;i tried using the auto builder, but either i did something wrong, or there is a bug with it.
+nikola depends on the python package &lt;code&gt;watchdog&lt;/code&gt; for the continuous auto-build.
+i might try it again some other time.&lt;/p&gt;
+&lt;p&gt;for now, this blog is built with the following sequence of commands:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;check&lt;span class="w"&gt; &lt;/span&gt;--clean-files
+nikola&lt;span class="w"&gt; &lt;/span&gt;build
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;and served locally with:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;serve&lt;span class="w"&gt; &lt;/span&gt;-b
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;in one line:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;check&lt;span class="w"&gt; &lt;/span&gt;--clean-files&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;build&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;serve
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;the first line cleans up any files that no longer exist from the output directory (&lt;code&gt;docs&lt;/code&gt;, &lt;a href="https://rodigu.github.io/posts/setting-up/"&gt;because github pages is unloved&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;new "tabs" can be added with through the &lt;code&gt;NAVIGATION_LINKS&lt;/code&gt; variable in &lt;code&gt;conf.py&lt;/code&gt; &lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="https://rodigu.github.io/posts/meta/on-nikola/#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt;.
+here is what that variable looks like attow:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="n"&gt;NAVIGATION_LINKS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;DEFAULT_LANG&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"/archive.html"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"archive"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"/categories/"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"tags"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"/rss.xml"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"rss feed"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"/pages/about/index.html"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"about"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;),&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="footnote"&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;as documented in &lt;a href="https://getnikola.com/handbook.html#customizing-your-site"&gt;the nikola handbook on &lt;em&gt;customizing your site&lt;/em&gt;&lt;/a&gt; &lt;a class="footnote-backref" href="https://rodigu.github.io/posts/meta/on-nikola/#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description><category>meta</category><category>technical</category><guid>https://rodigu.github.io/posts/meta/on-nikola/</guid><pubDate>Sun, 30 Mar 2025 20:47:00 GMT</pubDate></item><item><title>airflow task inside task group failed</title><link>https://rodigu.github.io/posts/data-sci/airflow-task_group-failure/</link><dc:creator>rodigu</dc:creator><description>&lt;p&gt;checking if a task has failed in airflow is simple enough, and may be done with:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;airflow.operators.python&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;get_current_context&lt;/span&gt;
+
+&lt;span class="nd"&gt;@task&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;check_task_failed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;task_id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;bool&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+      &lt;span class="n"&gt;context&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;get_current_context&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+      &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+          &lt;span class="n"&gt;context&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"dag_run"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_task_instance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;task_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;task_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;state&lt;/span&gt;
+          &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;State&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;FAILED&lt;/span&gt;
+      &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;however, if the task is nested within a &lt;code&gt;task_group&lt;/code&gt;, referencing the task with &lt;code&gt;task_id&lt;/code&gt; doesn't work.
+in theory, tasks inside a &lt;code&gt;task_group&lt;/code&gt; should be indexed with &lt;code&gt;group_id.task_id&lt;/code&gt;&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="https://rodigu.github.io/posts/data-sci/airflow-task_group-failure/#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt;, but trying &lt;code&gt;get_task_instance&lt;/code&gt;
+with this ID structure will return a &lt;code&gt;NoneType&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;the one way i have found to actually make it work, is with the following:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;airflow.operators.python&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;get_current_context&lt;/span&gt;
+
+&lt;span class="nd"&gt;@task&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;check_task_failed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;group_id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;task_id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;bool&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+      &lt;span class="n"&gt;context&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;get_current_context&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+      &lt;span class="n"&gt;failed_tasks&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;context&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"dag_run"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_task_instances&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;state&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;State&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;FAILED&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;group_id&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;.&lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;task_id&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+          &lt;span class="n"&gt;ft&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;task_id&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;ft&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;failed_tasks&lt;/span&gt;
+      &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;which i was able to implement based an answer on stackoverflow&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="https://rodigu.github.io/posts/data-sci/airflow-task_group-failure/#fn:2"&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;before finding that answer, i struggled with missing docs, llm hallucinations. and what i am fairly sure were people posting llm bullshit as if it were real.&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;&lt;a href="https://www.astronomer.io/docs/learn/task-groups/" target="_blank"&gt;astronomer docs on &lt;code&gt;task_groups&lt;/code&gt;&lt;/a&gt; &lt;a class="footnote-backref" href="https://rodigu.github.io/posts/data-sci/airflow-task_group-failure/#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:2"&gt;
+&lt;p&gt;&lt;a href="https://stackoverflow.com/questions/73740427/airflow-how-to-get-list-of-upstream-failed-tasks" target="_blank"&gt;the answer to my problems, thank you mati.o&lt;/a&gt; &lt;a class="footnote-backref" href="https://rodigu.github.io/posts/data-sci/airflow-task_group-failure/#fnref:2" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description><category>airflow</category><category>python</category><guid>https://rodigu.github.io/posts/data-sci/airflow-task_group-failure/</guid><pubDate>Sun, 30 Mar 2025 19:20:00 GMT</pubDate></item><item><title>setting up</title><link>https://rodigu.github.io/posts/meta/setting-up/</link><dc:creator>rodigu</dc:creator><description>&lt;p&gt;looking at the &lt;a href="https://github.com/rodigu/rodigu.github.io/commits/master/" target="_blank"&gt;commit history&lt;/a&gt; for the repository
 containing the source for this blog, you may notice that this was originally my personal website/cv.&lt;/p&gt;
 &lt;p&gt;my initial intention was to setup the present blog on a separate branch,
-but &lt;a href="https://c.tenor.com/Bi5t9IXWlEkAAAAC/tenor.gif"&gt;i forgot to switch branches before deleting everything&lt;/a&gt;.&lt;/p&gt;
+but &lt;a href="https://c.tenor.com/Bi5t9IXWlEkAAAAC/tenor.gif" target="_blank"&gt;i forgot to switch branches before deleting everything&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;in any case, i suppose i'll have to commit to this now.
 so here is a test post.&lt;/p&gt;
 &lt;h3&gt;testing out&lt;/h3&gt;
-&lt;p&gt;originally, i attempted to use &lt;a href="https://rodigu.github.io/posts/setting-up/(https:/jekyllrb.com/)"&gt;jekyll&lt;/a&gt; for this blog, as it is already integrated into github pages.
-however, after some frustration (as had happened years ago when i last tried it),
+&lt;p&gt;originally, i attempted to use &lt;a href="https://jekyllrb.com/" target="_blank"&gt;jekyll&lt;/a&gt; for this blog, as it is already integrated into github pages.
+however, after some frustration (as had happened years ago when i first tried it),
 i decided to look for a different blog building tool.&lt;/p&gt;
 &lt;p&gt;one of my main points of contention with jekyll is that it uses ruby, which i don't have anything against, but am also entirelly unfamiliar with.
 therefore, i went searching for a tool that allowed me to stay within what i alredy know (namely, python),
@@ -18,15 +254,15 @@ and that had built-in markdown support.&lt;/p&gt;
 &lt;p&gt;i also want it to be doing most of the work.
 i am not too interested in messing with templates and such at the moment.
 all i want is to get started on throwing stuff out there.&lt;/p&gt;
-&lt;p&gt;so i landed on &lt;a href="https://getnikola.com/"&gt;nikola&lt;/a&gt; for static site generation.
-it even has built'in support for &lt;em&gt;extended&lt;/em&gt; markdown, seeing that the footnotes are working nicely.&lt;/p&gt;
+&lt;p&gt;so i landed on &lt;a href="https://getnikola.com/"&gt;nikola&lt;/a&gt;{:target="&lt;em&gt;blank"} for static site generation.
+it even has built'in support for _extended&lt;/em&gt; markdown, seeing that the footnotes are working nicely.&lt;/p&gt;
 &lt;p&gt;it does have support for images in markdown, but...&lt;/p&gt;
-&lt;p&gt;&lt;img alt="a photo i took while biking in chicago" src="https://rodigu.github.io/images/2025-03-30_16-37_chicago-skyline-biking.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="a photo i took while biking in chicago" src="https://rodigu.github.io/posts/images/2025-03-30_16-37_chicago-skyline-biking.png"&gt;&lt;/p&gt;
 &lt;p&gt;here is what the markdown for the previous photo looks like:&lt;/p&gt;
 &lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;![&lt;span class="nt"&gt;a photo i took while biking in chicago&lt;/span&gt;](&lt;span class="na"&gt;../../images/2025-03-30_16-37_chicago-skyline-biking.png&lt;/span&gt;)
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;which seems fine, except that the folder structure of this repo looks a little like this (with some omissions for readability):&lt;/p&gt;
+&lt;p&gt;which seems fine, except that this is what the folder structure of this repo looks like (with some omissions for readability):&lt;/p&gt;
 &lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;.
 ├──&lt;span class="w"&gt; &lt;/span&gt;images
 │&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2025&lt;/span&gt;-03-30_16-37_chicago-skyline-biking.png
@@ -49,23 +285,23 @@ it even has built'in support for &lt;em&gt;extended&lt;/em&gt; markdown, seeing 
 &lt;p&gt;i am writing from &lt;code&gt;./posts/1.md&lt;/code&gt;, and i am placing my image in &lt;code&gt;./images/&lt;/code&gt;.
 after the build, my post is in &lt;code&gt;./output/posts/setting-up&lt;/code&gt;, and the image is in &lt;code&gt;./output/images/&lt;/code&gt;.
 meaning that while in this markdown i can use intellisense to access the image with:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="cp"&gt;../images/2025-03-30_16-37_chicago-skyline-biking.png&lt;/span&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;../images/2025-03-30_16-37_chicago-skyline-biking.png
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;however, because the image in the output build is in a different directory,
-i need to add an additional &lt;code&gt;../&lt;/code&gt; to the beginning of the image reference&lt;sup id="fnref:5"&gt;&lt;a class="footnote-ref" href="https://rodigu.github.io/posts/setting-up/#fn:5"&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+i need to add an additional &lt;code&gt;../&lt;/code&gt; to the beginning of the image reference&lt;sup id="fnref:5"&gt;&lt;a class="footnote-ref" href="https://rodigu.github.io/posts/meta/setting-up/#fn:5"&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 &lt;p&gt;anyway, this is more of a minor pet peeve, so it is fine i guess.&lt;/p&gt;
 &lt;h3&gt;addendum 1&lt;/h3&gt;
 &lt;p&gt;ok, i have another pet peev, this time with github pages.
-for whatever reason, github pages only allows deployement from root or from &lt;code&gt;/docs&lt;/code&gt;&lt;sup id="fnref:3"&gt;&lt;a class="footnote-ref" href="https://rodigu.github.io/posts/setting-up/#fn:3"&gt;2&lt;/a&gt;&lt;/sup&gt;?&lt;/p&gt;
-&lt;p&gt;so i had to change the output folder of this repo to &lt;code&gt;docs&lt;/code&gt;, with the following addition to nikola's &lt;a href="https://github.com/rodigu/rodigu.github.io/blob/master/conf.py"&gt;&lt;code&gt;conf.py&lt;/code&gt;&lt;/a&gt;:&lt;/p&gt;
+for whatever reason, github pages only allows deployement from root or from &lt;code&gt;/docs&lt;/code&gt;&lt;sup id="fnref:3"&gt;&lt;a class="footnote-ref" href="https://rodigu.github.io/posts/meta/setting-up/#fn:3"&gt;2&lt;/a&gt;&lt;/sup&gt;?&lt;/p&gt;
+&lt;p&gt;so i had to change the output folder of this repo to &lt;code&gt;docs&lt;/code&gt;, with the following addition to nikola's &lt;a href="https://github.com/rodigu/rodigu.github.io/blob/master/conf.py" target="_blank"&gt;&lt;code&gt;conf.py&lt;/code&gt;&lt;/a&gt;:&lt;/p&gt;
 &lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="n"&gt;OUTPUT_FOLDER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'docs'&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3&gt;addemdum 2&lt;/h3&gt;
 &lt;p&gt;one last thing for this test post.&lt;/p&gt;
-&lt;p&gt;nikola came with a number of filed in its demo.
-i deleted them manually, and then followed the instructions from the &lt;a href="https://rodigu.github.io/posts/setting-up/(https:/getnikola.com/getting-started.html#rm-demo)"&gt;getting started page&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;nikola came with a number of files in its demo.
+i deleted them manually, and then followed the instructions from the &lt;a href="https://getnikola.com/getting-started.html#rm-demo" target="_blank"&gt;getting started page&lt;/a&gt;:&lt;/p&gt;
 &lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;nikola&lt;span class="w"&gt; &lt;/span&gt;check&lt;span class="w"&gt; &lt;/span&gt;--clean-files
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -75,10 +311,22 @@ i deleted them manually, and then followed the instructions from the &lt;a href=
 &lt;li id="fn:5"&gt;
 &lt;p&gt;going on a tangent here, but i had to make the previous long directory reference into
 its own code block instead of an in-line reference because it was breaking the layout on mobile.
-i should keep this in mind for the future. &lt;a class="footnote-backref" href="https://rodigu.github.io/posts/setting-up/#fnref:5" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+i should keep this in mind for the future. &lt;a class="footnote-backref" href="https://rodigu.github.io/posts/meta/setting-up/#fnref:5" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:3"&gt;
-&lt;p&gt;at least according to the answer to &lt;a href="https://github.com/orgs/community/discussions/23073"&gt;this community question&lt;/a&gt; &lt;a class="footnote-backref" href="https://rodigu.github.io/posts/setting-up/#fnref:3" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;at least according to the answer to &lt;a href="https://github.com/orgs/community/discussions/23073" target="_blank"&gt;this community question&lt;/a&gt; &lt;a class="footnote-backref" href="https://rodigu.github.io/posts/meta/setting-up/#fnref:3" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description><category>blog</category><category>meta</category><guid>https://rodigu.github.io/posts/setting-up/</guid><pubDate>Sun, 30 Mar 2025 19:20:00 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>blog</category><category>meta</category><guid>https://rodigu.github.io/posts/meta/setting-up/</guid><pubDate>Sun, 30 Mar 2025 19:20:00 GMT</pubDate></item><item><title>walrus for airflow</title><link>https://rodigu.github.io/posts/data-sci/airflow-walrus/</link><dc:creator>rodigu</dc:creator><description>&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="p"&gt;[&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="n"&gt;a_data&lt;/span&gt; &lt;span class="o"&gt;:=&lt;/span&gt; &lt;span class="n"&gt;get_users&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;partial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+            &lt;span class="n"&gt;connection_meta&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;connection_meta&lt;/span&gt;
+        &lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;expand&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;code&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;code_a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;),&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="n"&gt;b_data&lt;/span&gt; &lt;span class="o"&gt;:=&lt;/span&gt; &lt;span class="n"&gt;get_users&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;partial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+            &lt;span class="n"&gt;connection_meta&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;connection_meta&lt;/span&gt;
+        &lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;expand&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;code&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;code_b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;),&lt;/span&gt;
+&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fetch_content&lt;/span&gt; &lt;span class="o"&gt;:=&lt;/span&gt; &lt;span class="n"&gt;content_fetch&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><category>airflow</category><category>python</category><category>snippet</category><guid>https://rodigu.github.io/posts/data-sci/airflow-walrus/</guid><pubDate>Sun, 30 Mar 2025 19:20:00 GMT</pubDate></item></channel></rss>

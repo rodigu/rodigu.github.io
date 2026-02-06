@@ -14,7 +14,7 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="https://rodigu.github.io/">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/reading/thoreau-walden-31/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/photo-journal/thermal-visit-masp-annex/" type="text/html">
 </head>
 <body class="hack dark">
 
@@ -31,6 +31,9 @@
         
     <nav id="menu"><ul>
 <li><a href="categories/cat_reading/">reading</a></li>
+                <li><a href="categories/cat_linux/">linux</a></li>
+                <li><a href="categories/cat_data-sci/">data science</a></li>
+                <li><a href="categories/cat_photo-journal/">photo journal</a></li>
                 <li><a href="rss.xml">rss</a></li>
                 <li><a href="pages/about/index.html">about</a></li>
 
@@ -39,7 +42,211 @@
     
     
     </ul></nav></header><main id="content"><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/reading/thoreau-walden-31/" class="u-url">thoreau; walden; 31</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/photo-journal/thermal-visit-masp-annex/" class="u-url">tiny thermal cam goes to masp</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                rodigu
+            </span></p>
+            <p class="dateline">
+            <a href="posts/photo-journal/thermal-visit-masp-annex/" rel="bookmark">
+            <time class="published dt-published" datetime="2026-02-05T23:34:00-03:00" itemprop="datePublished" title="2026-02-05 23:34">2026-02-05 23:34</time></a>
+            </p>
+                <p class="commentline">
+    
+        <a href="posts/photo-journal/thermal-visit-masp-annex/#utterances-thread">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <p>last year, masp's new annex opened to the public. i had the opportunity to visit at opening week. a few weeks before that, i bought a tiny thermal camera that prints on receipt paper.</p>
+<h3>path</h3>
+<p align="center">
+    <img src="posts/images/poste-fio.jpg" width="400"></p>
+
+<p>using the tiny camera is lots of fun. i get to print and see the image as soon as they are taken.</p>
+<p align="center">
+    <img src="posts/images/janelas-paulista.jpg" width="400"></p>
+
+<p>the paper is also cheap (a <em>lot</em> cheaper than instax). i could even reuse regular print paper, which is something i do actually want to try out in the future.</p>
+<p align="center">
+    <img src="posts/images/cadeirinhas.jpg" width="400"></p>
+
+<p>some little chairs i found on the way.</p>
+<h3>anexo</h3>
+<p>the annex is out of place and discrete at the same time.</p>
+<p align="center">
+    <img src="posts/images/anexo-masp.jpg" width="400"></p>
+
+<p align="center">
+    <img src="posts/images/anexo-visao.jpg" width="200"></p>
+
+<p>it does not draw much attention to itself.</p>
+<p align="center">
+    <img src="posts/images/masp-e-anexo.jpg" width="200"></p>
+
+<p>while contrasting the original building by bobardi.</p>
+<p align="center">
+    <img src="posts/images/masp-e-anexo-lado.jpg" width="200"></p>
+
+<p>the annex was actually built on top of a pre-existing building. they reused some of the foundations and original structure.</p>
+<p align="center">
+    <img src="posts/images/moca-masp-escuro.jpg" width="200"></p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/linux/arch-missing-packages/" class="u-url">missing packages on arch</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                rodigu
+            </span></p>
+            <p class="dateline">
+            <a href="posts/linux/arch-missing-packages/" rel="bookmark">
+            <time class="published dt-published" datetime="2026-02-05T22:41:00-03:00" itemprop="datePublished" title="2026-02-05 22:41">2026-02-05 22:41</time></a>
+            </p>
+                <p class="commentline">
+    
+        <a href="posts/linux/arch-missing-packages/#utterances-thread">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <p>i was trying to use pandoc with arch, but was getting an error when trying to convert a markdown to pdf.</p>
+<p>conversion snippet:</p>
+<div class="code"><pre class="code literal-block">pandoc<span class="w"> </span>document.md<span class="w"> </span>-o<span class="w"> </span>document.pdf
+</pre></div>
+
+<p>resulted in:</p>
+<div class="code"><pre class="code literal-block">Error producing PDF.
+! LaTeX Error: File `xcolor.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+
+l.7 \usepackage
+</pre></div>
+
+<p>to use pandoc you first need a tex engine, like texlive:</p>
+<div class="code"><pre class="code literal-block">sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>texlive
+</pre></div>
+
+<p>i installed only the ones that seemed relevant, as all packages amount to over 1 GB (??).</p>
+<p>turns out, i was missing something.
+<a href="https://www.reddit.com/r/archlinux/comments/n8vbyz/latex_packages_problem/" target="_blank">this reddit comment</a> helped me out:</p>
+<blockquote>
+<p>If you want to figure out which one you need to install to get a certain LaTeX package, use for example <code>pacman -F bbm.sty</code>. You will need to run <code>pacman -Fy</code> once if you have never used <code>pacman -F</code> at all.</p>
+</blockquote>
+<p>very good to know.
+running it:</p>
+<div class="code"><pre class="code literal-block">sudo<span class="w"> </span>pacman<span class="w"> </span>-F<span class="w"> </span>soul.sty
+</pre></div>
+
+<p>gave me:</p>
+<div class="code"><pre class="code literal-block">extra/texlive-plaingeneric 2025.2-3 (texlive)
+    usr/share/texmf-dist/tex/generic/soul/soul.sty
+</pre></div>
+
+<p>which i just had to install with pacman.</p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/data-sci/tsql-between/" class="u-url">is tsql's `between` inclusive?</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                rodigu
+            </span></p>
+            <p class="dateline">
+            <a href="posts/data-sci/tsql-between/" rel="bookmark">
+            <time class="published dt-published" datetime="2025-12-16T17:10:00-03:00" itemprop="datePublished" title="2025-12-16 17:10">2025-12-16 17:10</time></a>
+            </p>
+                <p class="commentline">
+    
+        <a href="posts/data-sci/tsql-between/#utterances-thread">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <p>microsoft's <a href="https://learn.microsoft.com/en-us/sql/t-sql/language-elements/between-transact-sql?view=sql-server-ver17" target="_blank">documentation for between</a> doesn't mention inclusivity <em>at all</em> until <a href="https://learn.microsoft.com/en-us/sql/t-sql/language-elements/between-transact-sql?view=sql-server-ver17#b-use--and--instead-of-between" target="_blank">section b</a>, which suggests that <code>between</code> is inclusive. the information is only really <em>explicitly</em> stated all the way down in <a href="https://learn.microsoft.com/en-us/sql/t-sql/language-elements/between-transact-sql?view=sql-server-ver17#d-use-between-with-datetime-values" target="_blank">section d</a>, where it states that (for datetime values, at least), <code>between</code> is inclusive.</p>
+<p>however, as i have come to find out (not before a whole hour of debugging): it ... depends?</p>
+<h3>context</h3>
+<p>lets create a table with two columns.
+<code>date_vc</code> is a <code>varchar</code> that follows the formatting <code>'%d/%m/%Y'</code> (as per the usual cron formatting<sup id="fnref:2"><a class="footnote-ref" href="posts/data-sci/tsql-between/#fn:2">1</a></sup>).
+<code>date_dt</code> is a <code>datetime</code> column.</p>
+<p>this was an issue i ran into at work, involving real data.
+here, i'll demonstrate it with a sample table.</p>
+<p>here is a sample sql script to create the tables and insert some values into them.</p>
+<div class="code"><pre class="code literal-block"><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">tsql_testing</span><span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">date_vc</span><span class="p">]</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">,</span>
+<span class="w">    </span><span class="p">[</span><span class="n">date_dt</span><span class="p">]</span><span class="w"> </span><span class="n">datetime</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span>
+<span class="p">)</span>
+<span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">tsql_testing</span><span class="w"> </span><span class="p">(</span><span class="n">date_vc</span><span class="p">,</span><span class="w"> </span><span class="n">date_dt</span><span class="p">)</span>
+<span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">'15/12/2025'</span><span class="p">,</span><span class="w"> </span><span class="s1">'2025-12-15 23:48:13.000'</span><span class="p">)</span>
+<span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">tsql_testing</span><span class="w"> </span><span class="p">(</span><span class="n">date_vc</span><span class="p">,</span><span class="w"> </span><span class="n">date_dt</span><span class="p">)</span>
+<span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">'09/12/2025'</span><span class="p">,</span><span class="w"> </span><span class="s1">'2025-12-09 23:48:13.000'</span><span class="p">)</span>
+</pre></div>
+
+<p>now, notice that, as previously mentioned, <code>date_vc</code> has string values with style 103 (<code>'%d/%m/%Y'</code>),
+the British/French standard as per <a href="https://learn.microsoft.com/en-us/sql/t-sql/functions/cast-and-convert-transact-sql?view=sql-server-ver17#date-and-time-styles" target="_blank">microsoft's own documentation</a>.</p>
+<h3>between is (not?) inclusive</h3>
+<p>if we try to select the following using <code>between</code>, what should be the expected behavior?</p>
+<div class="code"><pre class="code literal-block"><span class="k">select</span><span class="w"> </span><span class="n">date_vc</span><span class="p">,</span><span class="w"> </span><span class="n">date_dt</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">tsql_testing</span>
+<span class="k">where</span><span class="w"> </span><span class="k">convert</span><span class="p">(</span><span class="n">datetime</span><span class="p">,</span><span class="n">date_vc</span><span class="p">,</span><span class="mi">103</span><span class="p">)</span><span class="w"> </span><span class="k">between</span><span class="w"> </span><span class="s1">'2025-12-09'</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="s1">'2025-12-15'</span><span class="p">;</span>
+</pre></div>
+
+<p>we convert the <code>varchar</code> column <code>date_vc</code> to datetime, and select between those two dates.</p>
+<p>as alluded to in microsoft's own documentation, we do get that this between select is indeed inclusive, as we fetch the following from the select:</p>
+<blockquote>
+<table>
+<thead><tr>
+<th>date_vc</th>
+<th>date_dt</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>09/12/2025</td>
+<td>2025-12-09 23:48:13.000</td>
+</tr>
+<tr>
+<td>15/12/2025</td>
+<td>2025-12-15 23:48:13.000</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>note that, even if we were to use the 103 standard with <code>between '12/09/2025' and '12/15/2025'</code>, we'd still get the same response.</p>
+<p>now, if we do the <strong><em>exact same select</em></strong> for the <code>datetime</code> column <code>date_dt</code> (again, it doesn't matter which standard and formatting you pick):</p>
+<div class="code"><pre class="code literal-block"><span class="k">select</span><span class="w"> </span><span class="n">date_vc</span><span class="p">,</span><span class="w"> </span><span class="n">date_dt</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">tsql_testing</span>
+<span class="k">where</span><span class="w"> </span><span class="n">date_dt</span><span class="w"> </span><span class="k">between</span><span class="w"> </span><span class="s1">'12/09/2025'</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="s1">'12/15/2025'</span>
+</pre></div>
+
+<p>we get a response non-inclusive of the second value:</p>
+<blockquote>
+<table>
+<thead><tr>
+<th>date_vc</th>
+<th>date_dt</th>
+</tr></thead>
+<tbody><tr>
+<td>09/12/2025</td>
+<td>2025-12-09 23:48:13.000</td>
+</tr></tbody>
+</table>
+</blockquote>
+<p>is this a quirk of tsql? or is this also in other sql dialects?</p>
+<h3>a rant</h3>
+<p>it is a tremendously unpleasant experience to find out that a bug derives not from a mistake i have made, bet from an <em>undocumented</em> issue from the tool i am using. all the more aggravating when this is not someone's foss passion project, but a prod tool by a massive tech company (which we pay good money to deploy on <em>their</em> azure servers). well, at least this is not as bad as powerbi.</p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:2">
+<p>not entirely sure of the name. i have seen this formatting in different places, such as a <a href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html" target="_blank">rust library</a> and the <a href="https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes" target="_blank">python standard library</a>, but i can't find a proper standards definition, nor the origin of this formatting convention. <a class="footnote-backref" href="posts/data-sci/tsql-between/#fnref:2" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/reading/thoreau-walden-31/" class="u-url">thoreau; walden; 31</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 rodigu
@@ -61,32 +268,145 @@
 Yet we do not treat ourselves nor one another thus tenderly.</p>
 </blockquote>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/setting-up/" class="u-url">setting up</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/meta/on-nikola/" class="u-url">on nikola</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 rodigu
             </span></p>
             <p class="dateline">
-            <a href="posts/setting-up/" rel="bookmark">
-            <time class="published dt-published" datetime="2025-03-30T16:20:00-03:00" itemprop="datePublished" title="2025-03-30 16:20">2025-03-30 16:20</time></a>
+            <a href="posts/meta/on-nikola/" rel="bookmark">
+            <time class="published dt-published" datetime="2025-03-30T17:47:00-03:00" itemprop="datePublished" title="2025-03-30 17:47">2025-03-30 17:47</time></a>
             </p>
                 <p class="commentline">
     
-        <a href="posts/setting-up/#utterances-thread">Comments</a>
+        <a href="posts/meta/on-nikola/#utterances-thread">Comments</a>
 
 
         </p>
 </div>
     </header><div class="e-content entry-content">
-    <p>looking at the <a href="https://github.com/rodigu/rodigu.github.io/commits/master/">commit history</a> for the repository
+    <p>i tried using the auto builder, but either i did something wrong, or there is a bug with it.
+nikola depends on the python package <code>watchdog</code> for the continuous auto-build.
+i might try it again some other time.</p>
+<p>for now, this blog is built with the following sequence of commands:</p>
+<div class="code"><pre class="code literal-block">nikola<span class="w"> </span>check<span class="w"> </span>--clean-files
+nikola<span class="w"> </span>build
+</pre></div>
+
+<p>and served locally with:</p>
+<div class="code"><pre class="code literal-block">nikola<span class="w"> </span>serve<span class="w"> </span>-b
+</pre></div>
+
+<p>in one line:</p>
+<div class="code"><pre class="code literal-block">nikola<span class="w"> </span>check<span class="w"> </span>--clean-files<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>nikola<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>nikola<span class="w"> </span>serve
+</pre></div>
+
+<p>the first line cleans up any files that no longer exist from the output directory (<code>docs</code>, <a href="https://rodigu.github.io/posts/setting-up/">because github pages is unloved</a>).</p>
+<p>new "tabs" can be added with through the <code>NAVIGATION_LINKS</code> variable in <code>conf.py</code> <sup id="fnref:1"><a class="footnote-ref" href="posts/meta/on-nikola/#fn:1">1</a></sup>.
+here is what that variable looks like attow:</p>
+<div class="code"><pre class="code literal-block"><span class="n">NAVIGATION_LINKS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">DEFAULT_LANG</span><span class="p">:</span> <span class="p">(</span>
+        <span class="p">(</span><span class="s2">"/archive.html"</span><span class="p">,</span> <span class="s2">"archive"</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">"/categories/"</span><span class="p">,</span> <span class="s2">"tags"</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">"/rss.xml"</span><span class="p">,</span> <span class="s2">"rss feed"</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">"/pages/about/index.html"</span><span class="p">,</span> <span class="s2">"about"</span><span class="p">)</span>
+    <span class="p">),</span>
+<span class="p">}</span>
+</pre></div>
+
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:1">
+<p>as documented in <a href="https://getnikola.com/handbook.html#customizing-your-site">the nikola handbook on <em>customizing your site</em></a> <a class="footnote-backref" href="posts/meta/on-nikola/#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/data-sci/airflow-task_group-failure/" class="u-url">airflow task inside task group failed</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                rodigu
+            </span></p>
+            <p class="dateline">
+            <a href="posts/data-sci/airflow-task_group-failure/" rel="bookmark">
+            <time class="published dt-published" datetime="2025-03-30T16:20:00-03:00" itemprop="datePublished" title="2025-03-30 16:20">2025-03-30 16:20</time></a>
+            </p>
+                <p class="commentline">
+    
+        <a href="posts/data-sci/airflow-task_group-failure/#utterances-thread">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <p>checking if a task has failed in airflow is simple enough, and may be done with:</p>
+<div class="code"><pre class="code literal-block"><span class="kn">from</span><span class="w"> </span><span class="nn">airflow.operators.python</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_current_context</span>
+
+<span class="nd">@task</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">check_task_failed</span><span class="p">(</span><span class="n">task_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+      <span class="n">context</span> <span class="o">=</span> <span class="n">get_current_context</span><span class="p">()</span>
+      <span class="k">return</span> <span class="p">(</span>
+          <span class="n">context</span><span class="p">[</span><span class="s2">"dag_run"</span><span class="p">]</span><span class="o">.</span><span class="n">get_task_instance</span><span class="p">(</span><span class="n">task_id</span><span class="o">=</span><span class="n">task_id</span><span class="p">)</span><span class="o">.</span><span class="n">state</span>
+          <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">FAILED</span>
+      <span class="p">)</span>
+</pre></div>
+
+<p>however, if the task is nested within a <code>task_group</code>, referencing the task with <code>task_id</code> doesn't work.
+in theory, tasks inside a <code>task_group</code> should be indexed with <code>group_id.task_id</code><sup id="fnref:1"><a class="footnote-ref" href="posts/data-sci/airflow-task_group-failure/#fn:1">1</a></sup>, but trying <code>get_task_instance</code>
+with this ID structure will return a <code>NoneType</code>.</p>
+<p>the one way i have found to actually make it work, is with the following:</p>
+<div class="code"><pre class="code literal-block"><span class="kn">from</span><span class="w"> </span><span class="nn">airflow.operators.python</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_current_context</span>
+
+<span class="nd">@task</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">check_task_failed</span><span class="p">(</span><span class="n">group_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">task_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+      <span class="n">context</span> <span class="o">=</span> <span class="n">get_current_context</span><span class="p">()</span>
+      <span class="n">failed_tasks</span> <span class="o">=</span> <span class="n">context</span><span class="p">[</span><span class="s2">"dag_run"</span><span class="p">]</span><span class="o">.</span><span class="n">get_task_instances</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="n">State</span><span class="o">.</span><span class="n">FAILED</span><span class="p">)</span>
+      <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">group_id</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">task_id</span><span class="si">}</span><span class="s2">"</span> <span class="ow">in</span> <span class="p">{</span>
+          <span class="n">ft</span><span class="o">.</span><span class="n">task_id</span> <span class="k">for</span> <span class="n">ft</span> <span class="ow">in</span> <span class="n">failed_tasks</span>
+      <span class="p">}</span>
+</pre></div>
+
+<p>which i was able to implement based an answer on stackoverflow<sup id="fnref:2"><a class="footnote-ref" href="posts/data-sci/airflow-task_group-failure/#fn:2">2</a></sup>.</p>
+<p>before finding that answer, i struggled with missing docs, llm hallucinations. and what i am fairly sure were people posting llm bullshit as if it were real.</p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://www.astronomer.io/docs/learn/task-groups/" target="_blank">astronomer docs on <code>task_groups</code></a> <a class="footnote-backref" href="posts/data-sci/airflow-task_group-failure/#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://stackoverflow.com/questions/73740427/airflow-how-to-get-list-of-upstream-failed-tasks" target="_blank">the answer to my problems, thank you mati.o</a> <a class="footnote-backref" href="posts/data-sci/airflow-task_group-failure/#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/meta/setting-up/" class="u-url">setting up</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                rodigu
+            </span></p>
+            <p class="dateline">
+            <a href="posts/meta/setting-up/" rel="bookmark">
+            <time class="published dt-published" datetime="2025-03-30T16:20:00-03:00" itemprop="datePublished" title="2025-03-30 16:20">2025-03-30 16:20</time></a>
+            </p>
+                <p class="commentline">
+    
+        <a href="posts/meta/setting-up/#utterances-thread">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <p>looking at the <a href="https://github.com/rodigu/rodigu.github.io/commits/master/" target="_blank">commit history</a> for the repository
 containing the source for this blog, you may notice that this was originally my personal website/cv.</p>
 <p>my initial intention was to setup the present blog on a separate branch,
-but <a href="https://c.tenor.com/Bi5t9IXWlEkAAAAC/tenor.gif">i forgot to switch branches before deleting everything</a>.</p>
+but <a href="https://c.tenor.com/Bi5t9IXWlEkAAAAC/tenor.gif" target="_blank">i forgot to switch branches before deleting everything</a>.</p>
 <p>in any case, i suppose i'll have to commit to this now.
 so here is a test post.</p>
 <h3>testing out</h3>
-<p>originally, i attempted to use <a href="posts/setting-up/(https:/jekyllrb.com/)">jekyll</a> for this blog, as it is already integrated into github pages.
-however, after some frustration (as had happened years ago when i last tried it),
+<p>originally, i attempted to use <a href="https://jekyllrb.com/" target="_blank">jekyll</a> for this blog, as it is already integrated into github pages.
+however, after some frustration (as had happened years ago when i first tried it),
 i decided to look for a different blog building tool.</p>
 <p>one of my main points of contention with jekyll is that it uses ruby, which i don't have anything against, but am also entirelly unfamiliar with.
 therefore, i went searching for a tool that allowed me to stay within what i alredy know (namely, python),
@@ -94,15 +414,15 @@ and that had built-in markdown support.</p>
 <p>i also want it to be doing most of the work.
 i am not too interested in messing with templates and such at the moment.
 all i want is to get started on throwing stuff out there.</p>
-<p>so i landed on <a href="https://getnikola.com/">nikola</a> for static site generation.
-it even has built'in support for <em>extended</em> markdown, seeing that the footnotes are working nicely.</p>
+<p>so i landed on <a href="https://getnikola.com/">nikola</a>{:target="<em>blank"} for static site generation.
+it even has built'in support for _extended</em> markdown, seeing that the footnotes are working nicely.</p>
 <p>it does have support for images in markdown, but...</p>
-<p><img alt="a photo i took while biking in chicago" src="images/2025-03-30_16-37_chicago-skyline-biking.png"></p>
+<p><img alt="a photo i took while biking in chicago" src="posts/images/2025-03-30_16-37_chicago-skyline-biking.png"></p>
 <p>here is what the markdown for the previous photo looks like:</p>
 <div class="code"><pre class="code literal-block">![<span class="nt">a photo i took while biking in chicago</span>](<span class="na">../../images/2025-03-30_16-37_chicago-skyline-biking.png</span>)
 </pre></div>
 
-<p>which seems fine, except that the folder structure of this repo looks a little like this (with some omissions for readability):</p>
+<p>which seems fine, except that this is what the folder structure of this repo looks like (with some omissions for readability):</p>
 <div class="code"><pre class="code literal-block">.
 ├──<span class="w"> </span>images
 │<span class="w">   </span>├──<span class="w"> </span><span class="m">2025</span>-03-30_16-37_chicago-skyline-biking.png
@@ -125,23 +445,23 @@ it even has built'in support for <em>extended</em> markdown, seeing that the foo
 <p>i am writing from <code>./posts/1.md</code>, and i am placing my image in <code>./images/</code>.
 after the build, my post is in <code>./output/posts/setting-up</code>, and the image is in <code>./output/images/</code>.
 meaning that while in this markdown i can use intellisense to access the image with:</p>
-<div class="code"><pre class="code literal-block"><span class="cp">../images/2025-03-30_16-37_chicago-skyline-biking.png</span>
+<div class="code"><pre class="code literal-block">../images/2025-03-30_16-37_chicago-skyline-biking.png
 </pre></div>
 
 <p>however, because the image in the output build is in a different directory,
-i need to add an additional <code>../</code> to the beginning of the image reference<sup id="fnref:5"><a class="footnote-ref" href="posts/setting-up/#fn:5">1</a></sup>.</p>
+i need to add an additional <code>../</code> to the beginning of the image reference<sup id="fnref:5"><a class="footnote-ref" href="posts/meta/setting-up/#fn:5">1</a></sup>.</p>
 <p>anyway, this is more of a minor pet peeve, so it is fine i guess.</p>
 <h3>addendum 1</h3>
 <p>ok, i have another pet peev, this time with github pages.
-for whatever reason, github pages only allows deployement from root or from <code>/docs</code><sup id="fnref:3"><a class="footnote-ref" href="posts/setting-up/#fn:3">2</a></sup>?</p>
-<p>so i had to change the output folder of this repo to <code>docs</code>, with the following addition to nikola's <a href="https://github.com/rodigu/rodigu.github.io/blob/master/conf.py"><code>conf.py</code></a>:</p>
+for whatever reason, github pages only allows deployement from root or from <code>/docs</code><sup id="fnref:3"><a class="footnote-ref" href="posts/meta/setting-up/#fn:3">2</a></sup>?</p>
+<p>so i had to change the output folder of this repo to <code>docs</code>, with the following addition to nikola's <a href="https://github.com/rodigu/rodigu.github.io/blob/master/conf.py" target="_blank"><code>conf.py</code></a>:</p>
 <div class="code"><pre class="code literal-block"><span class="n">OUTPUT_FOLDER</span> <span class="o">=</span> <span class="s1">'docs'</span>
 </pre></div>
 
 <h3>addemdum 2</h3>
 <p>one last thing for this test post.</p>
-<p>nikola came with a number of filed in its demo.
-i deleted them manually, and then followed the instructions from the <a href="posts/setting-up/(https:/getnikola.com/getting-started.html#rm-demo)">getting started page</a>:</p>
+<p>nikola came with a number of files in its demo.
+i deleted them manually, and then followed the instructions from the <a href="https://getnikola.com/getting-started.html#rm-demo" target="_blank">getting started page</a>:</p>
 <div class="code"><pre class="code literal-block">nikola<span class="w"> </span>check<span class="w"> </span>--clean-files
 </pre></div>
 
@@ -151,13 +471,44 @@ i deleted them manually, and then followed the instructions from the <a href="po
 <li id="fn:5">
 <p>going on a tangent here, but i had to make the previous long directory reference into
 its own code block instead of an in-line reference because it was breaking the layout on mobile.
-i should keep this in mind for the future. <a class="footnote-backref" href="posts/setting-up/#fnref:5" title="Jump back to footnote 1 in the text">↩</a></p>
+i should keep this in mind for the future. <a class="footnote-backref" href="posts/meta/setting-up/#fnref:5" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 <li id="fn:3">
-<p>at least according to the answer to <a href="https://github.com/orgs/community/discussions/23073">this community question</a> <a class="footnote-backref" href="posts/setting-up/#fnref:3" title="Jump back to footnote 2 in the text">↩</a></p>
+<p>at least according to the answer to <a href="https://github.com/orgs/community/discussions/23073" target="_blank">this community question</a> <a class="footnote-backref" href="posts/meta/setting-up/#fnref:3" title="Jump back to footnote 2 in the text">↩</a></p>
 </li>
 </ol>
 </div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/data-sci/airflow-walrus/" class="u-url">walrus for airflow</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                rodigu
+            </span></p>
+            <p class="dateline">
+            <a href="posts/data-sci/airflow-walrus/" rel="bookmark">
+            <time class="published dt-published" datetime="2025-03-30T16:20:00-03:00" itemprop="datePublished" title="2025-03-30 16:20">2025-03-30 16:20</time></a>
+            </p>
+                <p class="commentline">
+    
+        <a href="posts/data-sci/airflow-walrus/#utterances-thread">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div class="code"><pre class="code literal-block"><span class="p">[</span>
+    <span class="p">(</span>
+        <span class="n">a_data</span> <span class="o">:=</span> <span class="n">get_users</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span>
+            <span class="n">connection_meta</span><span class="o">=</span><span class="n">connection_meta</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">code_a</span><span class="p">)</span>
+    <span class="p">),</span>
+    <span class="p">(</span>
+        <span class="n">b_data</span> <span class="o">:=</span> <span class="n">get_users</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span>
+            <span class="n">connection_meta</span><span class="o">=</span><span class="n">connection_meta</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">code_b</span><span class="p">)</span>
+    <span class="p">),</span>
+<span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="p">(</span><span class="n">fetch_content</span> <span class="o">:=</span> <span class="n">content_fetch</span><span class="p">())</span>
+</pre></div>
     </div>
     </article>
 </div>
@@ -170,7 +521,7 @@ i should keep this in mind for the future. <a class="footnote-backref" href="po
 
 
 
-         </main><footer id="footer"><p>Contents © 2025         <a href="mailto:rmoraisu@proton.me">rodigu</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+         </main><footer id="footer"><p>Contents © 2026         <a href="mailto:rmoraisu@proton.me">rodigu</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
             
         </footer>
 </div>
