@@ -1,45 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>hiroto's things</title><link>https://rodigu.github.io/</link><description>personal website with technical writing, tiny game demos, and photo-logs</description><atom:link href="https://rodigu.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:rmoraisu@proton.me"&gt;rodigu&lt;/a&gt; </copyright><lastBuildDate>Fri, 06 Feb 2026 03:00:38 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>tiny thermal cam goes to masp</title><link>https://rodigu.github.io/posts/photo-journal/thermal-visit-masp-annex/</link><dc:creator>rodigu</dc:creator><description>&lt;p&gt;last year, masp's new annex opened to the public. i had the opportunity to visit at opening week. a few weeks before that, i bought a tiny thermal camera that prints on receipt paper.&lt;/p&gt;
-&lt;h3&gt;path&lt;/h3&gt;
-&lt;p align="center"&gt;
-    &lt;img src="https://rodigu.github.io/posts/images/poste-fio.jpg" width="400"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;using the tiny camera is lots of fun. i get to print and see the image as soon as they are taken.&lt;/p&gt;
-&lt;p align="center"&gt;
-    &lt;img src="https://rodigu.github.io/posts/images/janelas-paulista.jpg" width="400"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;the paper is also cheap (a &lt;em&gt;lot&lt;/em&gt; cheaper than instax). i could even reuse regular print paper, which is something i do actually want to try out in the future.&lt;/p&gt;
-&lt;p align="center"&gt;
-    &lt;img src="https://rodigu.github.io/posts/images/cadeirinhas.jpg" width="400"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;some little chairs i found on the way.&lt;/p&gt;
-&lt;h3&gt;anexo&lt;/h3&gt;
-&lt;p&gt;the annex is out of place and discrete at the same time.&lt;/p&gt;
-&lt;p align="center"&gt;
-    &lt;img src="https://rodigu.github.io/posts/images/anexo-masp.jpg" width="400"&gt;
-&lt;/p&gt;
-
-&lt;p align="center"&gt;
-    &lt;img src="https://rodigu.github.io/posts/images/anexo-visao.jpg" width="200"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;it does not draw much attention to itself.&lt;/p&gt;
-&lt;p align="center"&gt;
-    &lt;img src="https://rodigu.github.io/posts/images/masp-e-anexo.jpg" width="200"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;while contrasting the original building by bobardi.&lt;/p&gt;
-&lt;p align="center"&gt;
-    &lt;img src="https://rodigu.github.io/posts/images/masp-e-anexo-lado.jpg" width="200"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;the annex was actually built on top of a pre-existing building. they reused some of the foundations and original structure.&lt;/p&gt;
-&lt;p align="center"&gt;
-    &lt;img src="https://rodigu.github.io/posts/images/moca-masp-escuro.jpg" width="200"&gt;
-&lt;/p&gt;</description><category>blog</category><category>photos</category><guid>https://rodigu.github.io/posts/photo-journal/thermal-visit-masp-annex/</guid><pubDate>Fri, 06 Feb 2026 02:34:00 GMT</pubDate></item><item><title>missing packages on arch</title><link>https://rodigu.github.io/posts/linux/arch-missing-packages/</link><dc:creator>rodigu</dc:creator><description>&lt;p&gt;i was trying to use pandoc with arch, but was getting an error when trying to convert a markdown to pdf.&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>hiroto's things</title><link>https://rodigu.github.io/</link><description>personal website with technical writing, tiny game demos, and photo-logs</description><atom:link href="https://rodigu.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:rmoraisu@proton.me"&gt;rodigu&lt;/a&gt; </copyright><lastBuildDate>Sat, 14 Feb 2026 14:58:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>doing the lord's work with python and the walrus operator</title><link>https://rodigu.github.io/posts/data-eng/airflow-walrus/</link><dc:creator>rodigu</dc:creator><description>&lt;p&gt;&lt;em&gt;(actual prod code for airflow)&lt;/em&gt;&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="p"&gt;[&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="n"&gt;a_data&lt;/span&gt; &lt;span class="o"&gt;:=&lt;/span&gt; &lt;span class="n"&gt;get_users&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;partial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+            &lt;span class="n"&gt;connection_meta&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;connection_meta&lt;/span&gt;
+        &lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;expand&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;code&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;code_a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;),&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="n"&gt;b_data&lt;/span&gt; &lt;span class="o"&gt;:=&lt;/span&gt; &lt;span class="n"&gt;get_users&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;partial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+            &lt;span class="n"&gt;connection_meta&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;connection_meta&lt;/span&gt;
+        &lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;expand&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;code&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;code_b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;),&lt;/span&gt;
+&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fetch_content&lt;/span&gt; &lt;span class="o"&gt;:=&lt;/span&gt; &lt;span class="n"&gt;content_fetch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a_data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b_data&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><category>airflow</category><category>python</category><category>snippet</category><guid>https://rodigu.github.io/posts/data-eng/airflow-walrus/</guid><pubDate>Sat, 14 Feb 2026 14:54:00 GMT</pubDate></item><item><title>missing packages on arch</title><link>https://rodigu.github.io/posts/linux/arch-missing-packages/</link><dc:creator>rodigu</dc:creator><description>&lt;p&gt;while using pandoc on arch, i got an error as i tried to convert a markdown to a pdf.&lt;/p&gt;
 &lt;p&gt;conversion snippet:&lt;/p&gt;
 &lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;pandoc&lt;span class="w"&gt; &lt;/span&gt;document.md&lt;span class="w"&gt; &lt;/span&gt;-o&lt;span class="w"&gt; &lt;/span&gt;document.pdf
 &lt;/pre&gt;&lt;/div&gt;
@@ -62,11 +35,11 @@ l.7 \usepackage
 &lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;texlive
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;i installed only the ones that seemed relevant, as all packages amount to over 1 GB (??).&lt;/p&gt;
+&lt;p&gt;i installed only the ones that seemed relevant, as all packages amount to over 1 GB together (??).&lt;/p&gt;
 &lt;p&gt;turns out, i was missing something.
 &lt;a href="https://www.reddit.com/r/archlinux/comments/n8vbyz/latex_packages_problem/" target="_blank"&gt;this reddit comment&lt;/a&gt; helped me out:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;If you want to figure out which one you need to install to get a certain LaTeX package, use for example &lt;code&gt;pacman -F bbm.sty&lt;/code&gt;. You will need to run &lt;code&gt;pacman -Fy&lt;/code&gt; once if you have never used &lt;code&gt;pacman -F&lt;/code&gt; at all.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;If you want to figure out which one you need to install to get a certain LaTeX package, use for example &lt;code&gt;pacman -F bbm.sty&lt;/code&gt;. You will need to run &lt;code&gt;pacman -Fy&lt;/code&gt; once if you have never used &lt;code&gt;pacman -F&lt;/code&gt; at all.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;very good to know.
 running it:&lt;/p&gt;
@@ -78,11 +51,13 @@ running it:&lt;/p&gt;
     usr/share/texmf-dist/tex/generic/soul/soul.sty
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;which i just had to install with pacman.&lt;/p&gt;</description><category>arch</category><category>linux</category><guid>https://rodigu.github.io/posts/linux/arch-missing-packages/</guid><pubDate>Fri, 06 Feb 2026 01:41:00 GMT</pubDate></item><item><title>is tsql's `between` inclusive?</title><link>https://rodigu.github.io/posts/data-sci/tsql-between/</link><dc:creator>rodigu</dc:creator><description>&lt;p&gt;microsoft's &lt;a href="https://learn.microsoft.com/en-us/sql/t-sql/language-elements/between-transact-sql?view=sql-server-ver17" target="_blank"&gt;documentation for between&lt;/a&gt; doesn't mention inclusivity &lt;em&gt;at all&lt;/em&gt; until &lt;a href="https://learn.microsoft.com/en-us/sql/t-sql/language-elements/between-transact-sql?view=sql-server-ver17#b-use--and--instead-of-between" target="_blank"&gt;section b&lt;/a&gt;, which suggests that &lt;code&gt;between&lt;/code&gt; is inclusive. the information is only really &lt;em&gt;explicitly&lt;/em&gt; stated all the way down in &lt;a href="https://learn.microsoft.com/en-us/sql/t-sql/language-elements/between-transact-sql?view=sql-server-ver17#d-use-between-with-datetime-values" target="_blank"&gt;section d&lt;/a&gt;, where it states that (for datetime values, at least), &lt;code&gt;between&lt;/code&gt; is inclusive.&lt;/p&gt;
+&lt;p&gt;which i just had to install with pacman:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;soul
+&lt;/pre&gt;&lt;/div&gt;</description><category>arch</category><category>linux</category><guid>https://rodigu.github.io/posts/linux/arch-missing-packages/</guid><pubDate>Fri, 06 Feb 2026 01:41:00 GMT</pubDate></item><item><title>is tsql's `between` inclusive?</title><link>https://rodigu.github.io/posts/data-eng/tsql-between/</link><dc:creator>rodigu</dc:creator><description>&lt;p&gt;microsoft's &lt;a href="https://learn.microsoft.com/en-us/sql/t-sql/language-elements/between-transact-sql?view=sql-server-ver17" target="_blank"&gt;documentation for between&lt;/a&gt; doesn't mention inclusivity &lt;em&gt;at all&lt;/em&gt; until &lt;a href="https://learn.microsoft.com/en-us/sql/t-sql/language-elements/between-transact-sql?view=sql-server-ver17#b-use--and--instead-of-between" target="_blank"&gt;section b&lt;/a&gt;, which suggests that &lt;code&gt;between&lt;/code&gt; is inclusive. the information is only really &lt;em&gt;explicitly&lt;/em&gt; stated all the way down in &lt;a href="https://learn.microsoft.com/en-us/sql/t-sql/language-elements/between-transact-sql?view=sql-server-ver17#d-use-between-with-datetime-values" target="_blank"&gt;section d&lt;/a&gt;, where it states that (for datetime values, at least), &lt;code&gt;between&lt;/code&gt; is inclusive.&lt;/p&gt;
 &lt;p&gt;however, as i have come to find out (not before a whole hour of debugging): it ... depends?&lt;/p&gt;
 &lt;h3&gt;context&lt;/h3&gt;
 &lt;p&gt;lets create a table with two columns.
-&lt;code&gt;date_vc&lt;/code&gt; is a &lt;code&gt;varchar&lt;/code&gt; that follows the formatting &lt;code&gt;'%d/%m/%Y'&lt;/code&gt; (as per the usual cron formatting&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="https://rodigu.github.io/posts/data-sci/tsql-between/#fn:2"&gt;1&lt;/a&gt;&lt;/sup&gt;).
+&lt;code&gt;date_vc&lt;/code&gt; is a &lt;code&gt;varchar&lt;/code&gt; that follows the formatting &lt;code&gt;'%d/%m/%Y'&lt;/code&gt; (as per the usual cron formatting&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="https://rodigu.github.io/posts/data-eng/tsql-between/#fn:2"&gt;1&lt;/a&gt;&lt;/sup&gt;).
 &lt;code&gt;date_dt&lt;/code&gt; is a &lt;code&gt;datetime&lt;/code&gt; column.&lt;/p&gt;
 &lt;p&gt;this was an issue i ran into at work, involving real data.
 here, i'll demonstrate it with a sample table.&lt;/p&gt;
@@ -152,17 +127,18 @@ the British/French standard as per &lt;a href="https://learn.microsoft.com/en-us
 &lt;/blockquote&gt;
 &lt;p&gt;is this a quirk of tsql? or is this also in other sql dialects?&lt;/p&gt;
 &lt;h3&gt;a rant&lt;/h3&gt;
-&lt;p&gt;it is a tremendously unpleasant experience to find out that a bug derives not from a mistake i have made, bet from an &lt;em&gt;undocumented&lt;/em&gt; issue from the tool i am using. all the more aggravating when this is not someone's foss passion project, but a prod tool by a massive tech company (which we pay good money to deploy on &lt;em&gt;their&lt;/em&gt; azure servers). well, at least this is not as bad as powerbi.&lt;/p&gt;
+&lt;p&gt;it is a tremendously unpleasant experience to find out that a bug derives not from a mistake i have made, but from an &lt;em&gt;undocumented&lt;/em&gt; "feature" from the tool i am &lt;em&gt;paying&lt;/em&gt; to use.
+a prod tool by a massive tech company (which we pay good money to deploy on &lt;em&gt;their&lt;/em&gt; azure servers). well, at least this is not as bad as powerbi.&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id="fn:2"&gt;
-&lt;p&gt;not entirely sure of the name. i have seen this formatting in different places, such as a &lt;a href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html" target="_blank"&gt;rust library&lt;/a&gt; and the &lt;a href="https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes" target="_blank"&gt;python standard library&lt;/a&gt;, but i can't find a proper standards definition, nor the origin of this formatting convention. &lt;a class="footnote-backref" href="https://rodigu.github.io/posts/data-sci/tsql-between/#fnref:2" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;not entirely sure of the name. i have seen this formatting in different places, such as a &lt;a href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html" target="_blank"&gt;rust library&lt;/a&gt; and the &lt;a href="https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes" target="_blank"&gt;python standard library&lt;/a&gt;, but i can't find a proper standards definition, nor the origin of this formatting convention. &lt;a class="footnote-backref" href="https://rodigu.github.io/posts/data-eng/tsql-between/#fnref:2" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description><category>databases</category><category>sql</category><guid>https://rodigu.github.io/posts/data-sci/tsql-between/</guid><pubDate>Tue, 16 Dec 2025 20:10:00 GMT</pubDate></item><item><title>thoreau; walden; 31</title><link>https://rodigu.github.io/posts/reading/thoreau-walden-31/</link><dc:creator>rodigu</dc:creator><description>&lt;blockquote&gt;
-&lt;p&gt;The finest qualities of our nature, like the bloom on fruits, can be preserved only by the most delicate handling.
-Yet we do not treat ourselves nor one another thus tenderly.&lt;/p&gt;
+&lt;/div&gt;</description><category>databases</category><category>sql</category><guid>https://rodigu.github.io/posts/data-eng/tsql-between/</guid><pubDate>Tue, 16 Dec 2025 20:10:00 GMT</pubDate></item><item><title>thoreau; walden; 31</title><link>https://rodigu.github.io/posts/reading/thoreau-walden-31/</link><dc:creator>rodigu</dc:creator><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;The finest qualities of our nature, like the bloom on fruits, can be preserved only by the most delicate handling.&lt;/em&gt;
+&lt;em&gt;Yet we do not treat ourselves nor one another thus tenderly.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;</description><category>english</category><category>literature</category><category>non-fiction</category><category>quote</category><guid>https://rodigu.github.io/posts/reading/thoreau-walden-31/</guid><pubDate>Sat, 05 Apr 2025 14:41:00 GMT</pubDate></item><item><title>on nikola</title><link>https://rodigu.github.io/posts/meta/on-nikola/</link><dc:creator>rodigu</dc:creator><description>&lt;p&gt;i tried using the auto builder, but either i did something wrong, or there is a bug with it.
 nikola depends on the python package &lt;code&gt;watchdog&lt;/code&gt; for the continuous auto-build.
 i might try it again some other time.&lt;/p&gt;
@@ -199,46 +175,7 @@ here is what that variable looks like attow:&lt;/p&gt;
 &lt;p&gt;as documented in &lt;a href="https://getnikola.com/handbook.html#customizing-your-site"&gt;the nikola handbook on &lt;em&gt;customizing your site&lt;/em&gt;&lt;/a&gt; &lt;a class="footnote-backref" href="https://rodigu.github.io/posts/meta/on-nikola/#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description><category>meta</category><category>technical</category><guid>https://rodigu.github.io/posts/meta/on-nikola/</guid><pubDate>Sun, 30 Mar 2025 20:47:00 GMT</pubDate></item><item><title>airflow task inside task group failed</title><link>https://rodigu.github.io/posts/data-sci/airflow-task_group-failure/</link><dc:creator>rodigu</dc:creator><description>&lt;p&gt;checking if a task has failed in airflow is simple enough, and may be done with:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;airflow.operators.python&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;get_current_context&lt;/span&gt;
-
-&lt;span class="nd"&gt;@task&lt;/span&gt;
-&lt;span class="k"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;check_task_failed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;task_id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;bool&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-      &lt;span class="n"&gt;context&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;get_current_context&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-      &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-          &lt;span class="n"&gt;context&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"dag_run"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_task_instance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;task_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;task_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;state&lt;/span&gt;
-          &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;State&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;FAILED&lt;/span&gt;
-      &lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;however, if the task is nested within a &lt;code&gt;task_group&lt;/code&gt;, referencing the task with &lt;code&gt;task_id&lt;/code&gt; doesn't work.
-in theory, tasks inside a &lt;code&gt;task_group&lt;/code&gt; should be indexed with &lt;code&gt;group_id.task_id&lt;/code&gt;&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="https://rodigu.github.io/posts/data-sci/airflow-task_group-failure/#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt;, but trying &lt;code&gt;get_task_instance&lt;/code&gt;
-with this ID structure will return a &lt;code&gt;NoneType&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;the one way i have found to actually make it work, is with the following:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;airflow.operators.python&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;get_current_context&lt;/span&gt;
-
-&lt;span class="nd"&gt;@task&lt;/span&gt;
-&lt;span class="k"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;check_task_failed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;group_id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;task_id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;bool&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-      &lt;span class="n"&gt;context&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;get_current_context&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-      &lt;span class="n"&gt;failed_tasks&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;context&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"dag_run"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_task_instances&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;state&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;State&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;FAILED&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-      &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;group_id&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;.&lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;task_id&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-          &lt;span class="n"&gt;ft&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;task_id&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;ft&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;failed_tasks&lt;/span&gt;
-      &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;which i was able to implement based an answer on stackoverflow&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="https://rodigu.github.io/posts/data-sci/airflow-task_group-failure/#fn:2"&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
-&lt;p&gt;before finding that answer, i struggled with missing docs, llm hallucinations. and what i am fairly sure were people posting llm bullshit as if it were real.&lt;/p&gt;
-&lt;div class="footnote"&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id="fn:1"&gt;
-&lt;p&gt;&lt;a href="https://www.astronomer.io/docs/learn/task-groups/" target="_blank"&gt;astronomer docs on &lt;code&gt;task_groups&lt;/code&gt;&lt;/a&gt; &lt;a class="footnote-backref" href="https://rodigu.github.io/posts/data-sci/airflow-task_group-failure/#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id="fn:2"&gt;
-&lt;p&gt;&lt;a href="https://stackoverflow.com/questions/73740427/airflow-how-to-get-list-of-upstream-failed-tasks" target="_blank"&gt;the answer to my problems, thank you mati.o&lt;/a&gt; &lt;a class="footnote-backref" href="https://rodigu.github.io/posts/data-sci/airflow-task_group-failure/#fnref:2" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;</description><category>airflow</category><category>python</category><guid>https://rodigu.github.io/posts/data-sci/airflow-task_group-failure/</guid><pubDate>Sun, 30 Mar 2025 19:20:00 GMT</pubDate></item><item><title>setting up</title><link>https://rodigu.github.io/posts/meta/setting-up/</link><dc:creator>rodigu</dc:creator><description>&lt;p&gt;looking at the &lt;a href="https://github.com/rodigu/rodigu.github.io/commits/master/" target="_blank"&gt;commit history&lt;/a&gt; for the repository
+&lt;/div&gt;</description><category>meta</category><category>technical</category><guid>https://rodigu.github.io/posts/meta/on-nikola/</guid><pubDate>Sun, 30 Mar 2025 20:47:00 GMT</pubDate></item><item><title>setting up</title><link>https://rodigu.github.io/posts/meta/setting-up/</link><dc:creator>rodigu</dc:creator><description>&lt;p&gt;looking at the &lt;a href="https://github.com/rodigu/rodigu.github.io/commits/master/" target="_blank"&gt;commit history&lt;/a&gt; for the repository
 containing the source for this blog, you may notice that this was originally my personal website/cv.&lt;/p&gt;
 &lt;p&gt;my initial intention was to setup the present blog on a separate branch,
 but &lt;a href="https://c.tenor.com/Bi5t9IXWlEkAAAAC/tenor.gif" target="_blank"&gt;i forgot to switch branches before deleting everything&lt;/a&gt;.&lt;/p&gt;
@@ -254,8 +191,8 @@ and that had built-in markdown support.&lt;/p&gt;
 &lt;p&gt;i also want it to be doing most of the work.
 i am not too interested in messing with templates and such at the moment.
 all i want is to get started on throwing stuff out there.&lt;/p&gt;
-&lt;p&gt;so i landed on &lt;a href="https://getnikola.com/"&gt;nikola&lt;/a&gt;{:target="&lt;em&gt;blank"} for static site generation.
-it even has built'in support for _extended&lt;/em&gt; markdown, seeing that the footnotes are working nicely.&lt;/p&gt;
+&lt;p&gt;so i landed on &lt;a href="https://getnikola.com/" target="_blank"&gt;nikola&lt;/a&gt; for static site generation.
+it even has built'in support for &lt;em&gt;extended&lt;/em&gt; markdown, seeing that the footnotes are working nicely.&lt;/p&gt;
 &lt;p&gt;it does have support for images in markdown, but...&lt;/p&gt;
 &lt;p&gt;&lt;img alt="a photo i took while biking in chicago" src="https://rodigu.github.io/posts/images/2025-03-30_16-37_chicago-skyline-biking.png"&gt;&lt;/p&gt;
 &lt;p&gt;here is what the markdown for the previous photo looks like:&lt;/p&gt;
@@ -317,16 +254,45 @@ i should keep this in mind for the future. &lt;a class="footnote-backref" href=
 &lt;p&gt;at least according to the answer to &lt;a href="https://github.com/orgs/community/discussions/23073" target="_blank"&gt;this community question&lt;/a&gt; &lt;a class="footnote-backref" href="https://rodigu.github.io/posts/meta/setting-up/#fnref:3" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description><category>blog</category><category>meta</category><guid>https://rodigu.github.io/posts/meta/setting-up/</guid><pubDate>Sun, 30 Mar 2025 19:20:00 GMT</pubDate></item><item><title>walrus for airflow</title><link>https://rodigu.github.io/posts/data-sci/airflow-walrus/</link><dc:creator>rodigu</dc:creator><description>&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="p"&gt;[&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;
-        &lt;span class="n"&gt;a_data&lt;/span&gt; &lt;span class="o"&gt;:=&lt;/span&gt; &lt;span class="n"&gt;get_users&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;partial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
-            &lt;span class="n"&gt;connection_meta&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;connection_meta&lt;/span&gt;
-        &lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;expand&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;code&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;code_a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="p"&gt;),&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;
-        &lt;span class="n"&gt;b_data&lt;/span&gt; &lt;span class="o"&gt;:=&lt;/span&gt; &lt;span class="n"&gt;get_users&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;partial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
-            &lt;span class="n"&gt;connection_meta&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;connection_meta&lt;/span&gt;
-        &lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;expand&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;code&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;code_b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="p"&gt;),&lt;/span&gt;
-&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fetch_content&lt;/span&gt; &lt;span class="o"&gt;:=&lt;/span&gt; &lt;span class="n"&gt;content_fetch&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><category>airflow</category><category>python</category><category>snippet</category><guid>https://rodigu.github.io/posts/data-sci/airflow-walrus/</guid><pubDate>Sun, 30 Mar 2025 19:20:00 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>blog</category><category>meta</category><guid>https://rodigu.github.io/posts/meta/setting-up/</guid><pubDate>Sun, 30 Mar 2025 19:20:00 GMT</pubDate></item><item><title>what to do when an airflow task inside a task group fails</title><link>https://rodigu.github.io/posts/data-eng/airflow-task_group-failure/</link><dc:creator>rodigu</dc:creator><description>&lt;p&gt;checking if a task has failed on airflow is simple enough, and may be done with:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;airflow.operators.python&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;get_current_context&lt;/span&gt;
+
+&lt;span class="nd"&gt;@task&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;check_task_failed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;task_id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;bool&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+      &lt;span class="n"&gt;context&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;get_current_context&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+      &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+          &lt;span class="n"&gt;context&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"dag_run"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_task_instance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;task_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;task_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;state&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;State&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;FAILED&lt;/span&gt;
+      &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;however, if the task is nested within a &lt;code&gt;task_group&lt;/code&gt;, referencing said task with &lt;code&gt;task_id&lt;/code&gt; doesn't work.
+in theory, tasks inside a &lt;code&gt;task_group&lt;/code&gt; should be indexed with &lt;code&gt;group_id.task_id&lt;/code&gt;&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="https://rodigu.github.io/posts/data-eng/airflow-task_group-failure/#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt;, but trying &lt;code&gt;get_task_instance&lt;/code&gt; with this ID structure will return a &lt;code&gt;NoneType&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;the one way i have found to actually make it work, is with the following:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;airflow.operators.python&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;get_current_context&lt;/span&gt;
+
+&lt;span class="nd"&gt;@task&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;check_task_failed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;group_id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;task_id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;bool&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+      &lt;span class="n"&gt;context&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;get_current_context&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+      &lt;span class="c1"&gt;# get all failed tasks&lt;/span&gt;
+      &lt;span class="n"&gt;failed_tasks&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;context&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"dag_run"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_task_instances&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;state&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;State&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;FAILED&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="c1"&gt;# check if the task from the group id shows up in failed tasks&lt;/span&gt;
+      &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;group_id&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;.&lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;task_id&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+          &lt;span class="n"&gt;ft&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;task_id&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;ft&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;failed_tasks&lt;/span&gt;
+      &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;which i was able to implement based on an answer from stackoverflow&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="https://rodigu.github.io/posts/data-eng/airflow-task_group-failure/#fn:2"&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;before finding that answer, i struggled with missing docs, llm hallucinations. and what i am fairly sure were people posting llm bullshit as if it were real.&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;&lt;a href="https://www.astronomer.io/docs/learn/task-groups/" target="_blank"&gt;astronomer docs on &lt;code&gt;task_groups&lt;/code&gt;&lt;/a&gt; &lt;a class="footnote-backref" href="https://rodigu.github.io/posts/data-eng/airflow-task_group-failure/#fnref:1" title="Jump back to footnote 1 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:2"&gt;
+&lt;p&gt;&lt;a href="https://stackoverflow.com/questions/73740427/airflow-how-to-get-list-of-upstream-failed-tasks" target="_blank"&gt;the answer to my problems, thank you mati.o&lt;/a&gt; &lt;a class="footnote-backref" href="https://rodigu.github.io/posts/data-eng/airflow-task_group-failure/#fnref:2" title="Jump back to footnote 2 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description><category>airflow</category><category>python</category><guid>https://rodigu.github.io/posts/data-eng/airflow-task_group-failure/</guid><pubDate>Sun, 30 Mar 2025 19:20:00 GMT</pubDate></item></channel></rss>

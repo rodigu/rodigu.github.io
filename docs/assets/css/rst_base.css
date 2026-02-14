@@ -56,7 +56,7 @@ span.problematic {
 
 /* Inline Literals */
 .docutils.literal {
-  font-family: monospace;
+  font-family: 'Share Tech Mono', monospace;
   white-space: pre-wrap;
 }
 /* do not wrap at hyphens and similar: */
@@ -402,7 +402,7 @@ summary { margin-left: -1em; }
 /* Literal Blocks */
 pre.literal-block, pre.doctest-block,
 pre.math, pre.code {
-  font-family: monospace;
+  font-family: 'Share Tech Mono', monospace;
 }
 
 /* Block Quotes and Topics */
@@ -513,4 +513,9 @@ aside.sidebar {
   margin-left: 1em;
   margin-right: -1%;
   background-color: #fffffa;
+}
+
+.code, .hack code, .pre code, .pre literal-block, .dark blockquote
+{
+	background-color: #101010;
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>hiroto's things (Posts about meta)</title><link>https://rodigu.github.io/</link><description></description><atom:link href="https://rodigu.github.io/categories/cat_meta.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:rmoraisu@proton.me"&gt;rodigu&lt;/a&gt; </copyright><lastBuildDate>Fri, 06 Feb 2026 02:50:30 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>on nikola</title><link>https://rodigu.github.io/posts/meta/on-nikola/</link><dc:creator>rodigu</dc:creator><description>&lt;p&gt;i tried using the auto builder, but either i did something wrong, or there is a bug with it.
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>hiroto's things (Posts about meta)</title><link>https://rodigu.github.io/</link><description></description><atom:link href="https://rodigu.github.io/categories/cat_meta.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:rmoraisu@proton.me"&gt;rodigu&lt;/a&gt; </copyright><lastBuildDate>Sat, 14 Feb 2026 14:58:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>on nikola</title><link>https://rodigu.github.io/posts/meta/on-nikola/</link><dc:creator>rodigu</dc:creator><description>&lt;p&gt;i tried using the auto builder, but either i did something wrong, or there is a bug with it.
 nikola depends on the python package &lt;code&gt;watchdog&lt;/code&gt; for the continuous auto-build.
 i might try it again some other time.&lt;/p&gt;
 &lt;p&gt;for now, this blog is built with the following sequence of commands:&lt;/p&gt;
@@ -51,8 +51,8 @@ and that had built-in markdown support.&lt;/p&gt;
 &lt;p&gt;i also want it to be doing most of the work.
 i am not too interested in messing with templates and such at the moment.
 all i want is to get started on throwing stuff out there.&lt;/p&gt;
-&lt;p&gt;so i landed on &lt;a href="https://getnikola.com/"&gt;nikola&lt;/a&gt;{:target="&lt;em&gt;blank"} for static site generation.
-it even has built'in support for _extended&lt;/em&gt; markdown, seeing that the footnotes are working nicely.&lt;/p&gt;
+&lt;p&gt;so i landed on &lt;a href="https://getnikola.com/" target="_blank"&gt;nikola&lt;/a&gt; for static site generation.
+it even has built'in support for &lt;em&gt;extended&lt;/em&gt; markdown, seeing that the footnotes are working nicely.&lt;/p&gt;
 &lt;p&gt;it does have support for images in markdown, but...&lt;/p&gt;
 &lt;p&gt;&lt;img alt="a photo i took while biking in chicago" src="https://rodigu.github.io/posts/images/2025-03-30_16-37_chicago-skyline-biking.png"&gt;&lt;/p&gt;
 &lt;p&gt;here is what the markdown for the previous photo looks like:&lt;/p&gt;

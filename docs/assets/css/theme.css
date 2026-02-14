@@ -27,8 +27,8 @@
 */
 
 body {
-	color: #4F5151;
-	font-family: 'Share Tech Mono', monospace;
+	color: #db8758;
+	font-family: 'Maple Mono', monospace;
 	font-size: 20px;
 	line-height: 1.4;
 	padding: 1em;
@@ -38,7 +38,7 @@ body {
 
 .code, .hack, .hack blockquote, .hack code, .hack em, .hack h1, .hack h2, .hack h3, .hack h4, .hack h5, .hack h6, .hack strong
 {
-	font-family: 'Share Tech Mono', monospace;
+	font-family: 'Maple Mono', monospace;
 }
 
 #container {
@@ -417,3 +417,12 @@ pre.code, code {
 	}
 }
 
+div.code {
+	border-radius: 6px;
+	padding: 6px 8px;
+}
+
+blockquote {
+	border-radius: 6px;
+	padding: 3px 2px;
+}
