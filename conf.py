@@ -144,9 +144,10 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         # ("/archive.html", "archive"),
         ("/categories/cat_reading/", "reading"),
+        ("/galleries", "photos"),
+        ("/categories/cat_music/", "music"),
         ("/categories/cat_linux/", "linux"),
-        ("/categories/cat_data-sci/", "data science"),
-        ("/categories/cat_photo-journal/", "photo journal"),
+        ("/categories/cat_data-eng/", "data"),
         ("/rss.xml", "rss"),
         ("/pages/about/index.html", "about")
     ),
@@ -784,7 +785,7 @@ OUTPUT_FOLDER = 'docs'
 # "source/" and the results will be located in
 # "OUTPUT_PATH/relative_destination/gallery_name"
 # Default is:
-# GALLERY_FOLDERS = {"galleries": "galleries"}
+GALLERY_FOLDERS = {"galleries": "galleries"}
 # More gallery options:
 # THUMBNAIL_SIZE = 180
 # MAX_IMAGE_SIZE = 1280
