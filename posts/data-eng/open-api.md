@@ -4,6 +4,6 @@
 .. tags: python, api, brief
 .. author: rodigu
 .. status: draft
-.. category: data-sci
+.. category: data-eng
 .. link: https://rodigu.github.io/
 .. description: 

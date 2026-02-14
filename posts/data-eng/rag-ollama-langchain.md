@@ -4,6 +4,6 @@
 .. tags: python, llm
 .. author: rodigu
 .. status: draft
-.. category: data-sci
+.. category: data-eng
 .. link: https://rodigu.github.io/
 .. description: implementing a rag llm with ollama and langchain

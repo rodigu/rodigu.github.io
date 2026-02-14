@@ -7,7 +7,7 @@
 .. link: https://rodigu.github.io/
 .. description:
 
-i was trying to use pandoc with arch, but was getting an error when trying to convert a markdown to pdf.
+while using pandoc on arch, i got an error as i tried to convert a markdown to a pdf.
 
 conversion snippet:
 
@@ -37,12 +37,12 @@ to use pandoc you first need a tex engine, like texlive:
 sudo pacman -S texlive
 ```
 
-i installed only the ones that seemed relevant, as all packages amount to over 1 GB (??).
+i installed only the ones that seemed relevant, as all packages amount to over 1 GB together (??).
 
 turns out, i was missing something.
 [this reddit comment](https://www.reddit.com/r/archlinux/comments/n8vbyz/latex_packages_problem/){:target="_blank"} helped me out:
 
->If you want to figure out which one you need to install to get a certain LaTeX package, use for example `pacman -F bbm.sty`. You will need to run `pacman -Fy` once if you have never used `pacman -F` at all.
+>*If you want to figure out which one you need to install to get a certain LaTeX package, use for example `pacman -F bbm.sty`. You will need to run `pacman -Fy` once if you have never used `pacman -F` at all.*
 
 very good to know.
 running it:
@@ -58,4 +58,8 @@ extra/texlive-plaingeneric 2025.2-3 (texlive)
     usr/share/texmf-dist/tex/generic/soul/soul.sty
 ```
 
-which i just had to install with pacman.
+which i just had to install with pacman:
+
+```bash
+sudo pacman -S soul
+```

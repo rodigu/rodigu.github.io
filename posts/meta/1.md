@@ -1,3 +1,4 @@
+<!--
 .. title: setting up
 .. slug: setting-up
 .. date: 2025-03-30 16:20:00 UTC-03:00
@@ -6,6 +7,7 @@
 .. author: rodigu
 .. link: https://rodigu.github.io/
 .. description: setting up the blog
+-->
 
 looking at the [commit history](https://github.com/rodigu/rodigu.github.io/commits/master/){:target="_blank"} for the repository
 containing the source for this blog, you may notice that this was originally my personal website/cv.
@@ -31,7 +33,7 @@ i am not too interested in messing with templates and such at the moment.
 all i want is to get started on throwing stuff out there.
 
 so i landed on [nikola](https://getnikola.com/){:target="_blank"} for static site generation.
-it even has built'in support for _extended_ markdown, seeing that the footnotes are working nicely.
+it even has built'in support for *extended* markdown, seeing that the footnotes are working nicely.
 
 it does have support for images in markdown, but...
 

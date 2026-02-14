@@ -1,11 +1,14 @@
+<!--
 .. title: tiny thermal cam goes to masp
 .. slug: thermal-visit-masp-annex
 .. date: 2026-02-05 23:34:00 UTC-03:00
 .. tags: blog, photos
 .. category: photo-journal
 .. author: rodigu
+.. status: draft
 .. link: https://rodigu.github.io/
 .. description: photos from my first visit to masp's annex, last year
+-->
 
 last year, masp's new annex opened to the public. i had the opportunity to visit at opening week. a few weeks before that, i bought a tiny thermal camera that prints on receipt paper.
 

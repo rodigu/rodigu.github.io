@@ -4,6 +4,6 @@
 .. tags: api, web
 .. author: rodigu
 .. status: draft
-.. category: data-sci
+.. category: data-eng
 .. link: https://rodigu.github.io/
 .. description: a rant on the misuse of status codes

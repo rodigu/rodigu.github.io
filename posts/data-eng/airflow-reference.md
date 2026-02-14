@@ -1,15 +1,16 @@
+<!--
 .. title: airflow reference
 .. slug: airflow-reference
 .. date: 2025-03-30 16:20:00 UTC-03:00
 .. tags: python, airflow, reference
 .. author: rodigu
 .. status: draft
-.. category: data-sci
+.. category: data-eng
 .. link: https://rodigu.github.io/
 .. description: useful airflow snippets
+-->
 
 ## deploying and debugging the airflow daemon
-
 
 ```bash
 systemctl daemon-reload

@@ -2,7 +2,7 @@
 .. slug: tsql-between
 .. date: 2025-12-16 17:10:00 UTC-03:00
 .. tags: sql, databases
-.. category: data-sci
+.. category: data-eng
 .. author: rodigu
 .. link: https://rodigu.github.io/
 .. description: a caveat to the tsql `between`
@@ -77,4 +77,5 @@ is this a quirk of tsql? or is this also in other sql dialects?
 
 ## a rant
 
-it is a tremendously unpleasant experience to find out that a bug derives not from a mistake i have made, bet from an *undocumented* issue from the tool i am using. all the more aggravating when this is not someone's foss passion project, but a prod tool by a massive tech company (which we pay good money to deploy on *their* azure servers). well, at least this is not as bad as powerbi.
+it is a tremendously unpleasant experience to find out that a bug derives not from a mistake i have made, but from an *undocumented* "feature" from the tool i am *paying* to use.
+a prod tool by a massive tech company (which we pay good money to deploy on *their* azure servers). well, at least this is not as bad as powerbi.
