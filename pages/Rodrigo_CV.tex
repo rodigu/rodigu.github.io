@@ -1,0 +1,134 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[margin=0.75in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage[T1]{fontenc}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=black,
+    linkcolor=black
+}
+
+% Section formatting
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{8pt}{4pt}
+
+% No paragraph indent
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+
+% Compact lists
+\setlist[itemize]{noitemsep, topsep=2pt, leftmargin=1.2em}
+
+\begin{document}
+
+\pagestyle{empty}
+
+%----------- HEADER -----------
+\begin{center}
+    {\LARGE\bfseries Rodrigo Hiroto Morais}\\[4pt]
+    +55 (11) 95841-7956 \;|\;
+    \href{mailto:rodrigohmorais@proton.me}{rodrigohmorais@proton.me} \;|\;
+    \href{https://linkedin.com/in/rodrigohmorais}{linkedin.com/in/rodrigohmorais} \;|\;
+    \href{https://github.com/rodigu}{github.com/rodigu} \;|\;
+    \href{https://rodigu.github.io}{rodigu.github.io}
+\end{center}
+
+\vspace{2pt}
+Data Engineer with 5 years of experience building and maintaining large-scale data pipelines, ETL systems, and cloud data infrastructure. Proven track record of owning data architecture end-to-end from ingestion and transformation to quality assurance and BI enablement. Experienced in deploying LLM-powered pipelines and medallion architectures on Azure, with a research background in NLP and network science.
+
+%----------- EXPERIENCE -----------
+\section{Experience}
+
+\textbf{Data Engineer} \hfill \textit{January 2026 -- Present}\\
+CEJAM - Centro de Estudos e Pesquisas Dr.\ João Amorim \hfill São Paulo, Brazil
+\begin{itemize}
+    \item Deploy LLMs to Azure AI Foundry, integrating them into Databricks (Apache Spark) pipelines for NLP information extraction on unstructured data
+    \item Design and maintain medallion architecture (bronze/silver/gold) using Spark-based transformations for ingestion and processing from heterogeneous sources into analytics-ready databases
+    \item Build and optimize distributed data pipelines with Databricks, Apache Spark, Azure Data Factory, and Azure Data Lake Gen 2
+    \item Manage and optimize Azure cloud infrastructure costs and resources, including PostgreSQL database instances
+\end{itemize}
+
+\vspace{4pt}
+\textbf{Data Scientist / Data Engineer} \hfill \textit{October 2024 -- January 2026}\\
+Star Parks \hfill São Paulo, Brazil
+\begin{itemize}
+    \item Designed and maintained business-critical ETL pipelines on Airflow, ensuring reliability and scalability of data workflows
+    \item Implemented modular SQL data models using SQLAlchemy and PyODBC for HTTP API integrations
+    \item Managed Airflow DAG configuration and versioning through Git and GitHub
+    \item Led Airflow 2 to 3 migration and deployment on Azure
+    \item Built PowerBI dashboards enabling data-driven business decisions across teams
+\end{itemize}
+
+\vspace{4pt}
+\textbf{Applied Data Science Researcher} \hfill \textit{August 2022 -- August 2024}\\
+University of Illinois Urbana-Champaign \hfill Champaign, Illinois
+\begin{itemize}
+    \item Researched data analysis methods on multi-modal educational datasets
+    \item Developed NLP pipelines using LLMs for qualitative coding of large-scale textual data
+    \item Integrated the Ollama API with Python to operationalize LLM-based workflows
+\end{itemize}
+
+\vspace{4pt}
+\textbf{Mathematics Research Assistant} \hfill \textit{September 2021 -- May 2022}\\
+Soka University of America \hfill Aliso Viejo, California
+\begin{itemize}
+    \item Built TypeScript software to mine and transform data from currency markets APIs
+    \item Designed novel algorithms for detecting unbalanced trade cycles in currency exchange networks
+\end{itemize}
+
+\vspace{4pt}
+\textbf{Software Developer} \hfill \textit{March 2021 -- June 2021}\\
+PushStart Studio \hfill São Paulo, Brazil
+\begin{itemize}
+    \item Developed web-based applications using JavaScript and PixiJS
+    \item Coordinated with a cross-functional team via Git, Slack, and JIRA
+\end{itemize}
+
+%----------- SELECTED PROJECTS -----------
+\section{Selected Projects}
+
+\begin{itemize}
+    \item \textbf{Graph Simulation of Food Banks} \textit{(Python, Pandas, NumPy, NetworkX)} ---
+        Monte Carlo simulation on real food bank data from Illinois to model the impact of catastrophic disruptions on supply chain and distribution networks
+    \item \textbf{Machine-Learning for Supernovae Age Detection} \textit{(Python, Pandas, SciKit-Learn, Jupyter)} ---
+        Novel ML pipeline in partnership with the UIUC Astronomy department to classify supernovae age from light band readings
+    \item \textbf{PyDBCon} \textit{(Python, Pandas, SQL)} --- Open source library to streamline API-to-SQL database integrations
+    \item \textbf{ZenDBCon} \textit{(Python, Pandas, SQL)} --- Open source library to integrate the Zendesk API into SQL databases
+\end{itemize}
+
+%----------- CERTIFICATIONS & HONORS -----------
+\section{Certifications \& Honors}
+
+\textbf{DS4A 2.0 Honors} \hfill \textit{Sept 2021}
+\begin{itemize}
+    \item Merit fellowship for highly selective data science program (4\% acceptance rate) under professor Natesh Pillai (Harvard)
+    \item Delivered insights on user behavior from a dataset of 200K+ users for an EdTech company
+\end{itemize}
+
+\vspace{4pt}
+\textbf{SoftBank Endowed Scholar} \hfill \textit{Sept 2021}
+
+%----------- SKILLS -----------
+\section{Skills}
+
+\textbf{Languages \& Tools:} Python, SQL, Airflow, Databricks, Apache Spark, Azure Data Factory, Azure Data Lake Gen 2, Azure AI Foundry, PowerBI, DAX, Polars, Pandas, NumPy, SQLAlchemy, FastAPI, Git, Linux, TypeScript, JavaScript, R
+
+\vspace{4pt}
+\textbf{Data Engineering:} ETL Pipeline Design, Medallion Architecture, Distributed Computing (Spark), Data Lake \& Data Warehouse, Data Quality \& Monitoring, Pipeline Scalability, BI Enablement, LLM Integration, NLP, REST API Integrations, Cloud Infrastructure (Azure)
+
+%----------- EDUCATION -----------
+\section{Education}
+
+\textbf{University of Illinois Urbana-Champaign} \hfill \textit{August 2022 -- May 2024}\\
+PhD in Informatics (withdrawn)
+
+\vspace{4pt}
+\textbf{Soka University of America} \hfill \textit{August 2018 -- May 2022}\\
+Bachelor's degree, Liberal Arts and Sciences --- concentrations in Economics and International Studies
+
+\end{document}
