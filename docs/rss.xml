@@ -6,7 +6,7 @@
     <description>personal website with technical writing, tiny game demos, and photo-logs</description>
     <atom:link href="https://rodigu.github.io/rss.xml" rel="self" type="application/rss+xml"/>
     <language>en</language>
-    <lastBuildDate>Fri, 22 May 2026 23:08:05 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 22 May 2026 23:52:38 +0000</lastBuildDate>
   <item>
     <title>connecting to wifi via terminal with nmcli</title>
     <link>https://rodigu.github.io/posts/linux/connecting-to-wifi-via-terminal-with-nmcli/</link>
@@ -59,47 +59,11 @@ the top floor now seems to be accessible only through reservations now.&lt;/p&gt
     <title>tiny thermal cam goes to masp</title>
     <link>https://rodigu.github.io/posts/photo-journal/thermal-visit-masp-annex/</link>
     <dc:creator>rodigu</dc:creator>
-    <description>&lt;p&gt;last year, masp's new annex opened to the public. i had the opportunity to visit at opening week. a few weeks before that, i bought a tiny thermal camera that prints on receipt paper.&lt;/p&gt;
-&lt;h2&gt;path&lt;/h2&gt;
-&lt;p align="center"&gt;
-    &lt;img src="../../images/poste-fio.jpg" width="400"&gt;
+    <description>&lt;p align="center"&gt;
+    &lt;img src="./images/anexo-visao.jpg" width="200"&gt;
 &lt;/p&gt;
 
-&lt;p&gt;using the tiny camera is lots of fun. i get to print and see the image as soon as they are taken.&lt;/p&gt;
-&lt;p align="center"&gt;
-    &lt;img src="../../images/janelas-paulista.jpg" width="400"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;the paper is also cheap (a &lt;em&gt;lot&lt;/em&gt; cheaper than instax). i could even reuse regular print paper, which is something i do actually want to try out in the future.&lt;/p&gt;
-&lt;p align="center"&gt;
-    &lt;img src="../../images/cadeirinhas.jpg" width="400"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;some little chairs i found on the way.&lt;/p&gt;
-&lt;h2&gt;anexo&lt;/h2&gt;
-&lt;p&gt;the annex is out of place and discrete at the same time.&lt;/p&gt;
-&lt;p align="center"&gt;
-    &lt;img src="../../images/anexo-masp.jpg" width="400"&gt;
-&lt;/p&gt;
-
-&lt;p align="center"&gt;
-    &lt;img src="../../images/anexo-visao.jpg" width="200"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;it does not draw much attention to itself.&lt;/p&gt;
-&lt;p align="center"&gt;
-    &lt;img src="../../images/masp-e-anexo.jpg" width="200"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;while contrasting the original building by bobardi.&lt;/p&gt;
-&lt;p align="center"&gt;
-    &lt;img src="../../images/masp-e-anexo-lado.jpg" width="200"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;the annex was actually built on top of a pre-existing building. they reused some of the foundations and original structure.&lt;/p&gt;
-&lt;p align="center"&gt;
-    &lt;img src="../../images/moca-masp-escuro.jpg" width="200"&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;last year, masp's new annex opened to the public. i had the opportunity to visit at opening week. a few weeks before that, i bought a tiny thermal camera that prints on receipt paper.&lt;/p&gt;</description>
     <guid>https://rodigu.github.io/posts/photo-journal/thermal-visit-masp-annex/</guid>
     <pubDate>Thu, 05 Feb 2026 23:34:00 -0300</pubDate>
   </item>
