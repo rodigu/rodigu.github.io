@@ -98,9 +98,37 @@ def parse_tags(tagstr):
 
 def parse_markdown(text, extensions, extension_configs):
     html = markdown.markdown(text, extensions=extensions, extension_configs=extension_configs)
-    # Ensure <pre> tags inside code blocks have class="code" for CSS matching
     html = html.replace('<div class="code"><pre>', '<div class="code"><pre class="code">')
     return html
+
+
+def adjust_rel_paths(html, src_depth, display_depth):
+    """Rewrite relative image/href paths in HTML to work from a different page depth.
+    
+    src_depth: how many path segments deep the content was authored for
+               (e.g. 3 for posts/cat/slug/)
+    display_depth: how many path segments deep we're displaying it
+               (e.g. 0 for index.html, 2 for categories/cat_foo/)
+    """
+    def fix(m):
+        attr = m.group(1)
+        path = m.group(2)
+        if not path.startswith("../"):
+            return m.group(0)
+        levels = 0
+        while path.startswith("../"):
+            levels += 1
+            path = path[3:]
+        resolved = src_depth - levels
+        need = display_depth - resolved
+        if need > 0:
+            prefix = "../" * need
+        elif need == 0:
+            prefix = "./"
+        else:
+            prefix = ""
+        return f'{attr}="{prefix}{path}"'
+    return re.sub(r'(src|href)="([^"]*)"', fix, html)
 
 
 def get_slug_from_filename(filename):
@@ -325,19 +353,22 @@ def build():
 
     # --- Generate index page ---
     print("Generating index page...")
-    index_posts = [
-        {
+    index_posts = []
+    for p in posts:
+        out_depth = len(p["url"].split("/")) - 1
+        src_depth = out_depth - 1
+        content = adjust_rel_paths(p["content"], src_depth, 0)
+        teaser = adjust_rel_paths(p["teaser"], src_depth, 0) if p["teaser"] else None
+        index_posts.append({
             "title": p["title"],
             "author": p["author"],
             "date_iso": p["date"].isoformat() if p["date"] else "",
             "date_formatted": p["date"].strftime("%Y-%m-%d %H:%M") if p["date"] else "",
             "url": p["url"],
             "type": p["type"],
-            "content": p["content"],
-            "teaser": p["teaser"],
-        }
-        for p in posts
-    ]
+            "content": content,
+            "teaser": teaser,
+        })
 
     tmpl = env.get_template("index.html")
     html = tmpl.render(base_vars, nav=get_nav(), relroot="./", canonical_path="/", posts=index_posts)
@@ -353,10 +384,14 @@ def build():
         prev_post = posts[i + 1] if i + 1 < len(posts) else None
         next_post = posts[i - 1] if i - 1 >= 0 else None
 
+        out_depth = len(post["url"].split("/")) - 1
+        src_depth = out_depth - 1
+        adjusted_content = adjust_rel_paths(post["content"], src_depth, out_depth)
+
         post_data = {
             "title": post["title"],
             "author": post["author"],
-            "content": post["content"],
+            "content": adjusted_content,
             "date_iso": post["date"].isoformat() if post["date"] else "",
             "date_formatted": post["date"].strftime("%Y-%m-%d %H:%M") if post["date"] else "",
             "tags": post["tags"],
@@ -391,6 +426,9 @@ def build():
     # --- Generate page files ---
     print("Generating pages...")
     for page in pages:
+        if page["slug"] == "404":
+            continue
+
         depth = page["canonical"].count("/") - 1
         rr = relroot(depth)
 
@@ -413,6 +451,28 @@ def build():
 
         out_path = os.path.join(out_dir, page["output_path"])
         os.makedirs(os.path.dirname(out_path), exist_ok=True)
+        with open(out_path, "w") as f:
+            f.write(html)
+
+    # --- Generate 404 page ---
+    page_404 = next((p for p in pages if p["slug"] == "404"), None)
+    if page_404:
+        page_data = {
+            "title": page_404["title"],
+            "author": page_404["author"],
+            "content": page_404["content"],
+            "description": page_404["description"],
+            "date_iso": page_404["date"].isoformat() if page_404["date"] else "",
+            "tags": page_404["tags"],
+        }
+        desc = page_404.get("description") or base_vars["description"]
+        tmpl = env.get_template("page.html")
+        html = tmpl.render(
+            base_vars, nav=get_nav(),
+            relroot="./", canonical_path="/404.html",
+            title=page_404["title"], description=desc, page=page_data,
+        )
+        out_path = os.path.join(out_dir, "404.html")
         with open(out_path, "w") as f:
             f.write(html)
 
@@ -455,7 +515,9 @@ def build():
     print("Generating RSS feed...")
     rss_items = []
     for post in posts[:20]:
-        content = post["teaser"] if post["teaser"] else post["content"]
+        out_depth = len(post["url"].split("/")) - 1
+        raw_content = post["teaser"] if post["teaser"] else post["content"]
+        content = adjust_rel_paths(raw_content, out_depth - 1, 0)
         rss_items.append(f"""  <item>
     <title>{xml_escape(post['title'])}</title>
     <link>{site['url']}/{post['url']}</link>
