@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block extra_head %}
+<link rel="alternate" type="application/rss+xml" title="RSS for category {{ category }}" hreflang="en" href="../cat_{{ category }}.xml">
+{% endblock %}
+{% block content %}
+<article class="tagpage">
+  <header>
+    <h1>Posts about {{ category }}</h1>
+    <div class="metadata">
+      <p class="feedlink">
+        <a href="../cat_{{ category }}.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
+      </p>
+    </div>
+  </header>
+  <ul class="postlist">
+{% for post in posts %}
+    <li>
+      <time class="listdate" datetime="{{ post.date_iso }}" title="{{ post.date_formatted }}">{{ post.date_formatted }}</time>
+      <a href="{{ relroot }}{{ post.url }}" class="listtitle">{{ post.title }}</a>
+    </li>
+{% endfor %}
+  </ul>
+</article>
+{% endblock %}

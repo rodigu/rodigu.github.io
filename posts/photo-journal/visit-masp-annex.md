@@ -5,7 +5,6 @@
 .. tags: blog, photos
 .. category: photo-journal
 .. author: rodigu
-.. status: draft
 .. link: https://rodigu.github.io/
 .. description: photos from my first visit to masp's annex, last year
 -->

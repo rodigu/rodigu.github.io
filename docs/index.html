@@ -1,67 +1,105 @@
 <!DOCTYPE html>
-<html prefix="" lang="en">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="description" content="personal website with technical writing, tiny game demos, and photo-logs">
 <meta name="viewport" content="width=device-width">
 <title>hiroto's things</title>
-<link href="assets/css/rst.css" rel="stylesheet" type="text/css">
-<link href="assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="assets/css/dark.css" rel="stylesheet" type="text/css">
-<link href="assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="./assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="./assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="./assets/css/dark.css" rel="stylesheet" type="text/css">
+<link href="./assets/css/theme.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
 <meta name="theme-color" content="#5670d4">
-<meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="./rss.xml">
 <link rel="canonical" href="https://rodigu.github.io/">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/data-eng/airflow-walrus/" type="text/html">
+
 </head>
 <body class="hack dark">
-
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
-    <div id="container">
-         
-    <header id="header"><h1 id="brand"><a href="." title="hiroto's things" rel="home">
+<div id="container">
+  <header id="header"><h1 id="brand"><a href="./" title="hiroto's things" rel="home">
+    <span id="blog-title">hiroto's things</span>
+  </a></h1>
+  <nav id="menu"><ul>
 
-        <span id="blog-title">hiroto's things</span>
-    </a></h1>
+    <li><a href="./categories/cat_reading/">reading</a></li>
 
-        
+    <li><a href="./categories/cat_music/">music</a></li>
 
-        
-    <nav id="menu"><ul>
-<li><a href="categories/cat_reading/">reading</a></li>
-                <li><a href="galleries">photos</a></li>
-                <li><a href="categories/cat_music/">music</a></li>
-                <li><a href="categories/cat_linux/">linux</a></li>
-                <li><a href="categories/cat_data-eng/">data</a></li>
-                <li><a href="rss.xml">rss</a></li>
-                <li><a href="pages/about/index.html">about</a></li>
+    <li><a href="./categories/cat_linux/">linux</a></li>
 
-    
+    <li><a href="./categories/cat_data-eng/">data</a></li>
 
-    
-    
-    </ul></nav></header><main id="content"><div class="postindex">
-    <article class="h-entry post-micro" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/data-eng/airflow-walrus/" class="u-url">doing the lord's work with python and the walrus operator</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                rodigu
-            </span></p>
-            <p class="dateline">
-            <a href="posts/data-eng/airflow-walrus/" rel="bookmark">
-            <time class="published dt-published" datetime="2026-02-14T11:54:00-03:00" itemprop="datePublished" title="2026-02-14 11:54">2026-02-14 11:54</time></a>
-            </p>
-                <p class="commentline">
-    
-        <a href="posts/data-eng/airflow-walrus/#utterances-thread">Comments</a>
+    <li><a href="./rss.xml">rss</a></li>
 
+    <li><a href="./pages/about/index.html">about</a></li>
 
+  </ul></nav></header>
+  <main id="content">
+
+<div class="postindex">
+
+  <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <header>
+      <h1 class="p-name entry-title"><a href="./posts/linux/connecting-to-wifi-via-terminal-with-nmcli/" class="u-url">connecting to wifi via terminal with nmcli</a></h1>
+      <div class="metadata">
+        <p class="byline author vcard"><span class="byline-name fn" itemprop="author">rodigu</span></p>
+        <p class="dateline">
+          <a href="./posts/linux/connecting-to-wifi-via-terminal-with-nmcli/" rel="bookmark">
+            <time class="published dt-published" datetime="2026-02-28T16:19:37-03:00" itemprop="datePublished" title="2026-02-28 16:19">2026-02-28 16:19</time>
+          </a>
         </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p><em>(actual prod code for airflow)</em></p>
-<div class="code"><pre class="code literal-block"><span class="p">[</span>
+      </div>
+    </header>
+    <div class="p-summary entry-summary">
+<p>went to sesc paulista.
+last time i visited was years ago, soon after it first opened.
+the top floor now seems to be accessible only through reservations now.</p>
+<p>this was the first time i tried connecting to wifi with this new arch installation.</p>
+<p>the cachyos distro came with <code>nmcli</code>. i am not yet certain that it is a common dependency for other distros.</p>
+<p>this lists the available wifi networks:</p>
+<div class="code"><pre class="code"><span></span><code>nmcli<span class="w"> </span>device<span class="w"> </span>wifi<span class="w"> </span>list
+</code></pre></div>
+
+<p>this connects to wifi:</p>
+<div class="code"><pre class="code"><span></span><code>nmcli<span class="w"> </span>device<span class="w"> </span>wifi<span class="w"> </span>connect<span class="w"> </span>connection_name<span class="w"> </span>password<span class="w"> </span>connection_password
+</code></pre></div>
+    </div>
+  </article>
+
+  <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <header>
+      <h1 class="p-name entry-title"><a href="./posts/meta/post-teasers/" class="u-url">nikola post previews (teasers)</a></h1>
+      <div class="metadata">
+        <p class="byline author vcard"><span class="byline-name fn" itemprop="author">rodigu</span></p>
+        <p class="dateline">
+          <a href="./posts/meta/post-teasers/" rel="bookmark">
+            <time class="published dt-published" datetime="2026-02-14T13:00:09-03:00" itemprop="datePublished" title="2026-02-14 13:00">2026-02-14 13:00</time>
+          </a>
+        </p>
+      </div>
+    </header>
+    <div class="p-summary entry-summary">
+<p>took me a while, but i managed to figure out how to show a preview of a post instead of the whole post.</p>
+    </div>
+  </article>
+
+  <article class="h-entry post-micro" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <header>
+      <h1 class="p-name entry-title"><a href="./posts/data-eng/airflow-walrus/" class="u-url">doing the lord's work with python and the walrus operator</a></h1>
+      <div class="metadata">
+        <p class="byline author vcard"><span class="byline-name fn" itemprop="author">rodigu</span></p>
+        <p class="dateline">
+          <a href="./posts/data-eng/airflow-walrus/" rel="bookmark">
+            <time class="published dt-published" datetime="2026-02-14T11:54:00-03:00" itemprop="datePublished" title="2026-02-14 11:54">2026-02-14 11:54</time>
+          </a>
+        </p>
+      </div>
+    </header>
+    <div class="p-summary entry-summary">
+<p><em>(actual prod code for airflow)</em></p>
+<div class="code"><pre class="code"><span></span><code><span class="p">[</span>
     <span class="p">(</span>
         <span class="n">a_data</span> <span class="o">:=</span> <span class="n">get_users</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span>
             <span class="n">connection_meta</span><span class="o">=</span><span class="n">connection_meta</span>
@@ -73,34 +111,88 @@
         <span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">code_b</span><span class="p">)</span>
     <span class="p">),</span>
 <span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="p">(</span><span class="n">fetch_content</span> <span class="o">:=</span> <span class="n">content_fetch</span><span class="p">(</span><span class="n">a_data</span><span class="p">,</span> <span class="n">b_data</span><span class="p">))</span>
-</pre></div>
+</code></pre></div>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/linux/arch-missing-packages/" class="u-url">missing packages on arch</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                rodigu
-            </span></p>
-            <p class="dateline">
-            <a href="posts/linux/arch-missing-packages/" rel="bookmark">
-            <time class="published dt-published" datetime="2026-02-05T22:41:00-03:00" itemprop="datePublished" title="2026-02-05 22:41">2026-02-05 22:41</time></a>
-            </p>
-                <p class="commentline">
-    
-        <a href="posts/linux/arch-missing-packages/#utterances-thread">Comments</a>
+  </article>
 
-
+  <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <header>
+      <h1 class="p-name entry-title"><a href="./posts/photo-journal/thermal-visit-masp-annex/" class="u-url">tiny thermal cam goes to masp</a></h1>
+      <div class="metadata">
+        <p class="byline author vcard"><span class="byline-name fn" itemprop="author">rodigu</span></p>
+        <p class="dateline">
+          <a href="./posts/photo-journal/thermal-visit-masp-annex/" rel="bookmark">
+            <time class="published dt-published" datetime="2026-02-05T23:34:00-03:00" itemprop="datePublished" title="2026-02-05 23:34">2026-02-05 23:34</time>
+          </a>
         </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
+      </div>
+    </header>
+    <div class="p-summary entry-summary">
+<p>last year, masp's new annex opened to the public. i had the opportunity to visit at opening week. a few weeks before that, i bought a tiny thermal camera that prints on receipt paper.</p>
+<h2>path</h2>
+<p align="center">
+    <img src="../../images/poste-fio.jpg" width="400">
+</p>
+
+<p>using the tiny camera is lots of fun. i get to print and see the image as soon as they are taken.</p>
+<p align="center">
+    <img src="../../images/janelas-paulista.jpg" width="400">
+</p>
+
+<p>the paper is also cheap (a <em>lot</em> cheaper than instax). i could even reuse regular print paper, which is something i do actually want to try out in the future.</p>
+<p align="center">
+    <img src="../../images/cadeirinhas.jpg" width="400">
+</p>
+
+<p>some little chairs i found on the way.</p>
+<h2>anexo</h2>
+<p>the annex is out of place and discrete at the same time.</p>
+<p align="center">
+    <img src="../../images/anexo-masp.jpg" width="400">
+</p>
+
+<p align="center">
+    <img src="../../images/anexo-visao.jpg" width="200">
+</p>
+
+<p>it does not draw much attention to itself.</p>
+<p align="center">
+    <img src="../../images/masp-e-anexo.jpg" width="200">
+</p>
+
+<p>while contrasting the original building by bobardi.</p>
+<p align="center">
+    <img src="../../images/masp-e-anexo-lado.jpg" width="200">
+</p>
+
+<p>the annex was actually built on top of a pre-existing building. they reused some of the foundations and original structure.</p>
+<p align="center">
+    <img src="../../images/moca-masp-escuro.jpg" width="200">
+</p>
+    </div>
+  </article>
+
+  <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <header>
+      <h1 class="p-name entry-title"><a href="./posts/linux/arch-missing-packages/" class="u-url">missing packages on arch</a></h1>
+      <div class="metadata">
+        <p class="byline author vcard"><span class="byline-name fn" itemprop="author">rodigu</span></p>
+        <p class="dateline">
+          <a href="./posts/linux/arch-missing-packages/" rel="bookmark">
+            <time class="published dt-published" datetime="2026-02-05T22:41:00-03:00" itemprop="datePublished" title="2026-02-05 22:41">2026-02-05 22:41</time>
+          </a>
+        </p>
+      </div>
+    </header>
+    <div class="p-summary entry-summary">
 <p>while using pandoc on arch, i got an error as i tried to convert a markdown to a pdf.</p>
 <p>conversion snippet:</p>
-<div class="code"><pre class="code literal-block">pandoc<span class="w"> </span>document.md<span class="w"> </span>-o<span class="w"> </span>document.pdf
-</pre></div>
+<div class="code"><pre class="code"><span></span><code>pandoc<span class="w"> </span>document.md<span class="w"> </span>-o<span class="w"> </span>document.pdf
+</code></pre></div>
 
 <p>resulted in:</p>
-<div class="code"><pre class="code literal-block">Error producing PDF.
-! LaTeX Error: File `xcolor.sty' not found.
+<div class="code"><pre class="code"><span></span><code>Error producing PDF.
+! LaTeX Error: File `xcolor.sty&#39; not found.
 
 Type X to quit or &lt;RETURN&gt; to proceed,
 or enter new name. (Default extension: sty)
@@ -110,192 +202,121 @@ Enter file name:
 &lt;read *&gt; 
 
 l.7 \usepackage
-</pre></div>
-
-<p class="more"><a href="posts/linux/arch-missing-packages/">Read more…</a></p>
-</div>
+</code></pre></div>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/data-eng/tsql-between/" class="u-url">is tsql's `between` inclusive?</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                rodigu
-            </span></p>
-            <p class="dateline">
-            <a href="posts/data-eng/tsql-between/" rel="bookmark">
-            <time class="published dt-published" datetime="2025-12-16T17:10:00-03:00" itemprop="datePublished" title="2025-12-16 17:10">2025-12-16 17:10</time></a>
-            </p>
-                <p class="commentline">
-    
-        <a href="posts/data-eng/tsql-between/#utterances-thread">Comments</a>
+  </article>
 
-
+  <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <header>
+      <h1 class="p-name entry-title"><a href="./posts/data-eng/tsql-between/" class="u-url">is tsql's `between` inclusive?</a></h1>
+      <div class="metadata">
+        <p class="byline author vcard"><span class="byline-name fn" itemprop="author">rodigu</span></p>
+        <p class="dateline">
+          <a href="./posts/data-eng/tsql-between/" rel="bookmark">
+            <time class="published dt-published" datetime="2025-12-16T17:10:00-03:00" itemprop="datePublished" title="2025-12-16 17:10">2025-12-16 17:10</time>
+          </a>
         </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
+      </div>
+    </header>
+    <div class="p-summary entry-summary">
 <p>microsoft's <a href="https://learn.microsoft.com/en-us/sql/t-sql/language-elements/between-transact-sql?view=sql-server-ver17" target="_blank">documentation for between</a> doesn't mention inclusivity <em>at all</em> until <a href="https://learn.microsoft.com/en-us/sql/t-sql/language-elements/between-transact-sql?view=sql-server-ver17#b-use--and--instead-of-between" target="_blank">section b</a>, which suggests that <code>between</code> is inclusive. the information is only really <em>explicitly</em> stated all the way down in <a href="https://learn.microsoft.com/en-us/sql/t-sql/language-elements/between-transact-sql?view=sql-server-ver17#d-use-between-with-datetime-values" target="_blank">section d</a>, where it states that (for datetime values, at least), <code>between</code> is inclusive.</p>
 <p>however, as i have come to find out (not before a whole hour of debugging): it ... depends?</p>
-<p class="more"><a href="posts/data-eng/tsql-between/">Read more…</a></p>
-</div>
     </div>
-    </article><article class="h-entry post-micro" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/reading/thoreau-walden-31/" class="u-url">thoreau; walden; 31</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                rodigu
-            </span></p>
-            <p class="dateline">
-            <a href="posts/reading/thoreau-walden-31/" rel="bookmark">
-            <time class="published dt-published" datetime="2025-04-05T11:41:00-03:00" itemprop="datePublished" title="2025-04-05 11:41">2025-04-05 11:41</time></a>
-            </p>
-                <p class="commentline">
-    
-        <a href="posts/reading/thoreau-walden-31/#utterances-thread">Comments</a>
+  </article>
 
-
+  <article class="h-entry post-micro" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <header>
+      <h1 class="p-name entry-title"><a href="./posts/reading/thoreau-walden-31/" class="u-url">thoreau; walden; 31</a></h1>
+      <div class="metadata">
+        <p class="byline author vcard"><span class="byline-name fn" itemprop="author">rodigu</span></p>
+        <p class="dateline">
+          <a href="./posts/reading/thoreau-walden-31/" rel="bookmark">
+            <time class="published dt-published" datetime="2025-04-05T11:41:00-03:00" itemprop="datePublished" title="2025-04-05 11:41">2025-04-05 11:41</time>
+          </a>
         </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <blockquote>
+      </div>
+    </header>
+    <div class="p-summary entry-summary">
+<blockquote>
 <p><em>The finest qualities of our nature, like the bloom on fruits, can be preserved only by the most delicate handling.</em>
 <em>Yet we do not treat ourselves nor one another thus tenderly.</em></p>
 </blockquote>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/meta/on-nikola/" class="u-url">on nikola</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                rodigu
-            </span></p>
-            <p class="dateline">
-            <a href="posts/meta/on-nikola/" rel="bookmark">
-            <time class="published dt-published" datetime="2025-03-30T17:47:00-03:00" itemprop="datePublished" title="2025-03-30 17:47">2025-03-30 17:47</time></a>
-            </p>
-                <p class="commentline">
-    
-        <a href="posts/meta/on-nikola/#utterances-thread">Comments</a>
+  </article>
 
-
+  <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <header>
+      <h1 class="p-name entry-title"><a href="./posts/meta/on-nikola/" class="u-url">on nikola</a></h1>
+      <div class="metadata">
+        <p class="byline author vcard"><span class="byline-name fn" itemprop="author">rodigu</span></p>
+        <p class="dateline">
+          <a href="./posts/meta/on-nikola/" rel="bookmark">
+            <time class="published dt-published" datetime="2025-03-30T17:47:00-03:00" itemprop="datePublished" title="2025-03-30 17:47">2025-03-30 17:47</time>
+          </a>
         </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p>i tried using the auto builder, but either i did something wrong, or there is a bug with it.
+      </div>
+    </header>
+    <div class="p-summary entry-summary">
+<p>i tried using the auto builder, but either i did something wrong, or there is a bug with it.
 nikola depends on the python package <code>watchdog</code> for the continuous auto-build.
 i might try it again some other time.</p>
-<p>for now, this blog is built with the following sequence of commands:</p>
-<div class="code"><pre class="code literal-block">nikola<span class="w"> </span>check<span class="w"> </span>--clean-files
-nikola<span class="w"> </span>build
-</pre></div>
-
-<p>and served locally with:</p>
-<div class="code"><pre class="code literal-block">nikola<span class="w"> </span>serve<span class="w"> </span>-b
-</pre></div>
-
-<p>in one line:</p>
-<div class="code"><pre class="code literal-block">nikola<span class="w"> </span>check<span class="w"> </span>--clean-files<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>nikola<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>nikola<span class="w"> </span>serve
-</pre></div>
-
-<p>the first line cleans up any files that no longer exist from the output directory (<code>docs</code>, <a href="https://rodigu.github.io/posts/setting-up/">because github pages is unloved</a>).</p>
-<p>new "tabs" can be added with through the <code>NAVIGATION_LINKS</code> variable in <code>conf.py</code> <sup id="fnref:1"><a class="footnote-ref" href="posts/meta/on-nikola/#fn:1">1</a></sup>.
-here is what that variable looks like attow:</p>
-<div class="code"><pre class="code literal-block"><span class="n">NAVIGATION_LINKS</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">DEFAULT_LANG</span><span class="p">:</span> <span class="p">(</span>
-        <span class="p">(</span><span class="s2">"/archive.html"</span><span class="p">,</span> <span class="s2">"archive"</span><span class="p">),</span>
-        <span class="p">(</span><span class="s2">"/categories/"</span><span class="p">,</span> <span class="s2">"tags"</span><span class="p">),</span>
-        <span class="p">(</span><span class="s2">"/rss.xml"</span><span class="p">,</span> <span class="s2">"rss feed"</span><span class="p">),</span>
-        <span class="p">(</span><span class="s2">"/pages/about/index.html"</span><span class="p">,</span> <span class="s2">"about"</span><span class="p">)</span>
-    <span class="p">),</span>
-<span class="p">}</span>
-</pre></div>
-
-<div class="footnote">
-<hr>
-<ol>
-<li id="fn:1">
-<p>as documented in <a href="https://getnikola.com/handbook.html#customizing-your-site">the nikola handbook on <em>customizing your site</em></a> <a class="footnote-backref" href="posts/meta/on-nikola/#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
-</li>
-</ol>
-</div>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/meta/setting-up/" class="u-url">setting up</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                rodigu
-            </span></p>
-            <p class="dateline">
-            <a href="posts/meta/setting-up/" rel="bookmark">
-            <time class="published dt-published" datetime="2025-03-30T16:20:00-03:00" itemprop="datePublished" title="2025-03-30 16:20">2025-03-30 16:20</time></a>
-            </p>
-                <p class="commentline">
-    
-        <a href="posts/meta/setting-up/#utterances-thread">Comments</a>
+  </article>
 
-
+  <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <header>
+      <h1 class="p-name entry-title"><a href="./posts/meta/setting-up/" class="u-url">setting up</a></h1>
+      <div class="metadata">
+        <p class="byline author vcard"><span class="byline-name fn" itemprop="author">rodigu</span></p>
+        <p class="dateline">
+          <a href="./posts/meta/setting-up/" rel="bookmark">
+            <time class="published dt-published" datetime="2025-03-30T16:20:00-03:00" itemprop="datePublished" title="2025-03-30 16:20">2025-03-30 16:20</time>
+          </a>
         </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
+      </div>
+    </header>
+    <div class="p-summary entry-summary">
 <p>looking at the <a href="https://github.com/rodigu/rodigu.github.io/commits/master/" target="_blank">commit history</a> for the repository
 containing the source for this blog, you may notice that this was originally my personal website/cv.</p>
 <p>my initial intention was to setup the present blog on a separate branch,
 but <a href="https://c.tenor.com/Bi5t9IXWlEkAAAAC/tenor.gif" target="_blank">i forgot to switch branches before deleting everything</a>.</p>
 <p>in any case, i suppose i'll have to commit to this now.
 so here is a test post.</p>
-<p class="more"><a href="posts/meta/setting-up/">Read more…</a></p>
-</div>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/data-eng/airflow-task_group-failure/" class="u-url">what to do when an airflow task inside a task group fails</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                rodigu
-            </span></p>
-            <p class="dateline">
-            <a href="posts/data-eng/airflow-task_group-failure/" rel="bookmark">
-            <time class="published dt-published" datetime="2025-03-30T16:20:00-03:00" itemprop="datePublished" title="2025-03-30 16:20">2025-03-30 16:20</time></a>
-            </p>
-                <p class="commentline">
-    
-        <a href="posts/data-eng/airflow-task_group-failure/#utterances-thread">Comments</a>
+  </article>
 
-
+  <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <header>
+      <h1 class="p-name entry-title"><a href="./posts/data-eng/airflow-task_group-failure/" class="u-url">what to do when an airflow task inside a task group fails</a></h1>
+      <div class="metadata">
+        <p class="byline author vcard"><span class="byline-name fn" itemprop="author">rodigu</span></p>
+        <p class="dateline">
+          <a href="./posts/data-eng/airflow-task_group-failure/" rel="bookmark">
+            <time class="published dt-published" datetime="2025-03-30T16:20:00-03:00" itemprop="datePublished" title="2025-03-30 16:20">2025-03-30 16:20</time>
+          </a>
         </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
+      </div>
+    </header>
+    <div class="p-summary entry-summary">
 <p>checking if a task has failed on airflow is simple enough, and may be done with:</p>
-<div class="code"><pre class="code literal-block"><span class="kn">from</span><span class="w"> </span><span class="nn">airflow.operators.python</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_current_context</span>
+<div class="code"><pre class="code"><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">airflow.operators.python</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_current_context</span>
 
 <span class="nd">@task</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">check_task_failed</span><span class="p">(</span><span class="n">task_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
       <span class="n">context</span> <span class="o">=</span> <span class="n">get_current_context</span><span class="p">()</span>
       <span class="k">return</span> <span class="p">(</span>
-          <span class="n">context</span><span class="p">[</span><span class="s2">"dag_run"</span><span class="p">]</span>
+          <span class="n">context</span><span class="p">[</span><span class="s2">&quot;dag_run&quot;</span><span class="p">]</span>
             <span class="o">.</span><span class="n">get_task_instance</span><span class="p">(</span><span class="n">task_id</span><span class="o">=</span><span class="n">task_id</span><span class="p">)</span>
             <span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">FAILED</span>
       <span class="p">)</span>
-</pre></div>
-
-<p class="more"><a href="posts/data-eng/airflow-task_group-failure/">Read more…</a></p>
-</div>
+</code></pre></div>
     </div>
-    </article>
+  </article>
+
 </div>
 
-
-
-    
-
-
-
-
-
-         </main><footer id="footer"><p>Contents © 2026         <a href="mailto:rmoraisu@proton.me">rodigu</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
-            
-        </footer>
+  </main>
+  <footer id="footer"><p>Contents © 2026 <a href="mailto:rmoraisu@proton.me">rodigu</a></p></footer>
 </div>
-    
-    
-
-    
-    
-    
 </body>
 </html>
