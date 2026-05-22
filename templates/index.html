@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="postindex">
+{% for post in posts %}
+  <article class="h-entry {{ 'post-micro' if post.type == 'micro' else 'post-text' }}" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <header>
+      <h1 class="p-name entry-title"><a href="{{ relroot }}{{ post.url }}" class="u-url">{{ post.title }}</a></h1>
+      <div class="metadata">
+        <p class="byline author vcard"><span class="byline-name fn" itemprop="author">{{ post.author }}</span></p>
+        <p class="dateline">
+          <a href="{{ relroot }}{{ post.url }}" rel="bookmark">
+            <time class="published dt-published" datetime="{{ post.date_iso }}" itemprop="datePublished" title="{{ post.date_formatted }}">{{ post.date_formatted }}</time>
+          </a>
+        </p>
+      </div>
+    </header>
+    <div class="p-summary entry-summary">
+{{ post.teaser if post.teaser else post.content }}
+    </div>
+  </article>
+{% endfor %}
+</div>
+{% endblock %}

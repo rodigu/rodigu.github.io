@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="{{ description }}">
+<meta name="viewport" content="width=device-width">
+<title>{% if title %}{{ title }} | {{ site_title }}{% else %}{{ site_title }}{% endif %}</title>
+<link href="{{ relroot }}assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="{{ relroot }}assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="{{ relroot }}assets/css/dark.css" rel="stylesheet" type="text/css">
+<link href="{{ relroot }}assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family={{ font }}" rel="stylesheet">
+<meta name="theme-color" content="{{ theme_color }}">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="{{ relroot }}rss.xml">
+<link rel="canonical" href="{{ site_url }}{{ canonical_path }}">
+{% block extra_head %}{% endblock %}
+</head>
+<body class="hack {{ variant }}">
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+<div id="container">
+  <header id="header"><h1 id="brand"><a href="{{ relroot }}" title="{{ site_title }}" rel="home">
+    <span id="blog-title">{{ site_title }}</span>
+  </a></h1>
+  <nav id="menu"><ul>
+{% for item in nav %}
+    <li><a href="{{ relroot }}{{ item.url }}"{% if item.active %} class="active"{% endif %}>{{ item.label }}</a></li>
+{% endfor %}
+  </ul></nav></header>
+  <main id="content">
+{% block content %}{% endblock %}
+  </main>
+  <footer id="footer"><p>{{ footer }}</p></footer>
+</div>
+</body>
+</html>

@@ -14,6 +14,7 @@ Data Engineer with 5 years of experience building and maintaining large-scale da
 - Design and maintain medallion architecture (bronze/silver/gold) using Spark-based transformations for ingestion and processing from heterogeneous sources into analytics-ready databases
 - Build and optimize distributed data pipelines with Databricks, Apache Spark, Azure Data Factory, and Azure Data Lake Gen 2
 - Manage and optimize Azure cloud infrastructure costs and resources, including PostgreSQL database instances
+- Collaborate with business stakeholders to translate data requirements into scalable pipeline architecture and data models
 
 **Data Scientist / Data Engineer** | Star Parks | São Paulo, Brazil | *October 2024 – January 2026*
 

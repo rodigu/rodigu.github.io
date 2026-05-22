@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="description" content="personal website with technical writing, tiny game demos, and photo-logs">
 <meta name="viewport" content="width=device-width">
-<title>thoreau; walden; 31 | hiroto's things</title>
+<title>connecting to wifi via terminal with nmcli | hiroto's things</title>
 <link href="../../../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/css/code.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/css/dark.css" rel="stylesheet" type="text/css">
@@ -12,29 +12,21 @@
 <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
 <meta name="theme-color" content="#5670d4">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../../rss.xml">
-<link rel="canonical" href="https://rodigu.github.io/posts/reading/thoreau-walden-31/">
+<link rel="canonical" href="https://rodigu.github.io/posts/linux/connecting-to-wifi-via-terminal-with-nmcli/">
 
 <meta name="author" content="rodigu">
 <meta property="og:site_name" content="hiroto's things">
-<meta property="og:title" content="thoreau; walden; 31">
-<meta property="og:url" content="https://rodigu.github.io/posts/reading/thoreau-walden-31/">
+<meta property="og:title" content="connecting to wifi via terminal with nmcli">
+<meta property="og:url" content="https://rodigu.github.io/posts/linux/connecting-to-wifi-via-terminal-with-nmcli/">
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2025-04-05T11:41:00-03:00">
+<meta property="article:published_time" content="2026-02-28T16:19:37-03:00">
 
-<meta property="article:tag" content="quote">
-
-<meta property="article:tag" content="english">
-
-<meta property="article:tag" content="literature">
-
-<meta property="article:tag" content="non-fiction">
+<meta property="article:tag" content="terminal">
 
 
-<link rel="prev" href="../../../posts/meta/on-nikola/" title="on nikola" type="text/html">
+<link rel="prev" href="../../../posts/meta/post-teasers/" title="nikola post previews (teasers)" type="text/html">
 
-
-<link rel="next" href="../../../posts/data-eng/tsql-between/" title="is tsql's `between` inclusive?" type="text/html">
 
 
 </head>
@@ -46,11 +38,11 @@
   </a></h1>
   <nav id="menu"><ul>
 
-    <li><a href="../../../categories/cat_reading/" class="active">reading</a></li>
+    <li><a href="../../../categories/cat_reading/">reading</a></li>
 
     <li><a href="../../../categories/cat_music/">music</a></li>
 
-    <li><a href="../../../categories/cat_linux/">linux</a></li>
+    <li><a href="../../../categories/cat_linux/" class="active">linux</a></li>
 
     <li><a href="../../../categories/cat_photo-journal/">photo-journal</a></li>
 
@@ -63,45 +55,45 @@
   </ul></nav></header>
   <main id="content">
 
-<article class="post-micro h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
   <header>
-    <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">thoreau; walden; 31</a></h1>
+    <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">connecting to wifi via terminal with nmcli</a></h1>
     <div class="metadata">
       <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">rodigu</span></p>
       <p class="dateline">
         <a href="." rel="bookmark">
-          <time class="published dt-published" datetime="2025-04-05T11:41:00-03:00" itemprop="datePublished" title="2025-04-05 11:41">2025-04-05 11:41</time>
+          <time class="published dt-published" datetime="2026-02-28T16:19:37-03:00" itemprop="datePublished" title="2026-02-28 16:19">2026-02-28 16:19</time>
         </a>
       </p>
     </div>
   </header>
   <div class="e-content entry-content" itemprop="articleBody text">
-<blockquote>
-<p><em>The finest qualities of our nature, like the bloom on fruits, can be preserved only by the most delicate handling.</em>
-<em>Yet we do not treat ourselves nor one another thus tenderly.</em></p>
-</blockquote>
+<p>went to sesc paulista.
+last time i visited was years ago, soon after it first opened.
+the top floor now seems to be accessible only through reservations now.</p>
+<p>this was the first time i tried connecting to wifi with this new arch installation.</p>
+<p>the cachyos distro came with <code>nmcli</code>. i am not yet certain that it is a common dependency for other distros.</p>
+<p>this lists the available wifi networks:</p>
+<div class="code"><pre class="code"><span></span><code>nmcli<span class="w"> </span>device<span class="w"> </span>wifi<span class="w"> </span>list
+</code></pre></div>
+
+<p>this connects to wifi:</p>
+<div class="code"><pre class="code"><span></span><code>nmcli<span class="w"> </span>device<span class="w"> </span>wifi<span class="w"> </span>connect<span class="w"> </span>connection_name<span class="w"> </span>password<span class="w"> </span>connection_password
+</code></pre></div>
   </div>
 
   <aside class="postpromonav">
     <nav>
       <ul itemprop="keywords" class="tags">
 
-        <li><a class="tag p-category" href="../../../categories/quote/" rel="tag">quote</a></li>
-
-        <li><a class="tag p-category" href="../../../categories/english/" rel="tag">english</a></li>
-
-        <li><a class="tag p-category" href="../../../categories/literature/" rel="tag">literature</a></li>
-
-        <li><a class="tag p-category" href="../../../categories/non-fiction/" rel="tag">non-fiction</a></li>
+        <li><a class="tag p-category" href="../../../categories/terminal/" rel="tag">terminal</a></li>
 
       </ul>
 
       <ul class="pager hidden-print">
 
-        <li class="previous"><a href="../../../posts/meta/on-nikola/" rel="prev" title="on nikola">Previous post</a></li>
+        <li class="previous"><a href="../../../posts/meta/post-teasers/" rel="prev" title="nikola post previews (teasers)">Previous post</a></li>
 
-
-        <li class="next"><a href="../../../posts/data-eng/tsql-between/" rel="next" title="is tsql's `between` inclusive?">Next post</a></li>
 
       </ul>
 
@@ -111,7 +103,7 @@
 
   <section class="comments hidden-print">
     <h2>Comments</h2>
-    <div data-title="thoreau; walden; 31" id="utterances-thread"></div>
+    <div data-title="connecting to wifi via terminal with nmcli" id="utterances-thread"></div>
     <script src="https://utteranc.es/client.js" repo="rodigu/rodigu.github.io" issue-term="url" label="comment" theme="github-dark" crossorigin="anonymous"></script>
   </section>
 

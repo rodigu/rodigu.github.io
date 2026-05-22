@@ -5,12 +5,17 @@
 .. tags: blog, photos
 .. category: photo-journal
 .. author: rodigu
-.. status: draft
 .. link: https://rodigu.github.io/
 .. description: photos from my first visit to masp's annex, last year
 -->
 
+<p align="center">
+    <img src="../../images/anexo-visao.jpg" width="200">
+</p>
+
 last year, masp's new annex opened to the public. i had the opportunity to visit at opening week. a few weeks before that, i bought a tiny thermal camera that prints on receipt paper.
+
+<!-- TEASER_END -->
 
 ## path
 
@@ -38,10 +43,6 @@ the annex is out of place and discrete at the same time.
 
 <p align="center">
     <img src="../../images/anexo-masp.jpg" width="400">
-</p>
-
-<p align="center">
-    <img src="../../images/anexo-visao.jpg" width="200">
 </p>
 
 it does not draw much attention to itself.
