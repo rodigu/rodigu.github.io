@@ -24,6 +24,8 @@ def check_task_failed(task_id: str) -> bool:
       )
 ```
 
+<!-- TEASER_END -->
+
 however, if the task is nested within a `task_group`, referencing said task with `task_id` doesn't work.
 in theory, tasks inside a `task_group` should be indexed with `group_id.task_id`[^1], but trying `get_task_instance` with this ID structure will return a `NoneType`.
 

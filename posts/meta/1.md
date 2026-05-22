@@ -18,6 +18,8 @@ but [i forgot to switch branches before deleting everything](https://c.tenor.com
 in any case, i suppose i'll have to commit to this now.
 so here is a test post.
 
+<!-- TEASER_END -->
+
 ## testing out
 
 originally, i attempted to use [jekyll](https://jekyllrb.com/){:target="_blank"} for this blog, as it is already integrated into github pages.

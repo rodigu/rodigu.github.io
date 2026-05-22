@@ -11,6 +11,8 @@ microsoft's [documentation for between](https://learn.microsoft.com/en-us/sql/t-
 
 however, as i have come to find out (not before a whole hour of debugging): it ... depends?
 
+<!-- TEASER_END -->
+
 ## context
 
 lets create a table with two columns.

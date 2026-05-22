@@ -1,0 +1,24 @@
+<h2>deploying and debugging the airflow daemon</h2>
+<div class="code"><pre class="code literal-block">systemctl<span class="w"> </span>daemon-reload
+</pre></div>
+
+<h3><code>systemctl</code></h3>
+<div class="code"><pre class="code literal-block">systemctl<span class="w"> </span>start<span class="w"> </span>airflow-scheduler
+systemctl<span class="w"> </span>start<span class="w"> </span>airflow-webserver
+</pre></div>
+
+<div class="code"><pre class="code literal-block">systemctl<span class="w"> </span>status<span class="w"> </span>airflow-scheduler
+systemctl<span class="w"> </span>status<span class="w"> </span>airflow-webserver
+</pre></div>
+
+<div class="code"><pre class="code literal-block">systemctl<span class="w"> </span>stop<span class="w"> </span>airflow-scheduler
+systemctl<span class="w"> </span>stop<span class="w"> </span>airflow-webserver
+</pre></div>
+
+<div class="code"><pre class="code literal-block">systemctl<span class="w"> </span>restart<span class="w"> </span>airflow-scheduler
+systemctl<span class="w"> </span>restart<span class="w"> </span>airflow-webserver
+</pre></div>
+
+<h3>logs</h3>
+<div class="code"><pre class="code literal-block">journalctl<span class="w"> </span>-u<span class="w"> </span>airflow-webserver.service
+</pre></div>

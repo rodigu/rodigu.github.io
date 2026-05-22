@@ -78,6 +78,8 @@
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>microsoft's <a href="https://learn.microsoft.com/en-us/sql/t-sql/language-elements/between-transact-sql?view=sql-server-ver17" target="_blank">documentation for between</a> doesn't mention inclusivity <em>at all</em> until <a href="https://learn.microsoft.com/en-us/sql/t-sql/language-elements/between-transact-sql?view=sql-server-ver17#b-use--and--instead-of-between" target="_blank">section b</a>, which suggests that <code>between</code> is inclusive. the information is only really <em>explicitly</em> stated all the way down in <a href="https://learn.microsoft.com/en-us/sql/t-sql/language-elements/between-transact-sql?view=sql-server-ver17#d-use-between-with-datetime-values" target="_blank">section d</a>, where it states that (for datetime values, at least), <code>between</code> is inclusive.</p>
 <p>however, as i have come to find out (not before a whole hour of debugging): it ... depends?</p>
+<!-- TEASER_END -->
+
 <h3>context</h3>
 <p>lets create a table with two columns.
 <code>date_vc</code> is a <code>varchar</code> that follows the formatting <code>'%d/%m/%Y'</code> (as per the usual cron formatting<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">1</a></sup>).

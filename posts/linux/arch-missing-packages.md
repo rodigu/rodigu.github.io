@@ -31,6 +31,8 @@ Enter file name:
 l.7 \usepackage
 ```
 
+<!-- TEASER_END -->
+
 to use pandoc you first need a tex engine, like texlive:
 
 ```bash

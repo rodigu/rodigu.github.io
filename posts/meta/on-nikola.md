@@ -10,6 +10,8 @@ i tried using the auto builder, but either i did something wrong, or there is a 
 nikola depends on the python package `watchdog` for the continuous auto-build.
 i might try it again some other time.
 
+<!-- TEASER_END -->
+
 for now, this blog is built with the following sequence of commands:
 
 ```bash

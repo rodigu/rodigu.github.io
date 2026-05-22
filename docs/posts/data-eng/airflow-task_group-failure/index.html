@@ -89,6 +89,8 @@
       <span class="p">)</span>
 </pre></div>
 
+<!-- TEASER_END -->
+
 <p>however, if the task is nested within a <code>task_group</code>, referencing said task with <code>task_id</code> doesn't work.
 in theory, tasks inside a <code>task_group</code> should be indexed with <code>group_id.task_id</code><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, but trying <code>get_task_instance</code> with this ID structure will return a <code>NoneType</code>.</p>
 <p>the one way i have found to actually make it work, is with the following:</p>

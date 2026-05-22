@@ -1,4 +1,4 @@
-<p>i was trying to use pandoc with arch, but was getting an error when trying to convert a markdown to pdf.</p>
+<p>while using pandoc on arch, i got an error as i tried to convert a markdown to a pdf.</p>
 <p>conversion snippet:</p>
 <div class="code"><pre class="code literal-block">pandoc<span class="w"> </span>document.md<span class="w"> </span>-o<span class="w"> </span>document.pdf
 </pre></div>
@@ -17,15 +17,17 @@ Enter file name:
 l.7 \usepackage
 </pre></div>
 
+<!-- TEASER_END -->
+
 <p>to use pandoc you first need a tex engine, like texlive:</p>
 <div class="code"><pre class="code literal-block">sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>texlive
 </pre></div>
 
-<p>i installed only the ones that seemed relevant, as all packages amount to over 1 GB (??).</p>
+<p>i installed only the ones that seemed relevant, as all packages amount to over 1 GB together (??).</p>
 <p>turns out, i was missing something.
 <a href="https://www.reddit.com/r/archlinux/comments/n8vbyz/latex_packages_problem/" target="_blank">this reddit comment</a> helped me out:</p>
 <blockquote>
-<p>If you want to figure out which one you need to install to get a certain LaTeX package, use for example <code>pacman -F bbm.sty</code>. You will need to run <code>pacman -Fy</code> once if you have never used <code>pacman -F</code> at all.</p>
+<p><em>If you want to figure out which one you need to install to get a certain LaTeX package, use for example <code>pacman -F bbm.sty</code>. You will need to run <code>pacman -Fy</code> once if you have never used <code>pacman -F</code> at all.</em></p>
 </blockquote>
 <p>very good to know.
 running it:</p>
@@ -37,4 +39,6 @@ running it:</p>
     usr/share/texmf-dist/tex/generic/soul/soul.sty
 </pre></div>
 
-<p>which i just had to install with pacman.</p>
+<p>which i just had to install with pacman:</p>
+<div class="code"><pre class="code literal-block">sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>soul
+</pre></div>
