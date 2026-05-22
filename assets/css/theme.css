@@ -211,16 +211,16 @@ body {
 
 /* Links */
 :link {
-	color: #1168CC;
+	color: #b13d14;
 	text-decoration: none;
     border-bottom: 0px none green
 }
 :visited {
-	color: #6830BB;
-    border-bottom: 0px none green
+	color: #fce7d2;
+    border-bottom: 1px solid green
 }
 :link:hover, :visited:hover {
-	color: #0d53a3;
+	color: #d38f68;
 }
 
 #brand :link,
