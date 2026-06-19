@@ -1,11 +1,13 @@
-.. title: missing packages on arch
-.. slug: arch-missing-packages
+<!--
+.. title: converting markdown with pandoc on arch
+.. slug: markdown-pandoc-on-arch
 .. date: 2026-02-05 22:41:00 UTC-03:00
 .. tags: arch, linux
 .. category: linux
 .. author: rodigu
 .. link: https://rodigu.github.io/
-.. description:
+.. description: convering markdown to pdfs with pandoc on arch linux
+-->
 
 while using pandoc on arch, i got an error as i tried to convert a markdown to a pdf.
 
@@ -14,6 +16,7 @@ conversion snippet:
 ```bash
 pandoc document.md -o document.pdf
 ```
+<!-- TEASER_END -->
 
 resulted in:
 
@@ -30,8 +33,6 @@ Enter file name:
          
 l.7 \usepackage
 ```
-
-<!-- TEASER_END -->
 
 to use pandoc you first need a tex engine, like texlive:
 

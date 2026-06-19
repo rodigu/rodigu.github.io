@@ -1,3 +1,4 @@
+<!--
 .. title: on nikola
 .. slug: on-nikola
 .. date: 2025-03-30 17:47:00 UTC-03:00
@@ -5,6 +6,7 @@
 .. link: on-nikola
 .. category: meta
 .. description: some useful writing and references on the nikola static website builder
+-->
 
 i tried using the auto builder, but either i did something wrong, or there is a bug with it.
 nikola depends on the python package `watchdog` for the continuous auto-build.
