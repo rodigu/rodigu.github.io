@@ -1,10 +1,8 @@
-# Rodrigo Hiroto Morais
-
 |        phone        |          email           |                                 linkedin                                 |
 | ------------------- | ------------------------ | ------------------------------------------------------------------------ |
 | +55 (11) 95841-7956 | rodrigohmorais@proton.me | [linkedin.com/in/rodrigohmorais](https://linkedin.com/in/rodrigohmorais) |
 
-Data Engineer (3 YoE) with a background spanning network science, NLP, and cloud data infrastructure. Currently building LLM-powered information extraction and medallion architecture pipelines on Azure with Databricks, Airflow, and Fabric at CEJAM. Previously developed business-critical ETL systems with Airflow at Star Parks and conducted research on LLM applications for qualitative data analysis at the University of Illinois Urbana-Champaign.
+Data Engineer (4 YoE) with a background spanning network science, NLP, and cloud data infrastructure. Currently building LLM-powered information extraction and medallion architecture pipelines on Azure with Databricks, Airflow, and Fabric at CEJAM. Previously developed business-critical ETL systems with Airflow at Star Parks and conducted research on LLM applications for qualitative data analysis at the University of Illinois Urbana-Champaign.
 
 ---
 
@@ -12,7 +10,10 @@ Data Engineer (3 YoE) with a background spanning network science, NLP, and cloud
 
 **Data Engineer** | CEJAM | São Paulo, Brazil | *January 2026 – Present*
 
+- Architect LLM governance and access through a centralized Bifrost LLM gateway on Azure Cloud
+- Ensure conformity with the LGPD for data infrastructure and LLM operations
 - Deploy LLMs to the Azure Foundry, integrating them into Databricks pipelines for NLP (information extraction) on unstructured data
+- Create agentic workflows for automations, using Docker for agent containment and the OpenAI API for model access
 - Implement and maintain medallion data architecture for ingestion and transformation from various sources into databases ready for BI analytics
 - Create ETL pipelines with Databricks, Azure Data Factory and Azure Data Lake Gen 2
 - Manage Azure cloud infrastructure costs and resources
