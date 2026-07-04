@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="personal website with technical writing, tiny game demos, and photo-logs">
+<meta name="viewport" content="width=device-width">
+<title>How to Avoid Writing Like an LLM | hiroto</title>
+<link href="../../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/dark.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../../rss.xml">
+<link rel="canonical" href="https://rodigu.github.io/pages/itau-sr-data-sci/ai-writing/">
+
+<meta name="author" content="rodigu">
+<meta property="og:site_name" content="hiroto">
+<meta property="og:title" content="How to Avoid Writing Like an LLM">
+<meta property="og:url" content="https://rodigu.github.io/pages/itau-sr-data-sci/ai-writing/">
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
+
+
+
+</head>
+<body class="hack dark">
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+<div id="container">
+  <header id="header"><h1 id="brand"><a href="../../../" title="hiroto" rel="home">
+    <span id="blog-title">hiroto</span>
+  </a></h1>
+  <nav id="menu"><ul>
+
+    <li><a href="../../../categories/cat_reading/">reading</a></li>
+
+    <li><a href="../../../categories/cat_linux/">linux</a></li>
+
+    <li><a href="../../../categories/cat_photo-journal/">photo-journal</a></li>
+
+    <li><a href="../../../categories/cat_data-eng/">data</a></li>
+
+    <li><a href="../../../rss.xml">rss</a></li>
+
+    <li><a href="../../../pages/about/index.html">about</a></li>
+
+    <li><a href="../../../pages/cv/index.html">cv</a></li>
+
+  </ul></nav></header>
+  <main id="content">
+
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article">
+  <header>
+    <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">How to Avoid Writing Like an LLM</a></h1>
+  </header>
+  <div class="e-content entry-content" itemprop="articleBody text">
+<h1>How to Avoid Writing Like an LLM</h1>
+<p>Based on <a href="https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing">Wikipedia: Signs of AI writing</a>.</p>
+<hr />
+<h2>1. Vocabulary: Stop Using These Words</h2>
+<p>LLMs overuse specific words. If you catch yourself using them, replace with simpler alternatives.</p>
+<p><strong>Overused words (and what to use instead):</strong></p>
+<table>
+<thead>
+<tr>
+<th>LLM word</th>
+<th>Use instead</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Additionally</td>
+<td>Also, And, Plus</td>
+</tr>
+<tr>
+<td>Align with</td>
+<td>Match, fit, agree with</td>
+</tr>
+<tr>
+<td>Boasts (meaning "has")</td>
+<td>Has, features</td>
+</tr>
+<tr>
+<td>Bolstered</td>
+<td>Strengthened, supported</td>
+</tr>
+<tr>
+<td>Crucial</td>
+<td>Important, key, vital</td>
+</tr>
+<tr>
+<td>Delve</td>
+<td>Explore, dig into, examine</td>
+</tr>
+<tr>
+<td>Emphasizing</td>
+<td>Stressing, noting</td>
+</tr>
+<tr>
+<td>Enduring</td>
+<td>Lasting, long-standing</td>
+</tr>
+<tr>
+<td>Enhance</td>
+<td>Improve, boost</td>
+</tr>
+<tr>
+<td>Fostering</td>
+<td>Encouraging, building</td>
+</tr>
+<tr>
+<td>Garner</td>
+<td>Gain, earn, attract</td>
+</tr>
+<tr>
+<td>Highlight</td>
+<td>Show, point out, note</td>
+</tr>
+<tr>
+<td>Interplay</td>
+<td>Interaction, relationship</td>
+</tr>
+<tr>
+<td>Intricate/Intricacies</td>
+<td>Complex, detailed, complicated</td>
+</tr>
+<tr>
+<td>Landscape (abstract)</td>
+<td>Field, area, space</td>
+</tr>
+<tr>
+<td>Meticulous/meticulously</td>
+<td>Careful/carefully, thorough/thoroughly</td>
+</tr>
+<tr>
+<td>Pivotal</td>
+<td>Key, important, central</td>
+</tr>
+<tr>
+<td>Robust</td>
+<td>Strong, solid, reliable</td>
+</tr>
+<tr>
+<td>Showcase</td>
+<td>Show, display, present</td>
+</tr>
+<tr>
+<td>Tapestry (abstract)</td>
+<td>Mix, blend, collection</td>
+</tr>
+<tr>
+<td>Testament</td>
+<td>Proof, sign, evidence</td>
+</tr>
+<tr>
+<td>Underscore</td>
+<td>Emphasize, stress, highlight</td>
+</tr>
+<tr>
+<td>Valuable</td>
+<td>Useful, helpful, worthwhile</td>
+</tr>
+<tr>
+<td>Vibrant</td>
+<td>Lively, energetic, active</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key insight:</strong> These words co-occur. If you see 3+ in a paragraph, it reads as AI-generated.</p>
+<hr />
+<h2>2. Sentence Structure</h2>
+<h3>Use simple "is/are" constructions</h3>
+<p>LLMs avoid basic copulas. Humans don't.</p>
+<p><strong>LLM style:</strong> "The museum serves as a repository for regional artifacts."
+<strong>Human style:</strong> "The museum is a repository for regional artifacts."</p>
+<p><strong>LLM style:</strong> "The city features a population of 50,000."
+<strong>Human style:</strong> "The city has a population of 50,000."</p>
+<p><strong>LLM style:</strong> "She ventured into politics as a candidate."
+<strong>Human style:</strong> "She was a candidate."</p>
+<h3>Avoid negative parallelisms</h3>
+<p>LLMs love "not only X, but also Y" and "not X, but Y" constructions. Use them sparingly.</p>
+<h3>Don't overuse the rule of three</h3>
+<p>LLMs constantly write in triplets: "adjective, adjective, adjective" or "phrase, phrase, and phrase." Break the pattern. Use two items, or four, or just one.</p>
+<h3>Reduce em dashes</h3>
+<p>LLMs overuse em dashes — especially with spaces around them — where commas or parentheses would work. Humans use them less frequently.</p>
+<hr />
+<h2>3. Tone: Be Neutral, Not Promotional</h2>
+<h3>Avoid puffery words</h3>
+<ul>
+<li>~~boasts~~ → has</li>
+<li>~~vibrant~~ → lively</li>
+<li>~~rich (history/heritage)~~ → long/extensive</li>
+<li>~~profound~~ → deep, significant</li>
+<li>~~nestled~~ → located</li>
+<li>~~in the heart of~~ → in, at, near</li>
+<li>~~groundbreaking~~ → new, innovative</li>
+<li>~~renowned~~ → well-known, noted</li>
+<li>~~showcasing~~ → showing</li>
+<li>~~diverse array~~ → variety, range</li>
+</ul>
+<h3>Don't inflate significance</h3>
+<p>LLMs constantly remind readers how important something is. Don't do this.</p>
+<p><strong>LLM style:</strong> "This etymology highlights the enduring legacy of the community's resistance and the transformative power of unity."
+<strong>Human style:</strong> "The name reflects the community's history of resistance."</p>
+<h3>Don't write like a press release</h3>
+<p><strong>LLM style:</strong> "The company's projects align with its goals of reducing its environmental footprint and fostering community development."
+<strong>Human style:</strong> "The company's projects aim to reduce pollution and create jobs."</p>
+<hr />
+<h2>4. Attribution and Analysis</h2>
+<h3>Don't use vague authorities</h3>
+<p>Avoid attributing claims to unnamed groups:</p>
+<ul>
+<li>"Researchers say..." (which researchers?)</li>
+<li>"Industry reports suggest..." (which reports?)</li>
+<li>"Experts argue..." (which experts?)</li>
+<li>"Some critics contend..." (which critics?)</li>
+</ul>
+<p>Name your sources or remove the attribution.</p>
+<h3>Don't add superficial analysis</h3>
+<p>LLMs attach "-ing" phrases to the end of sentences that add nothing:</p>
+<p><strong>LLM style:</strong> "The population is 50,000, creating a lively community within its borders."
+<strong>Human style:</strong> "The population is 50,000."</p>
+<p><strong>LLM style:</strong> "The station connects to major cities, contributing to the socio-economic development of the region."
+<strong>Human style:</strong> "The station connects to major cities."</p>
+<h3>Don't editorialize about challenges and future prospects</h3>
+<p>LLMs love ending articles with formulaic "Challenges and Future Directions" sections:</p>
+<p><strong>LLM pattern:</strong> "Despite its success, X faces challenges... Despite these challenges, X continues to thrive..."
+<strong>Human approach:</strong> If challenges are noteworthy, describe them specifically. Don't use the formula.</p>
+<hr />
+<h2>5. Formatting</h2>
+<h3>Use sentence case for headings</h3>
+<p><strong>LLM style:</strong> "Impact of Technology and Digitalization"
+<strong>Human style:</strong> "Impact of technology and digitalization"</p>
+<h3>Don't overuse boldface</h3>
+<p>LLMs bold every key term. Use bold sparingly—mainly for the article title in the first sentence.</p>
+<h3>Don't use inline-header vertical lists</h3>
+<p><strong>LLM style:</strong></p>
+<div class="code"><pre class="code"><span></span><code>Key features: **Performance:** Fast processing...
+</code></pre></div>
+
+<p><strong>Human style:</strong> Write in prose, or use proper wiki lists without inline bold headers.</p>
+<h3>No emoji in headings or lists</h3>
+<h3>No Markdown</h3>
+<ul>
+<li>Use <code>'''bold'''</code> not <code>**bold**</code></li>
+<li>Use <code>''italic''</code> not <code>*italic*</code></li>
+<li>Use <code>== Heading ==</code> not <code>## Heading</code></li>
+<li>Use <code>[URL text]</code> not <code>[text](URL)</code></li>
+</ul>
+<h3>No thematic breaks (----) before headings</h3>
+<hr />
+<h2>6. Citations</h2>
+<h3>Verify every source exists</h3>
+<ul>
+<li>Check that URLs resolve</li>
+<li>Verify DOIs lead to the correct article</li>
+<li>Include page numbers for book citations</li>
+<li>Don't generate citations from memory—look them up</li>
+</ul>
+<h3>Don't use citation placeholders</h3>
+<p>Never leave:
+- <code>INSERT_SOURCE_URL</code>
+- <code>PASTE_URL_HERE</code>
+- <code>2025-XX-XX</code> (placeholder dates)
+- <code>[attached_file:1]</code>
+- <code>:contentReference[oaicite:0]</code>
+- <code>turn0search0</code></p>
+<h3>Don't add UTM parameters</h3>
+<p>Remove <code>utm_source=chatgpt.com</code>, <code>utm_source=openai</code>, <code>referrer=grok.com</code> from URLs.</p>
+<h3>Don't over-attribute in text</h3>
+<p>You don't need to write "According to The New York Times, BBC, and Financial Times..." for every claim. Just cite normally.</p>
+<hr />
+<h2>7. Communication Patterns to Avoid</h2>
+<h3>Don't write disclaimers</h3>
+<ul>
+<li>"As an AI language model..."</li>
+<li>"It's important to note that..."</li>
+<li>"While specific details are limited..."</li>
+<li>"Based on available information..."</li>
+</ul>
+<h3>Don't write section summaries</h3>
+<ul>
+<li>"In summary..."</li>
+<li>"In conclusion..."</li>
+<li>"Overall..."</li>
+</ul>
+<h3>Don't write submission statements</h3>
+<p>If submitting to review, don't include paragraphs explaining why your content meets guidelines. Let the content speak for itself.</p>
+<h3>Don't leave placeholder text</h3>
+<ul>
+<li>"[Describe the specific section...]"</li>
+<li>"[Your Name]"</li>
+<li>"[link to the revised article]"</li>
+</ul>
+<hr />
+<h2>8. Curly Quotes</h2>
+<p>LLMs (especially ChatGPT) use "curly quotes" and 'curly apostrophes' instead of straight quotes " and '. Use straight quotes unless your style guide specifically requires curly ones.</p>
+<hr />
+<h2>9. English Variety</h2>
+<p>Match the English variety to your context:
+- Writing about a British topic from India? Use British English.
+- LLMs default to American English. Humans don't always.</p>
+<hr />
+<h2>Quick Self-Check</h2>
+<p>Before publishing, ask:</p>
+<ol>
+<li>Did I use 3+ "AI vocabulary" words in any paragraph? → Replace them.</li>
+<li>Did I avoid "is/are" when simpler? → Simplify.</li>
+<li>Did I add "-ing" analysis phrases that don't add information? → Cut them.</li>
+<li>Did I inflate the subject's importance? → Deflate it.</li>
+<li>Are my headings in Title Case? → Change to sentence case.</li>
+<li>Did I bold too many terms? → Remove most bold.</li>
+<li>Are all my sources real and verifiable? → Check every one.</li>
+<li>Did I leave any placeholders? → Fill or remove them.</li>
+<li>Did I use Markdown instead of the target markup? → Convert.</li>
+<li>Does this sound like a press release or travel brochure? → Rewrite.</li>
+</ol>
+<hr />
+<h2>What NOT to Worry About</h2>
+<p>These are <strong>not</strong> reliable AI indicators:
+- Perfect grammar (many humans write well)
+- Formal tone (humans code-switch)
+- "Bland" or "robotic" prose (subjective)
+- Transition words like "Additionally" (in isolation)
+- Correct formatting (humans can learn markup)
+- Unsourced content (predates LLMs)</p>
+<hr />
+<p><em>Source: <a href="https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing">Wikipedia: Signs of AI writing</a>, accessed July 2026.</em></p>
+  </div>
+</article>
+
+  </main>
+  <footer id="footer"><p>Contents © 2026 <a href="mailto:rmoraisu@proton.me">rodigu</a></p></footer>
+</div>
+</body>
+</html>

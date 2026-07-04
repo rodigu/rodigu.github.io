@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hiroto's things</title>
+    <title>hiroto</title>
     <link>https://rodigu.github.io/</link>
     <description>personal website with technical writing, tiny game demos, and photo-logs</description>
     <atom:link href="https://rodigu.github.io/rss.xml" rel="self" type="application/rss+xml"/>
     <language>en</language>
-    <lastBuildDate>Sat, 04 Jul 2026 22:36:52 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 04 Jul 2026 22:53:32 +0000</lastBuildDate>
   <item>
     <title>cotrolling llm costs at scale</title>
     <link>https://rodigu.github.io/posts/data-eng/llm-cost-control/</link>
