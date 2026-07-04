@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="description" content="cost control for llms">
 <meta name="viewport" content="width=device-width">
-<title>how i am pushing for llm cost control in my team | hiroto's things</title>
+<title>cotrolling llm costs at scale | hiroto's things</title>
 <link href="../../../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/css/code.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/css/dark.css" rel="stylesheet" type="text/css">
@@ -16,7 +16,7 @@
 
 <meta name="author" content="rodigu">
 <meta property="og:site_name" content="hiroto's things">
-<meta property="og:title" content="how i am pushing for llm cost control in my team">
+<meta property="og:title" content="cotrolling llm costs at scale">
 <meta property="og:url" content="https://rodigu.github.io/posts/data-eng/llm-cost-control/">
 <meta property="og:description" content="cost control for llms">
 <meta property="og:type" content="article">
@@ -63,7 +63,7 @@
 
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
   <header>
-    <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">how i am pushing for llm cost control in my team</a></h1>
+    <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">cotrolling llm costs at scale</a></h1>
     <div class="metadata">
       <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">rodigu</span></p>
       <p class="dateline">
@@ -91,20 +91,15 @@ microsoft offers their own api gateway solution, but the cheapest subscription i
 so i decided to go with <a href="https://github.com/maximhq/bifrost">bifrost</a>, a newer llm gateway written in go to be performant and lite.</p>
 <p>with bifrost, we generate keys for team members and projects, setting budget limits for varying time frames. it also gives full governance over requests, letting me see exactly what is being sent to the llms.</p>
 <h2>llms agents are not magic (though they sometimes feel like they are)</h2>
-<p>i have observed that even amongst the most avid llm agent power users, a fundamental lack of understanding of the basics of how llms work is still missing.
-it is common to see users accumulating a massive context and moving the same session between tasks.</p>
-<p>even a basic understanding of context windows, token caching, and how llm input and reasoning pricing<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> works already helps a lot in giving users the fundamentals to make better use of llm agents.</p>
+<p>i have found that a basic understanding of context windows, token caching, and how llm input and reasoning pricing<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> works goes a long way in helping users make better use of llm agents. when users understand how context accumulation affects cost and performance, they naturally adopt better practices like using fresh sessions for new tasks.</p>
 <h2>deploying cheaper models</h2>
 <p>open source models have been getting really exceptional in their cost-benefit.
 deepseek v4 pro is <em>really</em> cheap for what it can do.</p>
 <p>i am a strong believer that we will see more and more that llm performance improvements have to do with technique than model size: appropriate context handling, atomic tasks, agent management.</p>
 <p>we are already seeing that with <a href="https://arxiv.org/html/2604.20801v1">cybersecurity</a>. smaller models can perform as well as mythos when given the <a href="https://www.aikido.dev/blog/mythos-vs-harness">proper harness</a>, for a fraction of the cost.</p>
 <h2>the future</h2>
-<p>the frontier models are, from my standpoint, impractical to implement due to their cost. for instance, claude <em>sonnet</em> is 5x the base price of deepseek v4 pro.</p>
-<p>the actual future of llm agent implementation in production will involve smaller models with very good harnesses and access to a limited set of tools, doing targeted, atomic, tasks.</p>
-<p>as an anecdote, i see some people using llms to search for errors in log files.
-the cost of loading a couple kilobytes of logs into the input tokens of a higher end model can get expensive very fast.
-thankfully, i have given proper <code>grep</code> and <code>ls</code> tools for the agents i make available for my team, so when that happens (and that <em>has</em> happened), the cost stays negligible.</p>
+<p>frontier models like claude sonnet can be 5x the base price of open weight models like deepseek v4 pro. for many production use cases, this cost difference makes smaller models with good harnesses a more practical choice.</p>
+<p>i believe the future of llm agent implementation in production will favor targeted, atomic tasks using smaller models with strong tooling and constrained contexts.</p>
 <div class="footnote">
 <hr />
 <ol>
@@ -145,7 +140,7 @@ thankfully, i have given proper <code>grep</code> and <code>ls</code> tools for 
 
   <section class="comments hidden-print">
     <h2>Comments</h2>
-    <div data-title="how i am pushing for llm cost control in my team" id="utterances-thread"></div>
+    <div data-title="cotrolling llm costs at scale" id="utterances-thread"></div>
     <script src="https://utteranc.es/client.js" repo="rodigu/rodigu.github.io" issue-term="url" label="comment" theme="github-dark" crossorigin="anonymous"></script>
   </section>
 
