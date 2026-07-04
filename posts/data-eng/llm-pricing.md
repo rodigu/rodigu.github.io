@@ -1,5 +1,5 @@
 <!--
-.. title: cotrolling llm costs at scale
+.. title: controlling llm costs at scale
 .. slug: llm-cost-control
 .. date: 2026-07-04 14:18:00 UTC-03:00
 .. tags: llm, agents, governance, token-cost
