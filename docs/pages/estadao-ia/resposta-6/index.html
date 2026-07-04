@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="personal website with technical writing, tiny game demos, and photo-logs">
+<meta name="viewport" content="width=device-width">
+<title>resposta-6 | hiroto's things</title>
+<link href="../../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/dark.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../../rss.xml">
+<link rel="canonical" href="https://rodigu.github.io/pages/estadao-ia/resposta-6/">
+
+<meta name="author" content="rodigu">
+<meta property="og:site_name" content="hiroto's things">
+<meta property="og:title" content="resposta-6">
+<meta property="og:url" content="https://rodigu.github.io/pages/estadao-ia/resposta-6/">
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
+
+
+
+</head>
+<body class="hack dark">
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+<div id="container">
+  <header id="header"><h1 id="brand"><a href="../../../" title="hiroto's things" rel="home">
+    <span id="blog-title">hiroto's things</span>
+  </a></h1>
+  <nav id="menu"><ul>
+
+    <li><a href="../../../categories/cat_reading/">reading</a></li>
+
+    <li><a href="../../../categories/cat_linux/">linux</a></li>
+
+    <li><a href="../../../categories/cat_photo-journal/">photo-journal</a></li>
+
+    <li><a href="../../../categories/cat_data-eng/">data</a></li>
+
+    <li><a href="../../../rss.xml">rss</a></li>
+
+    <li><a href="../../../pages/about/index.html">about</a></li>
+
+    <li><a href="../../../pages/cv/index.html">cv</a></li>
+
+  </ul></nav></header>
+  <main id="content">
+
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article">
+  <header>
+    <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">resposta-6</a></h1>
+  </header>
+  <div class="e-content entry-content" itemprop="articleBody text">
+<p>Pergunta: Apresente um caso real de sua autoria onde você foi responsável por conectar a camada de custos financeiros à camada de produção operacional. Explique qual foi o impacto no negócio?</p>
+<h2>Caso: Agente LLM para autosserviço de análise de dados</h2>
+<p>No CEJAM, stakeholders de diferentes áreas (financeiro, operacional, administrativo) precisavam se conectar diretamente com analistas de BI para responder perguntas sobre os dados do negócio. Esse processo consumia cerca de 50 horas/mês em tempo de equipe e criava uma dependência: stakeholders esperavam dias por respostas, decisões operacionais eram atrasadas, e os analistas ficavam presos em consultas repetitivas em vez de fazer análises mais profundas.</p>
+<p>Construí um agente com LLM conectado ao dashboard de BI, permitindo que stakeholders consultassem dados diretamente em linguagem natural. Para controle financeiro e governança, implementei o Bifrost (gateway open-source de LLMs que configurei e fiz deploy na Azure), com orçamentos granulares por chave virtual e por modelo. Antes de cada expansão de uso, apresento estimativas detalhadas de custo ao líder do departamento e alinhamos prioridades quando o orçamento é excedido.</p>
+<p>A conexão entre custo e produção opera em dois eixos. O primeiro é tempo de resposta: de dias para segundos. Stakeholders que esperavam dias agora obtêm dados imediatamente, o que encolhe drasticamente o ciclo de decisão operacional. O segundo é capacidade da equipe de BI: as 50 horas/mês que eram gastas em consultas repetitivas agora são direcionadas a projetos novos e análises mais profundas. A equipe saiu de um papel reativo para proativo.</p>
+<p>No lado financeiro, o custo de inferência ficou em torno de 40% de um plano enterprise equivalente (de aproximadamente $900/mês para $360/mês para 9 pessoas), com flexibilidade para reduzir gastos em períodos de menor uso. Os outputs são consumidos por diversas áreas do negócio e os custos são alinhados diretamente com o líder do departamento.</p>
+  </div>
+</article>
+
+  </main>
+  <footer id="footer"><p>Contents © 2026 <a href="mailto:rmoraisu@proton.me">rodigu</a></p></footer>
+</div>
+</body>
+</html>

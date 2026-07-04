@@ -5,19 +5,19 @@
 <meta name="description" content="personal website with technical writing, tiny game demos, and photo-logs">
 <meta name="viewport" content="width=device-width">
 <title>cv | hiroto's things</title>
-<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/dark.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/dark.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/theme.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
 <meta name="theme-color" content="#5670d4">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
-<link rel="canonical" href="https://rodigu.github.io/pages/cv/">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../../rss.xml">
+<link rel="canonical" href="https://rodigu.github.io/pages/base-cv/cv/">
 
 <meta name="author" content="rodigu">
 <meta property="og:site_name" content="hiroto's things">
 <meta property="og:title" content="cv">
-<meta property="og:url" content="https://rodigu.github.io/pages/cv/">
+<meta property="og:url" content="https://rodigu.github.io/pages/base-cv/cv/">
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
 
@@ -27,24 +27,24 @@
 <body class="hack dark">
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 <div id="container">
-  <header id="header"><h1 id="brand"><a href="../../" title="hiroto's things" rel="home">
+  <header id="header"><h1 id="brand"><a href="../../../" title="hiroto's things" rel="home">
     <span id="blog-title">hiroto's things</span>
   </a></h1>
   <nav id="menu"><ul>
 
-    <li><a href="../../categories/cat_reading/">reading</a></li>
+    <li><a href="../../../categories/cat_reading/">reading</a></li>
 
-    <li><a href="../../categories/cat_linux/">linux</a></li>
+    <li><a href="../../../categories/cat_linux/">linux</a></li>
 
-    <li><a href="../../categories/cat_photo-journal/">photo-journal</a></li>
+    <li><a href="../../../categories/cat_photo-journal/">photo-journal</a></li>
 
-    <li><a href="../../categories/cat_data-eng/">data</a></li>
+    <li><a href="../../../categories/cat_data-eng/">data</a></li>
 
-    <li><a href="../../rss.xml">rss</a></li>
+    <li><a href="../../../rss.xml">rss</a></li>
 
-    <li><a href="../../pages/about/index.html">about</a></li>
+    <li><a href="../../../pages/about/index.html">about</a></li>
 
-    <li><a href="../../pages/cv/index.html">cv</a></li>
+    <li><a href="../../../pages/cv/index.html">cv</a></li>
 
   </ul></nav></header>
   <main id="content">
@@ -70,16 +70,18 @@
 </tr>
 </tbody>
 </table>
-<p>Data Engineer (4 YoE) with a background spanning network science, NLP, and cloud data infrastructure. Currently building LLM-powered information extraction and medallion architecture pipelines on Azure with Databricks, Airflow, and Fabric at CEJAM. Previously developed business-critical ETL systems with Airflow at Star Parks and conducted research on LLM applications for qualitative data analysis at the University of Illinois Urbana-Champaign.</p>
+<p>{SUMMARY}</p>
 <hr />
 <h2>Experience</h2>
 <p><strong>Data Engineer</strong> | CEJAM | São Paulo, Brazil | <em>January 2026 – Present</em></p>
 <ul>
-<li>Architect LLM governance and access through a centralized Bifrost LLM gateway on Azure Cloud</li>
+<li>Architect LLM governance and access through a centralized LLM gateway (Bifrost) on Azure Cloud</li>
 <li>Ensure conformity with the LGPD for data infrastructure and LLM operations</li>
-<li>Deploy LLMs to the Azure Foundry, integrating them into Databricks pipelines for NLP (information extraction) on unstructured data</li>
-<li>Create agentic workflows for automations, using Docker for agent containment and the OpenAI API for model access</li>
-<li>Implement and maintain medallion data architecture for ingestion and transformation from various sources into databases ready for BI analytics</li>
+<li>Deploy LLMs into production, integrating them into Databricks pipelines for NLP (information extraction) on unstructured data</li>
+<li>Build and ship an LLM-powered agent for business stakeholders to self-serve data analysis</li>
+<li>Own prioritization, scoping incremental delivery to match business expectations while maintaining infrastructure and code quality</li>
+<li>Create agentic workflows for automations, using Docker for security and agent containment</li>
+<li>Implement and maintain medallion data architecture for ingestion and transformation from various sources into databases ready for BI analytics and real-time indicators</li>
 <li>Create ETL pipelines with Databricks, Azure Data Factory and Azure Data Lake Gen 2</li>
 <li>Manage Azure cloud infrastructure costs and resources</li>
 </ul>
@@ -101,6 +103,12 @@
 <ul>
 <li>Developed TypeScript software to mine and transform data from currency markets APIs</li>
 <li>Created novel algorithms for finding unbalanced trade cycles in currency exchange markets</li>
+</ul>
+<p><strong>Physics Research Assistant</strong> | Soka University of America | Aliso Viejo, California | <em>Oct 2021 – May 2022</em></p>
+<ul>
+<li>Created class material on modeling and simulations</li>
+<li>Prepared material for a class taught to pre-med students</li>
+<li>Edit and improve textbook code created by A. B. Downey</li>
 </ul>
 <p><strong>Software Developer</strong> | PushStart Studio | São Paulo, Brazil | <em>March 2021 – June 2021</em></p>
 <ul>
@@ -177,8 +185,6 @@
 <p><strong>Knowledge:</strong> Data-Driven Decision-Making, Problem-Solving, Critical Thinking, Data Pipeline Architecture and Design, ETL, Medallion Architecture, LLM Integration, NLP, Classical Machine Learning, Clustering, Data Storytelling, Data Cleansing and Quality, Data Science, Data Analytics, Data Mining, Business Intelligence and Analytics, Research</p>
 <hr />
 <h2>Education</h2>
-<p><strong>University of Illinois Urbana-Champaign</strong> | <em>August 2022 – May 2024</em>
-PhD in Informatics (withdrawn)</p>
 <p><strong>Soka University of America</strong> | Aliso Viejo, California | <em>August 2018 – May 2022</em>
 Bachelor's degree, Liberal Arts and Sciences, concentrations in Economics and International Studies</p>
 <table>

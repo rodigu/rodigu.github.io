@@ -44,6 +44,60 @@
 
   <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
     <header>
+      <h1 class="p-name entry-title"><a href="./posts/data-eng/llm-cost-control/" class="u-url">how i am pushing for llm cost control in my team</a></h1>
+      <div class="metadata">
+        <p class="byline author vcard"><span class="byline-name fn" itemprop="author">rodigu</span></p>
+        <p class="dateline">
+          <a href="./posts/data-eng/llm-cost-control/" rel="bookmark">
+            <time class="published dt-published" datetime="2026-07-04T14:18:00-03:00" itemprop="datePublished" title="2026-07-04 14:18">2026-07-04 14:18</time>
+          </a>
+        </p>
+      </div>
+    </header>
+    <div class="p-summary entry-summary">
+<p>the real cost of llm use is <a href="https://www.forbes.com/sites/janakirammsv/2026/05/17/uber-burns-its-2026-ai-budget-in-four-months-on-claude-code/">already hitting some large companies like a truck</a>. and i expect individual developers will soon start to feel the costs too.</p>
+<p>i have been talking about the end of the subsidies and how to prepare for the actual costs of llms with my peers for a while now. and at the information and data team at cejam, i have helped us prepare for it in three major ways: implementing a governance gateway for cost control, providing training on llm usage, and deploying cheaper models.</p>
+    </div>
+  </article>
+
+  <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <header>
+      <h1 class="p-name entry-title"><a href="./posts/data-eng/llm-shared-memory/" class="u-url">a simple shared memory system for llms</a></h1>
+      <div class="metadata">
+        <p class="byline author vcard"><span class="byline-name fn" itemprop="author">rodigu</span></p>
+        <p class="dateline">
+          <a href="./posts/data-eng/llm-shared-memory/" rel="bookmark">
+            <time class="published dt-published" datetime="2026-06-19T21:30:08-03:00" itemprop="datePublished" title="2026-06-19 21:30">2026-06-19 21:30</time>
+          </a>
+        </p>
+      </div>
+    </header>
+    <div class="p-summary entry-summary">
+<p>i wanted an easy way to share context between sessions for the members of my team.</p>
+<p>the basic first requirements i had for this system were:</p>
+<ul>
+<li>crud: the ability to perform all 4 basic operations on the data</li>
+<li>easy search: a simple, straight-forward way to search through the data so llms can easly retrieve relevant context</li>
+</ul>
+<p>i did consider using a vector database, implementing a rag. but rags are not free to develop, run and maintain (talking mainly about infra costs here). i also think they would have been overkill<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, a simple grep would sufice on well tagged data.</p>
+<p>in my experience, llms work best with short, well structured information. if they are given too much room to halucinate, they will do it<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
+<h2>the jsonl solution</h2>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>why go for simplicity when you can overcomplicate everything&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>reasons why i find the idea of an <a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f">llm wiki</a> so silly. the diagrams in the comments are silly too&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+    </div>
+  </article>
+
+  <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <header>
       <h1 class="p-name entry-title"><a href="./posts/linux/connecting-to-wifi-via-terminal-with-nmcli/" class="u-url">connecting to wifi via terminal with nmcli</a></h1>
       <div class="metadata">
         <p class="byline author vcard"><span class="byline-name fn" itemprop="author">rodigu</span></p>
