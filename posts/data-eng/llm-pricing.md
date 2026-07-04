@@ -1,5 +1,5 @@
 <!--
-.. title: how i am pushing for llm cost control in my team
+.. title: cotrolling llm costs at scale
 .. slug: llm-cost-control
 .. date: 2026-07-04 14:18:00 UTC-03:00
 .. tags: llm, agents, governance, token-cost
@@ -40,10 +40,7 @@ with bifrost, we generate keys for team members and projects, setting budget lim
 
 ## llms agents are not magic (though they sometimes feel like they are)
 
-i have observed that even amongst the most avid llm agent power users, a fundamental lack of understanding of the basics of how llms work is still missing.
-it is common to see users accumulating a massive context and moving the same session between tasks.
-
-even a basic understanding of context windows, token caching, and how llm input and reasoning pricing[^2] works already helps a lot in giving users the fundamentals to make better use of llm agents.
+i have found that a basic understanding of context windows, token caching, and how llm input and reasoning pricing[^2] works goes a long way in helping users make better use of llm agents. when users understand how context accumulation affects cost and performance, they naturally adopt better practices like using fresh sessions for new tasks.
 
 [^2]: computerphile has recently posted a [great video](https://www.youtube.com/watch?v=-0HRzXk8vlk) on token pricing
 
@@ -58,10 +55,6 @@ we are already seeing that with [cybersecurity](https://arxiv.org/html/2604.2080
 
 ## the future
 
-the frontier models are, from my standpoint, impractical to implement due to their cost. for instance, claude *sonnet* is 5x the base price of deepseek v4 pro.
+frontier models like claude sonnet can be 5x the base price of open weight models like deepseek v4 pro. for many production use cases, this cost difference makes smaller models with good harnesses a more practical choice.
 
-the actual future of llm agent implementation in production will involve smaller models with very good harnesses and access to a limited set of tools, doing targeted, atomic, tasks.
-
-as an anecdote, i see some people using llms to search for errors in log files.
-the cost of loading a couple kilobytes of logs into the input tokens of a higher end model can get expensive very fast.
-thankfully, i have given proper `grep` and `ls` tools for the agents i make available for my team, so when that happens (and that *has* happened), the cost stays negligible.
+i believe the future of llm agent implementation in production will favor targeted, atomic tasks using smaller models with strong tooling and constrained contexts.
