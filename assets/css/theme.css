@@ -232,6 +232,7 @@ body {
 img {
 	border: none;
 	line-height: 1;
+	border-radius: 3px;
 }
 
 .postpage img,

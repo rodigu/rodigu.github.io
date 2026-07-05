@@ -6,7 +6,7 @@
     <description>personal website with technical writing, tiny game demos, and photo-logs</description>
     <atom:link href="https://rodigu.github.io/rss.xml" rel="self" type="application/rss+xml"/>
     <language>en</language>
-    <lastBuildDate>Sun, 05 Jul 2026 18:49:14 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jul 2026 19:04:22 +0000</lastBuildDate>
   <item>
     <title>controlling llm costs at scale</title>
     <link>https://rodigu.github.io/posts/data-eng/llm-cost-control/</link>
