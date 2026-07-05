@@ -9,7 +9,7 @@ title: a simple shared memory system for llms
 .. description: a simple memory system for llms
 -->
 
-my team started using llm agents in daily work. fast, we hit a problem: each agent session knew nothing about the others. sarah's agent solved a bug one way, mine solved it another. no shared context. no record of why decisions were made.
+my team at cejam started using llm agents in daily work. fast, we hit a problem: each agent session knew nothing about the others. someone's agent solved a bug one way, mine had to figure out how to solve it again and we had no record of why decisions were made.
 
 i needed a shared memory for our llms.
 
@@ -22,16 +22,16 @@ requirements:
 
 i considered a vector database with retrieval-augmented generation. rag does semantic search over unstructured text. useful, but expensive: you need vector databases deployed, embedding models to interface with them, and more tokens.
 
-our memories are short. we enforce consistent tagging at creation time—the llm proposes tags, the user edits before confirming. grep on structured tags gives us what we need. rag solves a different problem: finding context in large, messy, unstructured corpora. we don't have that problem.
+our memories are short. we enforce consistent tagging at creation time-the llm proposes tags, the user edits before confirming. grep on structured tags gives us what we need. rag solves a different problem we don't have: finding context in large, messy, unstructured corpora.
 
 ## the jsonl solution
 
-llms work best with short, structured information. given too much room, they hallucinate. that's why llm wikis don't work well—the information isn't structured enough.
+llms work best with short, structured information. given too much room, they hallucinate. that's why i believe llm wikis don't work well, the information isn't structured enough.
 
 i used [pi](pi.dev)'s approach: jsonl files for session data. each memory has a uuid, update date, description, tags, and content.
 
 ```ts
-interface MemorySearch {
+interface MemoryBase {
     id: string;
     description: string;
     tags: Array<string>;
@@ -43,7 +43,7 @@ interface MemoryEdit {
     tags?: Array<string>;
 }
 
-interface MemoryCreate extends MemorySearch {
+interface MemoryCreate extends MemoryBase {
     content: string;
 }
 
@@ -53,14 +53,14 @@ interface MemoryQuery extends MemoryCreate {
 }
 ```
 
-the `changedAt` property works as both created-at and updated-at. memories act as a type 2 slowly changing dimension: edits add new lines with updated data instead of changing the original. `deletedAt` is a soft delete. we keep history.
+the `changedAt` property works as both created-at and updated-at. memories act as a type 2 slowly changing dimension: edits add new lines with updated data instead of changing the original. `deletedAt` is a soft delete, and we get to keep history for each memory.
 
 tags help llms search for relevant memories. descriptions help them decide if a memory is worth reading.
 
 five tools: search, create, edit, read, delete.
 
 ```ts
-function search(keyWords: Array<string>): Array<MemorySearch>
+function search(keyWords: Array<string>): Array<MemoryBase>
 function create(newMemory: MemoryCreate)
 function edit(memory: MemoryEdit)
 function read(id: string): MemoryQuery
@@ -69,7 +69,7 @@ function delete(id: string)
 
 search checks keywords against tags and descriptions. returns id, description, and tags for matches.
 
-but scaling to multiple users broke this. git would introduce merge conflicts—deciding what happens when two users edit the same memory. worse, memories stored in a single file meant any operation affected memories that came after it.
+but scaling to multiple users broke this. git would introduce merge conflicts, and we had to decide what happens when two users edit the same memory every time it happens. worse, memories stored in a single file meant any operation affected memories that came after it.
 
 ## sql server table
 
@@ -87,12 +87,12 @@ CREATE TABLE Memories (
 );
 ```
 
-sql server handles concurrency. no merge conflicts.
+sql server now handles concurrency, and we get no more merge conflicts.
 
 the migration worked because of the architecture: i defined tool signatures first. what the llm calls, what it gets back. storage is invisible to the agent. it doesn't know or care whether memories live in a jsonl file or a sql table. same five functions: search, create, edit, read, delete.
 
 the llm interface is a contract. when i migrated from jsonl to sql, no tool definitions changed. agent behavior stayed the same. only storage changed.
 
-define interfaces before implementation. llm tool use is early—storage backends will change, infra will shift, team needs will evolve. if tool definitions are coupled to storage, every backend change breaks every agent. decoupling from day one meant migration cost me an afternoon instead of a rewrite.
+define interfaces before implementation. llm tool use is early-storage backends will change, infra will shift, team needs will evolve. if tool definitions are coupled to storage, every backend change breaks every agent. decoupling from day one meant migration cost me an afternoon instead of a rewrite.
 
-the final solution's cost was minimal—we already had a sql server instance running.
+the final solution's cost was minimal since we already had a sql server instance running (no new costs setting up a new server or database).
