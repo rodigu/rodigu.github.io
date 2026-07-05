@@ -6,7 +6,7 @@
     <description>personal website with technical writing, tiny game demos, and photo-logs</description>
     <atom:link href="https://rodigu.github.io/rss.xml" rel="self" type="application/rss+xml"/>
     <language>en</language>
-    <lastBuildDate>Sun, 05 Jul 2026 18:37:49 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jul 2026 18:40:57 +0000</lastBuildDate>
   <item>
     <title>controlling llm costs at scale</title>
     <link>https://rodigu.github.io/posts/data-eng/llm-cost-control/</link>
@@ -19,6 +19,15 @@
 <p>i have been talking about the end of the subsidies and how to prepare for the actual costs of llms with my peers for a while now. and at the information and data team at cejam, i have helped us prepare for it in three major ways: implementing a governance gateway for cost control, providing training on llm usage, and deploying cheaper models.</p>]]></description>
     <guid>https://rodigu.github.io/posts/data-eng/llm-cost-control/</guid>
     <pubDate>Sat, 04 Jul 2026 14:18:00 -0300</pubDate>
+  </item>
+  <item>
+    <title>llm-shared-memory</title>
+    <link>https://rodigu.github.io/posts/data-eng/llm-shared-memory/</link>
+    <dc:creator>rodigu</dc:creator>
+    <description><![CDATA[<p>my team at cejam started using llm agents in daily work. fast, we hit a problem: each agent session knew nothing about the others. someone's agent solved a bug one way, mine had to figure out how to solve it again and we had no record of why decisions were made.</p>
+<p>i needed a shared memory for our llms.</p>]]></description>
+    <guid>https://rodigu.github.io/posts/data-eng/llm-shared-memory/</guid>
+    <pubDate>Fri, 19 Jun 2026 21:30:08 -0300</pubDate>
   </item>
   <item>
     <title>connecting to wifi via terminal with nmcli</title>
