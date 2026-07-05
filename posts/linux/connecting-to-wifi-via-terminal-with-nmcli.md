@@ -15,6 +15,8 @@ the top floor now seems to be accessible only through reservations now.
 
 this was the first time i tried connecting to wifi with this new arch installation.
 
+<!-- TEASER_END -->
+
 the cachyos distro came with `nmcli`. i am not yet certain that it is a common dependency for other distros.
 
 this lists the available wifi networks:
