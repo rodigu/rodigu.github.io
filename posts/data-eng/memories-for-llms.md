@@ -10,6 +10,10 @@ title: a simple shared memory system for llms
 .. description: a simple memory system for llms
 -->
 
+<p align="center">
+    <img src="../../images/memories-for-llms.jpg" width="400">
+</p>
+
 my team at cejam started using llm agents in daily work. fast, we hit a problem: each agent session knew nothing about the others. someone's agent solved a bug one way, mine had to figure out how to solve it again and we had no record of why decisions were made.
 
 i needed a shared memory for our llms.

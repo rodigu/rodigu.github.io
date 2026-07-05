@@ -6,7 +6,7 @@
     <description>personal website with technical writing, tiny game demos, and photo-logs</description>
     <atom:link href="https://rodigu.github.io/rss.xml" rel="self" type="application/rss+xml"/>
     <language>en</language>
-    <lastBuildDate>Sun, 05 Jul 2026 18:40:57 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jul 2026 18:49:14 +0000</lastBuildDate>
   <item>
     <title>controlling llm costs at scale</title>
     <link>https://rodigu.github.io/posts/data-eng/llm-cost-control/</link>
@@ -24,7 +24,11 @@
     <title>llm-shared-memory</title>
     <link>https://rodigu.github.io/posts/data-eng/llm-shared-memory/</link>
     <dc:creator>rodigu</dc:creator>
-    <description><![CDATA[<p>my team at cejam started using llm agents in daily work. fast, we hit a problem: each agent session knew nothing about the others. someone's agent solved a bug one way, mine had to figure out how to solve it again and we had no record of why decisions were made.</p>
+    <description><![CDATA[<p align="center">
+    <img src="./images/memories-for-llms.jpg" width="400">
+</p>
+
+<p>my team at cejam started using llm agents in daily work. fast, we hit a problem: each agent session knew nothing about the others. someone's agent solved a bug one way, mine had to figure out how to solve it again and we had no record of why decisions were made.</p>
 <p>i needed a shared memory for our llms.</p>]]></description>
     <guid>https://rodigu.github.io/posts/data-eng/llm-shared-memory/</guid>
     <pubDate>Fri, 19 Jun 2026 21:30:08 -0300</pubDate>
