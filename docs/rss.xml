@@ -6,7 +6,7 @@
     <description>personal website with technical writing, tiny game demos, and photo-logs</description>
     <atom:link href="https://rodigu.github.io/rss.xml" rel="self" type="application/rss+xml"/>
     <language>en</language>
-    <lastBuildDate>Sun, 05 Jul 2026 13:54:53 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jul 2026 15:03:59 +0000</lastBuildDate>
   <item>
     <title>controlling llm costs at scale</title>
     <link>https://rodigu.github.io/posts/data-eng/llm-cost-control/</link>
@@ -21,48 +21,13 @@
     <pubDate>Sat, 04 Jul 2026 14:18:00 -0300</pubDate>
   </item>
   <item>
-    <title>a simple shared memory system for llms</title>
-    <link>https://rodigu.github.io/posts/data-eng/llm-shared-memory/</link>
-    <dc:creator>rodigu</dc:creator>
-    <description><![CDATA[<p>i wanted an easy way to share context between sessions for the members of my team.</p>
-<p>the basic first requirements i had for this system were:</p>
-<ul>
-<li>crud: the ability to perform all 4 basic operations on the data</li>
-<li>easy search: a simple, straight-forward way to search through the data so llms can easly retrieve relevant context</li>
-</ul>
-<p>i did consider using a vector database, implementing a rag. but rags are not free to develop, run and maintain (talking mainly about infra costs here). i also think they would have been overkill<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, a simple grep would sufice on well tagged data.</p>
-<p>in my experience, llms work best with short, well structured information. if they are given too much room to halucinate, they will do it<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
-<h2>the jsonl solution</h2>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p>why go for simplicity when you can overcomplicate everything&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn:2">
-<p>reasons why i find the idea of an <a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f">llm wiki</a> so silly. the diagrams in the comments are silly too&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>]]></description>
-    <guid>https://rodigu.github.io/posts/data-eng/llm-shared-memory/</guid>
-    <pubDate>Fri, 19 Jun 2026 21:30:08 -0300</pubDate>
-  </item>
-  <item>
     <title>connecting to wifi via terminal with nmcli</title>
     <link>https://rodigu.github.io/posts/linux/connecting-to-wifi-via-terminal-with-nmcli/</link>
     <dc:creator>rodigu</dc:creator>
     <description><![CDATA[<p>went to sesc paulista.
 last time i visited was years ago, soon after it first opened.
 the top floor now seems to be accessible only through reservations now.</p>
-<p>this was the first time i tried connecting to wifi with this new arch installation.</p>
-<p>the cachyos distro came with <code>nmcli</code>. i am not yet certain that it is a common dependency for other distros.</p>
-<p>this lists the available wifi networks:</p>
-<div class="code"><pre class="code"><span></span><code>nmcli<span class="w"> </span>device<span class="w"> </span>wifi<span class="w"> </span>list
-</code></pre></div>
-
-<p>this connects to wifi:</p>
-<div class="code"><pre class="code"><span></span><code>nmcli<span class="w"> </span>device<span class="w"> </span>wifi<span class="w"> </span>connect<span class="w"> </span>connection_name<span class="w"> </span>password<span class="w"> </span>connection_password
-</code></pre></div>]]></description>
+<p>this was the first time i tried connecting to wifi with this new arch installation.</p>]]></description>
     <guid>https://rodigu.github.io/posts/linux/connecting-to-wifi-via-terminal-with-nmcli/</guid>
     <pubDate>Sat, 28 Feb 2026 16:19:37 -0300</pubDate>
   </item>
