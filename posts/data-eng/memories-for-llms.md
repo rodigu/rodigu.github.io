@@ -1,6 +1,5 @@
 <!--
-..
-title: a simple shared memory system for llms
+.. title: a simple shared memory system for llms
 .. slug: llm-shared-memory
 .. date: 2026-06-19 21:30:08 UTC-03:00
 .. tags: llm, llm-tooling
