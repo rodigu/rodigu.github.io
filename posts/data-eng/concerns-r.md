@@ -10,15 +10,11 @@
 .. description: r does not feel good to use
 -->
 
-there is some legacy code at work that uses r for etl.
-
-i am having to work with r again, it has been a couple of years since i did that.
-this is somewhere between a rant on technical debt and r (and its packages), and (yet another) warning on depencency hell.
+we have some legacy r code at work that handles etl. while migrating it to airflow, i found a bug in the `arrow` package: it silently corrupts `Float16` columns read from parquet files. numeric values were off by more than 10x in production dashboards, and it took hours to trace back to the source.
 
 <!-- TEASER_END -->
 
-i do think r succeeds at its intended purpose: an analysis language for those with stats background, but little to no previous knowledge of programming.
-it does not excel at much else, in my experience.
+this is part rant about r, part rant about technical debt. i do think r succeeds at its intended purpose: an analysis language for those with stats background, but little to no previous knowledge of programming. it does not excel at much else.
 
 the legacy r scripts were created a while ago and don't really follow any software engineering best-practices.
 some r scripts have over a fifteen hundred lines of code, featuring:
@@ -32,29 +28,15 @@ it is not a pleasant base to work with, and i believe r was not intended for dat
 
 ## the arrow package
 
-arrow is a package used used in the aforementioned legacy code.
-i have been incrementally transfering one of our r bases to airflow dags, slowly chipping at a thousand-line script.
+i have been incrementally migrating one of our r codebases to airflow dags, slowly chipping at a thousand-line script that uses `arrow` for reading parquet files.
 
-while doing that, i found a bug that stumpped me by for a couple of hours. some numeric values were increasing more than 10 fold in the final dashboard consuming the data.
+while doing that, i found the bug mentioned in the intro. some numeric values were increasing more than 10 fold in the final dashboard. i eventually traced it to `arrow` not properly reading `Float16` columns created by `polars` in python.
 
-i eventually found out that arrow could not properly read any of the `Float16` columns i had been creating in `polars` with python.
-
-this is the situation that initially drove me to write this post. and now i am recreating the bug to provide a minimal example of the problem.
+below is a minimal reproduction.
 
 ## the r package manager
 
-i did not have r installed in my personal laptop.
-so i had to install it, along with arrow.
-
-after 5 minutes of running the command to install arrow, it produced 70 kilobytes of logs, installed maybe a dozen different libraries, then got stuck at installing `arrow`. after 10 or so minutes, i figured it had crashed. i force-quit the script, and it yielded `there is no package called ‘arrow’`.
-
-*why* did it not warn me before i force quit? no idea.
-
-in any case, i will admit it was partially my own fault. as it turns out, `arrow` is not a part of the core r packages, and needs to be installed as not cran.
-
-r builds the packages at install, and arrow was installed from a prebuilt binary. still, it took a while, longer than i have ever seen any package manager take.
-
-it seems to me r is pretty slow from a development standpoint. i imagine having c-based packages make actual processing fast, but the dev experience has been a slog.
+`arrow` is not part of core r packages and needs to be installed separately. on my laptop, the install produced 70 kilobytes of logs, pulled in a dozen dependencies, then hung for 10+ minutes before i killed it. the error message was `there is no package called 'arrow'`, no warning that the install had failed.
 
 ## a minimal example
 
@@ -65,13 +47,13 @@ import polars as pl
 
 df = pl.DataFrame(
     {"name": "john", "height": 1.78},
-    schema={"name": pl.String, "height": pl.Float64},
-).write_parquet("./data.parquet")
-
+    schema={"name": pl.String, "height": pl.Float16},
+)
+df.write_parquet("./data.parquet")
 print(df)
 ```
 
-attempting to read the same dataframe from r:
+attempting to read the same file from r:
 
 ```r
 library(arrow)
@@ -87,13 +69,17 @@ name height
 1 john  16159
 ```
 
-i tested with `Float32` and `Float64`, and both work fine. the issue is just with `Float16`.
+`Float32` and `Float64` work fine. the issue is just with `Float16`.
+
+the workaround is to cast to `Float64` in polars before writing:
+
+```py
+df = df.with_columns(pl.col("height").cast(pl.Float64))
+df.write_parquet("./data.parquet")
+```
 
 ## reporting the issue
 
-right after finding this, i went on to try and report the issue. interestingly, r has a built-in function for listing the maintainer. using gave me a gmail for one jonathan keane, whom i am not sure i feel comfortable contacting directly.
+the r `arrow` package is an r binding for the apache arrow c++ library. its source lives on github, so i opened an issue there: https://github.com/apache/arrow/issues/50378.
 
-fortunately, there is a github mirror for the package distribution. the r arrow package is actually an implementation of apache arrow for r.
-
-i have opened the issue and am waiting on updates.
-but this feels like such an oversight for a project of this dimension that i am led to believe i am doing something wrong.
+still waiting on updates. if i am missing something obvious, i would like to know.
