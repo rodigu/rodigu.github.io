@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="ssh to termux on android">
+<meta name="viewport" content="width=device-width">
+<title>connecting to termux on android via ssh | hiroto</title>
+<link href="../../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/dark.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../../rss.xml">
+<link rel="canonical" href="https://rodigu.github.io/posts/linux/ssh-termux/">
+
+<meta name="author" content="rodigu">
+<meta property="og:site_name" content="hiroto">
+<meta property="og:title" content="connecting to termux on android via ssh">
+<meta property="og:url" content="https://rodigu.github.io/posts/linux/ssh-termux/">
+<meta property="og:description" content="ssh to termux on android">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2026-07-09T11:14:22-03:00">
+
+<meta property="article:tag" content="android">
+
+<meta property="article:tag" content="termux">
+
+<meta property="article:tag" content="ssh">
+
+<meta property="article:tag" content="dropbear">
+
+
+<link rel="prev" href="../../../posts/data-eng/llm-cost-control/" title="controlling llm costs at scale" type="text/html">
+
+
+
+</head>
+<body class="hack dark">
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+<div id="container">
+  <header id="header"><h1 id="brand"><a href="../../../" title="hiroto" rel="home">
+    <span id="blog-title">hiroto</span>
+  </a></h1>
+  <nav id="menu"><ul>
+
+    <li><a href="../../../categories/cat_reading/">reading</a></li>
+
+    <li><a href="../../../categories/cat_linux/" class="active">linux</a></li>
+
+    <li><a href="../../../categories/cat_photo-journal/">photo-journal</a></li>
+
+    <li><a href="../../../categories/cat_data-eng/">data</a></li>
+
+    <li><a href="../../../rss.xml">rss</a></li>
+
+    <li><a href="../../../pages/about/index.html">about</a></li>
+
+    <li><a href="../../../pages/cv/index.html">cv</a></li>
+
+  </ul></nav></header>
+  <main id="content">
+
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
+  <header>
+    <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">connecting to termux on android via ssh</a></h1>
+    <div class="metadata">
+      <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">rodigu</span></p>
+      <p class="dateline">
+        <a href="." rel="bookmark">
+          <time class="published dt-published" datetime="2026-07-09T11:14:22-03:00" itemprop="datePublished" title="2026-07-09 11:14">2026-07-09 11:14</time>
+        </a>
+      </p>
+    </div>
+  </header>
+  <div class="e-content entry-content" itemprop="articleBody text">
+<p>i have been using <a href="https://termux.dev/en/">termux</a> on my android phone for a while now. i use it mostly with the <a href="pi.dev">pi</a> agent and mimo v2.5 to manage my personal finances.</p>
+<p>phone screens are not pleasant to type on, so first thing i want to do is ssh into my phone from my laptop.</p>
+<p>here is how i did it.</p>
+<!-- TEASER_END -->
+
+<p>the termux website has a <a href="https://wiki.termux.com/wiki/Remote_Access">tutorial for remote access</a> that is very helpful. i wanted to use openssh to connect to my phone, and the process is pretty standard, except for the fact that my android is not rooted, meaning the connection has to be done to port 8022 instead of 22.</p>
+<p>for openssh all i had to do was:</p>
+<ol>
+<li>
+<p>install it from pkg
+    <code>bash
+    pkg upgrade
+    pkg i openssh</code></p>
+</li>
+<li>
+<p>run sshd to start the ssh server
+    <code>bash
+    sshd</code></p>
+</li>
+<li>
+<p>set password
+    <code>bash
+    passwd</code></p>
+</li>
+<li>
+<p>get the phone's ip. use the line with format <code>xxx.xxx.x.xx</code> where <code>x</code> is a number and the code does not start with <code>127.x.x.x</code> (mine looked like <code>192.xxx.x.xx</code>)
+    <code>bash
+    ifconfig | grep inet</code></p>
+</li>
+<li>
+<p>ssh into it:
+    <code>bash
+    ssh -p 8022 192.xxx.x.x</code></p>
+</li>
+</ol>
+<p>however, trying to connect to openssh's <code>sshd</code> was getting me a <code>connection reset by peer</code> error. it seems it is an <a href="https://www.reddit.com/r/termux/comments/17x1rvy/ssh_to_termux_keeps_failing/">error with openssh on termux</a>, and the <a href="https://www.reddit.com/r/termux/comments/17x1rvy/comment/kb6tcup/">solution was to use dropbear</a> instead. they have an <a href="https://matt.ucc.asn.au/dropbear/dropbear.html">awesome website</a>, and a seemingly <a href="https://github.com/mkj/dropbear">solid github</a>, so i figured i'd give it a shot.</p>
+<p>after killing <code>sshd</code> on termux:</p>
+<div class="code"><pre class="code"><span></span><code>pkill<span class="w"> </span>sshd
+</code></pre></div>
+
+<p>and installing dropbear:</p>
+<div class="code"><pre class="code"><span></span><code>pkg<span class="w"> </span>i<span class="w"> </span>dropbear
+</code></pre></div>
+
+<p>i added it to <a href="https://wiki.termux.com/wiki/Termux-services"><code>termux-services</code></a><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> to always run:</p>
+<div class="code"><pre class="code"><span></span><code>sv-enable<span class="w"> </span>dropbear
+</code></pre></div>
+
+<p>and now ssh into my android phone works normally.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>which i had already installed with <code>pkd i termux-services</code>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+  </div>
+
+  <aside class="postpromonav">
+    <nav>
+      <ul itemprop="keywords" class="tags">
+
+        <li><a class="tag p-category" href="../../../categories/android/" rel="tag">android</a></li>
+
+        <li><a class="tag p-category" href="../../../categories/termux/" rel="tag">termux</a></li>
+
+        <li><a class="tag p-category" href="../../../categories/ssh/" rel="tag">ssh</a></li>
+
+        <li><a class="tag p-category" href="../../../categories/dropbear/" rel="tag">dropbear</a></li>
+
+      </ul>
+
+      <ul class="pager hidden-print">
+
+        <li class="previous"><a href="../../../posts/data-eng/llm-cost-control/" rel="prev" title="controlling llm costs at scale">Previous post</a></li>
+
+
+      </ul>
+
+    </nav>
+  </aside>
+
+
+  <section class="comments hidden-print">
+    <h2>Comments</h2>
+    <div data-title="connecting to termux on android via ssh" id="utterances-thread"></div>
+    <script src="https://utteranc.es/client.js" repo="rodigu/rodigu.github.io" issue-term="url" label="comment" theme="github-dark" crossorigin="anonymous"></script>
+  </section>
+
+</article>
+
+  </main>
+  <footer id="footer"><p>Contents © 2026 <a href="mailto:rmoraisu@proton.me">rodigu</a></p></footer>
+</div>
+</body>
+</html>

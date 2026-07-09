@@ -1,6 +1,5 @@
 <!--
 .. title: connecting to termux on android via ssh
-.. status: draft
 .. slug: ssh-termux
 .. date: 2026-07-09 11:14:22 UTC-03:00
 .. tags: android, termux, ssh, dropbear
