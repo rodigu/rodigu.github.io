@@ -9,9 +9,7 @@
 .. description: ssh to termux on android
 -->
 
-hosting a minecraft server locally is something i have been interested in doing for a while now.
-
-so as a personal project for this holiday, i am installing and running a minecraft server on an old phone of mine using [termux](https://termux.dev/en/).
+i have been using [termux](https://termux.dev/en/) on my android phone for a while now. i use it mostly with the [pi](pi.dev) agent and mimo v2.5 to manage my personal finances.
 
 phone screens are not pleasant to type on, so first thing i want to do is ssh into my phone from my laptop.
 
