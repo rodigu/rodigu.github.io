@@ -74,6 +74,10 @@
     </div>
   </header>
   <div class="e-content entry-content" itemprop="articleBody text">
+<p align="center">
+    <img src="../../../images/termux-ssh.png" width="400">
+</p>
+
 <p>i have been using <a href="https://termux.dev/en/">termux</a> on my android phone for a while now. i use it mostly with the <a href="pi.dev">pi</a> agent and mimo v2.5 to manage my personal finances.</p>
 <p>phone screens are not pleasant to type on, so first thing i want to do is ssh into my phone from my laptop.</p>
 <p>here is how i did it.</p>
@@ -109,7 +113,7 @@
     ssh -p 8022 192.xxx.x.x</code></p>
 </li>
 </ol>
-<p>however, trying to connect to openssh's <code>sshd</code> was getting me a <code>connection reset by peer</code> error. it seems it is an <a href="https://www.reddit.com/r/termux/comments/17x1rvy/ssh_to_termux_keeps_failing/">error with openssh on termux</a>, and the <a href="https://www.reddit.com/r/termux/comments/17x1rvy/comment/kb6tcup/">solution was to use dropbear</a> instead. they have an <a href="https://matt.ucc.asn.au/dropbear/dropbear.html">awesome website</a>, and a seemingly <a href="https://github.com/mkj/dropbear">solid github</a>, so i figured i'd give it a shot.</p>
+<p>however, trying to connect to openssh's <code>sshd</code> was getting me a <code>connection reset by peer</code> error. it seems it is an <a href="https://www.reddit.com/r/termux/comments/17x1rvy/ssh_to_termux_keeps_failing/">error that sometimes happens with openssh on termux</a>, and the <a href="https://www.reddit.com/r/termux/comments/17x1rvy/comment/kb6tcup/">solution was to use dropbear</a> instead. they have an <a href="https://matt.ucc.asn.au/dropbear/dropbear.html">awesome website</a>, and a seemingly <a href="https://github.com/mkj/dropbear">solid github</a>, so i figured i'd give it a shot.</p>
 <p>after killing <code>sshd</code> on termux:</p>
 <div class="code"><pre class="code"><span></span><code>pkill<span class="w"> </span>sshd
 </code></pre></div>
@@ -123,6 +127,7 @@
 </code></pre></div>
 
 <p>and now ssh into my android phone works normally.</p>
+<p>i recommend trying openssh before dropbear in any case. for some of my devices openssh works.</p>
 <div class="footnote">
 <hr />
 <ol>

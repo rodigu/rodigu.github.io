@@ -8,6 +8,10 @@
 .. description: ssh to termux on android
 -->
 
+<p align="center">
+    <img src="../../images/termux-ssh.png" width="400">
+</p>
+
 i have been using [termux](https://termux.dev/en/) on my android phone for a while now. i use it mostly with the [pi](pi.dev) agent and mimo v2.5 to manage my personal finances.
 
 phone screens are not pleasant to type on, so first thing i want to do is ssh into my phone from my laptop.
@@ -46,7 +50,7 @@ for openssh all i had to do was:
     ssh -p 8022 192.xxx.x.x
     ```
 
-however, trying to connect to openssh's `sshd` was getting me a `connection reset by peer` error. it seems it is an [error with openssh on termux](https://www.reddit.com/r/termux/comments/17x1rvy/ssh_to_termux_keeps_failing/), and the [solution was to use dropbear](https://www.reddit.com/r/termux/comments/17x1rvy/comment/kb6tcup/) instead. they have an [awesome website](https://matt.ucc.asn.au/dropbear/dropbear.html), and a seemingly [solid github](https://github.com/mkj/dropbear), so i figured i'd give it a shot.
+however, trying to connect to openssh's `sshd` was getting me a `connection reset by peer` error. it seems it is an [error that sometimes happens with openssh on termux](https://www.reddit.com/r/termux/comments/17x1rvy/ssh_to_termux_keeps_failing/), and the [solution was to use dropbear](https://www.reddit.com/r/termux/comments/17x1rvy/comment/kb6tcup/) instead. they have an [awesome website](https://matt.ucc.asn.au/dropbear/dropbear.html), and a seemingly [solid github](https://github.com/mkj/dropbear), so i figured i'd give it a shot.
 
 after killing `sshd` on termux:
 
@@ -67,5 +71,7 @@ sv-enable dropbear
 ```
 
 and now ssh into my android phone works normally.
+
+i recommend trying openssh before dropbear in any case. for some of my devices openssh works.
 
 [^1]: which i had already installed with `pkd i termux-services`

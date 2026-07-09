@@ -6,12 +6,16 @@
     <description>personal website with technical writing, tiny game demos, and photo-logs</description>
     <atom:link href="https://rodigu.github.io/rss.xml" rel="self" type="application/rss+xml"/>
     <language>en</language>
-    <lastBuildDate>Thu, 09 Jul 2026 14:05:58 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 09 Jul 2026 14:34:54 +0000</lastBuildDate>
   <item>
     <title>connecting to termux on android via ssh</title>
     <link>https://rodigu.github.io/posts/linux/ssh-termux/</link>
     <dc:creator>rodigu</dc:creator>
-    <description><![CDATA[<p>i have been using <a href="https://termux.dev/en/">termux</a> on my android phone for a while now. i use it mostly with the <a href="pi.dev">pi</a> agent and mimo v2.5 to manage my personal finances.</p>
+    <description><![CDATA[<p align="center">
+    <img src="./images/termux-ssh.png" width="400">
+</p>
+
+<p>i have been using <a href="https://termux.dev/en/">termux</a> on my android phone for a while now. i use it mostly with the <a href="pi.dev">pi</a> agent and mimo v2.5 to manage my personal finances.</p>
 <p>phone screens are not pleasant to type on, so first thing i want to do is ssh into my phone from my laptop.</p>
 <p>here is how i did it.</p>]]></description>
     <guid>https://rodigu.github.io/posts/linux/ssh-termux/</guid>
