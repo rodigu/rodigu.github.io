@@ -1,6 +1,7 @@
 <!--
 .. title: creating a bootable usb on linux
 .. slug: linux-boot-device
+.. status: draft
 .. date: 2026-08-03 15:59:37 UTC-03:00
 .. tags: terminal, cachyos, steam-deck
 .. category: linux
