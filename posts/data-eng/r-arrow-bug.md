@@ -1,6 +1,5 @@
 <!--
 .. title: finding a bug with the r arrow package
-.. slug: r-arrow-bug
 .. date: 2026-08-07 22:08-03:00 UTC-03:00
 .. tags: python, parquet, r, etl, polars
 .. status: draft
