@@ -6,19 +6,7 @@
     <description>personal website with technical writing, tiny game demos, and photo-logs</description>
     <atom:link href="https://rodigu.github.io/rss.xml" rel="self" type="application/rss+xml"/>
     <language>en</language>
-    <lastBuildDate>Sat, 08 Aug 2026 12:20:32 +0000</lastBuildDate>
-  <item>
-    <title>creating a bootable usb on linux</title>
-    <link>https://rodigu.github.io/posts/linux/linux-boot-device/</link>
-    <dc:creator>rodigu</dc:creator>
-    <description><![CDATA[<p>i have only ever had laptops, and am considering building a pc.
-however, pc parts are currently pretty expensive (particularly here in brasil).</p>
-<p>have been using cachyos in my personal laptop for over a year now, and i enjoy it.
-recently learned that cachy has a handheld version made specifically for devices like the steam deck.
-so i am going to try it out.</p>]]></description>
-    <guid>https://rodigu.github.io/posts/linux/linux-boot-device/</guid>
-    <pubDate>Mon, 03 Aug 2026 15:59:37 -0300</pubDate>
-  </item>
+    <lastBuildDate>Sat, 08 Aug 2026 12:46:32 +0000</lastBuildDate>
   <item>
     <title>small language models (slms) on android with llama.cpp</title>
     <link>https://rodigu.github.io/posts/data-eng/slm-android/</link>
