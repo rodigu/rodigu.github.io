@@ -1,6 +1,6 @@
 <!--
-.. title: r may not be suited for etl
-.. slug: r-not-suited-etl
+.. title: a brief rant on technical debt
+.. slug: r-legacy-etl
 .. date: 2026-07-05 19:53-03:00 UTC-03:00
 .. tags: python, parquet, r, etl, polars
 .. status: draft
