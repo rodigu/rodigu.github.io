@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="description" content="ssh to termux on android">
 <meta name="viewport" content="width=device-width">
-<title>connecting to termux on android via ssh | hiroto</title>
+<title>connecting to termux on android via ssh | notas.</title>
 <link href="../../../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/css/code.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/css/dark.css" rel="stylesheet" type="text/css">
@@ -15,7 +15,7 @@
 <link rel="canonical" href="https://rodigu.github.io/posts/linux/ssh-termux/">
 
 <meta name="author" content="rodigu">
-<meta property="og:site_name" content="hiroto">
+<meta property="og:site_name" content="notas.">
 <meta property="og:title" content="connecting to termux on android via ssh">
 <meta property="og:url" content="https://rodigu.github.io/posts/linux/ssh-termux/">
 <meta property="og:description" content="ssh to termux on android">
@@ -34,13 +34,15 @@
 <link rel="prev" href="../../../posts/data-eng/llm-cost-control/" title="controlling llm costs at scale" type="text/html">
 
 
+<link rel="next" href="../../../posts/data-eng/slm-android/" title="small language models (slms) on android with llama.cpp" type="text/html">
+
 
 </head>
 <body class="hack dark">
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 <div id="container">
-  <header id="header"><h1 id="brand"><a href="../../../" title="hiroto" rel="home">
-    <span id="blog-title">hiroto</span>
+  <header id="header"><h1 id="brand"><a href="../../../" title="notas." rel="home">
+    <span id="blog-title">notas.</span>
   </a></h1>
   <nav id="menu"><ul>
 
@@ -115,16 +117,16 @@
 </ol>
 <p>however, trying to connect to openssh's <code>sshd</code> was getting me a <code>connection reset by peer</code> error. it seems it is an <a href="https://www.reddit.com/r/termux/comments/17x1rvy/ssh_to_termux_keeps_failing/">error that sometimes happens with openssh on termux</a>, and the <a href="https://www.reddit.com/r/termux/comments/17x1rvy/comment/kb6tcup/">solution was to use dropbear</a> instead. they have an <a href="https://matt.ucc.asn.au/dropbear/dropbear.html">awesome website</a>, and a seemingly <a href="https://github.com/mkj/dropbear">solid github</a>, so i figured i'd give it a shot.</p>
 <p>after killing <code>sshd</code> on termux:</p>
-<div class="code"><pre class="code"><span></span><code>pkill<span class="w"> </span>sshd
-</code></pre></div>
+<pre class="code"><code class="language-bash">pkill sshd
+</code></pre>
 
 <p>and installing dropbear:</p>
-<div class="code"><pre class="code"><span></span><code>pkg<span class="w"> </span>i<span class="w"> </span>dropbear
-</code></pre></div>
+<pre class="code"><code class="language-bash">pkg i dropbear
+</code></pre>
 
 <p>i added it to <a href="https://wiki.termux.com/wiki/Termux-services"><code>termux-services</code></a><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> to always run:</p>
-<div class="code"><pre class="code"><span></span><code>sv-enable<span class="w"> </span>dropbear
-</code></pre></div>
+<pre class="code"><code class="language-bash">sv-enable dropbear
+</code></pre>
 
 <p>and now ssh into my android phone works normally.</p>
 <p>i recommend trying openssh before dropbear in any case. for some of my devices openssh works.</p>
@@ -156,6 +158,8 @@
 
         <li class="previous"><a href="../../../posts/data-eng/llm-cost-control/" rel="prev" title="controlling llm costs at scale">Previous post</a></li>
 
+
+        <li class="next"><a href="../../../posts/data-eng/slm-android/" rel="next" title="small language models (slms) on android with llama.cpp">Next post</a></li>
 
       </ul>
 

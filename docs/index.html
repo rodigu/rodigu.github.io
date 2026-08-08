@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="description" content="personal website with technical writing, tiny game demos, and photo-logs">
 <meta name="viewport" content="width=device-width">
-<title>hiroto</title>
+<title>notas.</title>
 <link href="./assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="./assets/css/code.css" rel="stylesheet" type="text/css">
 <link href="./assets/css/dark.css" rel="stylesheet" type="text/css">
@@ -18,8 +18,8 @@
 <body class="hack dark">
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 <div id="container">
-  <header id="header"><h1 id="brand"><a href="./" title="hiroto" rel="home">
-    <span id="blog-title">hiroto</span>
+  <header id="header"><h1 id="brand"><a href="./" title="notas." rel="home">
+    <span id="blog-title">notas.</span>
   </a></h1>
   <nav id="menu"><ul>
 
@@ -41,6 +41,46 @@
   <main id="content">
 
 <div class="postindex">
+
+  <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <header>
+      <h1 class="p-name entry-title"><a href="./posts/linux/linux-boot-device/" class="u-url">creating a bootable usb on linux</a></h1>
+      <div class="metadata">
+        <p class="byline author vcard"><span class="byline-name fn" itemprop="author">rodigu</span></p>
+        <p class="dateline">
+          <a href="./posts/linux/linux-boot-device/" rel="bookmark">
+            <time class="published dt-published" datetime="2026-08-03T15:59:37-03:00" itemprop="datePublished" title="2026-08-03 15:59">2026-08-03 15:59</time>
+          </a>
+        </p>
+      </div>
+    </header>
+    <div class="p-summary entry-summary">
+<p>i have only ever had laptops, and am considering building a pc.
+however, pc parts are currently pretty expensive (particularly here in brasil).</p>
+<p>have been using cachyos in my personal laptop for over a year now, and i enjoy it.
+recently learned that cachy has a handheld version made specifically for devices like the steam deck.
+so i am going to try it out.</p>
+    </div>
+  </article>
+
+  <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <header>
+      <h1 class="p-name entry-title"><a href="./posts/data-eng/slm-android/" class="u-url">small language models (slms) on android with llama.cpp</a></h1>
+      <div class="metadata">
+        <p class="byline author vcard"><span class="byline-name fn" itemprop="author">rodigu</span></p>
+        <p class="dateline">
+          <a href="./posts/data-eng/slm-android/" rel="bookmark">
+            <time class="published dt-published" datetime="2026-07-09T19:17:25-03:00" itemprop="datePublished" title="2026-07-09 19:17">2026-07-09 19:17</time>
+          </a>
+        </p>
+      </div>
+    </header>
+    <div class="p-summary entry-summary">
+<p>small language models are getting really good, and <em>very</em> tiny.
+from last year, <a href="https://developers.googleblog.com/en/google-ai-edge-small-language-models-multimodality-rag-function-calling/">google already had been using gemma 3 1b</a> as on-device models that even have tool-calling capabilities. apple has also launched <a href="https://machinelearning.apple.com/research/openelm">openelm</a>, a family of models targeting local inferencing, with models as small as 270 million parameters.</p>
+<p>for fun, here are some tokens per second benchmarks for a few slms running on my <a href="https://www.gsmarena.com/samsung_galaxy_a15-12637.php">samsung galaxy a15</a> (an almost 3 years old phone).</p>
+    </div>
+  </article>
 
   <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
     <header>
@@ -160,19 +200,19 @@ the top floor now seems to be accessible only through reservations now.</p>
     </header>
     <div class="p-summary entry-summary">
 <p><em>(actual prod code for airflow)</em></p>
-<div class="code"><pre class="code"><span></span><code><span class="p">[</span>
-    <span class="p">(</span>
-        <span class="n">a_data</span> <span class="o">:=</span> <span class="n">get_users</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span>
-            <span class="n">connection_meta</span><span class="o">=</span><span class="n">connection_meta</span>
-        <span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">code_a</span><span class="p">)</span>
-    <span class="p">),</span>
-    <span class="p">(</span>
-        <span class="n">b_data</span> <span class="o">:=</span> <span class="n">get_users</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span>
-            <span class="n">connection_meta</span><span class="o">=</span><span class="n">connection_meta</span>
-        <span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">code_b</span><span class="p">)</span>
-    <span class="p">),</span>
-<span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="p">(</span><span class="n">fetch_content</span> <span class="o">:=</span> <span class="n">content_fetch</span><span class="p">(</span><span class="n">a_data</span><span class="p">,</span> <span class="n">b_data</span><span class="p">))</span>
-</code></pre></div>
+<pre class="code"><code class="language-python">[
+    (
+        a_data := get_users.partial(
+            connection_meta=connection_meta
+        ).expand(code=code_a)
+    ),
+    (
+        b_data := get_users.partial(
+            connection_meta=connection_meta
+        ).expand(code=code_b)
+    ),
+] &gt;&gt; (fetch_content := content_fetch(a_data, b_data))
+</code></pre>
     </div>
   </article>
 
@@ -212,8 +252,8 @@ the top floor now seems to be accessible only through reservations now.</p>
     <div class="p-summary entry-summary">
 <p>while using pandoc on arch, i got an error as i tried to convert a markdown to a pdf.</p>
 <p>conversion snippet:</p>
-<div class="code"><pre class="code"><span></span><code>pandoc<span class="w"> </span>document.md<span class="w"> </span>-o<span class="w"> </span>document.pdf
-</code></pre></div>
+<pre class="code"><code class="language-bash">pandoc document.md -o document.pdf
+</code></pre>
     </div>
   </article>
 
@@ -276,6 +316,34 @@ i might try it again some other time.</p>
 
   <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
     <header>
+      <h1 class="p-name entry-title"><a href="./posts/data-eng/airflow-task_group-failure/" class="u-url">what to do when an airflow task inside a task group fails</a></h1>
+      <div class="metadata">
+        <p class="byline author vcard"><span class="byline-name fn" itemprop="author">rodigu</span></p>
+        <p class="dateline">
+          <a href="./posts/data-eng/airflow-task_group-failure/" rel="bookmark">
+            <time class="published dt-published" datetime="2025-03-30T16:20:00-03:00" itemprop="datePublished" title="2025-03-30 16:20">2025-03-30 16:20</time>
+          </a>
+        </p>
+      </div>
+    </header>
+    <div class="p-summary entry-summary">
+<p>checking if a task has failed on airflow is simple enough, and may be done with:</p>
+<pre class="code"><code class="language-py">from airflow.operators.python import get_current_context
+
+@task
+def check_task_failed(task_id: str) -&gt; bool:
+      context = get_current_context()
+      return (
+          context[&quot;dag_run&quot;]
+            .get_task_instance(task_id=task_id)
+            .state == State.FAILED
+      )
+</code></pre>
+    </div>
+  </article>
+
+  <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <header>
       <h1 class="p-name entry-title"><a href="./posts/meta/setting-up/" class="u-url">setting up</a></h1>
       <div class="metadata">
         <p class="byline author vcard"><span class="byline-name fn" itemprop="author">rodigu</span></p>
@@ -293,34 +361,6 @@ containing the source for this blog, you may notice that this was originally my 
 but <a href="https://c.tenor.com/Bi5t9IXWlEkAAAAC/tenor.gif" target="_blank">i forgot to switch branches before deleting everything</a>.</p>
 <p>in any case, i suppose i'll have to commit to this now.
 so here is a test post.</p>
-    </div>
-  </article>
-
-  <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article">
-    <header>
-      <h1 class="p-name entry-title"><a href="./posts/data-eng/airflow-task_group-failure/" class="u-url">what to do when an airflow task inside a task group fails</a></h1>
-      <div class="metadata">
-        <p class="byline author vcard"><span class="byline-name fn" itemprop="author">rodigu</span></p>
-        <p class="dateline">
-          <a href="./posts/data-eng/airflow-task_group-failure/" rel="bookmark">
-            <time class="published dt-published" datetime="2025-03-30T16:20:00-03:00" itemprop="datePublished" title="2025-03-30 16:20">2025-03-30 16:20</time>
-          </a>
-        </p>
-      </div>
-    </header>
-    <div class="p-summary entry-summary">
-<p>checking if a task has failed on airflow is simple enough, and may be done with:</p>
-<div class="code"><pre class="code"><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">airflow.operators.python</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_current_context</span>
-
-<span class="nd">@task</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">check_task_failed</span><span class="p">(</span><span class="n">task_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-      <span class="n">context</span> <span class="o">=</span> <span class="n">get_current_context</span><span class="p">()</span>
-      <span class="k">return</span> <span class="p">(</span>
-          <span class="n">context</span><span class="p">[</span><span class="s2">&quot;dag_run&quot;</span><span class="p">]</span>
-            <span class="o">.</span><span class="n">get_task_instance</span><span class="p">(</span><span class="n">task_id</span><span class="o">=</span><span class="n">task_id</span><span class="p">)</span>
-            <span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">FAILED</span>
-      <span class="p">)</span>
-</code></pre></div>
     </div>
   </article>
 

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="description" content="setting up the blog">
 <meta name="viewport" content="width=device-width">
-<title>setting up | hiroto</title>
+<title>setting up | notas.</title>
 <link href="../../../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/css/code.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/css/dark.css" rel="stylesheet" type="text/css">
@@ -15,7 +15,7 @@
 <link rel="canonical" href="https://rodigu.github.io/posts/meta/setting-up/">
 
 <meta name="author" content="rodigu">
-<meta property="og:site_name" content="hiroto">
+<meta property="og:site_name" content="notas.">
 <meta property="og:title" content="setting up">
 <meta property="og:url" content="https://rodigu.github.io/posts/meta/setting-up/">
 <meta property="og:description" content="setting up the blog">
@@ -27,18 +27,16 @@
 <meta property="article:tag" content="blog">
 
 
-<link rel="prev" href="../../../posts/data-eng/airflow-task_group-failure/" title="what to do when an airflow task inside a task group fails" type="text/html">
 
-
-<link rel="next" href="../../../posts/meta/on-nikola/" title="on nikola" type="text/html">
+<link rel="next" href="../../../posts/data-eng/airflow-task_group-failure/" title="what to do when an airflow task inside a task group fails" type="text/html">
 
 
 </head>
 <body class="hack dark">
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 <div id="container">
-  <header id="header"><h1 id="brand"><a href="../../../" title="hiroto" rel="home">
-    <span id="blog-title">hiroto</span>
+  <header id="header"><h1 id="brand"><a href="../../../" title="notas." rel="home">
+    <span id="blog-title">notas.</span>
   </a></h1>
   <nav id="menu"><ul>
 
@@ -95,34 +93,34 @@ it even has built'in support for <em>extended</em> markdown, seeing that the foo
 <p>it does have support for images in markdown, but...</p>
 <p><img alt="a photo i took while biking in chicago" src="../../../images/2025-03-30_16-37_chicago-skyline-biking.png" /></p>
 <p>here is what the markdown for the previous photo looks like:</p>
-<div class="code"><pre class="code"><span></span><code>![<span class="nt">a photo i took while biking in chicago</span>](<span class="na">../../images/2025-03-30_16-37_chicago-skyline-biking.png</span>)
-</code></pre></div>
+<pre class="code"><code class="language-md">![a photo i took while biking in chicago](../../images/2025-03-30_16-37_chicago-skyline-biking.png)
+</code></pre>
 
 <p>which seems fine, except that this is what the folder structure of this repo looks like (with some omissions for readability):</p>
-<div class="code"><pre class="code"><span></span><code>.
-├──<span class="w"> </span>images
-│<span class="w">   </span>├──<span class="w"> </span><span class="m">2025</span>-03-30_16-37_chicago-skyline-biking.png
-│<span class="w">   </span>├──<span class="w"> </span>frontispiece.jpg
-│<span class="w">   </span>└──<span class="w"> </span>illus_001.jpg
-├──<span class="w"> </span>output
-│<span class="w">   </span>├──<span class="w"> </span>images
-│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span><span class="m">2025</span>-03-30_16-37_chicago-skyline-biking.png
-│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span><span class="m">2025</span>-03-30_16-37_chicago-skyline-biking.thumbnail.png
-│<span class="w">   </span>├──<span class="w"> </span>index.html
-│<span class="w">   </span>└──<span class="w"> </span>posts
-│<span class="w">       </span>├──<span class="w"> </span>setting-up
-│<span class="w">       </span>├──<span class="w"> </span>index.html
-│<span class="w">       </span>└──<span class="w"> </span>index.md
-├──<span class="w"> </span>posts
-│<span class="w">   </span>└──<span class="w"> </span><span class="m">1</span>.md
-└──<span class="w"> </span>README.txt
-</code></pre></div>
+<pre class="code"><code class="language-bash">.
+├── images
+│   ├── 2025-03-30_16-37_chicago-skyline-biking.png
+│   ├── frontispiece.jpg
+│   └── illus_001.jpg
+├── output
+│   ├── images
+│   │   ├── 2025-03-30_16-37_chicago-skyline-biking.png
+│   │   ├── 2025-03-30_16-37_chicago-skyline-biking.thumbnail.png
+│   ├── index.html
+│   └── posts
+│       ├── setting-up
+│       ├── index.html
+│       └── index.md
+├── posts
+│   └── 1.md
+└── README.txt
+</code></pre>
 
 <p>i am writing from <code>./posts/1.md</code>, and i am placing my image in <code>./images/</code>.
 after the build, my post is in <code>./output/posts/setting-up</code>, and the image is in <code>./output/images/</code>.
 meaning that while in this markdown i can use intellisense to access the image with:</p>
-<div class="code"><pre class="code"><span></span><code>../images/2025-03-30_16-37_chicago-skyline-biking.png
-</code></pre></div>
+<pre class="code"><code class="language-bash">../images/2025-03-30_16-37_chicago-skyline-biking.png
+</code></pre>
 
 <p>however, because the image in the output build is in a different directory,
 i need to add an additional <code>../</code> to the beginning of the image reference<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">1</a></sup>.</p>
@@ -131,15 +129,15 @@ i need to add an additional <code>../</code> to the beginning of the image refer
 <p>ok, i have another pet peev, this time with github pages.
 for whatever reason, github pages only allows deployement from root or from <code>/docs</code><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">2</a></sup>?</p>
 <p>so i had to change the output folder of this repo to <code>docs</code>, with the following addition to nikola's <a href="https://github.com/rodigu/rodigu.github.io/blob/master/conf.py" target="_blank"><code>conf.py</code></a>:</p>
-<div class="code"><pre class="code"><span></span><code><span class="n">OUTPUT_FOLDER</span> <span class="o">=</span> <span class="s1">&#39;docs&#39;</span>
-</code></pre></div>
+<pre class="code"><code class="language-py">OUTPUT_FOLDER = 'docs'
+</code></pre>
 
 <h2>addemdum 2</h2>
 <p>one last thing for this test post.</p>
 <p>nikola came with a number of files in its demo.
 i deleted them manually, and then followed the instructions from the <a href="https://getnikola.com/getting-started.html#rm-demo" target="_blank">getting started page</a>:</p>
-<div class="code"><pre class="code"><span></span><code>nikola<span class="w"> </span>check<span class="w"> </span>--clean-files
-</code></pre></div>
+<pre class="code"><code class="language-bash">nikola check --clean-files
+</code></pre>
 
 <div class="footnote">
 <hr />
@@ -168,10 +166,8 @@ i should keep this in mind for the future.&#160;<a class="footnote-backref" href
 
       <ul class="pager hidden-print">
 
-        <li class="previous"><a href="../../../posts/data-eng/airflow-task_group-failure/" rel="prev" title="what to do when an airflow task inside a task group fails">Previous post</a></li>
 
-
-        <li class="next"><a href="../../../posts/meta/on-nikola/" rel="next" title="on nikola">Next post</a></li>
+        <li class="next"><a href="../../../posts/data-eng/airflow-task_group-failure/" rel="next" title="what to do when an airflow task inside a task group fails">Next post</a></li>
 
       </ul>
 

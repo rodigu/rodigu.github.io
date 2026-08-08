@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="description" content="a caveat to the tsql `between`">
 <meta name="viewport" content="width=device-width">
-<title>is tsql's `between` inclusive? | hiroto</title>
+<title>is tsql's `between` inclusive? | notas.</title>
 <link href="../../../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/css/code.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/css/dark.css" rel="stylesheet" type="text/css">
@@ -15,7 +15,7 @@
 <link rel="canonical" href="https://rodigu.github.io/posts/data-eng/tsql-between/">
 
 <meta name="author" content="rodigu">
-<meta property="og:site_name" content="hiroto">
+<meta property="og:site_name" content="notas.">
 <meta property="og:title" content="is tsql's `between` inclusive?">
 <meta property="og:url" content="https://rodigu.github.io/posts/data-eng/tsql-between/">
 <meta property="og:description" content="a caveat to the tsql `between`">
@@ -37,8 +37,8 @@
 <body class="hack dark">
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 <div id="container">
-  <header id="header"><h1 id="brand"><a href="../../../" title="hiroto" rel="home">
-    <span id="blog-title">hiroto</span>
+  <header id="header"><h1 id="brand"><a href="../../../" title="notas." rel="home">
+    <span id="blog-title">notas.</span>
   </a></h1>
   <nav id="menu"><ul>
 
@@ -83,23 +83,23 @@
 <p>this was an issue i ran into at work, involving real data.
 here, i'll demonstrate it with a sample table.</p>
 <p>here is a sample sql script to create the tables and insert some values into them.</p>
-<div class="code"><pre class="code"><span></span><code><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">tsql_testing</span><span class="p">(</span>
-<span class="w">    </span><span class="p">[</span><span class="n">date_vc</span><span class="p">]</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">,</span>
-<span class="w">    </span><span class="p">[</span><span class="n">date_dt</span><span class="p">]</span><span class="w"> </span><span class="n">datetime</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span>
-<span class="p">)</span>
-<span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">tsql_testing</span><span class="w"> </span><span class="p">(</span><span class="n">date_vc</span><span class="p">,</span><span class="w"> </span><span class="n">date_dt</span><span class="p">)</span>
-<span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;15/12/2025&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2025-12-15 23:48:13.000&#39;</span><span class="p">)</span>
-<span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">tsql_testing</span><span class="w"> </span><span class="p">(</span><span class="n">date_vc</span><span class="p">,</span><span class="w"> </span><span class="n">date_dt</span><span class="p">)</span>
-<span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;09/12/2025&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2025-12-09 23:48:13.000&#39;</span><span class="p">)</span>
-</code></pre></div>
+<pre class="code"><code class="language-sql">create table tsql_testing(
+    [date_vc] varchar(20) not null,
+    [date_dt] datetime not null
+)
+insert into tsql_testing (date_vc, date_dt)
+values ('15/12/2025', '2025-12-15 23:48:13.000')
+insert into tsql_testing (date_vc, date_dt)
+values ('09/12/2025', '2025-12-09 23:48:13.000')
+</code></pre>
 
 <p>now, notice that, as previously mentioned, <code>date_vc</code> has string values with style 103 (<code>'%d/%m/%Y'</code>),
 the British/French standard as per <a href="https://learn.microsoft.com/en-us/sql/t-sql/functions/cast-and-convert-transact-sql?view=sql-server-ver17#date-and-time-styles" target="_blank">microsoft's own documentation</a>.</p>
 <h2>between is (not?) inclusive</h2>
 <p>if we try to select the following using <code>between</code>, what should be the expected behavior?</p>
-<div class="code"><pre class="code"><span></span><code><span class="k">select</span><span class="w"> </span><span class="n">date_vc</span><span class="p">,</span><span class="w"> </span><span class="n">date_dt</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">tsql_testing</span>
-<span class="k">where</span><span class="w"> </span><span class="k">convert</span><span class="p">(</span><span class="n">datetime</span><span class="p">,</span><span class="n">date_vc</span><span class="p">,</span><span class="mi">103</span><span class="p">)</span><span class="w"> </span><span class="k">between</span><span class="w"> </span><span class="s1">&#39;2025-12-09&#39;</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="s1">&#39;2025-12-15&#39;</span><span class="p">;</span>
-</code></pre></div>
+<pre class="code"><code class="language-sql">select date_vc, date_dt from tsql_testing
+where convert(datetime,date_vc,103) between '2025-12-09' and '2025-12-15';
+</code></pre>
 
 <p>we convert the <code>varchar</code> column <code>date_vc</code> to datetime, and select between those two dates.</p>
 <p>as alluded to in microsoft's own documentation, we do get that this between select is indeed inclusive, as we fetch the following from the select:</p>
@@ -125,9 +125,9 @@ the British/French standard as per <a href="https://learn.microsoft.com/en-us/sq
 </blockquote>
 <p>note that, even if we were to use the 103 standard with <code>between '12/09/2025' and '12/15/2025'</code>, we'd still get the same response.</p>
 <p>now, if we do the <strong><em>exact same select</em></strong> for the <code>datetime</code> column <code>date_dt</code> (again, it doesn't matter which standard and formatting you pick):</p>
-<div class="code"><pre class="code"><span></span><code><span class="k">select</span><span class="w"> </span><span class="n">date_vc</span><span class="p">,</span><span class="w"> </span><span class="n">date_dt</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">tsql_testing</span>
-<span class="k">where</span><span class="w"> </span><span class="n">date_dt</span><span class="w"> </span><span class="k">between</span><span class="w"> </span><span class="s1">&#39;12/09/2025&#39;</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="s1">&#39;12/15/2025&#39;</span>
-</code></pre></div>
+<pre class="code"><code class="language-sql">select date_vc, date_dt from tsql_testing
+where date_dt between '12/09/2025' and '12/15/2025'
+</code></pre>
 
 <p>we get a response non-inclusive of the second value:</p>
 <blockquote>

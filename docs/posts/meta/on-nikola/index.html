@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="description" content="some useful writing and references on the nikola static website builder">
 <meta name="viewport" content="width=device-width">
-<title>on nikola | hiroto</title>
+<title>on nikola | notas.</title>
 <link href="../../../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/css/code.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/css/dark.css" rel="stylesheet" type="text/css">
@@ -15,7 +15,7 @@
 <link rel="canonical" href="https://rodigu.github.io/posts/meta/on-nikola/">
 
 <meta name="author" content="rodigu">
-<meta property="og:site_name" content="hiroto">
+<meta property="og:site_name" content="notas.">
 <meta property="og:title" content="on nikola">
 <meta property="og:url" content="https://rodigu.github.io/posts/meta/on-nikola/">
 <meta property="og:description" content="some useful writing and references on the nikola static website builder">
@@ -27,7 +27,7 @@
 <meta property="article:tag" content="technical">
 
 
-<link rel="prev" href="../../../posts/meta/setting-up/" title="setting up" type="text/html">
+<link rel="prev" href="../../../posts/data-eng/airflow-task_group-failure/" title="what to do when an airflow task inside a task group fails" type="text/html">
 
 
 <link rel="next" href="../../../posts/reading/thoreau-walden-31/" title="thoreau; walden; 31" type="text/html">
@@ -37,8 +37,8 @@
 <body class="hack dark">
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 <div id="container">
-  <header id="header"><h1 id="brand"><a href="../../../" title="hiroto" rel="home">
-    <span id="blog-title">hiroto</span>
+  <header id="header"><h1 id="brand"><a href="../../../" title="notas." rel="home">
+    <span id="blog-title">notas.</span>
   </a></h1>
   <nav id="menu"><ul>
 
@@ -78,30 +78,30 @@ i might try it again some other time.</p>
 <!-- TEASER_END -->
 
 <p>for now, this blog is built with the following sequence of commands:</p>
-<div class="code"><pre class="code"><span></span><code>nikola<span class="w"> </span>check<span class="w"> </span>--clean-files
-nikola<span class="w"> </span>build
-</code></pre></div>
+<pre class="code"><code class="language-bash">nikola check --clean-files
+nikola build
+</code></pre>
 
 <p>and served locally with:</p>
-<div class="code"><pre class="code"><span></span><code>nikola<span class="w"> </span>serve<span class="w"> </span>-b
-</code></pre></div>
+<pre class="code"><code class="language-bash">nikola serve -b
+</code></pre>
 
 <p>in one line:</p>
-<div class="code"><pre class="code"><span></span><code>nikola<span class="w"> </span>check<span class="w"> </span>--clean-files<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>nikola<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>nikola<span class="w"> </span>serve
-</code></pre></div>
+<pre class="code"><code class="language-bash">nikola check --clean-files &amp;&amp; nikola build &amp;&amp; nikola serve
+</code></pre>
 
 <p>the first line cleans up any files that no longer exist from the output directory (<code>docs</code>, <a href="https://rodigu.github.io/posts/setting-up/">because github pages is unloved</a>).</p>
 <p>new "tabs" can be added with through the <code>NAVIGATION_LINKS</code> variable in <code>conf.py</code> <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.
 here is what that variable looks like attow:</p>
-<div class="code"><pre class="code"><span></span><code><span class="n">NAVIGATION_LINKS</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">DEFAULT_LANG</span><span class="p">:</span> <span class="p">(</span>
-        <span class="p">(</span><span class="s2">&quot;/archive.html&quot;</span><span class="p">,</span> <span class="s2">&quot;archive&quot;</span><span class="p">),</span>
-        <span class="p">(</span><span class="s2">&quot;/categories/&quot;</span><span class="p">,</span> <span class="s2">&quot;tags&quot;</span><span class="p">),</span>
-        <span class="p">(</span><span class="s2">&quot;/rss.xml&quot;</span><span class="p">,</span> <span class="s2">&quot;rss feed&quot;</span><span class="p">),</span>
-        <span class="p">(</span><span class="s2">&quot;/pages/about/index.html&quot;</span><span class="p">,</span> <span class="s2">&quot;about&quot;</span><span class="p">)</span>
-    <span class="p">),</span>
-<span class="p">}</span>
-</code></pre></div>
+<pre class="code"><code class="language-py">NAVIGATION_LINKS = {
+    DEFAULT_LANG: (
+        (&quot;/archive.html&quot;, &quot;archive&quot;),
+        (&quot;/categories/&quot;, &quot;tags&quot;),
+        (&quot;/rss.xml&quot;, &quot;rss feed&quot;),
+        (&quot;/pages/about/index.html&quot;, &quot;about&quot;)
+    ),
+}
+</code></pre>
 
 <div class="footnote">
 <hr />
@@ -125,7 +125,7 @@ here is what that variable looks like attow:</p>
 
       <ul class="pager hidden-print">
 
-        <li class="previous"><a href="../../../posts/meta/setting-up/" rel="prev" title="setting up">Previous post</a></li>
+        <li class="previous"><a href="../../../posts/data-eng/airflow-task_group-failure/" rel="prev" title="what to do when an airflow task inside a task group fails">Previous post</a></li>
 
 
         <li class="next"><a href="../../../posts/reading/thoreau-walden-31/" rel="next" title="thoreau; walden; 31">Next post</a></li>

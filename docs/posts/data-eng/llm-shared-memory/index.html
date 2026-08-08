@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="description" content="a simple memory system for llms">
 <meta name="viewport" content="width=device-width">
-<title>minimalist shared memory system for llms | hiroto</title>
+<title>minimalist shared memory system for llms | notas.</title>
 <link href="../../../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/css/code.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/css/dark.css" rel="stylesheet" type="text/css">
@@ -15,7 +15,7 @@
 <link rel="canonical" href="https://rodigu.github.io/posts/data-eng/llm-shared-memory/">
 
 <meta name="author" content="rodigu">
-<meta property="og:site_name" content="hiroto">
+<meta property="og:site_name" content="notas.">
 <meta property="og:title" content="minimalist shared memory system for llms">
 <meta property="og:url" content="https://rodigu.github.io/posts/data-eng/llm-shared-memory/">
 <meta property="og:description" content="a simple memory system for llms">
@@ -37,8 +37,8 @@
 <body class="hack dark">
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 <div id="container">
-  <header id="header"><h1 id="brand"><a href="../../../" title="hiroto" rel="home">
-    <span id="blog-title">hiroto</span>
+  <header id="header"><h1 id="brand"><a href="../../../" title="notas." rel="home">
+    <span id="blog-title">notas.</span>
   </a></h1>
   <nav id="menu"><ul>
 
@@ -90,52 +90,52 @@
 <h2>the jsonl solution</h2>
 <p>llms work best with short, structured information. given too much room, they hallucinate. that's why i believe llm wikis don't work well, the information isn't structured enough.</p>
 <p>for a first proof of concept, i used <a href="pi.dev">pi</a>'s approach: jsonl files for session data. each memory has a uuid, update date, description, tags, and content.</p>
-<div class="code"><pre class="code"><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nx">MemoryBase</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">tags</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="p">}</span>
+<pre class="code"><code class="language-ts">interface MemoryBase {
+    id: string;
+    description: string;
+    tags: Array&lt;string&gt;;
+}
 
-<span class="kd">interface</span><span class="w"> </span><span class="nx">MemoryEdit</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">description?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">tags?</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="p">}</span>
+interface MemoryEdit {
+    id: string;
+    description?: string;
+    tags?: Array&lt;string&gt;;
+}
 
-<span class="kd">interface</span><span class="w"> </span><span class="nx">MemoryCreate</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">MemoryBase</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
-<span class="p">}</span>
+interface MemoryCreate extends MemoryBase {
+    content: string;
+}
 
-<span class="kd">interface</span><span class="w"> </span><span class="nx">MemoryQuery</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">MemoryCreate</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">changedAt</span><span class="o">:</span><span class="w"> </span><span class="kt">Date</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">deletedAt?</span><span class="o">:</span><span class="w"> </span><span class="kt">Date</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+interface MemoryQuery extends MemoryCreate {
+    changedAt: Date;
+    deletedAt?: Date;
+}
+</code></pre>
 
 <p>the <code>changedAt</code> property works as both created-at and updated-at. memories act as a type 2 slowly changing dimension: edits add new lines with updated data instead of changing the original. <code>deletedAt</code> is a soft delete, and we get to keep history for each memory.</p>
 <p>tags help llms search for relevant memories. descriptions help them decide if a memory is worth reading.</p>
 <p>here are the signatures for the five tools: search, create, edit, read, delete.</p>
-<div class="code"><pre class="code"><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">search</span><span class="p">(</span><span class="nx">keyWords</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Array</span><span class="o">&lt;</span><span class="nx">MemoryBase</span><span class="o">&gt;</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">create</span><span class="p">(</span><span class="nx">newMemory</span><span class="o">:</span><span class="w"> </span><span class="kt">MemoryCreate</span><span class="p">)</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">edit</span><span class="p">(</span><span class="nx">memory</span><span class="o">:</span><span class="w"> </span><span class="kt">MemoryEdit</span><span class="p">)</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">read</span><span class="p">(</span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">MemoryQuery</span>
-<span class="kd">function</span><span class="w"> </span><span class="ow">delete</span><span class="p">(</span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span>
-</code></pre></div>
+<pre class="code"><code class="language-ts">function search(keyWords: Array&lt;string&gt;): Array&lt;MemoryBase&gt;
+function create(newMemory: MemoryCreate)
+function edit(memory: MemoryEdit)
+function read(id: string): MemoryQuery
+function delete(id: string)
+</code></pre>
 
 <p>search checks keywords against tags and descriptions. returns id, description, and tags for matches.</p>
 <p>but scaling to multiple users broke this. git would introduce merge conflicts, and we had to decide what happens when two users edit the same memory every time it happened. worse, memories stored in a single file meant any operation in a single memory affected all memories.</p>
 <h2>sql server table</h2>
 <p>i kept the same tools. changed storage to a memory table in our production server.</p>
-<div class="code"><pre class="code"><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Memories</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="n">pk</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">IDENTITY</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
-<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="n">UNIQUEIDENTIFIER</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">description</span><span class="w"> </span><span class="n">NVARCHAR</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">tags</span><span class="w"> </span><span class="n">NVARCHAR</span><span class="p">(</span><span class="k">MAX</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w"> </span><span class="c1">-- stored as json array</span>
-<span class="w">    </span><span class="n">content</span><span class="w"> </span><span class="n">NVARCHAR</span><span class="p">(</span><span class="k">MAX</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">changedAt</span><span class="w"> </span><span class="n">DATETIME2</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<span class="w">    </span><span class="n">deletedAt</span><span class="w"> </span><span class="n">DATETIME2</span>
-<span class="p">);</span>
-</code></pre></div>
+<pre class="code"><code class="language-sql">CREATE TABLE Memories (
+    pk INT IDENTITY(1,1) PRIMARY KEY,
+    id UNIQUEIDENTIFIER NOT NULL,
+    description NVARCHAR(500) NOT NULL,
+    tags NVARCHAR(MAX) NOT NULL, -- stored as json array
+    content NVARCHAR(MAX) NOT NULL,
+    changedAt DATETIME2 NOT NULL,
+    deletedAt DATETIME2
+);
+</code></pre>
 
 <p>sql server now handles concurrency, and we get no more merge conflicts.</p>
 <p>the migration worked because of the architecture. i defined tool signatures first: what the llm calls, what it gets back. storage is invisible to the agent, it doesn't know or care whether memories live in a jsonl file or a sql table.</p>

@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="description" content="personal website with technical writing, tiny game demos, and photo-logs">
+<meta name="description" content="making a bootable usb for cachyos handheld">
 <meta name="viewport" content="width=device-width">
-<title>connecting to wifi via terminal with nmcli | notas.</title>
+<title>creating a bootable usb on linux | notas.</title>
 <link href="../../../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/css/code.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/css/dark.css" rel="stylesheet" type="text/css">
@@ -12,23 +12,25 @@
 <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
 <meta name="theme-color" content="#5670d4">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../../rss.xml">
-<link rel="canonical" href="https://rodigu.github.io/posts/linux/connecting-to-wifi-via-terminal-with-nmcli/">
+<link rel="canonical" href="https://rodigu.github.io/posts/linux/linux-boot-device/">
 
 <meta name="author" content="rodigu">
 <meta property="og:site_name" content="notas.">
-<meta property="og:title" content="connecting to wifi via terminal with nmcli">
-<meta property="og:url" content="https://rodigu.github.io/posts/linux/connecting-to-wifi-via-terminal-with-nmcli/">
-<meta property="og:description" content="">
+<meta property="og:title" content="creating a bootable usb on linux">
+<meta property="og:url" content="https://rodigu.github.io/posts/linux/linux-boot-device/">
+<meta property="og:description" content="making a bootable usb for cachyos handheld">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2026-02-28T16:19:37-03:00">
+<meta property="article:published_time" content="2026-08-03T15:59:37-03:00">
 
 <meta property="article:tag" content="terminal">
 
+<meta property="article:tag" content="cachyos">
 
-<link rel="prev" href="../../../posts/meta/post-teasers/" title="nikola post previews (teasers)" type="text/html">
+<meta property="article:tag" content="steam-deck">
 
 
-<link rel="next" href="../../../posts/data-eng/llm-shared-memory/" title="minimalist shared memory system for llms" type="text/html">
+<link rel="prev" href="../../../posts/data-eng/slm-android/" title="small language models (slms) on android with llama.cpp" type="text/html">
+
 
 
 </head>
@@ -59,31 +61,36 @@
 
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
   <header>
-    <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">connecting to wifi via terminal with nmcli</a></h1>
+    <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">creating a bootable usb on linux</a></h1>
     <div class="metadata">
       <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">rodigu</span></p>
       <p class="dateline">
         <a href="." rel="bookmark">
-          <time class="published dt-published" datetime="2026-02-28T16:19:37-03:00" itemprop="datePublished" title="2026-02-28 16:19">2026-02-28 16:19</time>
+          <time class="published dt-published" datetime="2026-08-03T15:59:37-03:00" itemprop="datePublished" title="2026-08-03 15:59">2026-08-03 15:59</time>
         </a>
       </p>
     </div>
   </header>
   <div class="e-content entry-content" itemprop="articleBody text">
-<p>went to sesc paulista.
-last time i visited was years ago, soon after it first opened.
-the top floor now seems to be accessible only through reservations now.</p>
-<p>this was the first time i tried connecting to wifi with this new arch installation.</p>
+<p>i have only ever had laptops, and am considering building a pc.
+however, pc parts are currently pretty expensive (particularly here in brasil).</p>
+<p>have been using cachyos in my personal laptop for over a year now, and i enjoy it.
+recently learned that cachy has a handheld version made specifically for devices like the steam deck.
+so i am going to try it out.</p>
 <!-- TEASER_END -->
 
-<p>the cachyos distro came with <code>nmcli</code>. i am not yet certain that it is a common dependency for other distros.</p>
-<p>this lists the available wifi networks:</p>
-<pre class="code"><code class="language-bash">nmcli device wifi list
+<h2>making a bootable device</h2>
+<p>i got the cachyos handheld distro iso torrent magnet from their <a href="https://cachyos.org/download/">downloads page</a>.</p>
+<p>balena etcher has not been working on my laptop, so i followed <a href="https://linuxconfig.org/how-to-make-a-bootable-usb-from-an-iso-in-linux">linuxconfig's tutorial</a>.</p>
+<h3>get device path</h3>
+<pre class="code"><code class="language-bash">sudo fdisk -l
 </code></pre>
 
-<p>this connects to wifi:</p>
-<pre class="code"><code class="language-bash">nmcli device wifi connect connection_name password connection_password
+<h3><code>dd</code></h3>
+<pre class="code"><code class="language-bash">sudo dd bs=4M if=/path/to/file.iso of=/dev/sdX status=progress oflag=sync
 </code></pre>
+
+<h2>the cachyos handheld experience</h2>
   </div>
 
   <aside class="postpromonav">
@@ -92,14 +99,16 @@ the top floor now seems to be accessible only through reservations now.</p>
 
         <li><a class="tag p-category" href="../../../categories/terminal/" rel="tag">terminal</a></li>
 
+        <li><a class="tag p-category" href="../../../categories/cachyos/" rel="tag">cachyos</a></li>
+
+        <li><a class="tag p-category" href="../../../categories/steam-deck/" rel="tag">steam-deck</a></li>
+
       </ul>
 
       <ul class="pager hidden-print">
 
-        <li class="previous"><a href="../../../posts/meta/post-teasers/" rel="prev" title="nikola post previews (teasers)">Previous post</a></li>
+        <li class="previous"><a href="../../../posts/data-eng/slm-android/" rel="prev" title="small language models (slms) on android with llama.cpp">Previous post</a></li>
 
-
-        <li class="next"><a href="../../../posts/data-eng/llm-shared-memory/" rel="next" title="minimalist shared memory system for llms">Next post</a></li>
 
       </ul>
 
@@ -109,7 +118,7 @@ the top floor now seems to be accessible only through reservations now.</p>
 
   <section class="comments hidden-print">
     <h2>Comments</h2>
-    <div data-title="connecting to wifi via terminal with nmcli" id="utterances-thread"></div>
+    <div data-title="creating a bootable usb on linux" id="utterances-thread"></div>
     <script src="https://utteranc.es/client.js" repo="rodigu/rodigu.github.io" issue-term="url" label="comment" theme="github-dark" crossorigin="anonymous"></script>
   </section>
 

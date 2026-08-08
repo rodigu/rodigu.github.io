@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="description" content="creating post teasers on nikola">
 <meta name="viewport" content="width=device-width">
-<title>nikola post previews (teasers) | hiroto</title>
+<title>nikola post previews (teasers) | notas.</title>
 <link href="../../../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/css/code.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/css/dark.css" rel="stylesheet" type="text/css">
@@ -15,7 +15,7 @@
 <link rel="canonical" href="https://rodigu.github.io/posts/meta/post-teasers/">
 
 <meta name="author" content="rodigu">
-<meta property="og:site_name" content="hiroto">
+<meta property="og:site_name" content="notas.">
 <meta property="og:title" content="nikola post previews (teasers)">
 <meta property="og:url" content="https://rodigu.github.io/posts/meta/post-teasers/">
 <meta property="og:description" content="creating post teasers on nikola">
@@ -35,8 +35,8 @@
 <body class="hack dark">
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 <div id="container">
-  <header id="header"><h1 id="brand"><a href="../../../" title="hiroto" rel="home">
-    <span id="blog-title">hiroto</span>
+  <header id="header"><h1 id="brand"><a href="../../../" title="notas." rel="home">
+    <span id="blog-title">notas.</span>
   </a></h1>
   <nav id="menu"><ul>
 
@@ -74,13 +74,13 @@
 <!-- TEASER_END -->
 
 <p>you can do it with a markdown comment as such:</p>
-<div class="code"><pre class="code"><span></span><code>&lt;!-- TEASER_END --&gt;
-</code></pre></div>
+<pre class="code"><code class="language-md">&lt;!-- TEASER_END --&gt;
+</code></pre>
 
 <p><a href="https://adriaanrol.com/posts/2020/building-a-site-using-nikola/">this reference</a> by adriaanrol gave me the initial idea that i had to change the nikola <code>conf.py</code> file.</p>
-<div class="code"><pre class="code"><span></span><code><span class="c1"># Show teasers (instead of full posts) in indexes? Defaults to False.</span>
-<span class="n">INDEX_TEASERS</span> <span class="o">=</span> <span class="kc">True</span>
-</code></pre></div>
+<pre class="code"><code class="language-py"># Show teasers (instead of full posts) in indexes? Defaults to False.
+INDEX_TEASERS = True
+</code></pre>
 
 <p>but it was <a href="https://dev.to/mattioo/create-a-blog-using-nikola-static-website-generator-l71">this post</a> by mattioo that showed me how to do it for markdown.</p>
   </div>
