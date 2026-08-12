@@ -763,6 +763,7 @@ def build() -> None:
                 base_vars, nav=get_nav(),
                 relroot=relroot(0), canonical_path="/404.html",
                 title=page_404["title"], description=desc, page=page_data,
+                base_href=f"{site['url']}/",
             )
         except Exception as e:
             log.error(f"Error rendering 404 page: {e}")
