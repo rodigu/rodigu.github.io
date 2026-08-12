@@ -38,7 +38,7 @@
     <nav>
       <ul itemprop="keywords" class="tags">
 {% for tag in post.tags %}
-        <li><a class="tag p-category" href="{{ relroot }}categories/{{ tag }}/" rel="tag">{{ tag }}</a></li>
+        <li><a class="tag p-category" href="{{ relroot }}tags/{{ tag }}/" rel="tag">{{ tag }}</a></li>
 {% endfor %}
       </ul>
 {% if post.prev or post.next %}

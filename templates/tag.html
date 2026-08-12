@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="tagpage">
+  <header>
+    <h1>Posts tagged "{{ tag }}"</h1>
+  </header>
+  <ul class="postlist">
+{% for post in posts %}
+    <li>
+      <time class="listdate" datetime="{{ post.date_iso }}" title="{{ post.date_formatted }}">{{ post.date_formatted }}</time>
+      <a href="{{ relroot }}{{ post.url }}" class="listtitle">{{ post.title }}</a>
+    </li>
+{% endfor %}
+  </ul>
+</article>
+{% endblock %}

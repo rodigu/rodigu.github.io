@@ -810,6 +810,52 @@ def build() -> None:
         with open(os.path.join(cat_out, "index.html"), "w") as f:
             f.write(html)
 
+    # --- Generate tag pages ---
+    print("Generating tag pages...")
+    tags = {}
+    for post in posts:
+        for tag in post["tags"]:
+            if tag not in tags:
+                tags[tag] = []
+            tags[tag].append(post)
+
+    for tag_name, tag_posts in tags.items():
+        tag_posts_sorted = sorted(
+            tag_posts,
+            key=lambda p: p["date"] or datetime.min.replace(tzinfo=timezone.utc),
+            reverse=True,
+        )
+
+        tag_dir_path = f"tags/{tag_name}/"
+        depth = len(tag_dir_path.split("/")) - 1
+        rr = relroot(depth)
+
+        tag_post_list = [
+            {
+                "title": p["title"],
+                "date_iso": p["date"].isoformat() if p["date"] else "",
+                "date_formatted": p["date"].strftime("%Y-%m-%d %H:%M") if p["date"] else "",
+                "url": p["url"],
+            }
+            for p in tag_posts_sorted
+        ]
+
+        try:
+            tmpl = env.get_template("tag.html")
+            html = tmpl.render(
+                base_vars, nav=get_nav(),
+                relroot=rr, canonical_path=f"/tags/{tag_name}/",
+                title=f"Posts tagged {tag_name}", tag=tag_name, posts=tag_post_list,
+            )
+        except Exception as e:
+            log.error(f"Error rendering tag page '{tag_name}': {e}")
+            continue
+
+        tag_out = os.path.join(out_dir, tag_dir_path)
+        os.makedirs(tag_out, exist_ok=True)
+        with open(os.path.join(tag_out, "index.html"), "w") as f:
+            f.write(html)
+
     # --- Generate RSS feed ---
     print("Generating RSS feed...")
     rss_items = []
