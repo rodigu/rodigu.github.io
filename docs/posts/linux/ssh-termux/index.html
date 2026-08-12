@@ -117,16 +117,16 @@
 </ol>
 <p>however, trying to connect to openssh's <code>sshd</code> was getting me a <code>connection reset by peer</code> error. it seems it is an <a href="https://www.reddit.com/r/termux/comments/17x1rvy/ssh_to_termux_keeps_failing/">error that sometimes happens with openssh on termux</a>, and the <a href="https://www.reddit.com/r/termux/comments/17x1rvy/comment/kb6tcup/">solution was to use dropbear</a> instead. they have an <a href="https://matt.ucc.asn.au/dropbear/dropbear.html">awesome website</a>, and a seemingly <a href="https://github.com/mkj/dropbear">solid github</a>, so i figured i'd give it a shot.</p>
 <p>after killing <code>sshd</code> on termux:</p>
-<pre class="code"><code class="language-bash">pkill sshd
-</code></pre>
+<div class="code" data-lang="bash"><pre class="code"><span></span><code>pkill<span class="w"> </span>sshd
+</code></pre></div>
 
 <p>and installing dropbear:</p>
-<pre class="code"><code class="language-bash">pkg i dropbear
-</code></pre>
+<div class="code" data-lang="bash"><pre class="code"><span></span><code>pkg<span class="w"> </span>i<span class="w"> </span>dropbear
+</code></pre></div>
 
 <p>i added it to <a href="https://wiki.termux.com/wiki/Termux-services"><code>termux-services</code></a><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> to always run:</p>
-<pre class="code"><code class="language-bash">sv-enable dropbear
-</code></pre>
+<div class="code" data-lang="bash"><pre class="code"><span></span><code>sv-enable<span class="w"> </span>dropbear
+</code></pre></div>
 
 <p>and now ssh into my android phone works normally.</p>
 <p>i recommend trying openssh before dropbear in any case. for some of my devices openssh works.</p>

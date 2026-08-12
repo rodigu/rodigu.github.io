@@ -6,7 +6,7 @@
     <description>personal website with technical writing, tiny game demos, and photo-logs</description>
     <atom:link href="https://rodigu.github.io/rss.xml" rel="self" type="application/rss+xml"/>
     <language>en</language>
-    <lastBuildDate>Wed, 12 Aug 2026 21:08:20 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2026 22:25:49 +0000</lastBuildDate>
   <item>
     <title>small language models (slms) on android with ollama</title>
     <link>https://rodigu.github.io/posts/data-eng/ollama-slm-android/</link>
@@ -81,19 +81,19 @@ the top floor now seems to be accessible only through reservations now.</p>
     <link>https://rodigu.github.io/posts/data-eng/airflow-walrus/</link>
     <dc:creator>rodigu</dc:creator>
     <description><![CDATA[<p><em>(actual prod code for airflow)</em></p>
-<pre class="code"><code class="language-python">[
-    (
-        a_data := get_users.partial(
-            connection_meta=connection_meta
-        ).expand(code=code_a)
-    ),
-    (
-        b_data := get_users.partial(
-            connection_meta=connection_meta
-        ).expand(code=code_b)
-    ),
-] &gt;&gt; (fetch_content := content_fetch(a_data, b_data))
-</code></pre>]]></description>
+<div class="code" data-lang="python"><pre class="code"><span></span><code><span class="p">[</span>
+    <span class="p">(</span>
+        <span class="n">a_data</span> <span class="o">:=</span> <span class="n">get_users</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span>
+            <span class="n">connection_meta</span><span class="o">=</span><span class="n">connection_meta</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">code_a</span><span class="p">)</span>
+    <span class="p">),</span>
+    <span class="p">(</span>
+        <span class="n">b_data</span> <span class="o">:=</span> <span class="n">get_users</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span>
+            <span class="n">connection_meta</span><span class="o">=</span><span class="n">connection_meta</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">code_b</span><span class="p">)</span>
+    <span class="p">),</span>
+<span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="p">(</span><span class="n">fetch_content</span> <span class="o">:=</span> <span class="n">content_fetch</span><span class="p">(</span><span class="n">a_data</span><span class="p">,</span> <span class="n">b_data</span><span class="p">))</span>
+</code></pre></div>]]></description>
     <guid>https://rodigu.github.io/posts/data-eng/airflow-walrus/</guid>
     <pubDate>Sat, 14 Feb 2026 11:54:00 -0300</pubDate>
   </item>
@@ -115,8 +115,8 @@ the top floor now seems to be accessible only through reservations now.</p>
     <dc:creator>rodigu</dc:creator>
     <description><![CDATA[<p>while using pandoc on arch, i got an error as i tried to convert a markdown to a pdf.</p>
 <p>conversion snippet:</p>
-<pre class="code"><code class="language-bash">pandoc document.md -o document.pdf
-</code></pre>]]></description>
+<div class="code" data-lang="bash"><pre class="code"><span></span><code>pandoc<span class="w"> </span>document.md<span class="w"> </span>-o<span class="w"> </span>document.pdf
+</code></pre></div>]]></description>
     <guid>https://rodigu.github.io/posts/linux/markdown-pandoc-on-arch/</guid>
     <pubDate>Thu, 05 Feb 2026 22:41:00 -0300</pubDate>
   </item>
@@ -155,17 +155,17 @@ i might try it again some other time.</p>]]></description>
     <link>https://rodigu.github.io/posts/data-eng/airflow-task_group-failure/</link>
     <dc:creator>rodigu</dc:creator>
     <description><![CDATA[<p>checking if a task has failed on airflow is simple enough, and may be done with:</p>
-<pre class="code"><code class="language-py">from airflow.operators.python import get_current_context
+<div class="code" data-lang="py"><pre class="code"><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">airflow.operators.python</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_current_context</span>
 
-@task
-def check_task_failed(task_id: str) -&gt; bool:
-      context = get_current_context()
-      return (
-          context[&quot;dag_run&quot;]
-            .get_task_instance(task_id=task_id)
-            .state == State.FAILED
-      )
-</code></pre>]]></description>
+<span class="nd">@task</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">check_task_failed</span><span class="p">(</span><span class="n">task_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+      <span class="n">context</span> <span class="o">=</span> <span class="n">get_current_context</span><span class="p">()</span>
+      <span class="k">return</span> <span class="p">(</span>
+          <span class="n">context</span><span class="p">[</span><span class="s2">&quot;dag_run&quot;</span><span class="p">]</span>
+            <span class="o">.</span><span class="n">get_task_instance</span><span class="p">(</span><span class="n">task_id</span><span class="o">=</span><span class="n">task_id</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">FAILED</span>
+      <span class="p">)</span>
+</code></pre></div>]]></description>
     <guid>https://rodigu.github.io/posts/data-eng/airflow-task_group-failure/</guid>
     <pubDate>Sun, 30 Mar 2025 16:20:00 -0300</pubDate>
   </item>

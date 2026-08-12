@@ -74,14 +74,14 @@
   <div class="e-content entry-content" itemprop="articleBody text">
 <p>while using pandoc on arch, i got an error as i tried to convert a markdown to a pdf.</p>
 <p>conversion snippet:</p>
-<pre class="code"><code class="language-bash">pandoc document.md -o document.pdf
-</code></pre>
+<div class="code" data-lang="bash"><pre class="code"><span></span><code>pandoc<span class="w"> </span>document.md<span class="w"> </span>-o<span class="w"> </span>document.pdf
+</code></pre></div>
 
 <!-- TEASER_END -->
 
 <p>resulted in:</p>
-<pre class="code"><code class="language-text">Error producing PDF.
-! LaTeX Error: File `xcolor.sty' not found.
+<div class="code" data-lang="text"><pre class="code"><span></span><code>Error producing PDF.
+! LaTeX Error: File `xcolor.sty&#39; not found.
 
 Type X to quit or &lt;RETURN&gt; to proceed,
 or enter new name. (Default extension: sty)
@@ -91,11 +91,11 @@ Enter file name:
 &lt;read *&gt; 
 
 l.7 \usepackage
-</code></pre>
+</code></pre></div>
 
 <p>to use pandoc you first need a tex engine, like texlive:</p>
-<pre class="code"><code class="language-bash">sudo pacman -S texlive
-</code></pre>
+<div class="code" data-lang="bash"><pre class="code"><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>texlive
+</code></pre></div>
 
 <p>i installed only the ones that seemed relevant, as all packages amount to over 1 GB together (??).</p>
 <p>turns out, i was missing something.
@@ -105,17 +105,17 @@ l.7 \usepackage
 </blockquote>
 <p>very good to know.
 running it:</p>
-<pre class="code"><code class="language-bash">sudo pacman -F soul.sty
-</code></pre>
+<div class="code" data-lang="bash"><pre class="code"><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-F<span class="w"> </span>soul.sty
+</code></pre></div>
 
 <p>gave me:</p>
-<pre class="code"><code class="language-text">extra/texlive-plaingeneric 2025.2-3 (texlive)
+<div class="code" data-lang="text"><pre class="code"><span></span><code>extra/texlive-plaingeneric 2025.2-3 (texlive)
     usr/share/texmf-dist/tex/generic/soul/soul.sty
-</code></pre>
+</code></pre></div>
 
 <p>which i just had to install with pacman:</p>
-<pre class="code"><code class="language-bash">sudo pacman -S soul
-</code></pre>
+<div class="code" data-lang="bash"><pre class="code"><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>soul
+</code></pre></div>
   </div>
 
   <aside class="postpromonav">

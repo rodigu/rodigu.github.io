@@ -75,19 +75,19 @@
   </header>
   <div class="e-content entry-content" itemprop="articleBody text">
 <p><em>(actual prod code for airflow)</em></p>
-<pre class="code"><code class="language-python">[
-    (
-        a_data := get_users.partial(
-            connection_meta=connection_meta
-        ).expand(code=code_a)
-    ),
-    (
-        b_data := get_users.partial(
-            connection_meta=connection_meta
-        ).expand(code=code_b)
-    ),
-] &gt;&gt; (fetch_content := content_fetch(a_data, b_data))
-</code></pre>
+<div class="code" data-lang="python"><pre class="code"><span></span><code><span class="p">[</span>
+    <span class="p">(</span>
+        <span class="n">a_data</span> <span class="o">:=</span> <span class="n">get_users</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span>
+            <span class="n">connection_meta</span><span class="o">=</span><span class="n">connection_meta</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">code_a</span><span class="p">)</span>
+    <span class="p">),</span>
+    <span class="p">(</span>
+        <span class="n">b_data</span> <span class="o">:=</span> <span class="n">get_users</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span>
+            <span class="n">connection_meta</span><span class="o">=</span><span class="n">connection_meta</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">code_b</span><span class="p">)</span>
+    <span class="p">),</span>
+<span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="p">(</span><span class="n">fetch_content</span> <span class="o">:=</span> <span class="n">content_fetch</span><span class="p">(</span><span class="n">a_data</span><span class="p">,</span> <span class="n">b_data</span><span class="p">))</span>
+</code></pre></div>
   </div>
 
   <aside class="postpromonav">

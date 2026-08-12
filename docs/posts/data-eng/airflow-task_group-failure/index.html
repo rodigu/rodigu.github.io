@@ -73,35 +73,35 @@
   </header>
   <div class="e-content entry-content" itemprop="articleBody text">
 <p>checking if a task has failed on airflow is simple enough, and may be done with:</p>
-<pre class="code"><code class="language-py">from airflow.operators.python import get_current_context
+<div class="code" data-lang="py"><pre class="code"><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">airflow.operators.python</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_current_context</span>
 
-@task
-def check_task_failed(task_id: str) -&gt; bool:
-      context = get_current_context()
-      return (
-          context[&quot;dag_run&quot;]
-            .get_task_instance(task_id=task_id)
-            .state == State.FAILED
-      )
-</code></pre>
+<span class="nd">@task</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">check_task_failed</span><span class="p">(</span><span class="n">task_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+      <span class="n">context</span> <span class="o">=</span> <span class="n">get_current_context</span><span class="p">()</span>
+      <span class="k">return</span> <span class="p">(</span>
+          <span class="n">context</span><span class="p">[</span><span class="s2">&quot;dag_run&quot;</span><span class="p">]</span>
+            <span class="o">.</span><span class="n">get_task_instance</span><span class="p">(</span><span class="n">task_id</span><span class="o">=</span><span class="n">task_id</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">FAILED</span>
+      <span class="p">)</span>
+</code></pre></div>
 
 <!-- TEASER_END -->
 
 <p>however, if the task is nested within a <code>task_group</code>, referencing said task with <code>task_id</code> doesn't work.
 in theory, tasks inside a <code>task_group</code> should be indexed with <code>group_id.task_id</code><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, but trying <code>get_task_instance</code> with this ID structure will return a <code>NoneType</code>.</p>
 <p>the one way i have found to actually make it work, is with the following:</p>
-<pre class="code"><code class="language-py">from airflow.operators.python import get_current_context
+<div class="code" data-lang="py"><pre class="code"><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">airflow.operators.python</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_current_context</span>
 
-@task
-def check_task_failed(group_id: str, task_id: str) -&gt; bool:
-      context = get_current_context()
-      # get all failed tasks
-      failed_tasks = context[&quot;dag_run&quot;].get_task_instances(state=State.FAILED)
-      # check if the task from the group id shows up in failed tasks
-      return f&quot;{group_id}.{task_id}&quot; in {
-          ft.task_id for ft in failed_tasks
-      }
-</code></pre>
+<span class="nd">@task</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">check_task_failed</span><span class="p">(</span><span class="n">group_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">task_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+      <span class="n">context</span> <span class="o">=</span> <span class="n">get_current_context</span><span class="p">()</span>
+      <span class="c1"># get all failed tasks</span>
+      <span class="n">failed_tasks</span> <span class="o">=</span> <span class="n">context</span><span class="p">[</span><span class="s2">&quot;dag_run&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">get_task_instances</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="n">State</span><span class="o">.</span><span class="n">FAILED</span><span class="p">)</span>
+      <span class="c1"># check if the task from the group id shows up in failed tasks</span>
+      <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">group_id</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">task_id</span><span class="si">}</span><span class="s2">&quot;</span> <span class="ow">in</span> <span class="p">{</span>
+          <span class="n">ft</span><span class="o">.</span><span class="n">task_id</span> <span class="k">for</span> <span class="n">ft</span> <span class="ow">in</span> <span class="n">failed_tasks</span>
+      <span class="p">}</span>
+</code></pre></div>
 
 <p>which i was able to implement based on an answer from stackoverflow<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
 <p>before finding that answer, i struggled with missing docs, llm hallucinations. and what i am fairly sure were people posting llm bullshit as if it were real.</p>
