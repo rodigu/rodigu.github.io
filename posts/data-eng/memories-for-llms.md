@@ -34,7 +34,7 @@ llms work best with short, structured information. given too much room, they hal
 
 for a first proof of concept, i used [pi](pi.dev)'s approach: jsonl files for session data. each memory has a uuid, update date, description, tags, and content.
 
-```ts
+```typescript
 interface MemoryBase {
     id: string;
     description: string;
@@ -63,7 +63,7 @@ tags help llms search for relevant memories. descriptions help them decide if a 
 
 here are the signatures for the five tools: search, create, edit, read, delete.
 
-```ts
+```typescript
 function search(keyWords: Array<string>): Array<MemoryBase>
 function create(newMemory: MemoryCreate)
 function edit(memory: MemoryEdit)
