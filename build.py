@@ -19,6 +19,7 @@ log = logging.getLogger("build")
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
+
 REQUIRED_CONFIG_KEYS = {
     "site": ["title", "author", "email", "url", "description", "theme_color", "font", "variant", "footer"],
     "output": None,
@@ -168,7 +169,8 @@ def parse_markdown(text: str, extensions: list[str], extension_configs: dict[str
     """Render markdown text to HTML with the configured extensions.
 
     Applies a post-processing fix to inject ``class="code"`` into
-    codehilite output ``<pre>`` tags.
+    codehilite output ``<pre>`` tags. Also extracts language info from
+    fenced code blocks and adds it as a data-lang attribute.
 
     Args:
         text: Raw markdown text.
@@ -178,8 +180,31 @@ def parse_markdown(text: str, extensions: list[str], extension_configs: dict[str
     Returns:
         Rendered HTML string.
     """
+    # Extract language from fenced code blocks before processing
+    code_blocks = []
+    def extract_lang(match):
+        lang = match.group(1)
+        if lang:  # Only add if there's a language (skip closing ```)
+            code_blocks.append(lang)
+        return match.group(0)
+
+    re.sub(r'```(\w*)\n', extract_lang, text)
+
     html = markdown.markdown(text, extensions=extensions, extension_configs=extension_configs)
     html = html.replace('<div class="code"><pre>', '<div class="code"><pre class="code">')
+
+    # Add data-lang attributes to code blocks
+    block_idx = 0
+    def add_lang_attr(match):
+        nonlocal block_idx
+        div_tag = match.group(0)
+        if block_idx < len(code_blocks) and code_blocks[block_idx]:
+            lang = code_blocks[block_idx]
+            div_tag = div_tag.replace('<div class="code">', f'<div class="code" data-lang="{lang}">', 1)
+        block_idx += 1
+        return div_tag
+
+    html = re.sub(r'<div class="code">.*?</div>', add_lang_attr, html, flags=re.DOTALL)
     return html
 
 

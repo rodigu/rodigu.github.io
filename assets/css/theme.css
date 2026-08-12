@@ -456,6 +456,20 @@ pre.code .hll {
 	border-radius: 5px;
 	border: 2px solid rgba(252, 231, 210, 0.7);
 	overflow: hidden;
+	position: relative;
+}
+
+.code[data-lang]::before {
+	content: attr(data-lang);
+	display: inline-block;
+	padding: 2px 8px;
+	margin: 8px 8px 0 8px;
+	font-family: 'Space Mono', monospace;
+	font-size: 11px;
+	color: rgba(252, 231, 210, 0.7);
+	background: #101010;
+	border: 1px solid rgba(252, 231, 210, 0.4);
+	border-radius: 3px;
 }
 
 pre.code {
