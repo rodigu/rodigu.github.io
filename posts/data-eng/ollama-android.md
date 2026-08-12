@@ -1,11 +1,11 @@
 <!--
-.. title: small language models (slms) on android with llama.cpp
-.. slug: slm-android
+.. title: small language models (slms) on android with ollama
+.. slug: ollama-slm-android
 .. date: 2026-07-09 19:17:25 UTC-03:00
 .. tags: android, termux, llm, slm
 .. category: data-eng
 .. link: https://rodigu.github.io/
-.. description: running slms on android with llama.cpp
+.. description: running slms on android with ollama
 -->
 
 small language models are getting really good, and *very* tiny.
