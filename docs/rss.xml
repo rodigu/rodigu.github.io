@@ -6,15 +6,15 @@
     <description>personal website with technical writing, tiny game demos, and photo-logs</description>
     <atom:link href="https://rodigu.github.io/rss.xml" rel="self" type="application/rss+xml"/>
     <language>en</language>
-    <lastBuildDate>Sat, 08 Aug 2026 12:46:32 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2026 20:30:45 +0000</lastBuildDate>
   <item>
-    <title>small language models (slms) on android with llama.cpp</title>
-    <link>https://rodigu.github.io/posts/data-eng/slm-android/</link>
+    <title>small language models (slms) on android with ollama</title>
+    <link>https://rodigu.github.io/posts/data-eng/ollama-slm-android/</link>
     <dc:creator>rodigu</dc:creator>
     <description><![CDATA[<p>small language models are getting really good, and <em>very</em> tiny.
 from last year, <a href="https://developers.googleblog.com/en/google-ai-edge-small-language-models-multimodality-rag-function-calling/">google already had been using gemma 3 1b</a> as on-device models that even have tool-calling capabilities. apple has also launched <a href="https://machinelearning.apple.com/research/openelm">openelm</a>, a family of models targeting local inferencing, with models as small as 270 million parameters.</p>
 <p>for fun, here are some tokens per second benchmarks for a few slms running on my <a href="https://www.gsmarena.com/samsung_galaxy_a15-12637.php">samsung galaxy a15</a> (an almost 3 years old phone).</p>]]></description>
-    <guid>https://rodigu.github.io/posts/data-eng/slm-android/</guid>
+    <guid>https://rodigu.github.io/posts/data-eng/ollama-slm-android/</guid>
     <pubDate>Thu, 09 Jul 2026 19:17:25 -0300</pubDate>
   </item>
   <item>
