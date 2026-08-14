@@ -6,7 +6,7 @@
     <description>personal website with technical writing, tiny game demos, and photo-logs</description>
     <atom:link href="https://rodigu.github.io/rss.xml" rel="self" type="application/rss+xml"/>
     <language>en</language>
-    <lastBuildDate>Fri, 14 Aug 2026 19:42:01 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 14 Aug 2026 20:01:19 +0000</lastBuildDate>
   <item>
     <title>small language models (slms) on android with ollama</title>
     <link>https://rodigu.github.io/posts/data-eng/ollama-slm-android/</link>
