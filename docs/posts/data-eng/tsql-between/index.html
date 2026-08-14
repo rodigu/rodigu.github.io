@@ -105,7 +105,7 @@ the British/French standard as per <a href="https://learn.microsoft.com/en-us/sq
 <p>we convert the <code>varchar</code> column <code>date_vc</code> to datetime, and select between those two dates.</p>
 <p>as alluded to in microsoft's own documentation, we do get that this between select is indeed inclusive, as we fetch the following from the select:</p>
 <blockquote>
-<table>
+<div class="table-wrapper"><table>
 <thead>
 <tr>
 <th>date_vc</th>
@@ -122,7 +122,7 @@ the British/French standard as per <a href="https://learn.microsoft.com/en-us/sq
 <td>2025-12-15 23:48:13.000</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 </blockquote>
 <p>note that, even if we were to use the 103 standard with <code>between '12/09/2025' and '12/15/2025'</code>, we'd still get the same response.</p>
 <p>now, if we do the <strong><em>exact same select</em></strong> for the <code>datetime</code> column <code>date_dt</code> (again, it doesn't matter which standard and formatting you pick):</p>
@@ -132,7 +132,7 @@ the British/French standard as per <a href="https://learn.microsoft.com/en-us/sq
 
 <p>we get a response non-inclusive of the second value:</p>
 <blockquote>
-<table>
+<div class="table-wrapper"><table>
 <thead>
 <tr>
 <th>date_vc</th>
@@ -145,7 +145,7 @@ the British/French standard as per <a href="https://learn.microsoft.com/en-us/sq
 <td>2025-12-09 23:48:13.000</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 </blockquote>
 <p>is this a quirk of tsql? or is this also in other sql dialects?</p>
 <h2>a rant</h2>

@@ -98,13 +98,14 @@ we can install ollama with:</p>
 </code></pre></div>
 
 <h2>results</h2>
-<p>i only asked the models <code>what is the capital of france?</code>.</p>
-<table>
+<p>i only asked the models <em>what is the capital of france?</em>.</p>
+<p>here are the results in tokens per second (t/s).</p>
+<div class="table-wrapper"><table>
 <thead>
 <tr>
 <th>model</th>
 <th>size</th>
-<th>avg tokens per second</th>
+<th>avg t/s</th>
 <th>tokens</th>
 <th>reasoning time</th>
 </tr>
@@ -139,7 +140,7 @@ we can install ollama with:</p>
 <td>non-reasoning</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>of course, this simple question isn't necessarily a good benchmark for actual practical use. qwen 3.5 0.8B, for instance, is great at tool calling. it is impressive that it can run on my 5 year old galaxy book at all, and can do basic calls (read, edit, write) on python scripts.</p>
 <p>the gemma3 models are non-reasoning, and because of that they answer very fast. the 270m model in particular gets to 11 t/s at times. of course, it <em>is</em> the least capable at well in terms of encyclopedic knowledge. but i do like how straight to the point it is. unlike gemma3 1b, the smaller cousin does not use emojis at all. the smaller models are mostly useful as cognitive cores that pull information from elsewhere and call tools.</p>
   </div>
