@@ -30,7 +30,7 @@
 body {
 	color: #db8758;
 	font-family: 'Maple Mono', monospace;
-	font-size: 20px;
+	font-size: 15px;
 	line-height: 1.4;
 	padding: 1em;
 }
@@ -43,6 +43,7 @@ body {
 }
 
 #container {
+	width: 100%;
 	margin: 1em auto;
 	max-width: 770px;
 }
@@ -316,6 +317,24 @@ pre.code, code {
 	overflow: auto;
 }
 
+/* Article content */
+.postpage .e-content.entry-content {
+	width: 100%;
+	max-width: 100%;
+	min-width: 0;
+}
+
+.table-wrapper {
+	width: 100%;
+	max-width: 100%;
+	overflow-x: auto;
+}
+
+.entry-content table {
+	width: max-content;
+	min-width: 100%;
+}
+
 /* Tables */
 table {
 	border-collapse: collapse;
@@ -489,4 +508,26 @@ pre.code code {
 blockquote {
 	border-radius: 6px;
 	padding: 3px 2px;
+}
+
+@media screen and (max-width: 768px) {
+	body {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	#container {
+		width: 100%;
+		max-width: none;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.postpage .e-content.entry-content {
+		width: 90%;
+		max-width: none;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: left;
+	}
 }

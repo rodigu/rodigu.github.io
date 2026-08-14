@@ -192,6 +192,8 @@ def parse_markdown(text: str, extensions: list[str], extension_configs: dict[str
 
     html = markdown.markdown(text, extensions=extensions, extension_configs=extension_configs)
     html = html.replace('<div class="code"><pre>', '<div class="code"><pre class="code">')
+    html = re.sub(r'(<table(?:\s[^>]*)?>)', r'<div class="table-wrapper">\1', html)
+    html = html.replace('</table>', '</table></div>')
 
     # Add data-lang attributes to code blocks
     block_idx = 0
