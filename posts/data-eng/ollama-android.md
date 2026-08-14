@@ -42,9 +42,11 @@ ollama run qwen3.5:0.8b
 
 ## results
 
-i only asked the models `what is the capital of france?`.
+i only asked the models _what is the capital of france?_.
 
-|model|size|avg tokens per second|tokens|reasoning time|
+here are the results in tokens per second (t/s).
+
+|model|size|avg t/s|tokens|reasoning time|
 |-|-|-|-|-|
 | [qwen 3.5](https://ollama.com/library/qwen3.5:0.8b)| 0.8b | 5.5 |1340|5 minutes|
 | [lfm2.5](https://ollama.com/library/lfm2.5-thinking:1.2b)| 1.2b | 4 |260|1 minutes|
